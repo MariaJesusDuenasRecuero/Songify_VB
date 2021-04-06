@@ -149,5 +149,8 @@
   <ItemGroup>
     <None Include="Resources\IconContrasena.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-04-06 at 12.28.12.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
