@@ -25,8 +25,6 @@ Partial Class Login
         Me.btn_login = New System.Windows.Forms.Button()
         Me.btn_signUp = New System.Windows.Forms.Button()
         Me.txt_email = New System.Windows.Forms.TextBox()
-        Me.txt_password = New System.Windows.Forms.TextBox()
-        Me.lbl_iconPassword = New System.Windows.Forms.Label()
         Me.lbl_iconEmail = New System.Windows.Forms.Label()
         Me.lbl_songify = New System.Windows.Forms.Label()
         Me.lbl_background = New System.Windows.Forms.Label()
@@ -60,37 +58,17 @@ Partial Class Login
         '
         Me.txt_email.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_email.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.txt_email.Location = New System.Drawing.Point(367, 327)
+        Me.txt_email.Location = New System.Drawing.Point(367, 350)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(212, 31)
         Me.txt_email.TabIndex = 4
         Me.txt_email.Text = "Email"
         '
-        'txt_password
-        '
-        Me.txt_password.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_password.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.txt_password.Location = New System.Drawing.Point(367, 386)
-        Me.txt_password.Name = "txt_password"
-        Me.txt_password.Size = New System.Drawing.Size(212, 31)
-        Me.txt_password.TabIndex = 5
-        Me.txt_password.Text = "password"
-        Me.txt_password.UseSystemPasswordChar = True
-        '
-        'lbl_iconPassword
-        '
-        Me.lbl_iconPassword.BackColor = System.Drawing.Color.White
-        Me.lbl_iconPassword.Image = Global.Songify.My.Resources.Resources.IconContrasena
-        Me.lbl_iconPassword.Location = New System.Drawing.Point(315, 386)
-        Me.lbl_iconPassword.Name = "lbl_iconPassword"
-        Me.lbl_iconPassword.Size = New System.Drawing.Size(37, 31)
-        Me.lbl_iconPassword.TabIndex = 7
-        '
         'lbl_iconEmail
         '
         Me.lbl_iconEmail.BackColor = System.Drawing.Color.White
         Me.lbl_iconEmail.Image = Global.Songify.My.Resources.Resources.email
-        Me.lbl_iconEmail.Location = New System.Drawing.Point(315, 327)
+        Me.lbl_iconEmail.Location = New System.Drawing.Point(324, 350)
         Me.lbl_iconEmail.Name = "lbl_iconEmail"
         Me.lbl_iconEmail.Size = New System.Drawing.Size(37, 31)
         Me.lbl_iconEmail.TabIndex = 6
@@ -118,9 +96,7 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
-        Me.Controls.Add(Me.lbl_iconPassword)
         Me.Controls.Add(Me.lbl_iconEmail)
-        Me.Controls.Add(Me.txt_password)
         Me.Controls.Add(Me.txt_email)
         Me.Controls.Add(Me.btn_signUp)
         Me.Controls.Add(Me.btn_login)
@@ -138,7 +114,5 @@ Partial Class Login
     Friend WithEvents btn_login As Button
     Friend WithEvents btn_signUp As Button
     Friend WithEvents txt_email As TextBox
-    Friend WithEvents txt_password As TextBox
     Friend WithEvents lbl_iconEmail As Label
-    Friend WithEvents lbl_iconPassword As Label
 End Class
