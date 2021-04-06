@@ -152,5 +152,14 @@
   <ItemGroup>
     <None Include="Resources\WhatsApp Image 2021-04-06 at 12.28.12.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-04-06 at 12.35.22.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-04-06 at 12.35.46.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-04-06 at 12.40.53.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

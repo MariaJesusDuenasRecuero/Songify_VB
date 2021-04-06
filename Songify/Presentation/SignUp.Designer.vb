@@ -22,27 +22,19 @@ Partial Class SignUp
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btn_back = New System.Windows.Forms.Button()
         Me.btn_loginSignUp = New System.Windows.Forms.Button()
         Me.txt_name = New System.Windows.Forms.TextBox()
         Me.txt_surname = New System.Windows.Forms.TextBox()
         Me.txt_email = New System.Windows.Forms.TextBox()
         Me.txt_birthdate = New System.Windows.Forms.TextBox()
         Me.lbl_introduceCredentials = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btn_back = New System.Windows.Forms.Button()
         Me.lbl_background = New System.Windows.Forms.Label()
         Me.SuspendLayout()
-        '
-        'btn_back
-        '
-        Me.btn_back.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btn_back.BackColor = System.Drawing.Color.White
-        Me.btn_back.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_back.Location = New System.Drawing.Point(338, 552)
-        Me.btn_back.Name = "btn_back"
-        Me.btn_back.Size = New System.Drawing.Size(264, 42)
-        Me.btn_back.TabIndex = 5
-        Me.btn_back.Text = "Back"
-        Me.btn_back.UseVisualStyleBackColor = False
         '
         'btn_loginSignUp
         '
@@ -108,6 +100,59 @@ Partial Class SignUp
         Me.lbl_introduceCredentials.TabIndex = 10
         Me.lbl_introduceCredentials.Text = "Introduce credentials"
         '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.Color.White
+        Me.Label4.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_35_46
+        Me.Label4.Location = New System.Drawing.Point(335, 421)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(45, 31)
+        Me.Label4.TabIndex = 14
+        '
+        'Label3
+        '
+        Me.Label3.BackColor = System.Drawing.Color.White
+        Me.Label3.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_35_22
+        Me.Label3.Location = New System.Drawing.Point(335, 261)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(45, 40)
+        Me.Label3.TabIndex = 13
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.Color.White
+        Me.Label2.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_35_22
+        Me.Label2.Location = New System.Drawing.Point(335, 184)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(45, 42)
+        Me.Label2.TabIndex = 12
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.White
+        Me.Label1.Image = Global.Songify.My.Resources.Resources.email
+        Me.Label1.Location = New System.Drawing.Point(335, 348)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(45, 31)
+        Me.Label1.TabIndex = 11
+        '
+        'btn_back
+        '
+        Me.btn_back.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btn_back.BackColor = System.Drawing.Color.White
+        Me.btn_back.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_back.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_40_53
+        Me.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_back.Location = New System.Drawing.Point(338, 552)
+        Me.btn_back.Margin = New System.Windows.Forms.Padding(15)
+        Me.btn_back.Name = "btn_back"
+        Me.btn_back.Size = New System.Drawing.Size(264, 42)
+        Me.btn_back.TabIndex = 5
+        Me.btn_back.Text = "Back"
+        Me.btn_back.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_back.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_back.UseVisualStyleBackColor = False
+        '
         'lbl_background
         '
         Me.lbl_background.Image = Global.Songify.My.Resources.Resources.fonditomj
@@ -122,6 +167,10 @@ Partial Class SignUp
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbl_introduceCredentials)
         Me.Controls.Add(Me.txt_birthdate)
         Me.Controls.Add(Me.txt_email)
@@ -145,4 +194,8 @@ Partial Class SignUp
     Friend WithEvents txt_email As TextBox
     Friend WithEvents txt_birthdate As TextBox
     Friend WithEvents lbl_introduceCredentials As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class
