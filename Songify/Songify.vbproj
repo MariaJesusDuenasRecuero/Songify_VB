@@ -109,9 +109,7 @@
     <Compile Include="Presentation\MainWindow.Designer.vb">
       <DependentUpon>MainWindow.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\MainWindow.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Presentation\MainWindow.vb" />
     <Compile Include="Presentation\SignUp.Designer.vb">
       <DependentUpon>SignUp.vb</DependentUpon>
     </Compile>
@@ -171,6 +169,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\WhatsApp Image 2021-04-06 at 12.40.53.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cantante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jugar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grabacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\album-de-musica.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
