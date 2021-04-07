@@ -28,14 +28,16 @@
             usr.birthdate = aux(4)
         Next
     End Sub
-
-    Public Function Insert(ByVal usr As User) As Integer
+    Public Function Insert(ByVal usr As User, path As String) As Integer
+        DBBroker.GetBroker(path)
         Return DBBroker.GetBroker.Change("INSERT INTO Users VALUES ('" & usr.Email & "', '" & usr.uName & "', '" & usr.uSurname & "', '" & usr.birthdate & "' );")
     End Function
-    Public Function Update(ByVal usr As User) As Integer
+    Public Function Update(ByVal usr As User, path As String) As Integer
+        DBBroker.GetBroker(path)
         Return DBBroker.GetBroker.Change("UPDATE Users SET uName='" & usr.uName & "' SET uSurname='" & usr.uSurname & "' SET birthdate='" & usr.birthdate & "'WHERE Email='" & usr.Email & "';")
     End Function
-    Public Function Delete(ByVal usr As User) As Integer
+    Public Function Delete(ByVal usr As User, path As String) As Integer
+        DBBroker.GetBroker(path)
         Return DBBroker.GetBroker.Change("DELETE FROM Users WHERE Email='" & usr.Email & "';")
     End Function
 

@@ -19,13 +19,13 @@
         Me.usrDAO.Read(Me)
     End Sub
     Public Function InsertUser() As Integer
-        Return Me.usrDAO.Insert(Me)
+        Return Me.usrDAO.Insert(Me, "C:\songify.accdb")
     End Function
     Public Function UpdateUser() As Integer
-        Return Me.usrDAO.Update(Me)
+        Return Me.usrDAO.Update(Me, "C:\songify.accdb")
     End Function
     Public Function DeleteUser() As Integer
-        Return Me.usrDAO.Delete(Me)
+        Return Me.usrDAO.Delete(, "C:\songify.accdb")
     End Function
 
 

@@ -16,7 +16,7 @@
     End Function
 
     Public Shared Function GetBroker(path As String) As DBBroker
-        DBBroker.connectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" & path 'mirar esto el path es la ruta del archivo
+        DBBroker.connectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" & path
         DBBroker.connection = New OleDb.OleDbConnection(DBBroker.connectionString) 'devulve DBBroker
         Return DBBroker.GetBroker
     End Function
