@@ -12,12 +12,12 @@
         Me.usrDAO = New UserDAO
         Me.Email = id
     End Sub
-    Public Sub ReadAllUsers(path As String)
-        Me.usrDAO.ReadAll(path)
-    End Sub
-    Public Sub ReadUser()
-        Me.usrDAO.Read(Me)
-    End Sub
+    Public Function ReadAllUsers(path As String)
+        Return Me.usrDAO.ReadAll(path)
+    End Function
+    Public Function ReadUser()
+        Return Me.usrDAO.Read(Me)
+    End Function
     Public Function InsertUser() As Integer
         Return Me.usrDAO.Insert(Me, "C:\songify.accdb")
     End Function
@@ -25,7 +25,7 @@
         Return Me.usrDAO.Update(Me, "C:\songify.accdb")
     End Function
     Public Function DeleteUser() As Integer
-        Return Me.usrDAO.Delete(, "C:\songify.accdb")
+        Return Me.usrDAO.Delete(Me, "C:\songify.accdb")
     End Function
 
 

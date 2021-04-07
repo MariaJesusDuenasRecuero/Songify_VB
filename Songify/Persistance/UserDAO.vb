@@ -5,21 +5,21 @@
         Me.Users = New Collection
     End Sub
 
-    Public Sub ReadAll(path As String)
+    Public Function ReadAll(path As String)
         Dim usr As User
         Dim col, aux As Collection
-        col = DBBroker.GetBroker(path).Read("SELECT * FROM Users ORDER BY UserEmail")
+        col = DBBroker.GetBroker(path).Read("SELECT * FROM Users ORDER BY Email")
         For Each aux In col
             usr = New User(aux(1).ToString)
-            usr.Email = aux(2).ToString
-            usr.uName = aux(3).ToString
-            usr.uSurname = aux(4).ToString
-            usr.birthdate = aux(5).ToString
+            usr.uName = aux(2).ToString
+            usr.uSurname = aux(3).ToString
+            usr.birthdate = aux(4)
             Me.Users.Add(usr)
         Next
-    End Sub
+        Return Users
+    End Function
 
-    Public Sub Read(ByRef usr As User)
+    Public Function Read(ByRef usr As User)
         Dim col As Collection : Dim aux As Collection
         col = DBBroker.GetBroker.Read("SELECT * FROM Users WHERE Email='" & usr.Email & "';")
         For Each aux In col
@@ -27,7 +27,8 @@
             usr.uSurname = aux(3).ToString
             usr.birthdate = aux(4)
         Next
-    End Sub
+        Return usr
+    End Function
     Public Function Insert(ByVal usr As User, path As String) As Integer
         DBBroker.GetBroker(path)
         Return DBBroker.GetBroker.Change("INSERT INTO Users VALUES ('" & usr.Email & "', '" & usr.uName & "', '" & usr.uSurname & "', '" & usr.birthdate & "' );")

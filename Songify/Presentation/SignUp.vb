@@ -16,19 +16,21 @@ Public Class SignUp
     Private Sub SignUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+    Private Sub txtname_Clear(sender As Object, e As EventArgs) Handles txt_name.Enter
+        txt_name.Clear()
+    End Sub
+    Private Sub txtsurname_Clear(sender As Object, e As EventArgs) Handles txt_surname.Enter
+        txt_surname.Clear()
+    End Sub
+    Private Sub txtemail_Clear(sender As Object, e As EventArgs) Handles txt_email.Enter
+        txt_email.Clear()
+    End Sub
+    Private Sub txtbirthdate_Clear(sender As Object, e As EventArgs) Handles txt_birthdate.Enter
+        txt_birthdate.Clear()
+    End Sub
 
-    'Private Sub Conexion()
-    'Dim cadena As New OleDb.OleDbConnection
-    'Try
-    '      cadena.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source= songify.accdb; Persis Security Info=False"
-    '      cadena.Open()
-    'Catch ex As Exception
-    '       MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-    'End Try
-    ' End Sub
     Private Sub SignUpClick(sender As Object, e As EventArgs) Handles btn_loginSignUp.Click
         Dim name As String : Dim surname As String : Dim email As String : Dim birthdate As Date : Dim u As User
-        ' Conexion()
         Try
             name = txt_name.Text
             surname = txt_surname.Text

@@ -1,7 +1,7 @@
 ﻿
 Public Class Login
 
-    Private user As User
+    Public user As User
     Public fileName As String
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -63,5 +63,28 @@ Public Class Login
         Me.Hide()
     End Sub
 
+    Private Sub lbl_background_Click(sender As Object, e As EventArgs) Handles lbl_background.Click
 
+    End Sub
+    Private Sub btn_Login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
+        Dim Users As Collection : Dim useremail As String : Dim UserDAO As UserDAO : Dim f2 As New MainWindow : Dim iguales As Boolean
+        iguales = False
+        UserDAO = New UserDAO()
+        Users = UserDAO.ReadAll("C:\songify.accdb")
+        For Each user In Users
+            useremail = user.Email
+            If user.Email = txt_email.Text Then
+                iguales = True
+                Exit For
+            End If
+        Next
+        If iguales = True Then
+            MsgBox("Welcome to our application", MsgBoxStyle.OkOnly, "Allow to Access")
+            f2.Show()
+            Me.Hide()
+        Else
+            MsgBox("This user isn't in out DataBase", MsgBoxStyle.OkOnly, "Error")
+        End If
+
+    End Sub
 End Class
