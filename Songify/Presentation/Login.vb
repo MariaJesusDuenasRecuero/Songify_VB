@@ -12,6 +12,7 @@ Public Class Login
     Private Sub ofdPath_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ofdPath.FileOk
         Me.ofdPath.InitialDirectory = Application.StartupPath
     End Sub
+
     Private Sub btn_selectDB_Click(sender As Object, e As EventArgs) Handles btn_selectDB.Click
         If Me.ofdPath.ShowDialog = DialogResult.OK Then
             btn_connect.Enabled = True
@@ -30,25 +31,6 @@ Public Class Login
     End Sub
 
 
-
-    ' Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
-    ' query = "SELECT Email FROM USER WHERE Email='&txt_email.Text'"
-
-    'If query.HasRows = True Then
-    'MsgBox("acept", MsgBoxStyle.Information, "Allow to Access")
-    'clean_focus()
-    'Dim f2 As New MainWindow
-    'f2.Show()
-    'Me.Hide()
-    'Else
-    'MsgBox("Incorrect Email, please try again", MsgBoxStyle.Critical, "Warning")
-
-
-
-    ' End If
-
-    ' End Sub
-
     Private Sub clean_focus()
         txt_email.Clear()
         txt_email.Focus()
@@ -63,9 +45,7 @@ Public Class Login
         Me.Hide()
     End Sub
 
-    Private Sub lbl_background_Click(sender As Object, e As EventArgs) Handles lbl_background.Click
 
-    End Sub
     Private Sub btn_Login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         Dim Users As Collection : Dim useremail As String : Dim UserDAO As UserDAO : Dim f2 As New MainWindow : Dim iguales As Boolean
         iguales = False
@@ -80,11 +60,23 @@ Public Class Login
         Next
         If iguales = True Then
             MsgBox("Welcome to our application", MsgBoxStyle.OkOnly, "Allow to Access")
+            lbl_warning.Enabled = False
             f2.Show()
             Me.Hide()
         Else
             MsgBox("This user isn't in out DataBase", MsgBoxStyle.OkOnly, "Error")
+            lbl_warning.Enabled = True
         End If
+
+        If txt_email.Text = "" Then
+            MsgBox("Please introduce an email", MsgBoxStyle.OkOnly, "Warning")
+            lbl_warning.Enabled = True
+
+
+
+
+        End If
+
 
     End Sub
 End Class
