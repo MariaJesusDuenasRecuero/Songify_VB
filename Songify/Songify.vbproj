@@ -185,5 +185,14 @@
   <ItemGroup>
     <None Include="Resources\album-de-musica.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busqueda-de-datos %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bases-de-datos-conectadas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar-simbolo-de-usuario.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
