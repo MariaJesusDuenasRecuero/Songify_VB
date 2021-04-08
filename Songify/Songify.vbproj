@@ -85,6 +85,12 @@
     <Compile Include="Persistance\DBBroker.vb" />
     <Compile Include="Persistance\SongDAO.vb" />
     <Compile Include="Persistance\UserDAO.vb" />
+    <Compile Include="Presentation\Albums.Designer.vb">
+      <DependentUpon>Albums.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Albums.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\Artists.Designer.vb">
       <DependentUpon>Artists.vb</DependentUpon>
     </Compile>
@@ -127,6 +133,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Presentation\Albums.resx">
+      <DependentUpon>Albums.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Artists.resx">
       <DependentUpon>Artists.vb</DependentUpon>
     </EmbeddedResource>

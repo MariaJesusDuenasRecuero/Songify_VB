@@ -141,11 +141,9 @@ Partial Class MainWindow
         f2.Show()
         Me.Hide()
     End Sub
-
     Private Sub AlbumBtnClick(sender As Object, e As EventArgs) Handles btn_Album.Click
-
+        Dim f2 As New Albums
+        f2.Show()
+        Me.Hide()
     End Sub
-
-
-
 End Class

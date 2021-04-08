@@ -30,17 +30,45 @@ Public Class SignUp
     End Sub
 
     Private Sub SignUpClick(sender As Object, e As EventArgs) Handles btn_loginSignUp.Click
-        Dim name As String : Dim surname As String : Dim email As String : Dim birthdate As Date : Dim u As User
+        Dim name As String : Dim surname As String : Dim email As String : Dim birthdate As Date : Dim u As User : Dim valido As Boolean : Dim formatEmail As String
+        'formatEmail = "^[\w-\.]+@\cancionify\+$"
+        valido = True
         Try
+            If txt_name.Text = "" Then
+                MessageBox.Show("Please introduce a valid value")
+                valido = False
+            End If
             name = txt_name.Text
+            If txt_surname.Text = "" Then
+                MessageBox.Show("Please introduce a valid value")
+                valido = False
+            End If
             surname = txt_surname.Text
+            If txt_email.Text = "" Then
+                MessageBox.Show("Please introduce a valid value")
+                valido = False
+                'ElseIf txt_email.Text <> Format(txt_email.Text, formatEmail) Then
+                'valido = True
+                'Else
+                'valido = False
+            End If
             email = txt_email.Text
+            If txt_birthdate.Text = "" Then
+                MessageBox.Show("Please introduce a valid value")
+                valido = False
+                'ElseIf txt_birthdate.Text = Format(txt_birthdate.Text, "d/mm/yyyy") Then
+                'valido = True
+                ' Else
+                'valido = False
+            End If
             birthdate = txt_birthdate.Text
-            u = New User(email)
-            u.uName = name
-            u.uSurname = surname
-            u.birthdate = birthdate
-            u.InsertUser()
+            If valido = True Then
+                u = New User(email)
+                u.uName = name
+                u.uSurname = surname
+                u.birthdate = birthdate
+                u.InsertUser()
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try

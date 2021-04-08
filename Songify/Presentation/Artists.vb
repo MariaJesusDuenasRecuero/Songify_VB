@@ -39,7 +39,7 @@
         country.Text = SelectedArtist.country
     End Sub
 
-    Private Sub BackBtn(sender As Object, e As EventArgs) Handles GoBackBtn.Click
+    Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
         Dim f2 As New MainWindow
         f2.Show()
         Me.Hide()

@@ -12,7 +12,8 @@
         For Each aux In col
             s = New Song(aux(1).ToString)
             s.sName = aux(2).ToString
-            s.length = aux(3).ToString
+            s.Album = aux(3).ToString
+            s.length = aux(4)
             Me.Songs.Add(s)
         Next
         Return Songs
