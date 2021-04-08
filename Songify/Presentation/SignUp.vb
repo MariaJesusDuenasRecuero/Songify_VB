@@ -45,4 +45,8 @@ Public Class SignUp
             MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
     End Sub
+
+    Private Sub lbl_background_Click(sender As Object, e As EventArgs) Handles lbl_background.Click
+
+    End Sub
 End Class

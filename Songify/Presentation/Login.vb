@@ -60,23 +60,27 @@ Public Class Login
         Next
         If iguales = True Then
             MsgBox("Welcome to our application", MsgBoxStyle.OkOnly, "Allow to Access")
-            lbl_warning.Enabled = False
+            'lbl_warning.Enabled = False
             f2.Show()
             Me.Hide()
         Else
             MsgBox("This user isn't in out DataBase", MsgBoxStyle.OkOnly, "Error")
-            lbl_warning.Enabled = True
+            'lbl_warning.Enabled = True
         End If
 
         If txt_email.Text = "" Then
             MsgBox("Please introduce an email", MsgBoxStyle.OkOnly, "Warning")
-            lbl_warning.Enabled = True
+            'lbl_warning.Enabled = True
 
 
 
 
         End If
 
+
+    End Sub
+
+    Private Sub lbl_background_Click(sender As Object, e As EventArgs) Handles lbl_background.Click
 
     End Sub
 End Class

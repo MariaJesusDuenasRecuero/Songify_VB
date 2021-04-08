@@ -5,7 +5,7 @@
         Me.Artists = New Collection
     End Sub
 
-    Public Sub ReadAll(path As String)
+    Public Function ReadAll(path As String)
         Dim ar As Artist
         Dim col, aux As Collection
         col = DBBroker.GetBroker(path).Read("SELECT * FROM Artists ORDER BY IdArtist")
@@ -16,7 +16,8 @@
             ar.image = aux(4).ToString
             Me.Artists.Add(ar)
         Next
-    End Sub
+        Return Artists
+    End Function
 
     Public Sub Read(ByRef ar As Artist)
         Dim col As Collection : Dim aux As Collection

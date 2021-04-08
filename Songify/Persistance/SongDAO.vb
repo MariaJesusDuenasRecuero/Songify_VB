@@ -5,7 +5,7 @@
         Me.Songs = New Collection
     End Sub
 
-    Public Sub ReadAll(path As String)
+    Public Function ReadAll(path As String)
         Dim s As Song
         Dim col, aux As Collection
         col = DBBroker.GetBroker(path).Read("SELECT * FROM Songs ORDER BY IdSong")
@@ -15,7 +15,8 @@
             s.length = aux(3).ToString
             Me.Songs.Add(s)
         Next
-    End Sub
+        Return Songs
+    End Function
 
     Public Sub Read(ByRef s As Song)
         Dim col As Collection : Dim aux As Collection

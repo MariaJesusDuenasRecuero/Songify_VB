@@ -5,7 +5,7 @@
         Me.Albums = New Collection
     End Sub
 
-    Public Sub ReadAll(path As String)
+    Public Function ReadAll(path As String)
         Dim a As Album
         Dim col, aux As Collection
         col = DBBroker.GetBroker(path).Read("SELECT * FROM Albums ORDER BY IdAlbum")
@@ -17,7 +17,8 @@
             a.cover = aux(5).ToString
             Me.Albums.Add(a)
         Next
-    End Sub
+        Return Albums
+    End Function
 
     Public Sub Read(ByRef a As Album)
         Dim col As Collection : Dim aux As Collection
