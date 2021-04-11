@@ -77,7 +77,6 @@
     <Compile Include="Domain\Album.vb" />
     <Compile Include="Domain\Artist.vb" />
     <Compile Include="Domain\Fav_Artist.vb" />
-    <Compile Include="Domain\Playback.vb" />
     <Compile Include="Domain\Song.vb" />
     <Compile Include="Domain\User.vb" />
     <Compile Include="Persistance\AlbumDAO.vb" />
@@ -125,10 +124,22 @@
     <Compile Include="Presentation\MainWindow.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentation\Playback.Designer.vb">
+      <DependentUpon>Playback.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Playback.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\SignUp.Designer.vb">
       <DependentUpon>SignUp.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentation\SignUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Songs.Designer.vb">
+      <DependentUpon>Songs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Songs.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -151,8 +162,14 @@
     <EmbeddedResource Include="Presentation\MainWindow.resx">
       <DependentUpon>MainWindow.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Playback.resx">
+      <DependentUpon>Playback.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\SignUp.resx">
       <DependentUpon>SignUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Songs.resx">
+      <DependentUpon>Songs.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

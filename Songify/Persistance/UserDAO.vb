@@ -33,6 +33,10 @@
         DBBroker.GetBroker(path)
         Return DBBroker.GetBroker.Change("INSERT INTO Users VALUES ('" & usr.Email & "', '" & usr.uName & "', '" & usr.uSurname & "', '" & usr.birthdate & "' );")
     End Function
+    Public Function InsertPlayback(ByVal playback As Playback, path As String) As Integer
+        DBBroker.GetBroker(path)
+        Return DBBroker.GetBroker.Change("INSERT INTO Playbacks ('" & playback.IdPlay & "','" & playback.user & "', '" & playback.song & "', '" & playback.plDate & "' );")
+    End Function
     Public Function Update(ByVal usr As User, path As String) As Integer
         DBBroker.GetBroker(path)
         Return DBBroker.GetBroker.Change("UPDATE Users SET uName='" & usr.uName & "' SET uSurname='" & usr.uSurname & "' SET birthdate='" & usr.birthdate & "'WHERE Email='" & usr.Email & "';")

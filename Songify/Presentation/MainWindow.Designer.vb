@@ -134,6 +134,7 @@ Partial Class MainWindow
     Public Songs As Collection
     Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
     End Sub
 
     Private Sub ArtistBtnClick(sender As Object, e As EventArgs) Handles btn_artists.Click
@@ -145,5 +146,15 @@ Partial Class MainWindow
         Dim f2 As New Albums
         f2.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub SongBtnClick(sender As Object, e As EventArgs) Handles btn_songs.Click
+        Dim f2 As New Songs
+        f2.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_play_Click(sender As Object, e As EventArgs) Handles btn_play.Click
+
     End Sub
 End Class

@@ -23,11 +23,12 @@ Partial Class Albums
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GoBackBtn = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.releaseDate = New System.Windows.Forms.Label()
         Me.aName = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.Length = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -41,19 +42,11 @@ Partial Class Albums
         Me.GoBackBtn.Text = "Back"
         Me.GoBackBtn.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(13, 269)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(151, 103)
-        Me.PictureBox1.TabIndex = 9
-        Me.PictureBox1.TabStop = False
-        '
         'releaseDate
         '
         Me.releaseDate.AutoSize = True
         Me.releaseDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.releaseDate.Location = New System.Drawing.Point(179, 184)
+        Me.releaseDate.Location = New System.Drawing.Point(179, 118)
         Me.releaseDate.Name = "releaseDate"
         Me.releaseDate.Size = New System.Drawing.Size(57, 20)
         Me.releaseDate.TabIndex = 8
@@ -85,12 +78,31 @@ Partial Class Albums
         Me.ListBox2.Size = New System.Drawing.Size(127, 238)
         Me.ListBox2.TabIndex = 12
         '
+        'Length
+        '
+        Me.Length.AutoSize = True
+        Me.Length.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Length.Location = New System.Drawing.Point(179, 191)
+        Me.Length.Name = "Length"
+        Me.Length.Size = New System.Drawing.Size(57, 20)
+        Me.Length.TabIndex = 13
+        Me.Length.Text = "Label2"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(13, 269)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(151, 103)
+        Me.PictureBox1.TabIndex = 9
+        Me.PictureBox1.TabStop = False
+        '
         'Albums
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(555, 408)
+        Me.Controls.Add(Me.Length)
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.GoBackBtn)
         Me.Controls.Add(Me.PictureBox1)
@@ -111,4 +123,5 @@ Partial Class Albums
     Friend WithEvents aName As Label
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents Length As Label
 End Class
