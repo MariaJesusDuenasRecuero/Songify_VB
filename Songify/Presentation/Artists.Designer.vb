@@ -25,9 +25,9 @@ Partial Class Artists
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.aName = New System.Windows.Forms.Label()
         Me.country = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.GoBackBtn = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -59,14 +59,6 @@ Partial Class Artists
         Me.country.TabIndex = 2
         Me.country.Text = "Label2"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 269)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(151, 103)
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
-        '
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
@@ -84,6 +76,14 @@ Partial Class Artists
         Me.GoBackBtn.TabIndex = 5
         Me.GoBackBtn.Text = "Back"
         Me.GoBackBtn.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 269)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(151, 103)
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
         '
         'Artists
         '
@@ -108,7 +108,7 @@ Partial Class Artists
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents aName As Label
     Friend WithEvents country As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ListBox2 As ListBox
     Friend WithEvents GoBackBtn As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

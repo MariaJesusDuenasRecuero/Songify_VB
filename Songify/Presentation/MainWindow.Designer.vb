@@ -155,6 +155,8 @@ Partial Class MainWindow
     End Sub
 
     Private Sub btn_play_Click(sender As Object, e As EventArgs) Handles btn_play.Click
-
+        Dim f2 As New SongPlayback
+        f2.Show()
+        Me.Hide()
     End Sub
 End Class

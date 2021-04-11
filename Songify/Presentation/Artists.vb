@@ -1,4 +1,7 @@
-﻿Public Class Artists
+﻿Imports System.IO
+Imports System.Net
+
+Public Class Artists
     Public SelectedArtist As Artist
     Public Artists As Collection
     Private Sub Artists_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -19,7 +22,8 @@
 
     Private Sub loadData(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         ListBox2.Items.Clear()
-        Dim Albums As Collection : Dim AlbumDAO As AlbumDAO : Dim ArtistName As String
+        Dim Albums As Collection : Dim AlbumDAO As AlbumDAO : Dim ArtistName As String : Dim wc As New WebClient()
+
         AlbumDAO = New AlbumDAO()
         Albums = AlbumDAO.ReadAll("C:\songify.accdb")
         ArtistName = ListBox1.SelectedItem
@@ -33,10 +37,14 @@
                 ListBox2.Items.Add(album.aName)
             End If
         Next
+
+        Dim datos As Byte() = wc.DownloadData(SelectedArtist.image)
+        Dim ms As New MemoryStream(datos)
         aName.Visible = True
         aName.Text = SelectedArtist.aName
         country.Visible = True
         country.Text = SelectedArtist.country
+        PictureBox1.Image = Image.FromStream(ms)
     End Sub
 
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
@@ -44,4 +52,5 @@
         f2.Show()
         Me.Hide()
     End Sub
+
 End Class
