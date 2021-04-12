@@ -3,6 +3,7 @@ Public Class Login
 
     Public user As User
     Public fileName As String
+    Public Users As Collection
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -31,9 +32,8 @@ Public Class Login
     End Sub
 
 
-    Private Sub clean_focus()
+    Private Sub clean_focus(Sender As Object, e As EventArgs) Handles txt_email.Enter
         txt_email.Clear()
-        txt_email.Focus()
 
     End Sub
 
@@ -47,7 +47,7 @@ Public Class Login
 
 
     Private Sub btn_Login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
-        Dim Users As Collection : Dim useremail As String : Dim UserDAO As UserDAO : Dim f2 As New MainWindow : Dim iguales As Boolean
+        Dim useremail As String : Dim UserDAO As UserDAO : Dim f2 As New MainWindow : Dim iguales As Boolean
         iguales = False
         UserDAO = New UserDAO()
         Users = UserDAO.ReadAll("C:\songify.accdb")
@@ -79,7 +79,19 @@ Public Class Login
 
 
     End Sub
-
+    'Public Function GetEmail()
+    'Dim useremail As String : Dim UserSend As User : Dim UserDAO As UserDAO
+    'UserDAO = New UserDAO()
+    ' Users = UserDAO.ReadAll("C:\songify.accdb")
+    'For Each user In Users
+    ' useremail = user.Email
+    'If user.Email = txt_email.Text Then
+    '  UserSend = user
+    'Exit For
+    'End If
+    '
+    'Return UserSend
+    ' End Function
     Private Sub lbl_background_Click(sender As Object, e As EventArgs) Handles lbl_background.Click
 
     End Sub

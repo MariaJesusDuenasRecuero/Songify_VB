@@ -1,6 +1,11 @@
 ﻿Public Class SongPlayback
     Public Songs As Collection
+    Shared User As User
     Private Sub Playback_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Dim f2 As New Login : Dim UserReceive As User
+        'UserReceive = f2.GetEmail()
+        'email.Text = UserReceive.Email
+
         Dim SongDAO As SongDAO
         SongDAO = New SongDAO()
         Songs = SongDAO.ReadAll("C:\songify.accdb")

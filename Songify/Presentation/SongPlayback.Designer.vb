@@ -25,6 +25,7 @@ Partial Class SongPlayback
         Me.Play = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.email = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Play
@@ -52,22 +53,35 @@ Partial Class SongPlayback
         Me.ProgressBar1.Size = New System.Drawing.Size(198, 23)
         Me.ProgressBar1.TabIndex = 2
         '
+        'email
+        '
+        Me.email.AutoSize = True
+        Me.email.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.email.Location = New System.Drawing.Point(146, 12)
+        Me.email.Name = "email"
+        Me.email.Size = New System.Drawing.Size(66, 24)
+        Me.email.TabIndex = 3
+        Me.email.Text = "Label1"
+        '
         'SongPlayback
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(399, 450)
+        Me.Controls.Add(Me.email)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Play)
         Me.Name = "SongPlayback"
         Me.Text = "Playback"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Play As Button
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents email As Label
 End Class
