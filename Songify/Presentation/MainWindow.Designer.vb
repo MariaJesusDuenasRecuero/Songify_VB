@@ -28,6 +28,8 @@ Partial Class MainWindow
         Me.btn_signOut = New System.Windows.Forms.Button()
         Me.btn_artists = New System.Windows.Forms.Button()
         Me.lbl_background = New System.Windows.Forms.Label()
+        Me.EmailTxt = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn_Album
@@ -104,12 +106,32 @@ Partial Class MainWindow
         Me.lbl_background.Size = New System.Drawing.Size(392, 579)
         Me.lbl_background.TabIndex = 2
         '
+        'EmailTxt
+        '
+        Me.EmailTxt.AutoSize = True
+        Me.EmailTxt.Location = New System.Drawing.Point(747, 200)
+        Me.EmailTxt.Name = "EmailTxt"
+        Me.EmailTxt.Size = New System.Drawing.Size(39, 13)
+        Me.EmailTxt.TabIndex = 8
+        Me.EmailTxt.Text = "Label1"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(747, 285)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Label1"
+        '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.EmailTxt)
         Me.Controls.Add(Me.btn_signOut)
         Me.Controls.Add(Me.btn_play)
         Me.Controls.Add(Me.btn_songs)
@@ -119,6 +141,7 @@ Partial Class MainWindow
         Me.Name = "MainWindow"
         Me.Text = "MainWindow"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -132,9 +155,41 @@ Partial Class MainWindow
     Public Artists As Collection
     Public Albums As Collection
     Public Songs As Collection
+    Public Email As String
+    Public Song As Song
     Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        EmailTxt.Text = Email
+        If Song IsNot Nothing Then
+            Label1.Text = Song.sName
+        End If
 
+    End Sub
 
+    Public Sub New()
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+    End Sub
+    Public Sub New(ByVal email As String)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Me.Email = email
+
+    End Sub
+    Public Sub New(ByVal email As String, ByVal song As Song)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Me.Email = email
+        Me.Song = song
     End Sub
 
     Private Sub ArtistBtnClick(sender As Object, e As EventArgs) Handles btn_artists.Click
@@ -149,14 +204,22 @@ Partial Class MainWindow
     End Sub
 
     Private Sub SongBtnClick(sender As Object, e As EventArgs) Handles btn_songs.Click
-        Dim f2 As New Songs
+        Dim f2 As New Songs(Email)
         f2.Show()
         Me.Hide()
     End Sub
 
     Private Sub btn_play_Click(sender As Object, e As EventArgs) Handles btn_play.Click
-        Dim f2 As New SongPlayback
-        f2.Show()
-        Me.Hide()
+        If Song Is Nothing Then
+            MsgBox("Choose a Song to play")
+        Else
+            Dim f2 As New SongPlayback(Email, Song)
+            f2.Show()
+            Me.Hide()
+        End If
+
     End Sub
+
+    Friend WithEvents EmailTxt As Label
+    Friend WithEvents Label1 As Label
 End Class

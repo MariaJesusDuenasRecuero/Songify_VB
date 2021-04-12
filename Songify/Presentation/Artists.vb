@@ -53,5 +53,4 @@ Public Class Artists
         Me.Hide()
     End Sub
 
-
 End Class

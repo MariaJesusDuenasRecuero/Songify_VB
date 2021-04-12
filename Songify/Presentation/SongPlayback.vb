@@ -1,31 +1,40 @@
 ﻿Public Class SongPlayback
     Public Songs As Collection
-    Shared User As User
+    Public User As User
+    Public EmailUser As String
+    Public IdPlay = 5
+    Public SongSelected As Song
     Private Sub Playback_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Dim f2 As New Login : Dim UserReceive As User
-        'UserReceive = f2.GetEmail()
-        'email.Text = UserReceive.Email
 
-        Dim SongDAO As SongDAO
-        SongDAO = New SongDAO()
-        Songs = SongDAO.ReadAll("C:\songify.accdb")
-        For Each song In Songs
-            ListBox1.Items.Add(song.sName)
-        Next
+    End Sub
+    Public Sub New(ByVal email As String, ByVal Song As Song)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        EmailUser = email
+        SongSelected = Song
+
     End Sub
 
     Private Sub PlaySong(sender As Object, e As EventArgs) Handles Play.Click
         ProgressBar1.Value = 0
-        Dim SelectedSong As String : Dim SongSelected As Song
-        SelectedSong = ListBox1.SelectedItem
-        For Each song In Songs
-            If SelectedSong = song.sName Then
-                SongSelected = song
-            End If
-        Next
-        For L As Double = 0.0 To SongSelected.length
-            ProgressBar1.Increment(L)
-        Next L
+        Dim PlayBack As Playback
+        If SongSelected IsNot Nothing Then
+            PlayBack = New Playback()
+            PlayBack.IdPlay = IdPlay
+            IdPlay += 1
+            PlayBack.user = EmailUser
+            PlayBack.song = SongSelected.IdSong
+            PlayBack.plDate = Date.Today
+            PlayBack.InsertPlayBack()
+            For L As Double = 0.0 To SongSelected.length
+                ProgressBar1.Increment(L)
+            Next L
+        Else
+            MsgBox("Error")
+        End If
     End Sub
 
 

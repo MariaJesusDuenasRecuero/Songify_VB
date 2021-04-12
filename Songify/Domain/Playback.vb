@@ -14,7 +14,7 @@
     Public Function ReadAllUsers(path As String)
         Return Me.usrDAO.ReadAll(path)
     End Function
-    'Public Function InsertUser() As Integer
-    'Return Me.usrDAO.InsertPlayback(Me, "C:\songify.accdb")
-    'End Function
+    Public Function InsertPlayBack() As Integer
+        Return Me.usrDAO.InsertPlayback(Me, "C:\songify.accdb")
+    End Function
 End Class

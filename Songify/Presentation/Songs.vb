@@ -1,6 +1,7 @@
 ﻿Public Class Songs
     Public Songs As Collection
     Public SongSelected As Song
+    Public EmailUser As String
     Private Sub Songs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SongDAO As SongDAO
         songName.Text = ""
@@ -14,6 +15,14 @@
         For Each song In Songs
             ListBox1.Items.Add(song.sName)
         Next
+    End Sub
+    Public Sub New(ByVal email As String)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        EmailUser = email
     End Sub
     Private Sub SelectSong(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         Dim Albums As Collection : Dim AlbumDAO As AlbumDAO : Dim SelectedSong As String : Dim AlbumName As String : Dim SLength As String
@@ -47,8 +56,14 @@
         Return horatotal
     End Function
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
-        Dim f2 As New MainWindow
-        f2.Show()
-        Me.Hide()
+        Dim f2 As New MainWindow(EmailUser, SongSelected) : Dim f3 As New MainWindow
+        If SongSelected IsNot Nothing Then
+            f2.Show()
+            Me.Hide()
+        Else
+            f3.Show()
+            Me.Hide()
+        End If
+
     End Sub
 End Class

@@ -64,6 +64,4 @@
         horatotal = horas & ":" & minutos & ":" & segundos
         Return horatotal
     End Function
-
-
 End Class
