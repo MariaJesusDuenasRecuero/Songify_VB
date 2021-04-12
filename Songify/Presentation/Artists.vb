@@ -13,20 +13,20 @@ Public Class Artists
         ArtistDAO = New ArtistDAO()
         Artists = ArtistDAO.ReadAll("C:\songify.accdb")
         For Each artist In Artists
-            ListBox1.Items.Add(artist.aName)
+            lsb_artist.Items.Add(artist.aName)
         Next
 
 
 
     End Sub
 
-    Private Sub loadData(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-        ListBox2.Items.Clear()
+    Private Sub loadData(sender As Object, e As EventArgs) Handles lsb_artist.SelectedIndexChanged
+        lst_album.Items.Clear()
         Dim Albums As Collection : Dim AlbumDAO As AlbumDAO : Dim ArtistName As String : Dim wc As New WebClient()
 
         AlbumDAO = New AlbumDAO()
         Albums = AlbumDAO.ReadAll("C:\songify.accdb")
-        ArtistName = ListBox1.SelectedItem
+        ArtistName = lsb_artist.SelectedItem
         For Each artist In Artists
             If artist.aName = ArtistName Then
                 SelectedArtist = artist
@@ -34,7 +34,7 @@ Public Class Artists
         Next
         For Each album In Albums
             If SelectedArtist.IdArtist = album.artist Then
-                ListBox2.Items.Add(album.aName)
+                lst_album.Items.Add(album.aName)
             End If
         Next
 
@@ -44,7 +44,7 @@ Public Class Artists
         aName.Text = SelectedArtist.aName
         country.Visible = True
         country.Text = SelectedArtist.country
-        PictureBox1.Image = Image.FromStream(ms)
+        im_artists.Image = Image.FromStream(ms)
     End Sub
 
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
@@ -52,5 +52,6 @@ Public Class Artists
         f2.Show()
         Me.Hide()
     End Sub
+
 
 End Class

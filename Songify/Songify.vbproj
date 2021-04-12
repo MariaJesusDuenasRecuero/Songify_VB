@@ -233,5 +233,11 @@
   <ItemGroup>
     <None Include="Resources\agregar-simbolo-de-usuario.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagenDefault.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jugar1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

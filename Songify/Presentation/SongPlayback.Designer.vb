@@ -22,46 +22,48 @@ Partial Class SongPlayback
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Play = New System.Windows.Forms.Button()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.email = New System.Windows.Forms.Label()
+        Me.Play = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Play
-        '
-        Me.Play.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.Play.Location = New System.Drawing.Point(221, 389)
-        Me.Play.Name = "Play"
-        Me.Play.Size = New System.Drawing.Size(98, 49)
-        Me.Play.TabIndex = 0
-        Me.Play.Text = "PLAY"
-        Me.Play.UseVisualStyleBackColor = True
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(12, 12)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(128, 420)
-        Me.ListBox1.TabIndex = 1
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(175, 354)
+        Me.ProgressBar1.Location = New System.Drawing.Point(73, 316)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(198, 23)
+        Me.ProgressBar1.Size = New System.Drawing.Size(265, 23)
         Me.ProgressBar1.TabIndex = 2
         '
         'email
         '
         Me.email.AutoSize = True
         Me.email.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.email.Location = New System.Drawing.Point(146, 12)
+        Me.email.ForeColor = System.Drawing.Color.White
+        Me.email.Location = New System.Drawing.Point(161, 276)
         Me.email.Name = "email"
         Me.email.Size = New System.Drawing.Size(66, 24)
         Me.email.TabIndex = 3
         Me.email.Text = "Label1"
+        '
+        'Play
+        '
+        Me.Play.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
+        Me.Play.Image = Global.Songify.My.Resources.Resources.jugar1
+        Me.Play.Location = New System.Drawing.Point(165, 371)
+        Me.Play.Name = "Play"
+        Me.Play.Size = New System.Drawing.Size(70, 49)
+        Me.Play.TabIndex = 0
+        Me.Play.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(73, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(265, 250)
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
         '
         'SongPlayback
         '
@@ -69,19 +71,20 @@ Partial Class SongPlayback
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(399, 450)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.email)
         Me.Controls.Add(Me.ProgressBar1)
-        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Play)
         Me.Name = "SongPlayback"
         Me.Text = "Playback"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Play As Button
-    Friend WithEvents ListBox1 As ListBox
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents email As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
