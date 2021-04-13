@@ -10,7 +10,10 @@
         Dim col, aux As Collection
         col = DBBroker.GetBroker(path).Read("SELECT * FROM Artists ORDER BY IdArtist")
         For Each aux In col
-            ar = New Artist(aux(1).ToString, aux(2).ToString, aux(3).ToString, aux(4).ToString)
+            ar = New Artist(aux(1).ToString)
+            ar.SetName(aux(2).ToString)
+            ar.SetCountry(aux(3).ToString)
+            ar.SetImage(aux(4).ToString)
             Me.Artists.Add(ar)
         Next
         Return Artists
@@ -20,9 +23,9 @@
         Dim col As Collection : Dim aux As Collection
         col = DBBroker.GetBroker.Read("SELECT * FROM Artists WHERE IdArtist='" & ar.GetIdArtist() & "';")
         For Each aux In col
-            ar.aName = aux(2).ToString
-            ar.country = aux(2).ToString
-            ar.image = aux(3).ToString
+            ar.SetName(aux(2).ToString)
+            ar.SetCountry(aux(3).ToString)
+            ar.SetImage(aux(4).ToString)
         Next
     End Sub
 

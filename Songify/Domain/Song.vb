@@ -12,15 +12,11 @@
         Me.sDAO = New SongDAO
         Me.IdSong = id
     End Sub
-    Public Sub New(id As String, name As String, album As Integer, length As Integer)
-        Me.sDAO = New SongDAO
-        IdSong = id
-        sName = name
-        Me.Album = album
-        Me.length = length
-    End Sub
     Public Function GetAlbum()
         Return Album
+    End Function
+    Public Function GetName()
+        Return sName
     End Function
     Public Function GetSLength()
         Return length
@@ -30,6 +26,15 @@
     End Function
     Public Function getLength()
         Return length
+    End Function
+    Public Function SetName(name As String)
+        sName = name
+    End Function
+    Public Function SetAlbum(album As Integer)
+        Me.Album = album
+    End Function
+    Public Function SetLength(length As Integer)
+        Me.length = length
     End Function
     Public Sub ReadAllSongs(path As String)
         Me.sDAO.ReadAll(path)

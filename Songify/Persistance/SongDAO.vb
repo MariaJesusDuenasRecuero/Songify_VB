@@ -11,9 +11,9 @@
         col = DBBroker.GetBroker(path).Read("SELECT * FROM Songs ORDER BY IdSong")
         For Each aux In col
             s = New Song(aux(1).ToString)
-            s.sName = aux(2).ToString
-            s.Album = aux(3).ToString
-            s.length = aux(4)
+            s.SetName(aux(2).ToString)
+            s.SetAlbum(aux(3).ToString)
+            s.SetLength(aux(4))
             Me.Songs.Add(s)
         Next
         Return Songs
@@ -21,20 +21,22 @@
 
     Public Sub Read(ByRef s As Song)
         Dim col As Collection : Dim aux As Collection
-        col = DBBroker.GetBroker.Read("SELECT * FROM Songs WHERE IdSong='" & s.IdSong & "';")
+        col = DBBroker.GetBroker.Read("SELECT * FROM Songs WHERE IdSong='" & s.getIdSong() & "';")
         For Each aux In col
-            s.sName = aux(2).ToString
+            s.SetName(aux(2).ToString)
+            s.SetAlbum(aux(3).ToString)
+            s.SetLength(aux(4))
         Next
     End Sub
 
     Public Function Insert(ByVal s As Song) As Integer
-        Return DBBroker.GetBroker.Change("INSERT INTO Songs VALUES ('" & s.IdSong & "', '" & s.sName & "', '" & s.length & "', '" & s.Album & "');")
+        Return DBBroker.GetBroker.Change("INSERT INTO Songs VALUES ('" & s.getIdSong() & "', '" & s.GetName() & "', '" & s.getLength() & "', '" & s.GetAlbum() & "');")
     End Function
     Public Function Update(ByVal s As Song) As Integer
-        Return DBBroker.GetBroker.Change("UPDATE Songs SET sName='" & s.sName & "' SET length='" & s.length & "' SET Album='" & s.Album & "' WHERE IdSong='" & s.IdSong & "';")
+        Return DBBroker.GetBroker.Change("UPDATE Songs SET sName='" & s.GetName() & "' SET length='" & s.getLength() & "' SET Album='" & s.GetAlbum() & "' WHERE IdSong='" & s.getIdSong() & "';")
     End Function
     Public Function Delete(ByVal s As Song) As Integer
-        Return DBBroker.GetBroker.Change("DELETE FROM Songs WHERE IdSong='" & s.IdSong & "';")
+        Return DBBroker.GetBroker.Change("DELETE FROM Songs WHERE IdSong='" & s.getIdSong() & "';")
     End Function
 
 

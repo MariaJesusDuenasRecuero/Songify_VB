@@ -13,7 +13,7 @@ Public Class Artists
         ArtistDAO = New ArtistDAO()
         Artists = ArtistDAO.ReadAll("C:\songify.accdb")
         For Each artist In Artists
-            lsb_artist.Items.Add(artist.aName)
+            lsb_artist.Items.Add(artist.GetName())
         Next
 
 
@@ -28,13 +28,13 @@ Public Class Artists
         Albums = AlbumDAO.ReadAll("C:\songify.accdb")
         ArtistName = lsb_artist.SelectedItem
         For Each artist In Artists
-            If artist.aName = ArtistName Then
+            If artist.GetName() = ArtistName Then
                 SelectedArtist = artist
             End If
         Next
         For Each album In Albums
             If SelectedArtist.GetIdArtist() = album.artist Then
-                lst_album.Items.Add(album.aName)
+                lst_album.Items.Add(album.GetName())
             End If
         Next
 

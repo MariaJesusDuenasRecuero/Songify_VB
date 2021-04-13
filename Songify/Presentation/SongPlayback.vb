@@ -22,7 +22,10 @@
         ProgressBar1.Value = 0
         Dim PlayBack As Playback
         If SongSelected IsNot Nothing Then
-            PlayBack = New Playback(IdPlay, EmailUser, SongSelected.getIdSong(), Date.Today)
+            PlayBack = New Playback(IdPlay)
+            PlayBack.SetUser(User.GetEmail())
+            PlayBack.SetSong(SongSelected.getIdSong())
+            PlayBack.SetPlDate(Date.Today)
             IdPlay += 1
             PlayBack.InsertPlayBack()
             For L As Double = 0.0 To SongSelected.getLength()

@@ -12,15 +12,26 @@
         Me.usrDAO = New UserDAO
         Me.Email = id
     End Sub
-    Public Sub New(id As String, name As String, surname As String, bhirthdate As Date)
-        Me.usrDAO = New UserDAO
-        Email = id
-        uName = name
-        uSurname = surname
-        Me.birthdate = birthdate
-    End Sub
     Public Function GetEmail()
         Return Email
+    End Function
+    Public Function SetName(name As String)
+        uName = name
+    End Function
+    Public Function SetSurname(surname As String)
+        uSurname = surname
+    End Function
+    Public Function GetName()
+        Return uName
+    End Function
+    Public Function GetSurname()
+        Return uSurname
+    End Function
+    Public Function GetBirthdate()
+        Return birthdate
+    End Function
+    Public Function SetBirthdate(birthdate As Date)
+        Me.birthdate = birthdate
     End Function
     Public Function ReadAllUsers(path As String)
         Return Me.usrDAO.ReadAll(path)

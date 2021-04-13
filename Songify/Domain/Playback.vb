@@ -18,6 +18,30 @@
         Me.song = song
         Me.plDate = pldate
     End Sub
+    Public Function GetIdPlay()
+        Return IdPlay
+    End Function
+    Public Function GetUser()
+        Return user
+    End Function
+    Public Function GetSong()
+        Return song
+    End Function
+    Public Function GetPlDate()
+        Return plDate
+    End Function
+    Public Function SetIdPlay(id As Integer)
+        IdPlay = id
+    End Function
+    Public Function SetUser(email As String)
+        user = email
+    End Function
+    Public Function SetSong(song As Integer)
+        Me.song = song
+    End Function
+    Public Function SetPlDate(plDate As Date)
+        Me.plDate = plDate
+    End Function
     Public Function ReadAllUsers(path As String)
         Return Me.usrDAO.ReadAll(path)
     End Function

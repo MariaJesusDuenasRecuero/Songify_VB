@@ -30,6 +30,15 @@
     Public Function GetName()
         Return aName
     End Function
+    Public Function SetName(name As String)
+        aName = name
+    End Function
+    Public Function SetImage(image As String)
+        Me.image = image
+    End Function
+    Public Function SetCountry(country As String)
+        Me.country = country
+    End Function
     Public Sub ReadAllArtists(path As String)
         Me.arDAO.ReadAll(path)
     End Sub

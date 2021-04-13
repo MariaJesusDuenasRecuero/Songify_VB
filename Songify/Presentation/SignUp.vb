@@ -65,7 +65,10 @@ Public Class SignUp
             'End If
             birthdate = txt_birthdate.Text
             If valido = True Then
-                u = New User(email, name, surname, birthdate)
+                u = New User(email)
+                u.SetName(name)
+                u.SetSurname(surname)
+                u.SetBirthdate(birthdate)
                 u.InsertUser()
             End If
         Catch ex As Exception
