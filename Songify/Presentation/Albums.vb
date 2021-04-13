@@ -30,7 +30,7 @@
             End If
         Next
         For Each song In Songs
-            If song.Album = SelectedAlbum.IdAlbum Then
+            If song.Album = SelectedAlbum.GetIdAlbum() Then
                 ListBox2.Items.Add(song.sName)
                 lengthalbum = lengthalbum + song.length
             End If
@@ -38,7 +38,7 @@
         ArtistDAO = New ArtistDAO()
         Artists = ArtistDAO.ReadAll("C:\songify.accdb")
         For Each artist In Artists
-            If artist.IdArtist = SelectedAlbum.artist Then
+            If artist.IdArtist = SelectedAlbum.getArtist() Then
                 artistname = artist.aName
             End If
         Next
@@ -46,7 +46,7 @@
         aName.Visible = True
         aName.Text = artistname
         releaseDate.Visible = True
-        releaseDate.Text = SelectedAlbum.releaseDate
+        releaseDate.Text = SelectedAlbum.getReleaseDate()
         Length.Visible = True
         Length.Text = lengthtotal
     End Sub

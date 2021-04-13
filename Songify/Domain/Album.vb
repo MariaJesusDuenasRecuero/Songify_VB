@@ -1,10 +1,10 @@
 ﻿Public Class Album
-    Public Property IdAlbum As String
-    Public Property aName As String
-    Public Property releaseDate As String
-    Public Property artist As Integer
-    Public Property cover As String
-    Public ReadOnly Property AlbDAO As AlbumDAO
+    Private Property IdAlbum As String
+    Private Property aName As String
+    Private Property releaseDate As Date
+    Private Property artist As Integer
+    Private Property cover As String
+    Private ReadOnly Property AlbDAO As AlbumDAO
     Public Sub New()
         Me.AlbDAO = New AlbumDAO
     End Sub
@@ -12,6 +12,23 @@
         Me.AlbDAO = New AlbumDAO
         Me.IdAlbum = id
     End Sub
+    Public Sub New(id As String, name As String, Rdate As Date, artist As Integer, cover As String)
+        Me.AlbDAO = New AlbumDAO
+        IdAlbum = id
+        aName = name
+        releaseDate = Rdate
+        Me.artist = artist
+        Me.cover = cover
+    End Sub
+    Public Function GetIdAlbum()
+        Return IdAlbum
+    End Function
+    Public Function getArtist()
+        Return artist
+    End Function
+    Public Function getReleaseDate()
+        Return releaseDate
+    End Function
     Public Sub ReadAllAlbums(path As String)
         Me.AlbDAO.ReadAll(path)
     End Sub

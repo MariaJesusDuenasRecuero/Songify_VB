@@ -1,9 +1,9 @@
 ﻿Public Class User
-    Public Property Email As String
-    Public Property uName As String
-    Public Property uSurname As String
-    Public Property birthdate As Date
-    Public ReadOnly Property usrDAO As UserDAO
+    Private Property Email As String
+    Private Property uName As String
+    Private Property uSurname As String
+    Private Property birthdate As Date
+    Private ReadOnly Property usrDAO As UserDAO
 
     Public Sub New()
         Me.usrDAO = New UserDAO
@@ -12,6 +12,16 @@
         Me.usrDAO = New UserDAO
         Me.Email = id
     End Sub
+    Public Sub New(id As String, name As String, surname As String, bhirthdate As Date)
+        Me.usrDAO = New UserDAO
+        Email = id
+        uName = name
+        uSurname = surname
+        Me.birthdate = birthdate
+    End Sub
+    Public Function GetEmail()
+        Return Email
+    End Function
     Public Function ReadAllUsers(path As String)
         Return Me.usrDAO.ReadAll(path)
     End Function

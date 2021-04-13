@@ -1,9 +1,9 @@
 ﻿Public Class Artist
-    Public Property IdArtist As String
-    Public Property aName As String
-    Public Property country As String
-    Public Property image As String
-    Public ReadOnly Property arDAO As ArtistDAO
+    Private Property IdArtist As String
+    Private Property aName As String
+    Private Property country As String
+    Private Property image As String
+    Private ReadOnly Property arDAO As ArtistDAO
     Public Sub New()
         Me.arDAO = New ArtistDAO
     End Sub
@@ -11,6 +11,25 @@
         Me.arDAO = New ArtistDAO
         Me.IdArtist = id
     End Sub
+    Public Sub New(id As String, name As String, country As String, image As String)
+        Me.arDAO = New ArtistDAO
+        IdArtist = id
+        aName = name
+        Me.country = country
+        Me.image = image
+    End Sub
+    Public Function GetIdArtist()
+        Return IdArtist
+    End Function
+    Public Function GetImage()
+        Return image
+    End Function
+    Public Function GetCountry()
+        Return country
+    End Function
+    Public Function GetName()
+        Return aName
+    End Function
     Public Sub ReadAllArtists(path As String)
         Me.arDAO.ReadAll(path)
     End Sub

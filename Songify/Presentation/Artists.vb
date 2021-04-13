@@ -33,17 +33,17 @@ Public Class Artists
             End If
         Next
         For Each album In Albums
-            If SelectedArtist.IdArtist = album.artist Then
+            If SelectedArtist.GetIdArtist() = album.artist Then
                 lst_album.Items.Add(album.aName)
             End If
         Next
 
-        Dim datos As Byte() = wc.DownloadData(SelectedArtist.image)
+        Dim datos As Byte() = wc.DownloadData(SelectedArtist.GetImage())
         Dim ms As New MemoryStream(datos)
         aName.Visible = True
-        aName.Text = SelectedArtist.aName
+        aName.Text = SelectedArtist.GetName()
         country.Visible = True
-        country.Text = SelectedArtist.country
+        country.Text = SelectedArtist.GetCountry()
         im_artists.Image = Image.FromStream(ms)
     End Sub
 

@@ -10,10 +10,7 @@
         Dim col, aux As Collection
         col = DBBroker.GetBroker(path).Read("SELECT * FROM Artists ORDER BY IdArtist")
         For Each aux In col
-            ar = New Artist(aux(1).ToString)
-            ar.aName = aux(2).ToString
-            ar.country = aux(3).ToString
-            ar.image = aux(4).ToString
+            ar = New Artist(aux(1).ToString, aux(2).ToString, aux(3).ToString, aux(4).ToString)
             Me.Artists.Add(ar)
         Next
         Return Artists
@@ -21,7 +18,7 @@
 
     Public Sub Read(ByRef ar As Artist)
         Dim col As Collection : Dim aux As Collection
-        col = DBBroker.GetBroker.Read("SELECT * FROM Artists WHERE IdArtist='" & ar.IdArtist & "';")
+        col = DBBroker.GetBroker.Read("SELECT * FROM Artists WHERE IdArtist='" & ar.GetIdArtist() & "';")
         For Each aux In col
             ar.aName = aux(2).ToString
             ar.country = aux(2).ToString
@@ -30,13 +27,13 @@
     End Sub
 
     Public Function Insert(ByVal ar As Artist) As Integer
-        Return DBBroker.GetBroker.Change("INSERT INTO Artists VALUES ('" & ar.IdArtist & "', '" & ar.aName & "', '" & ar.country & "', '" & ar.image & "');")
+        Return DBBroker.GetBroker.Change("INSERT INTO Artists VALUES ('" & ar.GetIdArtist() & "', '" & ar.GetName() & "', '" & ar.GetCountry() & "', '" & ar.GetImage() & "');")
     End Function
     Public Function Update(ByVal ar As Artist) As Integer
-        Return DBBroker.GetBroker.Change("UPDATE Artists SET aName='" & ar.aName & "' SET country='" & ar.country & "' SET image='" & ar.image & "' WHERE IdArtist='" & ar.IdArtist & "';")
+        Return DBBroker.GetBroker.Change("UPDATE Artists SET aName='" & ar.GetName() & "' SET country='" & ar.GetCountry() & "' SET image='" & ar.GetImage() & "' WHERE IdArtist='" & ar.GetIdArtist() & "';")
     End Function
     Public Function Delete(ByVal ar As Artist) As Integer
-        Return DBBroker.GetBroker.Change("DELETE FROM Artists WHERE IdArtist='" & ar.IdArtist & "';")
+        Return DBBroker.GetBroker.Change("DELETE FROM Artists WHERE IdArtist='" & ar.GetIdArtist() & "';")
     End Function
 
 

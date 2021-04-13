@@ -1,9 +1,9 @@
 ﻿Public Class Song
-    Public Property IdSong As String
-    Public Property sName As String
-    Public Property Album As Integer
-    Public Property length As Integer
-    Public ReadOnly Property sDAO As SongDAO
+    Private Property IdSong As String
+    Private Property sName As String
+    Private Property Album As Integer
+    Private Property length As Integer
+    Private ReadOnly Property sDAO As SongDAO
 
     Public Sub New()
         Me.sDAO = New SongDAO
@@ -12,6 +12,25 @@
         Me.sDAO = New SongDAO
         Me.IdSong = id
     End Sub
+    Public Sub New(id As String, name As String, album As Integer, length As Integer)
+        Me.sDAO = New SongDAO
+        IdSong = id
+        sName = name
+        Me.Album = album
+        Me.length = length
+    End Sub
+    Public Function GetAlbum()
+        Return Album
+    End Function
+    Public Function GetSLength()
+        Return length
+    End Function
+    Public Function getIdSong()
+        Return IdSong
+    End Function
+    Public Function getLength()
+        Return length
+    End Function
     Public Sub ReadAllSongs(path As String)
         Me.sDAO.ReadAll(path)
     End Sub

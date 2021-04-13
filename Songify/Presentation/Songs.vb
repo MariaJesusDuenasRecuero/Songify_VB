@@ -35,11 +35,11 @@
             End If
         Next
         For Each album In Albums
-            If SongSelected.Album = album.IdAlbum Then
+            If SongSelected.GetAlbum() = album.IdAlbum Then
                 AlbumName = album.aName
             End If
         Next
-        SLength = CalcularTiempo(SongSelected.length)
+        SLength = CalcularTiempo(SongSelected.GetSLength())
         songName.Text = SelectedSong
         songName.Visible = True
         AlbumSong.Text = AlbumName

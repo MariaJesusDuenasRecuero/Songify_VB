@@ -52,8 +52,8 @@ Public Class Login
         UserDAO = New UserDAO()
         Users = UserDAO.ReadAll("C:\songify.accdb")
         For Each user In Users
-            useremail = user.Email
-            If user.Email = txt_email.Text Then
+            useremail = user.GetEmail()
+            If user.GetEmail() = txt_email.Text Then
                 iguales = True
                 Exit For
             End If
