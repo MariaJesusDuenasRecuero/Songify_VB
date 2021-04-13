@@ -29,6 +29,24 @@
     Public Function getReleaseDate()
         Return releaseDate
     End Function
+    Public Function GetName()
+        Return aName
+    End Function
+    Public Function GetCover()
+        Return cover
+    End Function
+    Public Function SetName(name As String)
+        aName = name
+    End Function
+    Public Function SetDate(RDate As Date)
+        releaseDate = RDate
+    End Function
+    Public Function SetArtist(nartist As Integer)
+        artist = nartist
+    End Function
+    Public Function SetCover(cover As String)
+        Me.cover = cover
+    End Function
     Public Sub ReadAllAlbums(path As String)
         Me.AlbDAO.ReadAll(path)
     End Sub
