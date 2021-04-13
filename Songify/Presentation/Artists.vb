@@ -11,7 +11,7 @@ Public Class Artists
         country.Visible = False
         Dim ArtistDAO As ArtistDAO
         ArtistDAO = New ArtistDAO()
-        Artists = ArtistDAO.ReadAll("C:\songify.accdb")
+        Artists = ArtistDAO.ReadAll("C:\Users\manue\Documents\songify.accdb")
         For Each artist In Artists
             lsb_artist.Items.Add(artist.GetName())
         Next
@@ -33,7 +33,7 @@ Public Class Artists
             End If
         Next
         For Each album In Albums
-            If SelectedArtist.GetIdArtist() = album.artist Then
+            If SelectedArtist.GetIdArtist() = album.GetArtist() Then
                 lst_album.Items.Add(album.GetName())
             End If
         Next

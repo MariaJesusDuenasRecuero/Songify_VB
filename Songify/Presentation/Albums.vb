@@ -11,9 +11,9 @@
         Length.Visible = False
         Dim AlbumDAO As AlbumDAO
         AlbumDAO = New AlbumDAO()
-        Albums = AlbumDAO.ReadAll("C:\songify.accdb")
+        Albums = AlbumDAO.ReadAll("C:\Users\manue\Documents\songify.accdb")
         For Each album In Albums
-            ListBox1.Items.Add(album.aName)
+            ListBox1.Items.Add(album.GetName())
         Next
 
     End Sub
@@ -25,21 +25,21 @@
         Songs = SongDAO.ReadAll("C:\songify.accdb")
         AlbumName = ListBox1.SelectedItem
         For Each album In Albums
-            If album.aName = AlbumName Then
+            If album.GetName() = AlbumName Then
                 SelectedAlbum = album
             End If
         Next
         For Each song In Songs
-            If song.Album = SelectedAlbum.GetIdAlbum() Then
-                ListBox2.Items.Add(song.sName)
-                lengthalbum = lengthalbum + song.length
+            If song.GetAlbum() = SelectedAlbum.GetIdAlbum() Then
+                ListBox2.Items.Add(song.GetName())
+                lengthalbum = lengthalbum + song.GetLength()
             End If
         Next
         ArtistDAO = New ArtistDAO()
         Artists = ArtistDAO.ReadAll("C:\songify.accdb")
         For Each artist In Artists
-            If artist.IdArtist = SelectedAlbum.getArtist() Then
-                artistname = artist.aName
+            If artist.GetIdArtist() = SelectedAlbum.getArtist() Then
+                artistname = artist.GetName()
             End If
         Next
         lengthtotal = CalcularTiempo(lengthalbum)

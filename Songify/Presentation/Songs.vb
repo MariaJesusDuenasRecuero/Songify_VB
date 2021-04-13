@@ -11,9 +11,9 @@
         SongLength.Text = ""
         SongLength.Visible = False
         SongDAO = New SongDAO()
-        Songs = SongDAO.ReadAll("C:\songify.accdb")
+        Songs = SongDAO.ReadAll("C:\Users\manue\Documents\songify.accdb")
         For Each song In Songs
-            ListBox1.Items.Add(song.sName)
+            ListBox1.Items.Add(song.GetName())
         Next
     End Sub
     Public Sub New(ByVal email As String)
