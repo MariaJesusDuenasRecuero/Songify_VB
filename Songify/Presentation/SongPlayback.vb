@@ -41,10 +41,14 @@
             MsgBox("Error")
         End If
     End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim f2 As New MainWindow(EmailUser)
         f2.Show()
         Me.Hide()
     End Sub
+
+    Private Sub Play_MouseUp(sender As Object, e As MouseEventArgs) Handles Play.MouseUp
+        Play.BackgroundImage = My.Resources.boton_de_pausa_de_video
+    End Sub
+
 End Class
