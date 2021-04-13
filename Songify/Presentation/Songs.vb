@@ -2,6 +2,8 @@
     Public Songs As Collection
     Public SongSelected As Song
     Public EmailUser As String
+    Public User As User
+    Public IdPlay As Integer
     Private Sub Songs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SongDAO As Song
         songName.Text = ""
@@ -13,26 +15,28 @@
         EmailLog.Text = EmailUser
         SongDAO = New Song()
         Songs = SongDAO.ReadAllSongs("C:\songify.accdb")
-        For Each song In Songs
-            ListBox1.Items.Add(song.GetName())
+        For Each Song In Songs
+            ListBox1.Items.Add(Song.GetName())
         Next
     End Sub
-    Public Sub New(ByVal email As String)
+    Public Sub New(ByVal email As String, ByVal Song As Song)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         EmailUser = email
+        SongSelected = Song
+
     End Sub
     Private Sub SelectSong(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         Dim Albums As Collection : Dim AlbumDAO As Album : Dim SelectedSong As String : Dim AlbumName As String : Dim SLength As String
         AlbumDAO = New Album()
         Albums = AlbumDAO.ReadAllAlbums("C:\songify.accdb")
         SelectedSong = ListBox1.SelectedItem
-        For Each song In Songs
-            If SelectedSong = song.GetName() Then
-                SongSelected = song
+        For Each Song In Songs
+            If SelectedSong = Song.GetName() Then
+                SongSelected = Song
             End If
         Next
         For Each album In Albums
@@ -57,14 +61,11 @@
         Return horatotal
     End Function
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
-        Dim f2 As New MainWindow(EmailUser, SongSelected) : Dim f3 As New MainWindow
-        If SongSelected IsNot Nothing Then
-            f2.Show()
-            Me.Hide()
-        Else
-            f3.Show()
-            Me.Hide()
-        End If
-
+        Dim f2 As New MainWindow(EmailUser)
+        f2.Show()
+        Me.Hide()
+    End Sub
+    Private Sub Playback_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Songtxt.Text = SongSelected.GetName()
     End Sub
 End Class
