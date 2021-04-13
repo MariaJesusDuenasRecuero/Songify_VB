@@ -4,20 +4,30 @@ Imports System.Net
 Public Class Artists
     Public SelectedArtist As Artist
     Public Artists As Collection
+    Public EmailUser As String
     Private Sub Artists_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         aName.Text = ""
         aName.Visible = False
         country.Text = ""
         country.Visible = False
+        EmailLog.Text = EmailUser
         Dim ArtistDAO As ArtistDAO
         ArtistDAO = New ArtistDAO()
-        Artists = ArtistDAO.ReadAll("C:\Users\manue\Documents\songify.accdb")
+        Artists = ArtistDAO.ReadAll("C:\songify.accdb")
         For Each artist In Artists
             lsb_artist.Items.Add(artist.GetName())
         Next
 
 
 
+    End Sub
+    Public Sub New(EmailUser As String)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Me.EmailUser = EmailUser
     End Sub
 
     Private Sub loadData(sender As Object, e As EventArgs) Handles lsb_artist.SelectedIndexChanged
@@ -48,7 +58,7 @@ Public Class Artists
     End Sub
 
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
-        Dim f2 As New MainWindow
+        Dim f2 As New MainWindow(EmailUser)
         f2.Show()
         Me.Hide()
     End Sub

@@ -10,8 +10,9 @@
         AlbumSong.Visible = False
         SongLength.Text = ""
         SongLength.Visible = False
+        EmailLog.Text = EmailUser
         SongDAO = New SongDAO()
-        Songs = SongDAO.ReadAll("C:\Users\manue\Documents\songify.accdb")
+        Songs = SongDAO.ReadAll("C:\songify.accdb")
         For Each song In Songs
             ListBox1.Items.Add(song.GetName())
         Next
@@ -30,13 +31,13 @@
         Albums = AlbumDAO.ReadAll("C:\songify.accdb")
         SelectedSong = ListBox1.SelectedItem
         For Each song In Songs
-            If SelectedSong = song.sName Then
+            If SelectedSong = song.GetName() Then
                 SongSelected = song
             End If
         Next
         For Each album In Albums
-            If SongSelected.GetAlbum() = album.IdAlbum Then
-                AlbumName = album.aName
+            If SongSelected.GetAlbum() = album.GetIdAlbum() Then
+                AlbumName = album.GetName()
             End If
         Next
         SLength = CalcularTiempo(SongSelected.GetSLength())

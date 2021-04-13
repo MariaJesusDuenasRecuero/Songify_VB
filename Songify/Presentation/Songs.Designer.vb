@@ -27,21 +27,23 @@ Partial Class Songs
         Me.AlbumSong = New System.Windows.Forms.Label()
         Me.SongLength = New System.Windows.Forms.Label()
         Me.GoBackBtn = New System.Windows.Forms.Button()
+        Me.lbl_profile = New System.Windows.Forms.Label()
+        Me.EmailLog = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(12, 12)
+        Me.ListBox1.Location = New System.Drawing.Point(12, 64)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(161, 420)
+        Me.ListBox1.Size = New System.Drawing.Size(161, 368)
         Me.ListBox1.TabIndex = 0
         '
         'songName
         '
         Me.songName.AutoSize = True
         Me.songName.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.songName.Location = New System.Drawing.Point(197, 37)
+        Me.songName.Location = New System.Drawing.Point(197, 64)
         Me.songName.Name = "songName"
         Me.songName.Size = New System.Drawing.Size(77, 26)
         Me.songName.TabIndex = 1
@@ -51,7 +53,7 @@ Partial Class Songs
         '
         Me.AlbumSong.AutoSize = True
         Me.AlbumSong.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.AlbumSong.Location = New System.Drawing.Point(197, 120)
+        Me.AlbumSong.Location = New System.Drawing.Point(197, 158)
         Me.AlbumSong.Name = "AlbumSong"
         Me.AlbumSong.Size = New System.Drawing.Size(77, 26)
         Me.AlbumSong.TabIndex = 2
@@ -61,7 +63,7 @@ Partial Class Songs
         '
         Me.SongLength.AutoSize = True
         Me.SongLength.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.SongLength.Location = New System.Drawing.Point(197, 203)
+        Me.SongLength.Location = New System.Drawing.Point(197, 248)
         Me.SongLength.Name = "SongLength"
         Me.SongLength.Size = New System.Drawing.Size(77, 26)
         Me.SongLength.TabIndex = 3
@@ -70,12 +72,34 @@ Partial Class Songs
         'GoBackBtn
         '
         Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GoBackBtn.Location = New System.Drawing.Point(262, 364)
+        Me.GoBackBtn.Location = New System.Drawing.Point(202, 390)
         Me.GoBackBtn.Name = "GoBackBtn"
         Me.GoBackBtn.Size = New System.Drawing.Size(103, 42)
         Me.GoBackBtn.TabIndex = 12
         Me.GoBackBtn.Text = "Back"
         Me.GoBackBtn.UseVisualStyleBackColor = True
+        '
+        'lbl_profile
+        '
+        Me.lbl_profile.AutoSize = True
+        Me.lbl_profile.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_profile.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lbl_profile.Location = New System.Drawing.Point(12, 18)
+        Me.lbl_profile.Name = "lbl_profile"
+        Me.lbl_profile.Size = New System.Drawing.Size(126, 23)
+        Me.lbl_profile.TabIndex = 13
+        Me.lbl_profile.Text = "Logged as:"
+        '
+        'EmailLog
+        '
+        Me.EmailLog.AutoSize = True
+        Me.EmailLog.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmailLog.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.EmailLog.Location = New System.Drawing.Point(175, 18)
+        Me.EmailLog.Name = "EmailLog"
+        Me.EmailLog.Size = New System.Drawing.Size(61, 23)
+        Me.EmailLog.TabIndex = 14
+        Me.EmailLog.Text = "rfjpe"
         '
         'Songs
         '
@@ -83,6 +107,8 @@ Partial Class Songs
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(537, 450)
+        Me.Controls.Add(Me.EmailLog)
+        Me.Controls.Add(Me.lbl_profile)
         Me.Controls.Add(Me.GoBackBtn)
         Me.Controls.Add(Me.SongLength)
         Me.Controls.Add(Me.AlbumSong)
@@ -100,4 +126,6 @@ Partial Class Songs
     Friend WithEvents AlbumSong As Label
     Friend WithEvents SongLength As Label
     Friend WithEvents GoBackBtn As Button
+    Friend WithEvents lbl_profile As Label
+    Friend WithEvents EmailLog As Label
 End Class

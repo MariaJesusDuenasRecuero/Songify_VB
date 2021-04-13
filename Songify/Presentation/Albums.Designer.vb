@@ -35,7 +35,7 @@ Partial Class Albums
         Me.lbl_date = New System.Windows.Forms.Label()
         Me.lbl_length = New System.Windows.Forms.Label()
         Me.lbl_profile = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.EmailLog = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -174,20 +174,20 @@ Partial Class Albums
         Me.lbl_profile.ForeColor = System.Drawing.Color.White
         Me.lbl_profile.Location = New System.Drawing.Point(29, 9)
         Me.lbl_profile.Name = "lbl_profile"
-        Me.lbl_profile.Size = New System.Drawing.Size(139, 23)
+        Me.lbl_profile.Size = New System.Drawing.Size(126, 23)
         Me.lbl_profile.TabIndex = 20
-        Me.lbl_profile.Text = "Register as:"
+        Me.lbl_profile.Text = "Logged as:"
         '
-        'Label1
+        'EmailLog
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(205, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(61, 23)
-        Me.Label1.TabIndex = 19
-        Me.Label1.Text = "rfjpe"
+        Me.EmailLog.AutoSize = True
+        Me.EmailLog.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmailLog.ForeColor = System.Drawing.Color.White
+        Me.EmailLog.Location = New System.Drawing.Point(205, 9)
+        Me.EmailLog.Name = "EmailLog"
+        Me.EmailLog.Size = New System.Drawing.Size(61, 23)
+        Me.EmailLog.TabIndex = 19
+        Me.EmailLog.Text = "rfjpe"
         '
         'Albums
         '
@@ -196,7 +196,7 @@ Partial Class Albums
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
         Me.Controls.Add(Me.lbl_profile)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.EmailLog)
         Me.Controls.Add(Me.lbl_length)
         Me.Controls.Add(Me.lbl_date)
         Me.Controls.Add(Me.lbl_artistName)
@@ -230,5 +230,5 @@ Partial Class Albums
     Friend WithEvents lbl_date As Label
     Friend WithEvents lbl_length As Label
     Friend WithEvents lbl_profile As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents EmailLog As Label
 End Class

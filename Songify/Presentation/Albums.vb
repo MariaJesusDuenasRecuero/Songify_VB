@@ -2,6 +2,7 @@
     Public Albums As Collection
     Public SelectedAlbum As Album
     Public Artists As Collection
+    Public EmailUser As String
     Private Sub Albums_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         aName.Text = ""
         aName.Visible = False
@@ -9,13 +10,22 @@
         releaseDate.Visible = False
         Length.Text = ""
         Length.Visible = False
+        EmailLog.Text = EmailUser
         Dim AlbumDAO As AlbumDAO
         AlbumDAO = New AlbumDAO()
-        Albums = AlbumDAO.ReadAll("C:\Users\manue\Documents\songify.accdb")
+        Albums = AlbumDAO.ReadAll("C:\songify.accdb")
         For Each album In Albums
             ListBox1.Items.Add(album.GetName())
         Next
 
+    End Sub
+    Public Sub New(EmailUser As String)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Me.EmailUser = EmailUser
     End Sub
     Private Sub loadData(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         ListBox2.Items.Clear()
@@ -52,7 +62,7 @@
     End Sub
 
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
-        Dim f2 As New MainWindow
+        Dim f2 As New MainWindow(EmailUser)
         f2.Show()
         Me.Hide()
     End Sub

@@ -32,7 +32,7 @@ Partial Class Artists
         Me.lbl_albums = New System.Windows.Forms.Label()
         Me.lbl_name = New System.Windows.Forms.Label()
         Me.lbl_nationality = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.EmailLog = New System.Windows.Forms.Label()
         Me.lbl_profile = New System.Windows.Forms.Label()
         CType(Me.im_artists, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -149,15 +149,15 @@ Partial Class Artists
         Me.lbl_nationality.TabIndex = 9
         Me.lbl_nationality.Text = "Nationality"
         '
-        'Label1
+        'EmailLog
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(193, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(61, 23)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "rfjpe"
+        Me.EmailLog.AutoSize = True
+        Me.EmailLog.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmailLog.Location = New System.Drawing.Point(193, 13)
+        Me.EmailLog.Name = "EmailLog"
+        Me.EmailLog.Size = New System.Drawing.Size(61, 23)
+        Me.EmailLog.TabIndex = 10
+        Me.EmailLog.Text = "rfjpe"
         '
         'lbl_profile
         '
@@ -165,9 +165,9 @@ Partial Class Artists
         Me.lbl_profile.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_profile.Location = New System.Drawing.Point(17, 13)
         Me.lbl_profile.Name = "lbl_profile"
-        Me.lbl_profile.Size = New System.Drawing.Size(139, 23)
+        Me.lbl_profile.Size = New System.Drawing.Size(126, 23)
         Me.lbl_profile.TabIndex = 11
-        Me.lbl_profile.Text = "Register as:"
+        Me.lbl_profile.Text = "Logged as:"
         '
         'Artists
         '
@@ -176,7 +176,7 @@ Partial Class Artists
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
         Me.Controls.Add(Me.lbl_profile)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.EmailLog)
         Me.Controls.Add(Me.lbl_nationality)
         Me.Controls.Add(Me.lbl_name)
         Me.Controls.Add(Me.lbl_albums)
@@ -208,6 +208,6 @@ Partial Class Artists
     Friend WithEvents lbl_albums As Label
     Friend WithEvents lbl_name As Label
     Friend WithEvents lbl_nationality As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents EmailLog As Label
     Friend WithEvents lbl_profile As Label
 End Class

@@ -29,7 +29,9 @@ Partial Class MainWindow
         Me.btn_artists = New System.Windows.Forms.Button()
         Me.lbl_background = New System.Windows.Forms.Label()
         Me.lbl_profile = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.EmailLog = New System.Windows.Forms.Label()
+        Me.songTXT = New System.Windows.Forms.Label()
+        Me.songchoosed = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn_Album
@@ -37,7 +39,7 @@ Partial Class MainWindow
         Me.btn_Album.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Album.Image = Global.Songify.My.Resources.Resources.album_de_musica
         Me.btn_Album.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_Album.Location = New System.Drawing.Point(350, 200)
+        Me.btn_Album.Location = New System.Drawing.Point(374, 200)
         Me.btn_Album.Name = "btn_Album"
         Me.btn_Album.Size = New System.Drawing.Size(217, 64)
         Me.btn_Album.TabIndex = 4
@@ -50,7 +52,7 @@ Partial Class MainWindow
         Me.btn_songs.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_songs.Image = Global.Songify.My.Resources.Resources.grabacion
         Me.btn_songs.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_songs.Location = New System.Drawing.Point(350, 299)
+        Me.btn_songs.Location = New System.Drawing.Point(374, 299)
         Me.btn_songs.Name = "btn_songs"
         Me.btn_songs.Size = New System.Drawing.Size(217, 64)
         Me.btn_songs.TabIndex = 5
@@ -63,7 +65,7 @@ Partial Class MainWindow
         Me.btn_play.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_play.Image = Global.Songify.My.Resources.Resources.jugar
         Me.btn_play.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_play.Location = New System.Drawing.Point(350, 398)
+        Me.btn_play.Location = New System.Drawing.Point(374, 398)
         Me.btn_play.Name = "btn_play"
         Me.btn_play.Size = New System.Drawing.Size(217, 64)
         Me.btn_play.TabIndex = 6
@@ -76,7 +78,7 @@ Partial Class MainWindow
         Me.btn_signOut.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_signOut.Image = Global.Songify.My.Resources.Resources.power_off
         Me.btn_signOut.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_signOut.Location = New System.Drawing.Point(350, 518)
+        Me.btn_signOut.Location = New System.Drawing.Point(374, 518)
         Me.btn_signOut.Name = "btn_signOut"
         Me.btn_signOut.Size = New System.Drawing.Size(217, 64)
         Me.btn_signOut.TabIndex = 7
@@ -89,7 +91,7 @@ Partial Class MainWindow
         Me.btn_artists.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_artists.Image = Global.Songify.My.Resources.Resources.cantante
         Me.btn_artists.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_artists.Location = New System.Drawing.Point(350, 100)
+        Me.btn_artists.Location = New System.Drawing.Point(374, 100)
         Me.btn_artists.Name = "btn_artists"
         Me.btn_artists.Size = New System.Drawing.Size(217, 64)
         Me.btn_artists.TabIndex = 3
@@ -101,7 +103,7 @@ Partial Class MainWindow
         '
         Me.lbl_background.BackColor = System.Drawing.Color.DarkViolet
         Me.lbl_background.Image = Global.Songify.My.Resources.Resources.fonditomj
-        Me.lbl_background.Location = New System.Drawing.Point(272, 45)
+        Me.lbl_background.Location = New System.Drawing.Point(296, 45)
         Me.lbl_background.Name = "lbl_background"
         Me.lbl_background.Size = New System.Drawing.Size(392, 579)
         Me.lbl_background.TabIndex = 2
@@ -113,20 +115,42 @@ Partial Class MainWindow
         Me.lbl_profile.ForeColor = System.Drawing.Color.White
         Me.lbl_profile.Location = New System.Drawing.Point(29, 23)
         Me.lbl_profile.Name = "lbl_profile"
-        Me.lbl_profile.Size = New System.Drawing.Size(139, 23)
+        Me.lbl_profile.Size = New System.Drawing.Size(126, 23)
         Me.lbl_profile.TabIndex = 13
-        Me.lbl_profile.Text = "Register as:"
+        Me.lbl_profile.Text = "Logged as:"
         '
-        'Label1
+        'EmailLog
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(205, 23)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(61, 23)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "rfjpe"
+        Me.EmailLog.AutoSize = True
+        Me.EmailLog.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmailLog.ForeColor = System.Drawing.Color.White
+        Me.EmailLog.Location = New System.Drawing.Point(161, 23)
+        Me.EmailLog.Name = "EmailLog"
+        Me.EmailLog.Size = New System.Drawing.Size(61, 23)
+        Me.EmailLog.TabIndex = 12
+        Me.EmailLog.Text = "rfjpe"
+        '
+        'songTXT
+        '
+        Me.songTXT.AutoSize = True
+        Me.songTXT.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.songTXT.ForeColor = System.Drawing.Color.White
+        Me.songTXT.Location = New System.Drawing.Point(29, 77)
+        Me.songTXT.Name = "songTXT"
+        Me.songTXT.Size = New System.Drawing.Size(72, 23)
+        Me.songTXT.TabIndex = 14
+        Me.songTXT.Text = "Song:"
+        '
+        'songchoosed
+        '
+        Me.songchoosed.AutoSize = True
+        Me.songchoosed.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.songchoosed.ForeColor = System.Drawing.Color.White
+        Me.songchoosed.Location = New System.Drawing.Point(107, 77)
+        Me.songchoosed.Name = "songchoosed"
+        Me.songchoosed.Size = New System.Drawing.Size(61, 23)
+        Me.songchoosed.TabIndex = 15
+        Me.songchoosed.Text = "rfjpe"
         '
         'MainWindow
         '
@@ -134,8 +158,10 @@ Partial Class MainWindow
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
+        Me.Controls.Add(Me.songchoosed)
+        Me.Controls.Add(Me.songTXT)
         Me.Controls.Add(Me.lbl_profile)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.EmailLog)
         Me.Controls.Add(Me.btn_signOut)
         Me.Controls.Add(Me.btn_play)
         Me.Controls.Add(Me.btn_songs)
@@ -162,7 +188,14 @@ Partial Class MainWindow
     Public Email As String
     Public Song As Song
     Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        EmailLog.Text = Email
+        songTXT.Visible = False
+        songchoosed.Visible = False
+        If Song IsNot Nothing Then
+            songTXT.Visible = True
+            songchoosed.Visible = True
+            songchoosed.Text = Song.GetName()
+        End If
     End Sub
 
     Public Sub New()
@@ -193,12 +226,12 @@ Partial Class MainWindow
     End Sub
 
     Private Sub ArtistBtnClick(sender As Object, e As EventArgs) Handles btn_artists.Click
-        Dim f2 As New Artists
+        Dim f2 As New Artists(Email)
         f2.Show()
         Me.Hide()
     End Sub
     Private Sub AlbumBtnClick(sender As Object, e As EventArgs) Handles btn_Album.Click
-        Dim f2 As New Albums
+        Dim f2 As New Albums(Email)
         f2.Show()
         Me.Hide()
     End Sub
@@ -221,5 +254,7 @@ Partial Class MainWindow
     End Sub
 
     Friend WithEvents lbl_profile As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents EmailLog As Label
+    Friend WithEvents songTXT As Label
+    Friend WithEvents songchoosed As Label
 End Class

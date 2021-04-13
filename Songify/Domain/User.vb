@@ -40,13 +40,13 @@
         Return Me.usrDAO.Read(Me)
     End Function
     Public Function InsertUser() As Integer
-        Return Me.usrDAO.Insert(Me, "C:\Users\manue\Documents\songify.accdb")
+        Return Me.usrDAO.Insert(Me, "C:\songify.accdb")
     End Function
     Public Function UpdateUser() As Integer
-        Return Me.usrDAO.Update(Me, "C:\Users\manue\Documents\songify.accdb")
+        Return Me.usrDAO.Update(Me, "C:\songify.accdb")
     End Function
     Public Function DeleteUser() As Integer
-        Return Me.usrDAO.Delete(Me, "C:\Users\manue\Documents\songify.accdb")
+        Return Me.usrDAO.Delete(Me, "C:\songify.accdb")
     End Function
 
 

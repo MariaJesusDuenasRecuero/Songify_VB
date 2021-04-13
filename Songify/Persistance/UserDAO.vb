@@ -3,6 +3,7 @@
 
     Public Sub New()
         Me.Users = New Collection
+
     End Sub
 
     Public Function ReadAll(path As String)
@@ -17,6 +18,19 @@
             Me.Users.Add(usr)
         Next
         Return Users
+    End Function
+    Public Function ReadAllPlaybacks(path As String)
+        Dim pl As Playback : Dim Playbacks As New Collection
+        Dim col, aux As Collection
+        col = DBBroker.GetBroker(path).Read("SELECT * FROM Playbacks ORDER BY IdPlay")
+        For Each aux In col
+            pl = New Playback(aux(1).ToString)
+            pl.SetUser(aux(2).ToString)
+            pl.SetSong(aux(3).ToString)
+            pl.SetPlDate(aux(4))
+            Playbacks.Add(pl)
+        Next
+        Return Playbacks
     End Function
 
     Public Function Read(ByRef usr As User)
