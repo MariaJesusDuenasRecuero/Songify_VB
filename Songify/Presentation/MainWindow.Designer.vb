@@ -28,6 +28,8 @@ Partial Class MainWindow
         Me.btn_signOut = New System.Windows.Forms.Button()
         Me.btn_artists = New System.Windows.Forms.Button()
         Me.lbl_background = New System.Windows.Forms.Label()
+        Me.lbl_profile = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn_Album
@@ -104,12 +106,36 @@ Partial Class MainWindow
         Me.lbl_background.Size = New System.Drawing.Size(392, 579)
         Me.lbl_background.TabIndex = 2
         '
+        'lbl_profile
+        '
+        Me.lbl_profile.AutoSize = True
+        Me.lbl_profile.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_profile.ForeColor = System.Drawing.Color.White
+        Me.lbl_profile.Location = New System.Drawing.Point(29, 23)
+        Me.lbl_profile.Name = "lbl_profile"
+        Me.lbl_profile.Size = New System.Drawing.Size(139, 23)
+        Me.lbl_profile.TabIndex = 13
+        Me.lbl_profile.Text = "Register as:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(205, 23)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(61, 23)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "rfjpe"
+        '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
+        Me.Controls.Add(Me.lbl_profile)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_signOut)
         Me.Controls.Add(Me.btn_play)
         Me.Controls.Add(Me.btn_songs)
@@ -119,6 +145,7 @@ Partial Class MainWindow
         Me.Name = "MainWindow"
         Me.Text = "MainWindow"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -192,4 +219,7 @@ Partial Class MainWindow
         End If
 
     End Sub
+
+    Friend WithEvents lbl_profile As Label
+    Friend WithEvents Label1 As Label
 End Class
