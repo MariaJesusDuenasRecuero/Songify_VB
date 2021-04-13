@@ -47,10 +47,10 @@ Public Class Login
 
 
     Private Sub btn_Login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
-        Dim useremail As String : Dim UserDAO As UserDAO : Dim iguales As Boolean
+        Dim useremail As String : Dim UserDAO As User : Dim iguales As Boolean
         iguales = False
-        UserDAO = New UserDAO()
-        Users = UserDAO.ReadAll("C:\songify.accdb")
+        UserDAO = New User()
+        Users = UserDAO.ReadAllUsers("C:\songify.accdb")
         For Each user In Users
             useremail = user.GetEmail()
             If user.GetEmail() = txt_email.Text Then

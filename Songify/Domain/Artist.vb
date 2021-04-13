@@ -39,9 +39,9 @@
     Public Function SetCountry(country As String)
         Me.country = country
     End Function
-    Public Sub ReadAllArtists(path As String)
-        Me.arDAO.ReadAll(path)
-    End Sub
+    Public Function ReadAllArtists(path As String)
+        Return Me.arDAO.ReadAll(path)
+    End Function
     Public Sub ReadAll()
         Me.arDAO.Read(Me)
     End Sub

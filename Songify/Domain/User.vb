@@ -36,6 +36,9 @@
     Public Function ReadAllUsers(path As String)
         Return Me.usrDAO.ReadAll(path)
     End Function
+    Public Function ReadAllPlaybacks(path As String)
+        Return Me.usrDAO.ReadAllPlaybacks(path)
+    End Function
     Public Function ReadUser()
         Return Me.usrDAO.Read(Me)
     End Function
@@ -48,6 +51,5 @@
     Public Function DeleteUser() As Integer
         Return Me.usrDAO.Delete(Me, "C:\songify.accdb")
     End Function
-
 
 End Class

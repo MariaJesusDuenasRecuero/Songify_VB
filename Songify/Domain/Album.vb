@@ -47,9 +47,9 @@
     Public Function SetCover(cover As String)
         Me.cover = cover
     End Function
-    Public Sub ReadAllAlbums(path As String)
-        Me.AlbDAO.ReadAll(path)
-    End Sub
+    Public Function ReadAllAlbums(path As String)
+        Return Me.AlbDAO.ReadAll(path)
+    End Function
     Public Sub ReadAlbum()
         Me.AlbDAO.Read(Me)
     End Sub

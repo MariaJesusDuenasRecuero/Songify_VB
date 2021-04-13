@@ -36,9 +36,9 @@
     Public Function SetLength(length As Integer)
         Me.length = length
     End Function
-    Public Sub ReadAllSongs(path As String)
-        Me.sDAO.ReadAll(path)
-    End Sub
+    Public Function ReadAllSongs(path As String)
+        Return Me.sDAO.ReadAll(path)
+    End Function
     Public Sub ReadSong()
         Me.sDAO.Read(Me)
     End Sub

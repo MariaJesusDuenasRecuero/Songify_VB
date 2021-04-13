@@ -11,9 +11,9 @@
         Length.Text = ""
         Length.Visible = False
         EmailLog.Text = EmailUser
-        Dim AlbumDAO As AlbumDAO
-        AlbumDAO = New AlbumDAO()
-        Albums = AlbumDAO.ReadAll("C:\songify.accdb")
+        Dim AlbumDAO As Album
+        AlbumDAO = New Album()
+        Albums = AlbumDAO.ReadAllAlbums("C:\songify.accdb")
         For Each album In Albums
             ListBox1.Items.Add(album.GetName())
         Next
@@ -29,10 +29,10 @@
     End Sub
     Private Sub loadData(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         ListBox2.Items.Clear()
-        Dim Songs As Collection : Dim SongDAO As SongDAO : Dim AlbumName As String : Dim AlbumDAO As AlbumDAO : Dim ArtistDAO As ArtistDAO : Dim artistname As String : Dim lengthalbum As Integer : Dim lengthtotal As String
+        Dim Songs As Collection : Dim SongDAO As Song : Dim AlbumName As String : Dim AlbumDAO As Album : Dim ArtistDAO As Artist : Dim artistname As String : Dim lengthalbum As Integer : Dim lengthtotal As String
         lengthalbum = 0
-        SongDAO = New SongDAO()
-        Songs = SongDAO.ReadAll("C:\songify.accdb")
+        SongDAO = New Song()
+        Songs = SongDAO.ReadAllSongs("C:\songify.accdb")
         AlbumName = ListBox1.SelectedItem
         For Each album In Albums
             If album.GetName() = AlbumName Then
@@ -45,8 +45,8 @@
                 lengthalbum = lengthalbum + song.GetLength()
             End If
         Next
-        ArtistDAO = New ArtistDAO()
-        Artists = ArtistDAO.ReadAll("C:\songify.accdb")
+        ArtistDAO = New Artist()
+        Artists = ArtistDAO.ReadAllArtists("C:\songify.accdb")
         For Each artist In Artists
             If artist.GetIdArtist() = SelectedAlbum.getArtist() Then
                 artistname = artist.GetName()

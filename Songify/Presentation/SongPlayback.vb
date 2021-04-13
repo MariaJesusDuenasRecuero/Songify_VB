@@ -5,7 +5,7 @@
     Public IdPlay As Integer
     Public SongSelected As Song
     Private Sub Playback_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Song.Text = SongSelected.GetName()
     End Sub
     Public Sub New(ByVal email As String, ByVal Song As Song)
 
@@ -19,8 +19,8 @@
     End Sub
 
     Private Sub PlaySong(sender As Object, e As EventArgs) Handles Play.Click
-        Dim Playbacks As Collection : Dim UserDAO As UserDAO
-        UserDAO = New UserDAO()
+        Dim Playbacks As Collection : Dim UserDAO As User
+        UserDAO = New User()
         Playbacks = UserDAO.ReadAllPlaybacks("C:\songify.accdb")
         For Each playback In Playbacks
             IdPlay += 1
@@ -35,20 +35,23 @@
             PlayBackSong.SetPlDate(Date.Today)
             PlayBackSong.InsertPlayBack()
             For L As Double = 0.0 To SongSelected.getLength()
-                ProgressBar1.Increment(L)
+                ProgressBar1.Increment(L - 0.5)
             Next L
         Else
             MsgBox("Error")
         End If
+        Play.Image = Nothing
+        Play.Image = My.Resources.boton_de_pausa_de_video
+        Play.ImageAlign = ContentAlignment.MiddleCenter
+        'If ProgressBar1.Value = SongSelected.getLength() Then
+        'Play.Image = Nothing
+        'Play.Image = My.Resources.jugar1
+        'Play.ImageAlign = ContentAlignment.MiddleCenter
+        'End If
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim f2 As New MainWindow(EmailUser)
         f2.Show()
         Me.Hide()
     End Sub
-
-    Private Sub Play_MouseUp(sender As Object, e As MouseEventArgs) Handles Play.MouseUp
-        Play.BackgroundImage = My.Resources.boton_de_pausa_de_video
-    End Sub
-
 End Class

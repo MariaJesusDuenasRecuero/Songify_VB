@@ -3,7 +3,7 @@
     Public SongSelected As Song
     Public EmailUser As String
     Private Sub Songs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim SongDAO As SongDAO
+        Dim SongDAO As Song
         songName.Text = ""
         songName.Visible = False
         AlbumSong.Text = ""
@@ -11,8 +11,8 @@
         SongLength.Text = ""
         SongLength.Visible = False
         EmailLog.Text = EmailUser
-        SongDAO = New SongDAO()
-        Songs = SongDAO.ReadAll("C:\songify.accdb")
+        SongDAO = New Song()
+        Songs = SongDAO.ReadAllSongs("C:\songify.accdb")
         For Each song In Songs
             ListBox1.Items.Add(song.GetName())
         Next
@@ -26,9 +26,9 @@
         EmailUser = email
     End Sub
     Private Sub SelectSong(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-        Dim Albums As Collection : Dim AlbumDAO As AlbumDAO : Dim SelectedSong As String : Dim AlbumName As String : Dim SLength As String
-        AlbumDAO = New AlbumDAO()
-        Albums = AlbumDAO.ReadAll("C:\songify.accdb")
+        Dim Albums As Collection : Dim AlbumDAO As Album : Dim SelectedSong As String : Dim AlbumName As String : Dim SLength As String
+        AlbumDAO = New Album()
+        Albums = AlbumDAO.ReadAllAlbums("C:\songify.accdb")
         SelectedSong = ListBox1.SelectedItem
         For Each song In Songs
             If SelectedSong = song.GetName() Then

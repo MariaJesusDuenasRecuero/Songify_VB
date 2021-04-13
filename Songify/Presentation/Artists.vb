@@ -11,9 +11,9 @@ Public Class Artists
         country.Text = ""
         country.Visible = False
         EmailLog.Text = EmailUser
-        Dim ArtistDAO As ArtistDAO
-        ArtistDAO = New ArtistDAO()
-        Artists = ArtistDAO.ReadAll("C:\songify.accdb")
+        Dim ArtistDAO As Artist
+        ArtistDAO = New Artist()
+        Artists = ArtistDAO.ReadAllArtists("C:\songify.accdb")
         For Each artist In Artists
             lsb_artist.Items.Add(artist.GetName())
         Next
@@ -32,10 +32,10 @@ Public Class Artists
 
     Private Sub loadData(sender As Object, e As EventArgs) Handles lsb_artist.SelectedIndexChanged
         lst_album.Items.Clear()
-        Dim Albums As Collection : Dim AlbumDAO As AlbumDAO : Dim ArtistName As String : Dim wc As New WebClient()
+        Dim Albums As Collection : Dim AlbumDAO As Album : Dim ArtistName As String : Dim wc As New WebClient()
 
-        AlbumDAO = New AlbumDAO()
-        Albums = AlbumDAO.ReadAll("C:\songify.accdb")
+        AlbumDAO = New Album()
+        Albums = AlbumDAO.ReadAllAlbums("C:\songify.accdb")
         ArtistName = lsb_artist.SelectedItem
         For Each artist In Artists
             If artist.GetName() = ArtistName Then
