@@ -65,7 +65,7 @@ Public Class Login
             f2.Show()
             Me.Hide()
         Else
-            MsgBox("This user isn't in out DataBase", MsgBoxStyle.OkOnly, "Error")
+            MsgBox("This user isn't in our DataBase", MsgBoxStyle.OkOnly, "Error")
             'lbl_warning.Enabled = True
         End If
 

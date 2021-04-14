@@ -24,7 +24,6 @@ Partial Class MainWindow
     Private Sub InitializeComponent()
         Me.btn_Album = New System.Windows.Forms.Button()
         Me.btn_songs = New System.Windows.Forms.Button()
-        Me.btn_play = New System.Windows.Forms.Button()
         Me.btn_signOut = New System.Windows.Forms.Button()
         Me.btn_artists = New System.Windows.Forms.Button()
         Me.lbl_background = New System.Windows.Forms.Label()
@@ -39,7 +38,7 @@ Partial Class MainWindow
         Me.btn_Album.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Album.Image = Global.Songify.My.Resources.Resources.album_de_musica
         Me.btn_Album.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_Album.Location = New System.Drawing.Point(374, 200)
+        Me.btn_Album.Location = New System.Drawing.Point(374, 225)
         Me.btn_Album.Name = "btn_Album"
         Me.btn_Album.Size = New System.Drawing.Size(217, 64)
         Me.btn_Album.TabIndex = 4
@@ -52,26 +51,13 @@ Partial Class MainWindow
         Me.btn_songs.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_songs.Image = Global.Songify.My.Resources.Resources.grabacion
         Me.btn_songs.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_songs.Location = New System.Drawing.Point(374, 299)
+        Me.btn_songs.Location = New System.Drawing.Point(374, 324)
         Me.btn_songs.Name = "btn_songs"
         Me.btn_songs.Size = New System.Drawing.Size(217, 64)
         Me.btn_songs.TabIndex = 5
         Me.btn_songs.Text = "Songs"
         Me.btn_songs.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_songs.UseVisualStyleBackColor = True
-        '
-        'btn_play
-        '
-        Me.btn_play.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_play.Image = Global.Songify.My.Resources.Resources.jugar
-        Me.btn_play.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_play.Location = New System.Drawing.Point(374, 398)
-        Me.btn_play.Name = "btn_play"
-        Me.btn_play.Size = New System.Drawing.Size(217, 64)
-        Me.btn_play.TabIndex = 6
-        Me.btn_play.Text = "Play"
-        Me.btn_play.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_play.UseVisualStyleBackColor = True
         '
         'btn_signOut
         '
@@ -91,7 +77,7 @@ Partial Class MainWindow
         Me.btn_artists.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_artists.Image = Global.Songify.My.Resources.Resources.cantante
         Me.btn_artists.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_artists.Location = New System.Drawing.Point(374, 100)
+        Me.btn_artists.Location = New System.Drawing.Point(374, 125)
         Me.btn_artists.Name = "btn_artists"
         Me.btn_artists.Size = New System.Drawing.Size(217, 64)
         Me.btn_artists.TabIndex = 3
@@ -163,7 +149,6 @@ Partial Class MainWindow
         Me.Controls.Add(Me.lbl_profile)
         Me.Controls.Add(Me.EmailLog)
         Me.Controls.Add(Me.btn_signOut)
-        Me.Controls.Add(Me.btn_play)
         Me.Controls.Add(Me.btn_songs)
         Me.Controls.Add(Me.btn_Album)
         Me.Controls.Add(Me.btn_artists)
@@ -179,7 +164,6 @@ Partial Class MainWindow
     Friend WithEvents btn_artists As Button
     Friend WithEvents btn_Album As Button
     Friend WithEvents btn_songs As Button
-    Friend WithEvents btn_play As Button
     Friend WithEvents btn_signOut As Button
 
     Public Artists As Collection
@@ -242,7 +226,7 @@ Partial Class MainWindow
         Me.Hide()
     End Sub
 
-    Private Sub btn_play_Click(sender As Object, e As EventArgs) Handles btn_play.Click
+    Private Sub btn_play_Click(sender As Object, e As EventArgs)
         If Song Is Nothing Then
             MsgBox("Choose a Song to play")
         Else

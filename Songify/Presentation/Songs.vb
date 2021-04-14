@@ -4,6 +4,8 @@
     Public EmailUser As String
     Public User As User
     Public IdPlay As Integer
+    Private email As String
+
     Private Sub Songs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SongDAO As Song
         songName.Text = ""
@@ -29,6 +31,11 @@
         SongSelected = Song
 
     End Sub
+
+    Public Sub New(email As String)
+        Me.email = email
+    End Sub
+
     Private Sub SelectSong(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         Dim Albums As Collection : Dim AlbumDAO As Album : Dim SelectedSong As String : Dim AlbumName As String : Dim SLength As String
         AlbumDAO = New Album()

@@ -48,7 +48,7 @@ Partial Class Songs
         '
         Me.songName.AutoSize = True
         Me.songName.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.songName.Location = New System.Drawing.Point(326, 104)
+        Me.songName.Location = New System.Drawing.Point(484, 106)
         Me.songName.Name = "songName"
         Me.songName.Size = New System.Drawing.Size(77, 26)
         Me.songName.TabIndex = 1
@@ -58,7 +58,7 @@ Partial Class Songs
         '
         Me.AlbumSong.AutoSize = True
         Me.AlbumSong.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.AlbumSong.Location = New System.Drawing.Point(326, 230)
+        Me.AlbumSong.Location = New System.Drawing.Point(484, 228)
         Me.AlbumSong.Name = "AlbumSong"
         Me.AlbumSong.Size = New System.Drawing.Size(77, 26)
         Me.AlbumSong.TabIndex = 2
@@ -68,7 +68,7 @@ Partial Class Songs
         '
         Me.SongLength.AutoSize = True
         Me.SongLength.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.SongLength.Location = New System.Drawing.Point(326, 356)
+        Me.SongLength.Location = New System.Drawing.Point(484, 354)
         Me.SongLength.Name = "SongLength"
         Me.SongLength.Size = New System.Drawing.Size(77, 26)
         Me.SongLength.TabIndex = 3
@@ -110,7 +110,7 @@ Partial Class Songs
         '
         Me.PictureBox1.Location = New System.Drawing.Point(616, 64)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(309, 284)
+        Me.PictureBox1.Size = New System.Drawing.Size(309, 316)
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
         '

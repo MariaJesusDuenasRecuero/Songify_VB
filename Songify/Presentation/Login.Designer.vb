@@ -51,9 +51,9 @@ Partial Class Login
         Me.txt_email.Enabled = False
         Me.txt_email.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_email.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.txt_email.Location = New System.Drawing.Point(382, 300)
+        Me.txt_email.Location = New System.Drawing.Point(355, 321)
         Me.txt_email.Name = "txt_email"
-        Me.txt_email.Size = New System.Drawing.Size(212, 31)
+        Me.txt_email.Size = New System.Drawing.Size(239, 31)
         Me.txt_email.TabIndex = 4
         Me.txt_email.Text = "Email"
         '
@@ -96,7 +96,7 @@ Partial Class Login
         '
         Me.lbl_iconEmail.BackColor = System.Drawing.Color.White
         Me.lbl_iconEmail.Image = Global.Songify.My.Resources.Resources.email
-        Me.lbl_iconEmail.Location = New System.Drawing.Point(324, 300)
+        Me.lbl_iconEmail.Location = New System.Drawing.Point(312, 321)
         Me.lbl_iconEmail.Name = "lbl_iconEmail"
         Me.lbl_iconEmail.Size = New System.Drawing.Size(37, 31)
         Me.lbl_iconEmail.TabIndex = 6
