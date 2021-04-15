@@ -29,8 +29,6 @@ Partial Class MainWindow
         Me.lbl_background = New System.Windows.Forms.Label()
         Me.lbl_profile = New System.Windows.Forms.Label()
         Me.EmailLog = New System.Windows.Forms.Label()
-        Me.songTXT = New System.Windows.Forms.Label()
-        Me.songchoosed = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn_Album
@@ -116,36 +114,12 @@ Partial Class MainWindow
         Me.EmailLog.TabIndex = 12
         Me.EmailLog.Text = "rfjpe"
         '
-        'songTXT
-        '
-        Me.songTXT.AutoSize = True
-        Me.songTXT.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.songTXT.ForeColor = System.Drawing.Color.White
-        Me.songTXT.Location = New System.Drawing.Point(29, 77)
-        Me.songTXT.Name = "songTXT"
-        Me.songTXT.Size = New System.Drawing.Size(72, 23)
-        Me.songTXT.TabIndex = 14
-        Me.songTXT.Text = "Song:"
-        '
-        'songchoosed
-        '
-        Me.songchoosed.AutoSize = True
-        Me.songchoosed.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.songchoosed.ForeColor = System.Drawing.Color.White
-        Me.songchoosed.Location = New System.Drawing.Point(107, 77)
-        Me.songchoosed.Name = "songchoosed"
-        Me.songchoosed.Size = New System.Drawing.Size(61, 23)
-        Me.songchoosed.TabIndex = 15
-        Me.songchoosed.Text = "rfjpe"
-        '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
-        Me.Controls.Add(Me.songchoosed)
-        Me.Controls.Add(Me.songTXT)
         Me.Controls.Add(Me.lbl_profile)
         Me.Controls.Add(Me.EmailLog)
         Me.Controls.Add(Me.btn_signOut)
@@ -173,13 +147,6 @@ Partial Class MainWindow
     Public Song As Song
     Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         EmailLog.Text = Email
-        songTXT.Visible = False
-        songchoosed.Visible = False
-        If Song IsNot Nothing Then
-            songTXT.Visible = True
-            songchoosed.Visible = True
-            songchoosed.Text = Song.GetName()
-        End If
     End Sub
 
     Public Sub New()
@@ -233,6 +200,5 @@ Partial Class MainWindow
 
     Friend WithEvents lbl_profile As Label
     Friend WithEvents EmailLog As Label
-    Friend WithEvents songTXT As Label
-    Friend WithEvents songchoosed As Label
+
 End Class

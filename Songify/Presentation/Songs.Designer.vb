@@ -33,15 +33,18 @@ Partial Class Songs
         Me.Songtxt = New System.Windows.Forms.Label()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Play = New System.Windows.Forms.Button()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.historytxt = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(61, 64)
+        Me.ListBox1.Location = New System.Drawing.Point(16, 64)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(220, 459)
+        Me.ListBox1.Size = New System.Drawing.Size(174, 459)
         Me.ListBox1.TabIndex = 0
         '
         'songNametxt
@@ -77,7 +80,7 @@ Partial Class Songs
         'GoBackBtn
         '
         Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GoBackBtn.Location = New System.Drawing.Point(61, 620)
+        Me.GoBackBtn.Location = New System.Drawing.Point(16, 620)
         Me.GoBackBtn.Name = "GoBackBtn"
         Me.GoBackBtn.Size = New System.Drawing.Size(103, 42)
         Me.GoBackBtn.TabIndex = 12
@@ -100,7 +103,7 @@ Partial Class Songs
         Me.EmailLog.AutoSize = True
         Me.EmailLog.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EmailLog.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.EmailLog.Location = New System.Drawing.Point(175, 18)
+        Me.EmailLog.Location = New System.Drawing.Point(144, 18)
         Me.EmailLog.Name = "EmailLog"
         Me.EmailLog.Size = New System.Drawing.Size(61, 23)
         Me.EmailLog.TabIndex = 14
@@ -142,12 +145,45 @@ Partial Class Songs
         Me.Play.TabIndex = 18
         Me.Play.UseVisualStyleBackColor = True
         '
+        'ListBox2
+        '
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.Location = New System.Drawing.Point(228, 64)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(174, 459)
+        Me.ListBox2.TabIndex = 19
+        '
+        'historytxt
+        '
+        Me.historytxt.AutoSize = True
+        Me.historytxt.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.historytxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.historytxt.Location = New System.Drawing.Point(224, 18)
+        Me.historytxt.Name = "historytxt"
+        Me.historytxt.Size = New System.Drawing.Size(123, 23)
+        Me.historytxt.TabIndex = 20
+        Me.historytxt.Text = "History of:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Location = New System.Drawing.Point(353, 18)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(61, 23)
+        Me.Label2.TabIndex = 21
+        Me.Label2.Text = "rfjpe"
+        '
         'Songs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.historytxt)
+        Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.Play)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Songtxt)
@@ -178,4 +214,7 @@ Partial Class Songs
     Friend WithEvents Songtxt As Label
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Play As Button
+    Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents historytxt As Label
+    Friend WithEvents Label2 As Label
 End Class

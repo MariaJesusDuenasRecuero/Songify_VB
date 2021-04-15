@@ -13,12 +13,16 @@
         AlbumSongtxt.Visible = False
         SongLengthtxt.Text = ""
         SongLengthtxt.Visible = False
+        historytxt.Visible = False
+        Label2.Text = ""
+        Label2.Visible = False
         EmailLog.Text = EmailUser
         SongDAO = New Song()
         SongsCollection = SongDAO.ReadAllSongs("C:\songify.accdb")
         For Each song In SongsCollection
             ListBox1.Items.Add(song.GetName())
         Next
+        ListBox2.Items.Add("User" & "\" & "Date")
     End Sub
 
     Public Sub New(ByVal email As String)
@@ -31,10 +35,13 @@
     End Sub
 
     Private Sub SelectSong(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-        Dim Albums As Collection : Dim AlbumDAO As Album : Dim SelectedSong As String : Dim AlbumName As String : Dim SLength As String
+        ListBox2.Items.Clear()
+        ListBox2.Items.Add("User" & "\" & "Date")
+        Dim Albums As Collection : Dim AlbumDAO As Album : Dim SelectedSong As String : Dim AlbumName As String : Dim SLength As String : Dim userDAO As New User() : Dim playbacks As Collection
         AlbumDAO = New Album()
         Albums = AlbumDAO.ReadAllAlbums("C:\songify.accdb")
         SelectedSong = ListBox1.SelectedItem
+        playbacks = userDAO.ReadAllPlaybacks("C:\songify.accdb")
         For Each Song In SongsCollection
             If SelectedSong = Song.GetName() Then
                 SongSelected = Song
@@ -45,6 +52,11 @@
                 AlbumName = album.GetName()
             End If
         Next
+        For Each playback In playbacks
+            If playback.GetSong() = SongSelected.getIdSong() Then
+                ListBox2.Items.Add(playback.GetUser() & "\" & playback.getPlDate())
+            End If
+        Next
         SLength = CalcularTiempo(SongSelected.GetSLength())
         songNametxt.Text = SelectedSong
         songNametxt.Visible = True
@@ -53,6 +65,9 @@
         SongLengthtxt.Text = SLength
         SongLengthtxt.Visible = True
         Play.Image = My.Resources.jugar1
+        historytxt.Visible = True
+        Label2.Text = SongSelected.GetName()
+        Label2.Visible = True
     End Sub
     Private Sub PlaySong(sender As Object, e As EventArgs) Handles Play.Click
         Dim Playbacks As Collection : Dim UserDAO As User
