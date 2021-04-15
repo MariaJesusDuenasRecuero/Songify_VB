@@ -23,9 +23,9 @@ Partial Class Songs
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.songName = New System.Windows.Forms.Label()
-        Me.AlbumSong = New System.Windows.Forms.Label()
-        Me.SongLength = New System.Windows.Forms.Label()
+        Me.songNametxt = New System.Windows.Forms.Label()
+        Me.AlbumSongtxt = New System.Windows.Forms.Label()
+        Me.SongLengthtxt = New System.Windows.Forms.Label()
         Me.GoBackBtn = New System.Windows.Forms.Button()
         Me.lbl_profile = New System.Windows.Forms.Label()
         Me.EmailLog = New System.Windows.Forms.Label()
@@ -44,35 +44,35 @@ Partial Class Songs
         Me.ListBox1.Size = New System.Drawing.Size(220, 459)
         Me.ListBox1.TabIndex = 0
         '
-        'songName
+        'songNametxt
         '
-        Me.songName.AutoSize = True
-        Me.songName.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.songName.Location = New System.Drawing.Point(484, 106)
-        Me.songName.Name = "songName"
-        Me.songName.Size = New System.Drawing.Size(77, 26)
-        Me.songName.TabIndex = 1
-        Me.songName.Text = "Label1"
+        Me.songNametxt.AutoSize = True
+        Me.songNametxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
+        Me.songNametxt.Location = New System.Drawing.Point(484, 106)
+        Me.songNametxt.Name = "songNametxt"
+        Me.songNametxt.Size = New System.Drawing.Size(77, 26)
+        Me.songNametxt.TabIndex = 1
+        Me.songNametxt.Text = "Label1"
         '
-        'AlbumSong
+        'AlbumSongtxt
         '
-        Me.AlbumSong.AutoSize = True
-        Me.AlbumSong.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.AlbumSong.Location = New System.Drawing.Point(484, 228)
-        Me.AlbumSong.Name = "AlbumSong"
-        Me.AlbumSong.Size = New System.Drawing.Size(77, 26)
-        Me.AlbumSong.TabIndex = 2
-        Me.AlbumSong.Text = "Label2"
+        Me.AlbumSongtxt.AutoSize = True
+        Me.AlbumSongtxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
+        Me.AlbumSongtxt.Location = New System.Drawing.Point(484, 228)
+        Me.AlbumSongtxt.Name = "AlbumSongtxt"
+        Me.AlbumSongtxt.Size = New System.Drawing.Size(77, 26)
+        Me.AlbumSongtxt.TabIndex = 2
+        Me.AlbumSongtxt.Text = "Label2"
         '
-        'SongLength
+        'SongLengthtxt
         '
-        Me.SongLength.AutoSize = True
-        Me.SongLength.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.SongLength.Location = New System.Drawing.Point(484, 354)
-        Me.SongLength.Name = "SongLength"
-        Me.SongLength.Size = New System.Drawing.Size(77, 26)
-        Me.SongLength.TabIndex = 3
-        Me.SongLength.Text = "Label3"
+        Me.SongLengthtxt.AutoSize = True
+        Me.SongLengthtxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
+        Me.SongLengthtxt.Location = New System.Drawing.Point(484, 354)
+        Me.SongLengthtxt.Name = "SongLengthtxt"
+        Me.SongLengthtxt.Size = New System.Drawing.Size(77, 26)
+        Me.SongLengthtxt.TabIndex = 3
+        Me.SongLengthtxt.Text = "Label3"
         '
         'GoBackBtn
         '
@@ -155,9 +155,9 @@ Partial Class Songs
         Me.Controls.Add(Me.EmailLog)
         Me.Controls.Add(Me.lbl_profile)
         Me.Controls.Add(Me.GoBackBtn)
-        Me.Controls.Add(Me.SongLength)
-        Me.Controls.Add(Me.AlbumSong)
-        Me.Controls.Add(Me.songName)
+        Me.Controls.Add(Me.SongLengthtxt)
+        Me.Controls.Add(Me.AlbumSongtxt)
+        Me.Controls.Add(Me.songNametxt)
         Me.Controls.Add(Me.ListBox1)
         Me.Name = "Songs"
         Me.Text = "Songs"
@@ -168,9 +168,9 @@ Partial Class Songs
     End Sub
 
     Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents songName As Label
-    Friend WithEvents AlbumSong As Label
-    Friend WithEvents SongLength As Label
+    Friend WithEvents songNametxt As Label
+    Friend WithEvents AlbumSongtxt As Label
+    Friend WithEvents SongLengthtxt As Label
     Friend WithEvents GoBackBtn As Button
     Friend WithEvents lbl_profile As Label
     Friend WithEvents EmailLog As Label

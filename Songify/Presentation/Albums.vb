@@ -1,4 +1,7 @@
-﻿Public Class Albums
+﻿Imports System.IO
+Imports System.Net
+
+Public Class Albums
     Public Albums As Collection
     Public SelectedAlbum As Album
     Public Artists As Collection
@@ -29,7 +32,7 @@
     End Sub
     Private Sub loadData(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         ListBox2.Items.Clear()
-        Dim Songs As Collection : Dim SongDAO As Song : Dim AlbumName As String : Dim AlbumDAO As Album : Dim ArtistDAO As Artist : Dim artistname As String : Dim lengthalbum As Integer : Dim lengthtotal As String
+        Dim Songs As Collection : Dim SongDAO As Song : Dim AlbumName As String : Dim AlbumDAO As Album : Dim ArtistDAO As Artist : Dim artistname As String : Dim lengthalbum As Integer : Dim lengthtotal As String : Dim wc As New WebClient()
         lengthalbum = 0
         SongDAO = New Song()
         Songs = SongDAO.ReadAllSongs("C:\songify.accdb")
@@ -52,6 +55,8 @@
                 artistname = artist.GetName()
             End If
         Next
+        Dim datos As Byte() = wc.DownloadData(SelectedAlbum.GetCover())
+        Dim ms As New MemoryStream(datos)
         lengthtotal = CalcularTiempo(lengthalbum)
         aName.Visible = True
         aName.Text = artistname
@@ -59,6 +64,8 @@
         releaseDate.Text = SelectedAlbum.getReleaseDate()
         Length.Visible = True
         Length.Text = lengthtotal
+        img_album.Image = Image.FromStream(ms)
+
     End Sub
 
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click

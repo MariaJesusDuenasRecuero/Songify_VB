@@ -199,15 +199,6 @@ Partial Class MainWindow
         Me.Email = email
 
     End Sub
-    Public Sub New(ByVal email As String, ByVal song As Song)
-
-        ' Esta llamada es exigida por el diseñador.
-        InitializeComponent()
-
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        Me.Email = email
-        Me.Song = song
-    End Sub
 
     Private Sub ArtistBtnClick(sender As Object, e As EventArgs) Handles btn_artists.Click
         Dim f2 As New Artists(Email)
@@ -235,6 +226,9 @@ Partial Class MainWindow
             Me.Hide()
         End If
 
+    End Sub
+    Private Sub signOutClick(sender As Object, e As EventArgs) Handles btn_signOut.Click
+        End
     End Sub
 
     Friend WithEvents lbl_profile As Label

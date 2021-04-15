@@ -28,7 +28,7 @@ Partial Class Albums
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.Length = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.img_album = New System.Windows.Forms.PictureBox()
         Me.lbl_albums = New System.Windows.Forms.Label()
         Me.lbl_songs = New System.Windows.Forms.Label()
         Me.lbl_artistName = New System.Windows.Forms.Label()
@@ -36,7 +36,7 @@ Partial Class Albums
         Me.lbl_length = New System.Windows.Forms.Label()
         Me.lbl_profile = New System.Windows.Forms.Label()
         Me.EmailLog = New System.Windows.Forms.Label()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.img_album, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GoBackBtn
@@ -98,14 +98,14 @@ Partial Class Albums
         Me.Length.TabIndex = 13
         Me.Length.Text = "Label2"
         '
-        'PictureBox1
+        'img_album
         '
-        Me.PictureBox1.Image = Global.Songify.My.Resources.Resources.imagenDefault
-        Me.PictureBox1.Location = New System.Drawing.Point(395, 32)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(522, 508)
-        Me.PictureBox1.TabIndex = 9
-        Me.PictureBox1.TabStop = False
+        Me.img_album.Image = Global.Songify.My.Resources.Resources.imagenDefault
+        Me.img_album.Location = New System.Drawing.Point(395, 32)
+        Me.img_album.Name = "img_album"
+        Me.img_album.Size = New System.Drawing.Size(522, 508)
+        Me.img_album.TabIndex = 9
+        Me.img_album.TabStop = False
         '
         'lbl_albums
         '
@@ -205,20 +205,20 @@ Partial Class Albums
         Me.Controls.Add(Me.Length)
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.GoBackBtn)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.img_album)
         Me.Controls.Add(Me.releaseDate)
         Me.Controls.Add(Me.aName)
         Me.Controls.Add(Me.ListBox1)
         Me.Name = "Albums"
         Me.Text = "Albums"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.img_album, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents GoBackBtn As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents img_album As PictureBox
     Friend WithEvents releaseDate As Label
     Friend WithEvents aName As Label
     Friend WithEvents ListBox1 As ListBox
