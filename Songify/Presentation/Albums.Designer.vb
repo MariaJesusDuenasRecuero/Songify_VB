@@ -22,13 +22,13 @@ Partial Class Albums
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Albums))
         Me.GoBackBtn = New System.Windows.Forms.Button()
         Me.releaseDate = New System.Windows.Forms.Label()
         Me.aName = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.Length = New System.Windows.Forms.Label()
-        Me.img_album = New System.Windows.Forms.PictureBox()
         Me.lbl_albums = New System.Windows.Forms.Label()
         Me.lbl_songs = New System.Windows.Forms.Label()
         Me.lbl_artistName = New System.Windows.Forms.Label()
@@ -36,15 +36,19 @@ Partial Class Albums
         Me.lbl_length = New System.Windows.Forms.Label()
         Me.lbl_profile = New System.Windows.Forms.Label()
         Me.EmailLog = New System.Windows.Forms.Label()
+        Me.img_album = New System.Windows.Forms.PictureBox()
+        Me.btn_delete = New System.Windows.Forms.Button()
+        Me.btn_update = New System.Windows.Forms.Button()
+        Me.btn_insert = New System.Windows.Forms.Button()
         CType(Me.img_album, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GoBackBtn
         '
         Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GoBackBtn.Location = New System.Drawing.Point(51, 631)
+        Me.GoBackBtn.Location = New System.Drawing.Point(29, 643)
         Me.GoBackBtn.Name = "GoBackBtn"
-        Me.GoBackBtn.Size = New System.Drawing.Size(103, 42)
+        Me.GoBackBtn.Size = New System.Drawing.Size(81, 42)
         Me.GoBackBtn.TabIndex = 11
         Me.GoBackBtn.Text = "Back"
         Me.GoBackBtn.UseVisualStyleBackColor = True
@@ -82,7 +86,7 @@ Partial Class Albums
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(33, 362)
+        Me.ListBox2.Location = New System.Drawing.Point(29, 325)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.Size = New System.Drawing.Size(310, 199)
         Me.ListBox2.TabIndex = 12
@@ -97,15 +101,6 @@ Partial Class Albums
         Me.Length.Size = New System.Drawing.Size(57, 20)
         Me.Length.TabIndex = 13
         Me.Length.Text = "Label2"
-        '
-        'img_album
-        '
-        Me.img_album.Image = Global.Songify.My.Resources.Resources.imagenDefault
-        Me.img_album.Location = New System.Drawing.Point(395, 32)
-        Me.img_album.Name = "img_album"
-        Me.img_album.Size = New System.Drawing.Size(522, 508)
-        Me.img_album.TabIndex = 9
-        Me.img_album.TabStop = False
         '
         'lbl_albums
         '
@@ -124,7 +119,7 @@ Partial Class Albums
         Me.lbl_songs.AutoSize = True
         Me.lbl_songs.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_songs.ForeColor = System.Drawing.Color.White
-        Me.lbl_songs.Location = New System.Drawing.Point(29, 336)
+        Me.lbl_songs.Location = New System.Drawing.Point(25, 299)
         Me.lbl_songs.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_songs.Name = "lbl_songs"
         Me.lbl_songs.Size = New System.Drawing.Size(75, 23)
@@ -189,12 +184,66 @@ Partial Class Albums
         Me.EmailLog.TabIndex = 19
         Me.EmailLog.Text = "rfjpe"
         '
+        'img_album
+        '
+        Me.img_album.Image = Global.Songify.My.Resources.Resources.imagenDefault
+        Me.img_album.Location = New System.Drawing.Point(395, 32)
+        Me.img_album.Name = "img_album"
+        Me.img_album.Size = New System.Drawing.Size(522, 508)
+        Me.img_album.TabIndex = 9
+        Me.img_album.TabStop = False
+        '
+        'btn_delete
+        '
+        Me.btn_delete.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_delete.ForeColor = System.Drawing.Color.Black
+        Me.btn_delete.Image = Global.Songify.My.Resources.Resources.eliminar
+        Me.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_delete.Location = New System.Drawing.Point(258, 546)
+        Me.btn_delete.Name = "btn_delete"
+        Me.btn_delete.Size = New System.Drawing.Size(81, 57)
+        Me.btn_delete.TabIndex = 23
+        Me.btn_delete.Text = "Delete"
+        Me.btn_delete.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_delete.UseVisualStyleBackColor = True
+        '
+        'btn_update
+        '
+        Me.btn_update.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_update.ForeColor = System.Drawing.Color.Black
+        Me.btn_update.Image = Global.Songify.My.Resources.Resources.actualizar
+        Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_update.Location = New System.Drawing.Point(135, 546)
+        Me.btn_update.Name = "btn_update"
+        Me.btn_update.Size = New System.Drawing.Size(81, 57)
+        Me.btn_update.TabIndex = 22
+        Me.btn_update.Text = "Update"
+        Me.btn_update.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_update.UseVisualStyleBackColor = True
+        '
+        'btn_insert
+        '
+        Me.btn_insert.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_insert.ForeColor = System.Drawing.Color.Black
+        Me.btn_insert.Image = CType(resources.GetObject("btn_insert.Image"), System.Drawing.Image)
+        Me.btn_insert.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_insert.Location = New System.Drawing.Point(22, 546)
+        Me.btn_insert.Name = "btn_insert"
+        Me.btn_insert.Size = New System.Drawing.Size(81, 57)
+        Me.btn_insert.TabIndex = 21
+        Me.btn_insert.Text = "Insert"
+        Me.btn_insert.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_insert.UseVisualStyleBackColor = True
+        '
         'Albums
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
+        Me.Controls.Add(Me.btn_delete)
+        Me.Controls.Add(Me.btn_update)
+        Me.Controls.Add(Me.btn_insert)
         Me.Controls.Add(Me.lbl_profile)
         Me.Controls.Add(Me.EmailLog)
         Me.Controls.Add(Me.lbl_length)
@@ -231,4 +280,7 @@ Partial Class Albums
     Friend WithEvents lbl_length As Label
     Friend WithEvents lbl_profile As Label
     Friend WithEvents EmailLog As Label
+    Friend WithEvents btn_delete As Button
+    Friend WithEvents btn_update As Button
+    Friend WithEvents btn_insert As Button
 End Class

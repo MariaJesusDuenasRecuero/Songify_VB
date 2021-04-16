@@ -22,6 +22,7 @@ Partial Class Songs
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Songs))
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.songNametxt = New System.Windows.Forms.Label()
         Me.AlbumSongtxt = New System.Windows.Forms.Label()
@@ -29,29 +30,35 @@ Partial Class Songs
         Me.GoBackBtn = New System.Windows.Forms.Button()
         Me.lbl_profile = New System.Windows.Forms.Label()
         Me.EmailLog = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Songtxt = New System.Windows.Forms.Label()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.Play = New System.Windows.Forms.Button()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.historytxt = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Play = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btn_delete = New System.Windows.Forms.Button()
+        Me.btn_update = New System.Windows.Forms.Button()
+        Me.btn_insert = New System.Windows.Forms.Button()
+        Me.btn_fav = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(16, 64)
+        Me.ListBox1.Location = New System.Drawing.Point(45, 116)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(174, 459)
+        Me.ListBox1.Size = New System.Drawing.Size(174, 407)
         Me.ListBox1.TabIndex = 0
         '
         'songNametxt
         '
         Me.songNametxt.AutoSize = True
         Me.songNametxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.songNametxt.Location = New System.Drawing.Point(484, 106)
+        Me.songNametxt.Location = New System.Drawing.Point(484, 116)
         Me.songNametxt.Name = "songNametxt"
         Me.songNametxt.Size = New System.Drawing.Size(77, 26)
         Me.songNametxt.TabIndex = 1
@@ -80,7 +87,7 @@ Partial Class Songs
         'GoBackBtn
         '
         Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GoBackBtn.Location = New System.Drawing.Point(16, 620)
+        Me.GoBackBtn.Location = New System.Drawing.Point(35, 648)
         Me.GoBackBtn.Name = "GoBackBtn"
         Me.GoBackBtn.Size = New System.Drawing.Size(103, 42)
         Me.GoBackBtn.TabIndex = 12
@@ -109,14 +116,6 @@ Partial Class Songs
         Me.EmailLog.TabIndex = 14
         Me.EmailLog.Text = "rfjpe"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(616, 64)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(309, 316)
-        Me.PictureBox1.TabIndex = 15
-        Me.PictureBox1.TabStop = False
-        '
         'Songtxt
         '
         Me.Songtxt.AutoSize = True
@@ -135,22 +134,12 @@ Partial Class Songs
         Me.ProgressBar1.Size = New System.Drawing.Size(265, 23)
         Me.ProgressBar1.TabIndex = 17
         '
-        'Play
-        '
-        Me.Play.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.Play.Image = Global.Songify.My.Resources.Resources.jugar1
-        Me.Play.Location = New System.Drawing.Point(733, 613)
-        Me.Play.Name = "Play"
-        Me.Play.Size = New System.Drawing.Size(70, 49)
-        Me.Play.TabIndex = 18
-        Me.Play.UseVisualStyleBackColor = True
-        '
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(228, 64)
+        Me.ListBox2.Location = New System.Drawing.Point(257, 116)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(174, 459)
+        Me.ListBox2.Size = New System.Drawing.Size(174, 407)
         Me.ListBox2.TabIndex = 19
         '
         'historytxt
@@ -158,7 +147,7 @@ Partial Class Songs
         Me.historytxt.AutoSize = True
         Me.historytxt.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.historytxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.historytxt.Location = New System.Drawing.Point(224, 18)
+        Me.historytxt.Location = New System.Drawing.Point(15, 50)
         Me.historytxt.Name = "historytxt"
         Me.historytxt.Size = New System.Drawing.Size(123, 23)
         Me.historytxt.TabIndex = 20
@@ -169,11 +158,107 @@ Partial Class Songs
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(353, 18)
+        Me.Label2.Location = New System.Drawing.Point(144, 50)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(61, 23)
         Me.Label2.TabIndex = 21
         Me.Label2.Text = "rfjpe"
+        '
+        'Play
+        '
+        Me.Play.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
+        Me.Play.Image = Global.Songify.My.Resources.Resources.jugar1
+        Me.Play.Location = New System.Drawing.Point(733, 613)
+        Me.Play.Name = "Play"
+        Me.Play.Size = New System.Drawing.Size(70, 49)
+        Me.Play.TabIndex = 18
+        Me.Play.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(616, 64)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(309, 316)
+        Me.PictureBox1.TabIndex = 15
+        Me.PictureBox1.TabStop = False
+        '
+        'btn_delete
+        '
+        Me.btn_delete.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_delete.ForeColor = System.Drawing.Color.Black
+        Me.btn_delete.Image = Global.Songify.My.Resources.Resources.eliminar
+        Me.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_delete.Location = New System.Drawing.Point(350, 544)
+        Me.btn_delete.Name = "btn_delete"
+        Me.btn_delete.Size = New System.Drawing.Size(81, 57)
+        Me.btn_delete.TabIndex = 24
+        Me.btn_delete.Text = "Delete"
+        Me.btn_delete.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_delete.UseVisualStyleBackColor = True
+        '
+        'btn_update
+        '
+        Me.btn_update.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_update.ForeColor = System.Drawing.Color.Black
+        Me.btn_update.Image = Global.Songify.My.Resources.Resources.actualizar
+        Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_update.Location = New System.Drawing.Point(138, 544)
+        Me.btn_update.Name = "btn_update"
+        Me.btn_update.Size = New System.Drawing.Size(81, 57)
+        Me.btn_update.TabIndex = 23
+        Me.btn_update.Text = "Update"
+        Me.btn_update.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_update.UseVisualStyleBackColor = True
+        '
+        'btn_insert
+        '
+        Me.btn_insert.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_insert.ForeColor = System.Drawing.Color.Black
+        Me.btn_insert.Image = CType(resources.GetObject("btn_insert.Image"), System.Drawing.Image)
+        Me.btn_insert.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_insert.Location = New System.Drawing.Point(45, 544)
+        Me.btn_insert.Name = "btn_insert"
+        Me.btn_insert.Size = New System.Drawing.Size(81, 57)
+        Me.btn_insert.TabIndex = 22
+        Me.btn_insert.Text = "Insert"
+        Me.btn_insert.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_insert.UseVisualStyleBackColor = True
+        '
+        'btn_fav
+        '
+        Me.btn_fav.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_fav.ForeColor = System.Drawing.Color.Black
+        Me.btn_fav.Image = Global.Songify.My.Resources.Resources.estrella
+        Me.btn_fav.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_fav.Location = New System.Drawing.Point(257, 544)
+        Me.btn_fav.Name = "btn_fav"
+        Me.btn_fav.Size = New System.Drawing.Size(81, 57)
+        Me.btn_fav.TabIndex = 25
+        Me.btn_fav.Text = "Favorite"
+        Me.btn_fav.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_fav.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(43, 88)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(83, 25)
+        Me.Label1.TabIndex = 26
+        Me.Label1.Text = "Songs"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(241, 88)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(199, 25)
+        Me.Label3.TabIndex = 27
+        Me.Label3.Text = "Favourite songs"
         '
         'Songs
         '
@@ -181,6 +266,12 @@ Partial Class Songs
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btn_fav)
+        Me.Controls.Add(Me.btn_delete)
+        Me.Controls.Add(Me.btn_update)
+        Me.Controls.Add(Me.btn_insert)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.historytxt)
         Me.Controls.Add(Me.ListBox2)
@@ -217,4 +308,10 @@ Partial Class Songs
     Friend WithEvents ListBox2 As ListBox
     Friend WithEvents historytxt As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents btn_delete As Button
+    Friend WithEvents btn_update As Button
+    Friend WithEvents btn_insert As Button
+    Friend WithEvents btn_fav As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
 End Class

@@ -242,5 +242,17 @@
   <ItemGroup>
     <None Include="Resources\boton-de-pausa-de-video.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estrella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anadir.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

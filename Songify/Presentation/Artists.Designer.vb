@@ -22,18 +22,22 @@ Partial Class Artists
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Artists))
         Me.lsb_artist = New System.Windows.Forms.ListBox()
         Me.aName = New System.Windows.Forms.Label()
         Me.country = New System.Windows.Forms.Label()
         Me.lst_album = New System.Windows.Forms.ListBox()
         Me.GoBackBtn = New System.Windows.Forms.Button()
-        Me.im_artists = New System.Windows.Forms.PictureBox()
         Me.lbl_artists = New System.Windows.Forms.Label()
         Me.lbl_albums = New System.Windows.Forms.Label()
         Me.lbl_name = New System.Windows.Forms.Label()
         Me.lbl_nationality = New System.Windows.Forms.Label()
         Me.EmailLog = New System.Windows.Forms.Label()
         Me.lbl_profile = New System.Windows.Forms.Label()
+        Me.btn_delete = New System.Windows.Forms.Button()
+        Me.btn_update = New System.Windows.Forms.Button()
+        Me.btn_insert = New System.Windows.Forms.Button()
+        Me.im_artists = New System.Windows.Forms.PictureBox()
         CType(Me.im_artists, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -83,23 +87,13 @@ Partial Class Artists
         '
         Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.GoBackBtn.ForeColor = System.Drawing.Color.Black
-        Me.GoBackBtn.Location = New System.Drawing.Point(55, 636)
+        Me.GoBackBtn.Location = New System.Drawing.Point(49, 642)
         Me.GoBackBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.GoBackBtn.Name = "GoBackBtn"
-        Me.GoBackBtn.Size = New System.Drawing.Size(137, 42)
+        Me.GoBackBtn.Size = New System.Drawing.Size(88, 42)
         Me.GoBackBtn.TabIndex = 5
         Me.GoBackBtn.Text = "Back"
         Me.GoBackBtn.UseVisualStyleBackColor = True
-        '
-        'im_artists
-        '
-        Me.im_artists.Image = Global.Songify.My.Resources.Resources.imagenDefault
-        Me.im_artists.Location = New System.Drawing.Point(429, 34)
-        Me.im_artists.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.im_artists.Name = "im_artists"
-        Me.im_artists.Size = New System.Drawing.Size(509, 507)
-        Me.im_artists.TabIndex = 3
-        Me.im_artists.TabStop = False
         '
         'lbl_artists
         '
@@ -169,12 +163,67 @@ Partial Class Artists
         Me.lbl_profile.TabIndex = 11
         Me.lbl_profile.Text = "Logged as:"
         '
+        'btn_delete
+        '
+        Me.btn_delete.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_delete.ForeColor = System.Drawing.Color.Black
+        Me.btn_delete.Image = Global.Songify.My.Resources.Resources.eliminar
+        Me.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_delete.Location = New System.Drawing.Point(319, 555)
+        Me.btn_delete.Name = "btn_delete"
+        Me.btn_delete.Size = New System.Drawing.Size(81, 57)
+        Me.btn_delete.TabIndex = 14
+        Me.btn_delete.Text = "Delete"
+        Me.btn_delete.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_delete.UseVisualStyleBackColor = True
+        '
+        'btn_update
+        '
+        Me.btn_update.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_update.ForeColor = System.Drawing.Color.Black
+        Me.btn_update.Image = Global.Songify.My.Resources.Resources.actualizar
+        Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_update.Location = New System.Drawing.Point(160, 555)
+        Me.btn_update.Name = "btn_update"
+        Me.btn_update.Size = New System.Drawing.Size(81, 57)
+        Me.btn_update.TabIndex = 13
+        Me.btn_update.Text = "Update"
+        Me.btn_update.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_update.UseVisualStyleBackColor = True
+        '
+        'btn_insert
+        '
+        Me.btn_insert.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_insert.ForeColor = System.Drawing.Color.Black
+        Me.btn_insert.Image = CType(resources.GetObject("btn_insert.Image"), System.Drawing.Image)
+        Me.btn_insert.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_insert.Location = New System.Drawing.Point(17, 555)
+        Me.btn_insert.Name = "btn_insert"
+        Me.btn_insert.Size = New System.Drawing.Size(81, 57)
+        Me.btn_insert.TabIndex = 12
+        Me.btn_insert.Text = "Insert"
+        Me.btn_insert.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_insert.UseVisualStyleBackColor = True
+        '
+        'im_artists
+        '
+        Me.im_artists.Image = Global.Songify.My.Resources.Resources.imagenDefault
+        Me.im_artists.Location = New System.Drawing.Point(429, 34)
+        Me.im_artists.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.im_artists.Name = "im_artists"
+        Me.im_artists.Size = New System.Drawing.Size(509, 507)
+        Me.im_artists.TabIndex = 3
+        Me.im_artists.TabStop = False
+        '
         'Artists
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
+        Me.Controls.Add(Me.btn_delete)
+        Me.Controls.Add(Me.btn_update)
+        Me.Controls.Add(Me.btn_insert)
         Me.Controls.Add(Me.lbl_profile)
         Me.Controls.Add(Me.EmailLog)
         Me.Controls.Add(Me.lbl_nationality)
@@ -210,4 +259,7 @@ Partial Class Artists
     Friend WithEvents lbl_nationality As Label
     Friend WithEvents EmailLog As Label
     Friend WithEvents lbl_profile As Label
+    Friend WithEvents btn_insert As Button
+    Friend WithEvents btn_update As Button
+    Friend WithEvents btn_delete As Button
 End Class

@@ -53,16 +53,19 @@ Public Class SignUp
                 'valido = False
             End If
             email = txt_email.Text
+            If (email.Contains("@gmail.com") Or email.Contains("@hotmail.com") Or email.Contains("@hotmail.com") Or email.Contains("@cancionfy.com")) Then
+
+            Else
+                MessageBox.Show("Wrong format of the email, please rewrite it")
+
+            End If
+
+
+
             If txt_birthdate.Text = "" Then
                 MessageBox.Show("Please introduce a valid value")
                 valido = False
             End If
-            'If txt_birthdate.Text = Format(txt_birthdate.Text, Style:="dd/MM/yyyy") Then
-            'valido = True
-            'Else
-            'valido = False
-            'MsgBox("Error Fecha")
-            'End If
             birthdate = txt_birthdate.Text
             If valido = True Then
                 u = New User(email)
@@ -74,6 +77,7 @@ Public Class SignUp
         Catch ex As Exception
             MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
+
     End Sub
 
 End Class
