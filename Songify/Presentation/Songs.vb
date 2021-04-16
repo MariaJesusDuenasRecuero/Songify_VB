@@ -4,7 +4,7 @@
     Public EmailUser As String
     Public User As User
     Public IdPlay As Integer
-
+    Public path As String
     Private Sub Songs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SongDAO As Song
         songNametxt.Text = ""
@@ -18,20 +18,21 @@
         Label2.Visible = False
         EmailLog.Text = EmailUser
         SongDAO = New Song()
-        SongsCollection = SongDAO.ReadAllSongs("C:\songify.accdb")
+        SongsCollection = SongDAO.ReadAllSongs(path)
         For Each song In SongsCollection
             ListBox1.Items.Add(song.GetName())
         Next
         ListBox2.Items.Add("User" & "\" & "Date")
     End Sub
 
-    Public Sub New(ByVal email As String)
+    Public Sub New(email As String, path As String)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         EmailUser = email
+        Me.path = path
     End Sub
 
     Private Sub SelectSong(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
@@ -39,9 +40,9 @@
         ListBox2.Items.Add("User" & "\" & "Date")
         Dim Albums As Collection : Dim AlbumDAO As Album : Dim SelectedSong As String : Dim AlbumName As String : Dim SLength As String : Dim userDAO As New User() : Dim playbacks As Collection
         AlbumDAO = New Album()
-        Albums = AlbumDAO.ReadAllAlbums("C:\songify.accdb")
+        Albums = AlbumDAO.ReadAllAlbums(path)
         SelectedSong = ListBox1.SelectedItem
-        playbacks = userDAO.ReadAllPlaybacks("C:\songify.accdb")
+        playbacks = userDAO.ReadAllPlaybacks(path)
         For Each Song In SongsCollection
             If SelectedSong = Song.GetName() Then
                 SongSelected = Song
@@ -72,7 +73,7 @@
     Private Sub PlaySong(sender As Object, e As EventArgs) Handles Play.Click
         Dim Playbacks As Collection : Dim UserDAO As User
         UserDAO = New User()
-        Playbacks = UserDAO.ReadAllPlaybacks("C:\songify.accdb")
+        Playbacks = UserDAO.ReadAllPlaybacks(path)
         For Each playback In Playbacks
             IdPlay += 1
         Next
@@ -116,10 +117,8 @@
         Return horatotal
     End Function
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
-        Dim f2 As New MainWindow(EmailUser)
+        Dim f2 As New MainWindow(EmailUser, path)
         f2.Show()
         Me.Hide()
     End Sub
-
-
 End Class

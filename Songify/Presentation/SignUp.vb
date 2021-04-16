@@ -1,6 +1,7 @@
 ﻿Imports System.Data
 Imports System.Data.OleDb
 Public Class SignUp
+    Public path As String
     Private Sub btn_loginSignUp_Click(sender As Object, e As EventArgs) Handles btn_loginSignUp.Click
         Dim f2 As New Login
         f2.Show()
@@ -12,7 +13,14 @@ Public Class SignUp
         f2.Show()
         Me.Hide()
     End Sub
+    Public Sub New(path As String)
 
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Me.path = path
+    End Sub
     Private Sub SignUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -72,7 +80,7 @@ Public Class SignUp
                 u.SetName(name)
                 u.SetSurname(surname)
                 u.SetBirthdate(birthdate)
-                u.InsertUser()
+                u.InsertUser(path)
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

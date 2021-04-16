@@ -5,6 +5,7 @@ Public Class Artists
     Public SelectedArtist As Artist
     Public Artists As Collection
     Public EmailUser As String
+    Public path As String
     Private Sub Artists_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         aName.Text = ""
         aName.Visible = False
@@ -13,7 +14,7 @@ Public Class Artists
         EmailLog.Text = EmailUser
         Dim ArtistDAO As Artist
         ArtistDAO = New Artist()
-        Artists = ArtistDAO.ReadAllArtists("C:\songify.accdb")
+        Artists = ArtistDAO.ReadAllArtists(path)
         For Each artist In Artists
             lsb_artist.Items.Add(artist.GetName())
         Next
@@ -21,13 +22,14 @@ Public Class Artists
 
 
     End Sub
-    Public Sub New(EmailUser As String)
+    Public Sub New(EmailUser As String, path As String)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         Me.EmailUser = EmailUser
+        Me.path = path
     End Sub
 
     Private Sub loadData(sender As Object, e As EventArgs) Handles lsb_artist.SelectedIndexChanged
@@ -35,7 +37,7 @@ Public Class Artists
         Dim Albums As Collection : Dim AlbumDAO As Album : Dim ArtistName As String : Dim wc As New WebClient()
 
         AlbumDAO = New Album()
-        Albums = AlbumDAO.ReadAllAlbums("C:\songify.accdb")
+        Albums = AlbumDAO.ReadAllAlbums(path)
         ArtistName = lsb_artist.SelectedItem
         For Each artist In Artists
             If artist.GetName() = ArtistName Then
@@ -58,7 +60,7 @@ Public Class Artists
     End Sub
 
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
-        Dim f2 As New MainWindow(EmailUser)
+        Dim f2 As New MainWindow(EmailUser, path)
         f2.Show()
         Me.Hide()
     End Sub

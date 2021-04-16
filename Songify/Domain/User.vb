@@ -42,14 +42,14 @@
     Public Function ReadUser()
         Return Me.usrDAO.Read(Me)
     End Function
-    Public Function InsertUser() As Integer
-        Return Me.usrDAO.Insert(Me, "C:\songify.accdb")
+    Public Function InsertUser(path As String) As Integer
+        Return Me.usrDAO.Insert(Me, path)
     End Function
-    Public Function UpdateUser() As Integer
-        Return Me.usrDAO.Update(Me, "C:\songify.accdb")
+    Public Function UpdateUser(path As String) As Integer
+        Return Me.usrDAO.Update(Me, path)
     End Function
-    Public Function DeleteUser() As Integer
-        Return Me.usrDAO.Delete(Me, "C:\songify.accdb")
+    Public Function DeleteUser(path As String) As Integer
+        Return Me.usrDAO.Delete(Me, path)
     End Function
 
 End Class

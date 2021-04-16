@@ -40,7 +40,7 @@ Public Class Login
 
 
     Private Sub btn_signUp_Click(sender As Object, e As EventArgs) Handles btn_signUp.Click
-        Dim f2 As New SignUp
+        Dim f2 As New SignUp(fileName)
         f2.Show()
         Me.Hide()
     End Sub
@@ -50,7 +50,7 @@ Public Class Login
         Dim useremail As String : Dim UserDAO As User : Dim iguales As Boolean
         iguales = False
         UserDAO = New User()
-        Users = UserDAO.ReadAllUsers("C:\songify.accdb")
+        Users = UserDAO.ReadAllUsers("C:\Users\manue\Documents\songify.accdb")
         For Each user In Users
             useremail = user.GetEmail()
             If user.GetEmail() = txt_email.Text Then
@@ -60,7 +60,7 @@ Public Class Login
         Next
         If iguales = True Then
             MsgBox("Welcome to our application", MsgBoxStyle.OkOnly, "Allow to Access")
-            Dim f2 As New MainWindow(txt_email.Text)
+            Dim f2 As New MainWindow(txt_email.Text, fileName)
             'lbl_warning.Enabled = False
             f2.Show()
             Me.Hide()
@@ -80,4 +80,5 @@ Public Class Login
 
 
     End Sub
+
 End Class

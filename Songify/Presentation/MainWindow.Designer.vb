@@ -145,6 +145,7 @@ Partial Class MainWindow
     Public Songs As Collection
     Public Email As String
     Public Song As Song
+    Public path As String
     Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         EmailLog.Text = Email
     End Sub
@@ -157,42 +158,32 @@ Partial Class MainWindow
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
-    Public Sub New(ByVal email As String)
+    Public Sub New(ByVal email As String, ByVal path As String)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         Me.Email = email
+        Me.path = path
 
     End Sub
 
     Private Sub ArtistBtnClick(sender As Object, e As EventArgs) Handles btn_artists.Click
-        Dim f2 As New Artists(Email)
+        Dim f2 As New Artists(Email, path)
         f2.Show()
         Me.Hide()
     End Sub
     Private Sub AlbumBtnClick(sender As Object, e As EventArgs) Handles btn_Album.Click
-        Dim f2 As New Albums(Email)
+        Dim f2 As New Albums(Email, path)
         f2.Show()
         Me.Hide()
     End Sub
 
     Private Sub SongBtnClick(sender As Object, e As EventArgs) Handles btn_songs.Click
-        Dim f2 As New Songs(Email)
+        Dim f2 As New Songs(Email, path)
         f2.Show()
         Me.Hide()
-    End Sub
-
-    Private Sub btn_play_Click(sender As Object, e As EventArgs)
-        If Song Is Nothing Then
-            MsgBox("Choose a Song to play")
-        Else
-            Dim f2 As New SongPlayback(Email, Song)
-            f2.Show()
-            Me.Hide()
-        End If
-
     End Sub
     Private Sub signOutClick(sender As Object, e As EventArgs) Handles btn_signOut.Click
         End
