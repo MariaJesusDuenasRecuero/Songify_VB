@@ -17,7 +17,7 @@ Public Class Albums
         EmailLog.Text = EmailUser
         Dim AlbumDAO As Album
         AlbumDAO = New Album()
-        Albums = AlbumDAO.ReadAllAlbums("C:\Users\manue\Documents\songify.accdb")
+        Albums = AlbumDAO.ReadAllAlbums(path)
         For Each album In Albums
             ListBox1.Items.Add(album.GetName())
         Next

@@ -16,6 +16,7 @@ Public Class Login
 
     Private Sub btn_selectDB_Click(sender As Object, e As EventArgs) Handles btn_selectDB.Click
         If Me.ofdPath.ShowDialog = DialogResult.OK Then
+
             btn_connect.Enabled = True
             fileName = ofdPath.FileName
             btn_connect.Enabled = True
@@ -25,6 +26,18 @@ Public Class Login
 
 
     Private Sub btn_connect_Click(sender As Object, e As EventArgs) Handles btn_connect.Click
+        Dim AlbumDAO As New Album()
+
+
+        Try
+            AlbumDAO.ReadAllAlbums(ofdPath.FileName)
+            MessageBox.Show("Database has been read!", "Connection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show("Incorrect database, choose another one", "Connection error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End Try
+
+
         btn_login.Enabled = True
         btn_signUp.Enabled = True
         txt_email.Enabled = True
@@ -50,7 +63,7 @@ Public Class Login
         Dim useremail As String : Dim UserDAO As User : Dim iguales As Boolean
         iguales = False
         UserDAO = New User()
-        Users = UserDAO.ReadAllUsers("C:\Users\manue\Documents\songify.accdb")
+        Users = UserDAO.ReadAllUsers(fileName)
         For Each user In Users
             useremail = user.GetEmail()
             If user.GetEmail() = txt_email.Text Then

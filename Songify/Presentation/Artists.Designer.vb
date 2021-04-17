@@ -38,6 +38,7 @@ Partial Class Artists
         Me.btn_update = New System.Windows.Forms.Button()
         Me.btn_insert = New System.Windows.Forms.Button()
         Me.im_artists = New System.Windows.Forms.PictureBox()
+        Me.btnFav = New System.Windows.Forms.Button()
         CType(Me.im_artists, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -87,7 +88,7 @@ Partial Class Artists
         '
         Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.GoBackBtn.ForeColor = System.Drawing.Color.Black
-        Me.GoBackBtn.Location = New System.Drawing.Point(49, 642)
+        Me.GoBackBtn.Location = New System.Drawing.Point(21, 653)
         Me.GoBackBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.GoBackBtn.Name = "GoBackBtn"
         Me.GoBackBtn.Size = New System.Drawing.Size(88, 42)
@@ -183,7 +184,7 @@ Partial Class Artists
         Me.btn_update.ForeColor = System.Drawing.Color.Black
         Me.btn_update.Image = Global.Songify.My.Resources.Resources.actualizar
         Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_update.Location = New System.Drawing.Point(160, 555)
+        Me.btn_update.Location = New System.Drawing.Point(116, 555)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(81, 57)
         Me.btn_update.TabIndex = 13
@@ -215,12 +216,27 @@ Partial Class Artists
         Me.im_artists.TabIndex = 3
         Me.im_artists.TabStop = False
         '
+        'btnFav
+        '
+        Me.btnFav.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFav.ForeColor = System.Drawing.Color.Black
+        Me.btnFav.Image = Global.Songify.My.Resources.Resources.estrella
+        Me.btnFav.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnFav.Location = New System.Drawing.Point(223, 555)
+        Me.btnFav.Name = "btnFav"
+        Me.btnFav.Size = New System.Drawing.Size(81, 57)
+        Me.btnFav.TabIndex = 15
+        Me.btnFav.Text = "Favorite"
+        Me.btnFav.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnFav.UseVisualStyleBackColor = True
+        '
         'Artists
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
+        Me.Controls.Add(Me.btnFav)
         Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.btn_update)
         Me.Controls.Add(Me.btn_insert)
@@ -262,4 +278,5 @@ Partial Class Artists
     Friend WithEvents btn_insert As Button
     Friend WithEvents btn_update As Button
     Friend WithEvents btn_delete As Button
+    Friend WithEvents btnFav As Button
 End Class

@@ -60,14 +60,14 @@ Public Class SignUp
                 'Else
                 'valido = False
             End If
-            email = txt_email.Text
-            If (email.Contains("@gmail.com") Or email.Contains("@hotmail.com") Or email.Contains("@hotmail.com") Or email.Contains("@cancionfy.com")) Then
 
-            Else
-                MessageBox.Show("Wrong format of the email, please rewrite it")
-
-            End If
-
+            Try
+                email = txt_email.Text
+                If (email.Contains("@gmail.com") Or email.Contains("@hotmail.com") Or email.Contains("@hotmail.es") Or email.Contains("@cancionfy.com")) Then
+                End If
+            Catch ex As Exception
+                MsgBox("Please introduce a correct format of the email", MsgBoxStyle.OkOnly, "Warning")
+            End Try
 
 
             If txt_birthdate.Text = "" Then
@@ -81,11 +81,14 @@ Public Class SignUp
                 u.SetSurname(surname)
                 u.SetBirthdate(birthdate)
                 u.InsertUser(path)
+                MsgBox("Registered user", MsgBoxStyle.OkOnly, "Information")
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
 
     End Sub
+
+
 
 End Class
