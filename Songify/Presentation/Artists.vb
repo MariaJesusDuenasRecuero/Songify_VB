@@ -81,9 +81,7 @@ Public Class Artists
         FavArtist.setFavDate(Date.Today())
         FavArtist.InsertFavArtist()
     End Sub
-
-    Private Sub ReadAllFavArtists 
-
+ 
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
         Dim f2 As New MainWindow(EmailUser, path)
         f2.Show()
