@@ -19,10 +19,6 @@ Public Class Artists
             lsb_artist.Items.Add(artist.GetName())
         Next
         btnFav.Enabled = False
-
-
-
-
     End Sub
     Public Sub New(EmailUser As String, path As String)
 
