@@ -18,6 +18,8 @@ Public Class Artists
         For Each artist In Artists
             lsb_artist.Items.Add(artist.GetName())
         Next
+        btnFav.Enabled = False
+
 
 
 
@@ -57,7 +59,30 @@ Public Class Artists
         country.Visible = True
         country.Text = SelectedArtist.GetCountry()
         im_artists.Image = Image.FromStream(ms)
+
+        btnFav.Enabled = True
     End Sub
+
+    Private Sub CovertArtistToFav(sender As Object, e As EventArgs) Handles btnFav.Click
+        lsb_favArtist.Items.Clear()
+        Dim ArtistsCollection As Collection : Dim Selected_Artist As String : Dim ArtistDAO As Artist : Dim Fav_Artists As Collection : Dim Fav_Artist As String
+        ArtistDAO = New Artist()
+        ArtistsCollection = ArtistDAO.ReadAllArtists(path)
+        Selected_Artist = lsb_artist.SelectedItem
+        For Each Artist In ArtistsCollection
+            If Selected_Artist = Artist.GetName() Then
+                SelectedArtist = Artist
+            End If
+        Next
+        Dim FavArtist As Fav_Artist
+        FavArtist = New Fav_Artist()
+        FavArtist.setUser(EmailUser)
+        FavArtist.setArtist(SelectedArtist.GetIdArtist())
+        FavArtist.setFavDate(Date.Today())
+        FavArtist.InsertFavArtist()
+    End Sub
+
+    Private Sub ReadAllFavArtists 
 
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
         Dim f2 As New MainWindow(EmailUser, path)

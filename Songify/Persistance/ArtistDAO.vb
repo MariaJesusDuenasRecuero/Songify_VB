@@ -19,6 +19,21 @@
         Return Artists
     End Function
 
+    Public Function ReadAllFavArtists(path As String)
+        Dim ar As Fav_Artist
+        Dim fa As Collection
+        Dim col, aux As Collection
+        col = DBBroker.GetBroker(path).Read("SELECT * FROM Fav_Artists ORDER BY user")
+        For Each aux In col
+            ar = New Artist(aux(1).ToString)
+            ar.SetUser(aux(2).ToString)
+            ar.SetArtist(aux(3).ToString)
+            ar.SetFavDate(aux(4).ToString)
+            fa.Add(ar)
+        Next
+        Return fa
+    End Function
+
     Public Sub Read(ByRef ar As Artist)
         Dim col As Collection : Dim aux As Collection
         col = DBBroker.GetBroker.Read("SELECT * FROM Artists WHERE IdArtist='" & ar.GetIdArtist() & "';")
@@ -29,6 +44,9 @@
         Next
     End Sub
 
+    Public Function InsertFav(ByVal s As Fav_Artist) As Integer
+        Return DBBroker.GetBroker.Change("INSERT INTO Fav_Artists VALUES ('" & s.GetUser() & "', '" & s.GetArtist() & "', '" & s.GetFavDate() & "');")
+    End Function
     Public Function Insert(ByVal ar As Artist) As Integer
         Return DBBroker.GetBroker.Change("INSERT INTO Artists VALUES ('" & ar.GetIdArtist() & "', '" & ar.GetName() & "', '" & ar.GetCountry() & "', '" & ar.GetImage() & "');")
     End Function
@@ -38,6 +56,4 @@
     Public Function Delete(ByVal ar As Artist) As Integer
         Return DBBroker.GetBroker.Change("DELETE FROM Artists WHERE IdArtist='" & ar.GetIdArtist() & "';")
     End Function
-
-
 End Class

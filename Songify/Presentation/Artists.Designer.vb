@@ -39,16 +39,17 @@ Partial Class Artists
         Me.btn_insert = New System.Windows.Forms.Button()
         Me.im_artists = New System.Windows.Forms.PictureBox()
         Me.btnFav = New System.Windows.Forms.Button()
+        Me.lsb_favArtist = New System.Windows.Forms.ListBox()
         CType(Me.im_artists, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lsb_artist
         '
         Me.lsb_artist.FormattingEnabled = True
-        Me.lsb_artist.Location = New System.Drawing.Point(17, 81)
+        Me.lsb_artist.Location = New System.Drawing.Point(13, 81)
         Me.lsb_artist.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.lsb_artist.Name = "lsb_artist"
-        Me.lsb_artist.Size = New System.Drawing.Size(383, 212)
+        Me.lsb_artist.Size = New System.Drawing.Size(154, 212)
         Me.lsb_artist.TabIndex = 0
         '
         'aName
@@ -230,12 +231,22 @@ Partial Class Artists
         Me.btnFav.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnFav.UseVisualStyleBackColor = True
         '
+        'lsb_favArtist
+        '
+        Me.lsb_favArtist.FormattingEnabled = True
+        Me.lsb_favArtist.Location = New System.Drawing.Point(246, 81)
+        Me.lsb_favArtist.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.lsb_favArtist.Name = "lsb_favArtist"
+        Me.lsb_favArtist.Size = New System.Drawing.Size(154, 212)
+        Me.lsb_favArtist.TabIndex = 16
+        '
         'Artists
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(951, 714)
+        Me.Controls.Add(Me.lsb_favArtist)
         Me.Controls.Add(Me.btnFav)
         Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.btn_update)
@@ -279,4 +290,5 @@ Partial Class Artists
     Friend WithEvents btn_update As Button
     Friend WithEvents btn_delete As Button
     Friend WithEvents btnFav As Button
+    Friend WithEvents lsb_favArtist As ListBox
 End Class
