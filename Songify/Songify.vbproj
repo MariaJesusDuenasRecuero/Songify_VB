@@ -125,12 +125,6 @@
     <Compile Include="Presentation\MainWindow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\SongPlayback.Designer.vb">
-      <DependentUpon>SongPlayback.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\SongPlayback.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Presentation\SignUp.Designer.vb">
       <DependentUpon>SignUp.vb</DependentUpon>
     </Compile>
@@ -162,9 +156,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\MainWindow.resx">
       <DependentUpon>MainWindow.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\SongPlayback.resx">
-      <DependentUpon>SongPlayback.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\SignUp.resx">
       <DependentUpon>SignUp.vb</DependentUpon>

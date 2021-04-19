@@ -25,7 +25,7 @@
         Dim col, aux As Collection
         col = DBBroker.GetBroker(path).Read("SELECT * FROM Fav_Artists ORDER BY user")
         For Each aux In col
-            ar = New Artist(aux(1).ToString)
+            ar = New Fav_Artist(aux(1).ToString)
             ar.SetUser(aux(2).ToString)
             ar.SetArtist(aux(3).ToString)
             ar.SetFavDate(aux(4).ToString)

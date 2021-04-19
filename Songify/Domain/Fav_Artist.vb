@@ -2,9 +2,13 @@
     Private Property user As String
     Private Property artist As Integer
     Private Property favDate As Date
-    Private Sub New(id As String)
+
+    Private ReadOnly arDAO As ArtistDAO
+    Public Sub New(id As String)
+        Me.arDAO = New ArtistDAO
         Me.user = id
     End Sub
+
     Public Function GetUser()
         Return user
     End Function
@@ -27,6 +31,6 @@
         Return Me.arDAO.ReadAll(path)
     End Function
     Public Function InsertFav_Artist() As Integer
-        Return Me.arDAO.Insert(Me)
+        Return Me.arDAO.InsertFav(Me)
     End Function
 End Class
