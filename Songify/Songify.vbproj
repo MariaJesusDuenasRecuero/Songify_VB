@@ -97,6 +97,12 @@
     <Compile Include="Presentation\Artists.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentation\InsUpdDel.Designer.vb">
+      <DependentUpon>InsUpdDel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\InsUpdDel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\Login.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Artists.resx">
       <DependentUpon>Artists.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\InsUpdDel.resx">
+      <DependentUpon>InsUpdDel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

@@ -21,14 +21,13 @@
 
     Public Function ReadAllFavArtists(path As String)
         Dim ar As Fav_Artist
-        Dim fa As Collection
+        Dim fa As New Collection
         Dim col, aux As Collection
         col = DBBroker.GetBroker(path).Read("SELECT * FROM Fav_Artists ORDER BY user")
         For Each aux In col
             ar = New Fav_Artist(aux(1).ToString)
-            ar.SetUser(aux(2).ToString)
-            ar.SetArtist(aux(3).ToString)
-            ar.SetFavDate(aux(4).ToString)
+            ar.SetArtist(aux(2).ToString)
+            ar.SetFavDate(aux(3).ToString)
             fa.Add(ar)
         Next
         Return fa

@@ -8,7 +8,9 @@
         Me.arDAO = New ArtistDAO
         Me.user = id
     End Sub
-
+    Public Sub New()
+        Me.arDAO = New ArtistDAO
+    End Sub
     Public Function GetUser()
         Return user
     End Function
@@ -28,7 +30,7 @@
         Me.favDate = favDate
     End Function
     Public Function ReadAllFavArtists(path As String)
-        Return Me.arDAO.ReadAll(path)
+        Return Me.arDAO.ReadAllFavArtists(path)
     End Function
     Public Function InsertFav_Artist() As Integer
         Return Me.arDAO.InsertFav(Me)
