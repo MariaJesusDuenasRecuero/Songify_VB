@@ -58,6 +58,7 @@ Partial Class InsUpDel
         Me.btn_deleteArtists = New System.Windows.Forms.Button()
         Me.btn_updateArtists = New System.Windows.Forms.Button()
         Me.btn_insertArtists = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'albmcoverlbl
@@ -431,12 +432,20 @@ Partial Class InsUpDel
         Me.btn_insertArtists.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_insertArtists.UseVisualStyleBackColor = True
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(48, 87)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(251, 20)
+        Me.TextBox1.TabIndex = 86
+        '
         'InsUpDel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(1007, 683)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.albmcoverlbl)
         Me.Controls.Add(Me.albmcovertxt)
         Me.Controls.Add(Me.SongTitle)
@@ -514,4 +523,5 @@ Partial Class InsUpDel
     Friend WithEvents btn_deleteArtists As Button
     Friend WithEvents btn_updateArtists As Button
     Friend WithEvents btn_insertArtists As Button
+    Friend WithEvents TextBox1 As TextBox
 End Class

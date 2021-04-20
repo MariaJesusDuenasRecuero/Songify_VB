@@ -1,8 +1,13 @@
 ﻿Public Class InsUpDel
     Public SelectedArtist As Artist
     Public ImageArtist As String
+    Public Artists As Collection
+    Public path As String
     Private Sub InsUpDel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        artnametxt.Text = SelectedArtist.GetName()
+        artcountrytxt.Text = SelectedArtist.GetCountry()
+        artimagetxt.Text = SelectedArtist.GetImage()
+        TextBox1.Text = SelectedArtist.GetIdArtist()
     End Sub
     Public Sub New(SelectedArtist As Artist)
 
@@ -18,32 +23,37 @@
         Try
             ArtistName = artnametxt.Text
             ArtistCountry = artcountrytxt.Text
-            ArtistImage = ImageArtist
+            ArtistImage = artimagetxt.Text
             ArtistAdded = New Artist()
             ArtistAdded.SetName(ArtistName)
             ArtistAdded.SetCountry(ArtistCountry)
             ArtistAdded.SetImage(ArtistImage)
             ArtistAdded.InsertArtist()
         Catch ex As Exception
-            MsgBox("Fill the data with properly values", MsgBoxStyle.OkOnly, "Error")
+            MsgBox(ex.Message, MsgBoxStyle.OkOnly, "Error")
         End Try
     End Sub
     Private Sub updateArtist(sender As Object, e As EventArgs) Handles btn_updateArtists.Click
-        Dim ArtistUpdated As Artist : Dim ArtistName As String : Dim ArtistCountry As String : Dim ArtistImage As String
-        artnametxt.Text = SelectedArtist.GetName()
-        artcountrytxt.Text = SelectedArtist.GetCountry()
-        artimagetxt.Text = SelectedArtist.GetImage()
+        Dim ArtistUpdated As New Artist : Dim ArtistName As String : Dim ArtistCountry As String : Dim ArtistImage As String : Dim ArtistReader As Artist : Dim counter As Integer
+        ArtistReader = New Artist()
+        Artists = ArtistReader.ReadAllArtists(path)
+        For Each artist In Artists
+            counter += 1
+        Next
+        counter += 1
         Try
             ArtistName = artnametxt.Text
             ArtistCountry = artcountrytxt.Text
-            ArtistImage = ImageArtist
-            ArtistUpdated = New Artist()
+            ArtistImage = artimagetxt.Text
+            ArtistUpdated = New Artist
+            ArtistUpdated.setIdArtist(counter)
             ArtistUpdated.SetName(ArtistName)
             ArtistUpdated.SetCountry(ArtistCountry)
             ArtistUpdated.SetImage(ArtistImage)
-            ArtistUpdated.UpdateArtist()
+            ArtistUpdated.UpdateArtist(path)
+            MsgBox("Artist Updated")
         Catch ex As Exception
-            MsgBox("Fill the data with properly values", MsgBoxStyle.OkOnly, "Error")
+            MsgBox(ex.Message, MsgBoxStyle.OkOnly, "Error")
         End Try
     End Sub
     Private Sub deleteArtist(sender As Object, e As EventArgs) Handles btn_deleteArtists.Click
@@ -56,7 +66,7 @@
             ArtistAdded = New Artist(ArtistName)
             ArtistAdded.DeleteArtist()
         Catch ex As Exception
-            MsgBox("Fill the data with properly values", MsgBoxStyle.OkOnly, "Error")
+            MsgBox(ex.Message, MsgBoxStyle.OkOnly, "Error")
         End Try
     End Sub
 End Class

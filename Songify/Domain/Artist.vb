@@ -30,6 +30,9 @@
     Public Function GetName()
         Return aName
     End Function
+    Public Function setIdArtist(idArtsit As Integer)
+        IdArtist = idArtsit
+    End Function
     Public Function SetName(name As String)
         aName = name
     End Function
@@ -48,8 +51,8 @@
     Public Function InsertArtist() As Integer
         Return Me.arDAO.Insert(Me)
     End Function
-    Public Function UpdateArtist() As Integer
-        Return Me.arDAO.Update(Me)
+    Public Function UpdateArtist(path As String) As Integer
+        Return Me.arDAO.Update(Me, path)
     End Function
     Public Function DeleteArtist() As Integer
         Return Me.arDAO.Delete(Me)

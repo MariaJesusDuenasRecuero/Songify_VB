@@ -49,7 +49,8 @@
     Public Function Insert(ByVal ar As Artist) As Integer
         Return DBBroker.GetBroker.Change("INSERT INTO Artists VALUES ('" & ar.GetIdArtist() & "', '" & ar.GetName() & "', '" & ar.GetCountry() & "', '" & ar.GetImage() & "');")
     End Function
-    Public Function Update(ByVal ar As Artist) As Integer
+    Public Function Update(ByVal ar As Artist, path As String) As Integer
+        DBBroker.GetBroker(path)
         Return DBBroker.GetBroker.Change("UPDATE Artists SET aName='" & ar.GetName() & "' SET country='" & ar.GetCountry() & "' SET image='" & ar.GetImage() & "' WHERE IdArtist='" & ar.GetIdArtist() & "';")
     End Function
     Public Function Delete(ByVal ar As Artist) As Integer
