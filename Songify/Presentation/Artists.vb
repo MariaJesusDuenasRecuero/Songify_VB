@@ -75,7 +75,7 @@ Public Class Artists
         FavArtist.setUser(EmailUser)
         FavArtist.setArtist(SelectedArtist.GetIdArtist())
         FavArtist.setFavDate(Date.Today())
-        FavArtist.InsertFavArtist()
+        FavArtist.InsertFav_Artist()
     End Sub
  
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
@@ -84,5 +84,9 @@ Public Class Artists
         Me.Hide()
     End Sub
 
-
+    Private Sub btn_insert_Click(sender As Object, e As EventArgs) Handles btn_insert.Click
+        Dim f2 As New InsUpdDel(SelectedArtist)
+        f2.Show()
+        Me.Hide()
+    End Sub
 End Class
