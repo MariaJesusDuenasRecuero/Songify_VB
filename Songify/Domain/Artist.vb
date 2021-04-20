@@ -18,6 +18,9 @@
         Me.country = country
         Me.image = image
     End Sub
+    Public Sub ReadArtist()
+        Me.arDAO.Read(Me)
+    End Sub
     Public Function GetIdArtist()
         Return IdArtist
     End Function
@@ -48,13 +51,13 @@
     Public Sub ReadAll()
         Me.arDAO.Read(Me)
     End Sub
-    Public Function InsertArtist() As Integer
-        Return Me.arDAO.Insert(Me)
+    Public Function InsertArtist(path As String) As Integer
+        Return Me.arDAO.Insert(Me, path)
     End Function
     Public Function UpdateArtist(path As String) As Integer
         Return Me.arDAO.Update(Me, path)
     End Function
-    Public Function DeleteArtist() As Integer
-        Return Me.arDAO.Delete(Me)
+    Public Function DeleteArtist(path As String) As Integer
+        Return Me.arDAO.Delete(Me, path)
     End Function
 End Class

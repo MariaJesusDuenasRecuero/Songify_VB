@@ -85,7 +85,7 @@ Public Class Artists
     End Sub
 
     Private Sub btn_insert_Click(sender As Object, e As EventArgs) Handles btn_insert.Click
-        Dim f2 As New InsUpDel(SelectedArtist)
+        Dim f2 As New InsUpDel(SelectedArtist, path)
         f2.Show()
         Me.Hide()
     End Sub
