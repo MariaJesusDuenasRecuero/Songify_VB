@@ -51,13 +51,13 @@
     Public Sub ReadAll()
         Me.arDAO.Read(Me)
     End Sub
-    Public Function InsertArtist(path As String) As Integer
-        Return Me.arDAO.Insert(Me, path)
+    Public Function InsertArtist() As Integer
+        Return Me.arDAO.Insert(Me)
     End Function
-    Public Function UpdateArtist(path As String) As Integer
-        Return Me.arDAO.Update(Me, path)
+    Public Function UpdateArtist() As Integer
+        Return Me.arDAO.Update(Me)
     End Function
-    Public Function DeleteArtist(path As String) As Integer
-        Return Me.arDAO.Delete(Me, path)
+    Public Function DeleteArtist() As Integer
+        Return Me.arDAO.Delete(Me)
     End Function
 End Class

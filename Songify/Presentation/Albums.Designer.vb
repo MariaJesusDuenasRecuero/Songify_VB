@@ -240,7 +240,7 @@ Partial Class Albums
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
-        Me.ClientSize = New System.Drawing.Size(951, 714)
+        Me.ClientSize = New System.Drawing.Size(1271, 865)
         Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.btn_update)
         Me.Controls.Add(Me.btn_insert)

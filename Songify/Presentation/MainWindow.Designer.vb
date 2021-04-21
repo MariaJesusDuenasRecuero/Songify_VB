@@ -119,7 +119,7 @@ Partial Class MainWindow
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
-        Me.ClientSize = New System.Drawing.Size(951, 714)
+        Me.ClientSize = New System.Drawing.Size(1271, 865)
         Me.Controls.Add(Me.lbl_profile)
         Me.Controls.Add(Me.EmailLog)
         Me.Controls.Add(Me.btn_signOut)

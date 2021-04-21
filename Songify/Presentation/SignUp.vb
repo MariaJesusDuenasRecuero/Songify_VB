@@ -61,13 +61,14 @@ Public Class SignUp
                 'valido = False
             End If
 
-            Try
-                email = txt_email.Text
-                If (email.Contains("@gmail.com") Or email.Contains("@hotmail.com") Or email.Contains("@hotmail.es") Or email.Contains("@cancionfy.com")) Then
-                End If
-            Catch ex As Exception
+
+            email = txt_email.Text
+            If (email.Contains("@gmail.com") Or email.Contains("@hotmail.com") Or email.Contains("@hotmail.es") Or email.Contains("@cancionify.com")) Then
+                valido = True
+            Else
+                valido = False
                 MsgBox("Please introduce a correct format of the email", MsgBoxStyle.OkOnly, "Warning")
-            End Try
+            End If
 
 
             If txt_birthdate.Text = "" Then
@@ -88,7 +89,6 @@ Public Class SignUp
         End Try
 
     End Sub
-
 
 
 End Class

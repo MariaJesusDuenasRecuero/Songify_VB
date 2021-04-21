@@ -25,7 +25,7 @@
         Dim col, aux As Collection
         col = DBBroker.GetBroker(path).Read("SELECT * FROM Fav_Artists ORDER BY user")
         For Each aux In col
-            ar = New Fav_Artist(aux(1).ToString)
+            ar = New Fav_Artist(aux(1))
             ar.SetArtist(aux(2).ToString)
             ar.SetFavDate(aux(3).ToString)
             fa.Add(ar)
@@ -46,16 +46,13 @@
     Public Function InsertFav(ByVal s As Fav_Artist) As Integer
         Return DBBroker.GetBroker.Change("INSERT INTO Fav_Artists VALUES ('" & s.GetUser() & "', '" & s.GetArtist() & "', '" & s.GetFavDate() & "');")
     End Function
-    Public Function Insert(ByVal ar As Artist, path As String) As Integer
-        DBBroker.GetBroker(path)
-        Return DBBroker.GetBroker.Change("INSERT INTO Artists VALUES ('" & ar.GetIdArtist() & "', '" & ar.GetName() & "', '" & ar.GetCountry() & "', '" & ar.GetImage() & "');")
+    Public Function Insert(ByVal ar As Artist) As Integer
+        Return DBBroker.GetBroker.Change("INSERT INTO Artists ([aName],country,[image]) VALUES ('" & ar.GetName() & "','" & ar.GetCountry() & "','" & ar.GetImage() & "')")
     End Function
-    Public Function Update(ByVal ar As Artist, path As String) As Integer
-        DBBroker.GetBroker(path)
-        Return DBBroker.GetBroker.Change("UPDATE Artists SET aName='" & ar.GetName() & "' SET country='" & ar.GetCountry() & "' SET image='" & ar.GetImage() & "' WHERE IdArtist='" & ar.GetIdArtist() & "';")
+    Public Function Update(ByVal ar As Artist) As Integer
+        Return DBBroker.GetBroker.Change("UPDATE Artists SET aName='" & ar.GetName() & "' ,country='" & ar.GetCountry() & "' ,[image]='" & ar.GetImage() & "'WHERE IdArtist=" & ar.GetIdArtist() & ";")
     End Function
-    Public Function Delete(ByVal ar As Artist, path As String) As Integer
-        DBBroker.GetBroker(path)
-        Return DBBroker.GetBroker.Change("DELETE FROM Artists WHERE IdArtist='" & ar.GetIdArtist() & "';")
+    Public Function Delete(ByVal ar As Artist) As Integer
+        Return DBBroker.GetBroker.Change("DELETE FROM Artists WHERE IdArtist=" & ar.GetIdArtist() & ";")
     End Function
 End Class

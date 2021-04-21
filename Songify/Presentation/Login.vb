@@ -27,8 +27,6 @@ Public Class Login
 
     Private Sub btn_connect_Click(sender As Object, e As EventArgs) Handles btn_connect.Click
         Dim AlbumDAO As New Album()
-
-
         Try
             AlbumDAO.ReadAllAlbums(ofdPath.FileName)
             MessageBox.Show("Database has been read!", "Connection", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -36,8 +34,6 @@ Public Class Login
             MessageBox.Show("Incorrect database, choose another one", "Connection error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
-
-
         btn_login.Enabled = True
         btn_signUp.Enabled = True
         txt_email.Enabled = True
@@ -56,40 +52,52 @@ Public Class Login
         Dim f2 As New SignUp(fileName)
         f2.Show()
         Me.Hide()
+        btn_login.Enabled = True
+        btn_signUp.Enabled = True
+        txt_email.Enabled = True
     End Sub
 
 
     Private Sub btn_Login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
-        Dim useremail As String : Dim UserDAO As User : Dim iguales As Boolean
+        Dim useremail As String : Dim UserDAO As User : Dim iguales As Boolean : Dim email As String : Dim valido As Boolean
+
         iguales = False
         UserDAO = New User()
+        valido = False
         Users = UserDAO.ReadAllUsers(fileName)
+
+
+        email = txt_email.Text
         For Each user In Users
-            useremail = user.GetEmail()
-            If user.GetEmail() = txt_email.Text Then
+            If user.GetEmail() = email Then
                 iguales = True
-                Exit For
             End If
         Next
-        If iguales = True Then
+        If (email.Contains("@gmail.com") Or email.Contains("@hotmail.com") Or email.Contains("@hotmail.es") Or email.Contains("@cancionify.com")) Then
+            valido = True
+        Else
+            valido = False
+        End If
+
+
+        If iguales = True And valido = True Then
             MsgBox("Welcome to our application", MsgBoxStyle.OkOnly, "Allow to Access")
             Dim f2 As New MainWindow(txt_email.Text, fileName)
-            'lbl_warning.Enabled = False
+
             f2.Show()
             Me.Hide()
+        ElseIf valido = False Then
+            MsgBox("Please introduce a correct format of the email", MsgBoxStyle.OkOnly, "Warning")
         Else
             MsgBox("This user isn't in our DataBase", MsgBoxStyle.OkOnly, "Error")
-            'lbl_warning.Enabled = True
         End If
 
-        If txt_email.Text = "" Then
+        Try
+            txt_email.Text = ""
+        Catch ex As Exception
             MsgBox("Please introduce an email", MsgBoxStyle.OkOnly, "Warning")
-            'lbl_warning.Enabled = True
+        End Try
 
-
-
-
-        End If
 
 
     End Sub
