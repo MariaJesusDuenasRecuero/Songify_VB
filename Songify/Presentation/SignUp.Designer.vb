@@ -41,7 +41,7 @@ Partial Class SignUp
         Me.btn_loginSignUp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btn_loginSignUp.BackColor = System.Drawing.Color.White
         Me.btn_loginSignUp.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_loginSignUp.Location = New System.Drawing.Point(338, 494)
+        Me.btn_loginSignUp.Location = New System.Drawing.Point(455, 550)
         Me.btn_loginSignUp.Name = "btn_loginSignUp"
         Me.btn_loginSignUp.Size = New System.Drawing.Size(264, 42)
         Me.btn_loginSignUp.TabIndex = 4
@@ -52,7 +52,7 @@ Partial Class SignUp
         '
         Me.txt_name.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_name.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.txt_name.Location = New System.Drawing.Point(389, 195)
+        Me.txt_name.Location = New System.Drawing.Point(506, 251)
         Me.txt_name.Name = "txt_name"
         Me.txt_name.Size = New System.Drawing.Size(213, 31)
         Me.txt_name.TabIndex = 6
@@ -62,7 +62,7 @@ Partial Class SignUp
         '
         Me.txt_surname.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_surname.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.txt_surname.Location = New System.Drawing.Point(389, 270)
+        Me.txt_surname.Location = New System.Drawing.Point(506, 326)
         Me.txt_surname.Name = "txt_surname"
         Me.txt_surname.Size = New System.Drawing.Size(213, 31)
         Me.txt_surname.TabIndex = 7
@@ -72,7 +72,7 @@ Partial Class SignUp
         '
         Me.txt_email.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_email.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.txt_email.Location = New System.Drawing.Point(389, 348)
+        Me.txt_email.Location = New System.Drawing.Point(506, 404)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(213, 31)
         Me.txt_email.TabIndex = 8
@@ -82,7 +82,7 @@ Partial Class SignUp
         '
         Me.txt_birthdate.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_birthdate.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.txt_birthdate.Location = New System.Drawing.Point(389, 421)
+        Me.txt_birthdate.Location = New System.Drawing.Point(506, 477)
         Me.txt_birthdate.Name = "txt_birthdate"
         Me.txt_birthdate.Size = New System.Drawing.Size(213, 31)
         Me.txt_birthdate.TabIndex = 9
@@ -94,7 +94,7 @@ Partial Class SignUp
         Me.lbl_introduceCredentials.BackColor = System.Drawing.Color.White
         Me.lbl_introduceCredentials.Font = New System.Drawing.Font("Verdana", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_introduceCredentials.ForeColor = System.Drawing.Color.DarkViolet
-        Me.lbl_introduceCredentials.Location = New System.Drawing.Point(317, 118)
+        Me.lbl_introduceCredentials.Location = New System.Drawing.Point(434, 174)
         Me.lbl_introduceCredentials.Name = "lbl_introduceCredentials"
         Me.lbl_introduceCredentials.Size = New System.Drawing.Size(303, 29)
         Me.lbl_introduceCredentials.TabIndex = 10
@@ -104,7 +104,7 @@ Partial Class SignUp
         '
         Me.Label4.BackColor = System.Drawing.Color.White
         Me.Label4.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_35_46
-        Me.Label4.Location = New System.Drawing.Point(335, 421)
+        Me.Label4.Location = New System.Drawing.Point(452, 477)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(45, 31)
         Me.Label4.TabIndex = 14
@@ -113,7 +113,7 @@ Partial Class SignUp
         '
         Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_35_22
-        Me.Label3.Location = New System.Drawing.Point(335, 261)
+        Me.Label3.Location = New System.Drawing.Point(452, 317)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 40)
         Me.Label3.TabIndex = 13
@@ -122,7 +122,7 @@ Partial Class SignUp
         '
         Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_35_22
-        Me.Label2.Location = New System.Drawing.Point(335, 184)
+        Me.Label2.Location = New System.Drawing.Point(452, 240)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 42)
         Me.Label2.TabIndex = 12
@@ -131,7 +131,7 @@ Partial Class SignUp
         '
         Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Image = Global.Songify.My.Resources.Resources.email
-        Me.Label1.Location = New System.Drawing.Point(335, 348)
+        Me.Label1.Location = New System.Drawing.Point(452, 404)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 31)
         Me.Label1.TabIndex = 11
@@ -143,7 +143,7 @@ Partial Class SignUp
         Me.btn_back.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_back.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_40_53
         Me.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_back.Location = New System.Drawing.Point(338, 552)
+        Me.btn_back.Location = New System.Drawing.Point(455, 608)
         Me.btn_back.Margin = New System.Windows.Forms.Padding(15)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(264, 42)
@@ -156,7 +156,7 @@ Partial Class SignUp
         'lbl_background
         '
         Me.lbl_background.Image = Global.Songify.My.Resources.Resources.fonditomj
-        Me.lbl_background.Location = New System.Drawing.Point(204, 41)
+        Me.lbl_background.Location = New System.Drawing.Point(321, 97)
         Me.lbl_background.Name = "lbl_background"
         Me.lbl_background.Size = New System.Drawing.Size(543, 633)
         Me.lbl_background.TabIndex = 1
@@ -179,6 +179,8 @@ Partial Class SignUp
         Me.Controls.Add(Me.btn_back)
         Me.Controls.Add(Me.btn_loginSignUp)
         Me.Controls.Add(Me.lbl_background)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "SignUp"
         Me.Text = "SignUp"
         Me.ResumeLayout(False)

@@ -39,7 +39,7 @@ Partial Class Login
         Me.btn_login.BackColor = System.Drawing.Color.White
         Me.btn_login.Enabled = False
         Me.btn_login.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_login.Location = New System.Drawing.Point(315, 398)
+        Me.btn_login.Location = New System.Drawing.Point(497, 473)
         Me.btn_login.Name = "btn_login"
         Me.btn_login.Size = New System.Drawing.Size(279, 42)
         Me.btn_login.TabIndex = 2
@@ -51,7 +51,7 @@ Partial Class Login
         Me.txt_email.Enabled = False
         Me.txt_email.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_email.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.txt_email.Location = New System.Drawing.Point(355, 321)
+        Me.txt_email.Location = New System.Drawing.Point(537, 396)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(239, 31)
         Me.txt_email.TabIndex = 4
@@ -69,7 +69,7 @@ Partial Class Login
         Me.btn_connect.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_connect.Image = Global.Songify.My.Resources.Resources.bases_de_datos_conectadas
         Me.btn_connect.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_connect.Location = New System.Drawing.Point(476, 533)
+        Me.btn_connect.Location = New System.Drawing.Point(658, 608)
         Me.btn_connect.Name = "btn_connect"
         Me.btn_connect.Size = New System.Drawing.Size(118, 58)
         Me.btn_connect.TabIndex = 8
@@ -84,7 +84,7 @@ Partial Class Login
         Me.btn_selectDB.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_selectDB.Image = Global.Songify.My.Resources.Resources.busqueda_de_datos__1_
         Me.btn_selectDB.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_selectDB.Location = New System.Drawing.Point(315, 533)
+        Me.btn_selectDB.Location = New System.Drawing.Point(497, 608)
         Me.btn_selectDB.Name = "btn_selectDB"
         Me.btn_selectDB.Size = New System.Drawing.Size(118, 58)
         Me.btn_selectDB.TabIndex = 7
@@ -96,7 +96,7 @@ Partial Class Login
         '
         Me.lbl_iconEmail.BackColor = System.Drawing.Color.White
         Me.lbl_iconEmail.Image = Global.Songify.My.Resources.Resources.email
-        Me.lbl_iconEmail.Location = New System.Drawing.Point(312, 321)
+        Me.lbl_iconEmail.Location = New System.Drawing.Point(494, 396)
         Me.lbl_iconEmail.Name = "lbl_iconEmail"
         Me.lbl_iconEmail.Size = New System.Drawing.Size(37, 31)
         Me.lbl_iconEmail.TabIndex = 6
@@ -107,7 +107,7 @@ Partial Class Login
         Me.btn_signUp.BackColor = System.Drawing.Color.White
         Me.btn_signUp.Enabled = False
         Me.btn_signUp.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_signUp.Location = New System.Drawing.Point(315, 456)
+        Me.btn_signUp.Location = New System.Drawing.Point(497, 531)
         Me.btn_signUp.Name = "btn_signUp"
         Me.btn_signUp.Size = New System.Drawing.Size(279, 42)
         Me.btn_signUp.TabIndex = 3
@@ -118,7 +118,7 @@ Partial Class Login
         '
         Me.lbl_songify.BackColor = System.Drawing.Color.White
         Me.lbl_songify.Image = Global.Songify.My.Resources.Resources.logo
-        Me.lbl_songify.Location = New System.Drawing.Point(275, 92)
+        Me.lbl_songify.Location = New System.Drawing.Point(457, 167)
         Me.lbl_songify.Name = "lbl_songify"
         Me.lbl_songify.Size = New System.Drawing.Size(358, 180)
         Me.lbl_songify.TabIndex = 1
@@ -126,7 +126,7 @@ Partial Class Login
         'lbl_background
         '
         Me.lbl_background.Image = Global.Songify.My.Resources.Resources.fonditomj
-        Me.lbl_background.Location = New System.Drawing.Point(186, 22)
+        Me.lbl_background.Location = New System.Drawing.Point(368, 97)
         Me.lbl_background.Name = "lbl_background"
         Me.lbl_background.Size = New System.Drawing.Size(543, 633)
         Me.lbl_background.TabIndex = 0
@@ -145,6 +145,8 @@ Partial Class Login
         Me.Controls.Add(Me.btn_login)
         Me.Controls.Add(Me.lbl_songify)
         Me.Controls.Add(Me.lbl_background)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "Login"
         Me.Text = "Form1"
         Me.ResumeLayout(False)

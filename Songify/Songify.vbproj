@@ -129,6 +129,12 @@
     <Compile Include="Presentation\MainWindow.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentation\Queries.Designer.vb">
+      <DependentUpon>Queries.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Queries.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\SignUp.Designer.vb">
       <DependentUpon>SignUp.vb</DependentUpon>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\MainWindow.resx">
       <DependentUpon>MainWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Queries.resx">
+      <DependentUpon>Queries.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\SignUp.resx">
       <DependentUpon>SignUp.vb</DependentUpon>
@@ -248,6 +257,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\anadir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estrella1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searching.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

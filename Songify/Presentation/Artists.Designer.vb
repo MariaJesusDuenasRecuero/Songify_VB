@@ -34,11 +34,6 @@ Partial Class Artists
         Me.lbl_nationality = New System.Windows.Forms.Label()
         Me.EmailLog = New System.Windows.Forms.Label()
         Me.lbl_profile = New System.Windows.Forms.Label()
-        Me.btn_delete = New System.Windows.Forms.Button()
-        Me.btn_update = New System.Windows.Forms.Button()
-        Me.btn_insert = New System.Windows.Forms.Button()
-        Me.im_artists = New System.Windows.Forms.PictureBox()
-        Me.btnFav = New System.Windows.Forms.Button()
         Me.lsb_favArtist = New System.Windows.Forms.ListBox()
         Me.artistnametxt = New System.Windows.Forms.TextBox()
         Me.artistcountrytxt = New System.Windows.Forms.TextBox()
@@ -46,16 +41,24 @@ Partial Class Artists
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnFav = New System.Windows.Forms.Button()
+        Me.btn_delete = New System.Windows.Forms.Button()
+        Me.btn_update = New System.Windows.Forms.Button()
+        Me.btn_insert = New System.Windows.Forms.Button()
+        Me.im_artists = New System.Windows.Forms.PictureBox()
         CType(Me.im_artists, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lsb_artist
         '
         Me.lsb_artist.FormattingEnabled = True
-        Me.lsb_artist.Location = New System.Drawing.Point(13, 81)
+        Me.lsb_artist.Location = New System.Drawing.Point(13, 120)
         Me.lsb_artist.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.lsb_artist.Name = "lsb_artist"
-        Me.lsb_artist.Size = New System.Drawing.Size(154, 212)
+        Me.lsb_artist.Size = New System.Drawing.Size(154, 225)
         Me.lsb_artist.TabIndex = 0
         '
         'aName
@@ -63,7 +66,7 @@ Partial Class Artists
         Me.aName.AutoSize = True
         Me.aName.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
         Me.aName.ForeColor = System.Drawing.Color.White
-        Me.aName.Location = New System.Drawing.Point(717, 564)
+        Me.aName.Location = New System.Drawing.Point(733, 627)
         Me.aName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.aName.Name = "aName"
         Me.aName.Size = New System.Drawing.Size(77, 26)
@@ -75,7 +78,7 @@ Partial Class Artists
         Me.country.AutoSize = True
         Me.country.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
         Me.country.ForeColor = System.Drawing.Color.White
-        Me.country.Location = New System.Drawing.Point(717, 650)
+        Me.country.Location = New System.Drawing.Point(733, 670)
         Me.country.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.country.Name = "country"
         Me.country.Size = New System.Drawing.Size(77, 26)
@@ -85,7 +88,7 @@ Partial Class Artists
         'lst_album
         '
         Me.lst_album.FormattingEnabled = True
-        Me.lst_album.Location = New System.Drawing.Point(17, 337)
+        Me.lst_album.Location = New System.Drawing.Point(21, 402)
         Me.lst_album.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.lst_album.Name = "lst_album"
         Me.lst_album.Size = New System.Drawing.Size(383, 199)
@@ -95,7 +98,7 @@ Partial Class Artists
         '
         Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.GoBackBtn.ForeColor = System.Drawing.Color.Black
-        Me.GoBackBtn.Location = New System.Drawing.Point(21, 653)
+        Me.GoBackBtn.Location = New System.Drawing.Point(21, 800)
         Me.GoBackBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.GoBackBtn.Name = "GoBackBtn"
         Me.GoBackBtn.Size = New System.Drawing.Size(88, 42)
@@ -108,7 +111,7 @@ Partial Class Artists
         Me.lbl_artists.AutoSize = True
         Me.lbl_artists.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_artists.ForeColor = System.Drawing.Color.White
-        Me.lbl_artists.Location = New System.Drawing.Point(17, 51)
+        Me.lbl_artists.Location = New System.Drawing.Point(13, 94)
         Me.lbl_artists.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_artists.Name = "lbl_artists"
         Me.lbl_artists.Size = New System.Drawing.Size(81, 23)
@@ -120,7 +123,7 @@ Partial Class Artists
         Me.lbl_albums.AutoSize = True
         Me.lbl_albums.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_albums.ForeColor = System.Drawing.Color.White
-        Me.lbl_albums.Location = New System.Drawing.Point(17, 311)
+        Me.lbl_albums.Location = New System.Drawing.Point(19, 372)
         Me.lbl_albums.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_albums.Name = "lbl_albums"
         Me.lbl_albums.Size = New System.Drawing.Size(90, 23)
@@ -132,7 +135,7 @@ Partial Class Artists
         Me.lbl_name.AutoSize = True
         Me.lbl_name.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_name.ForeColor = System.Drawing.Color.White
-        Me.lbl_name.Location = New System.Drawing.Point(576, 564)
+        Me.lbl_name.Location = New System.Drawing.Point(592, 627)
         Me.lbl_name.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_name.Name = "lbl_name"
         Me.lbl_name.Size = New System.Drawing.Size(72, 23)
@@ -144,7 +147,7 @@ Partial Class Artists
         Me.lbl_nationality.AutoSize = True
         Me.lbl_nationality.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_nationality.ForeColor = System.Drawing.Color.White
-        Me.lbl_nationality.Location = New System.Drawing.Point(518, 653)
+        Me.lbl_nationality.Location = New System.Drawing.Point(534, 673)
         Me.lbl_nationality.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nationality.Name = "lbl_nationality"
         Me.lbl_nationality.Size = New System.Drawing.Size(130, 23)
@@ -171,13 +174,125 @@ Partial Class Artists
         Me.lbl_profile.TabIndex = 11
         Me.lbl_profile.Text = "Logged as:"
         '
+        'lsb_favArtist
+        '
+        Me.lsb_favArtist.FormattingEnabled = True
+        Me.lsb_favArtist.Location = New System.Drawing.Point(250, 120)
+        Me.lsb_favArtist.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.lsb_favArtist.Name = "lsb_favArtist"
+        Me.lsb_favArtist.Size = New System.Drawing.Size(154, 225)
+        Me.lsb_favArtist.TabIndex = 16
+        '
+        'artistnametxt
+        '
+        Me.artistnametxt.Location = New System.Drawing.Point(968, 232)
+        Me.artistnametxt.Name = "artistnametxt"
+        Me.artistnametxt.Size = New System.Drawing.Size(274, 21)
+        Me.artistnametxt.TabIndex = 17
+        '
+        'artistcountrytxt
+        '
+        Me.artistcountrytxt.Location = New System.Drawing.Point(968, 309)
+        Me.artistcountrytxt.Name = "artistcountrytxt"
+        Me.artistcountrytxt.Size = New System.Drawing.Size(274, 21)
+        Me.artistcountrytxt.TabIndex = 18
+        '
+        'artistimgtxt
+        '
+        Me.artistimgtxt.Location = New System.Drawing.Point(968, 394)
+        Me.artistimgtxt.Name = "artistimgtxt"
+        Me.artistimgtxt.Size = New System.Drawing.Size(274, 21)
+        Me.artistimgtxt.TabIndex = 19
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(964, 206)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(137, 23)
+        Me.Label1.TabIndex = 20
+        Me.Label1.Text = "Artist name"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(964, 283)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(159, 23)
+        Me.Label2.TabIndex = 21
+        Me.Label2.Text = "Artist country"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(964, 368)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(208, 23)
+        Me.Label3.TabIndex = 22
+        Me.Label3.Text = "Artist image route"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(246, 94)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(123, 23)
+        Me.Label4.TabIndex = 23
+        Me.Label4.Text = "Favourites"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Verdana", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(964, 94)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(163, 32)
+        Me.Label5.TabIndex = 33
+        Me.Label5.Text = "Add artist"
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Image = Global.Songify.My.Resources.Resources.estrella1
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button1.Location = New System.Drawing.Point(237, 619)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(167, 57)
+        Me.Button1.TabIndex = 34
+        Me.Button1.Text = "Unfavorite"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'btnFav
+        '
+        Me.btnFav.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFav.ForeColor = System.Drawing.Color.Black
+        Me.btnFav.Image = Global.Songify.My.Resources.Resources.estrella
+        Me.btnFav.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnFav.Location = New System.Drawing.Point(23, 622)
+        Me.btnFav.Name = "btnFav"
+        Me.btnFav.Size = New System.Drawing.Size(166, 57)
+        Me.btnFav.TabIndex = 15
+        Me.btnFav.Text = "Favorite"
+        Me.btnFav.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnFav.UseVisualStyleBackColor = True
+        '
         'btn_delete
         '
         Me.btn_delete.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_delete.ForeColor = System.Drawing.Color.Black
         Me.btn_delete.Image = Global.Songify.My.Resources.Resources.eliminar
         Me.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_delete.Location = New System.Drawing.Point(989, 564)
+        Me.btn_delete.Location = New System.Drawing.Point(1161, 457)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(81, 57)
         Me.btn_delete.TabIndex = 14
@@ -191,7 +306,7 @@ Partial Class Artists
         Me.btn_update.ForeColor = System.Drawing.Color.Black
         Me.btn_update.Image = Global.Songify.My.Resources.Resources.actualizar
         Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_update.Location = New System.Drawing.Point(1157, 479)
+        Me.btn_update.Location = New System.Drawing.Point(1063, 457)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(81, 57)
         Me.btn_update.TabIndex = 13
@@ -205,7 +320,7 @@ Partial Class Artists
         Me.btn_insert.ForeColor = System.Drawing.Color.Black
         Me.btn_insert.Image = CType(resources.GetObject("btn_insert.Image"), System.Drawing.Image)
         Me.btn_insert.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_insert.Location = New System.Drawing.Point(989, 479)
+        Me.btn_insert.Location = New System.Drawing.Point(968, 457)
         Me.btn_insert.Name = "btn_insert"
         Me.btn_insert.Size = New System.Drawing.Size(81, 57)
         Me.btn_insert.TabIndex = 12
@@ -216,86 +331,12 @@ Partial Class Artists
         'im_artists
         '
         Me.im_artists.Image = Global.Songify.My.Resources.Resources.imagenDefault
-        Me.im_artists.Location = New System.Drawing.Point(429, 34)
+        Me.im_artists.Location = New System.Drawing.Point(429, 94)
         Me.im_artists.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.im_artists.Name = "im_artists"
         Me.im_artists.Size = New System.Drawing.Size(509, 507)
         Me.im_artists.TabIndex = 3
         Me.im_artists.TabStop = False
-        '
-        'btnFav
-        '
-        Me.btnFav.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFav.ForeColor = System.Drawing.Color.Black
-        Me.btnFav.Image = Global.Songify.My.Resources.Resources.estrella
-        Me.btnFav.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnFav.Location = New System.Drawing.Point(21, 564)
-        Me.btnFav.Name = "btnFav"
-        Me.btnFav.Size = New System.Drawing.Size(88, 57)
-        Me.btnFav.TabIndex = 15
-        Me.btnFav.Text = "Favorite"
-        Me.btnFav.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnFav.UseVisualStyleBackColor = True
-        '
-        'lsb_favArtist
-        '
-        Me.lsb_favArtist.FormattingEnabled = True
-        Me.lsb_favArtist.Location = New System.Drawing.Point(246, 81)
-        Me.lsb_favArtist.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.lsb_favArtist.Name = "lsb_favArtist"
-        Me.lsb_favArtist.Size = New System.Drawing.Size(154, 212)
-        Me.lsb_favArtist.TabIndex = 16
-        '
-        'artistnametxt
-        '
-        Me.artistnametxt.Location = New System.Drawing.Point(989, 120)
-        Me.artistnametxt.Name = "artistnametxt"
-        Me.artistnametxt.Size = New System.Drawing.Size(184, 21)
-        Me.artistnametxt.TabIndex = 17
-        '
-        'artistcountrytxt
-        '
-        Me.artistcountrytxt.Location = New System.Drawing.Point(989, 197)
-        Me.artistcountrytxt.Name = "artistcountrytxt"
-        Me.artistcountrytxt.Size = New System.Drawing.Size(184, 21)
-        Me.artistcountrytxt.TabIndex = 18
-        '
-        'artistimgtxt
-        '
-        Me.artistimgtxt.Location = New System.Drawing.Point(989, 282)
-        Me.artistimgtxt.Name = "artistimgtxt"
-        Me.artistimgtxt.Size = New System.Drawing.Size(184, 21)
-        Me.artistimgtxt.TabIndex = 19
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(985, 94)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(137, 23)
-        Me.Label1.TabIndex = 20
-        Me.Label1.Text = "Artist name"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(985, 171)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(159, 23)
-        Me.Label2.TabIndex = 21
-        Me.Label2.Text = "Artist country"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(985, 256)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(208, 23)
-        Me.Label3.TabIndex = 22
-        Me.Label3.Text = "Artist image route"
         '
         'Artists
         '
@@ -303,6 +344,9 @@ Partial Class Artists
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -328,7 +372,9 @@ Partial Class Artists
         Me.Controls.Add(Me.im_artists)
         Me.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.White
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.MaximizeBox = False
         Me.Name = "Artists"
         Me.Text = "Artists"
         CType(Me.im_artists, System.ComponentModel.ISupportInitialize).EndInit()
@@ -360,4 +406,7 @@ Partial Class Artists
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Button1 As Button
 End Class

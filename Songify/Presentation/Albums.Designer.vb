@@ -36,10 +36,6 @@ Partial Class Albums
         Me.lbl_length = New System.Windows.Forms.Label()
         Me.lbl_profile = New System.Windows.Forms.Label()
         Me.EmailLog = New System.Windows.Forms.Label()
-        Me.img_album = New System.Windows.Forms.PictureBox()
-        Me.btn_delete = New System.Windows.Forms.Button()
-        Me.btn_update = New System.Windows.Forms.Button()
-        Me.btn_insert = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -48,13 +44,18 @@ Partial Class Albums
         Me.albumnametxt = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btn_delete = New System.Windows.Forms.Button()
+        Me.btn_update = New System.Windows.Forms.Button()
+        Me.btn_insert = New System.Windows.Forms.Button()
+        Me.img_album = New System.Windows.Forms.PictureBox()
         CType(Me.img_album, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GoBackBtn
         '
         Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GoBackBtn.Location = New System.Drawing.Point(29, 551)
+        Me.GoBackBtn.Location = New System.Drawing.Point(29, 786)
         Me.GoBackBtn.Name = "GoBackBtn"
         Me.GoBackBtn.Size = New System.Drawing.Size(81, 42)
         Me.GoBackBtn.TabIndex = 11
@@ -66,7 +67,7 @@ Partial Class Albums
         Me.releaseDate.AutoSize = True
         Me.releaseDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.releaseDate.ForeColor = System.Drawing.Color.White
-        Me.releaseDate.Location = New System.Drawing.Point(605, 604)
+        Me.releaseDate.Location = New System.Drawing.Point(690, 686)
         Me.releaseDate.Name = "releaseDate"
         Me.releaseDate.Size = New System.Drawing.Size(57, 20)
         Me.releaseDate.TabIndex = 8
@@ -77,7 +78,7 @@ Partial Class Albums
         Me.aName.AutoSize = True
         Me.aName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.aName.ForeColor = System.Drawing.Color.White
-        Me.aName.Location = New System.Drawing.Point(605, 563)
+        Me.aName.Location = New System.Drawing.Point(690, 634)
         Me.aName.Name = "aName"
         Me.aName.Size = New System.Drawing.Size(57, 20)
         Me.aName.TabIndex = 7
@@ -86,7 +87,7 @@ Partial Class Albums
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(33, 79)
+        Me.ListBox1.Location = New System.Drawing.Point(33, 124)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(310, 212)
         Me.ListBox1.TabIndex = 6
@@ -94,7 +95,7 @@ Partial Class Albums
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(29, 325)
+        Me.ListBox2.Location = New System.Drawing.Point(33, 388)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.Size = New System.Drawing.Size(310, 199)
         Me.ListBox2.TabIndex = 12
@@ -104,7 +105,7 @@ Partial Class Albums
         Me.Length.AutoSize = True
         Me.Length.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Length.ForeColor = System.Drawing.Color.White
-        Me.Length.Location = New System.Drawing.Point(605, 643)
+        Me.Length.Location = New System.Drawing.Point(690, 742)
         Me.Length.Name = "Length"
         Me.Length.Size = New System.Drawing.Size(57, 20)
         Me.Length.TabIndex = 13
@@ -115,7 +116,7 @@ Partial Class Albums
         Me.lbl_albums.AutoSize = True
         Me.lbl_albums.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_albums.ForeColor = System.Drawing.Color.White
-        Me.lbl_albums.Location = New System.Drawing.Point(29, 53)
+        Me.lbl_albums.Location = New System.Drawing.Point(29, 98)
         Me.lbl_albums.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_albums.Name = "lbl_albums"
         Me.lbl_albums.Size = New System.Drawing.Size(90, 23)
@@ -127,7 +128,7 @@ Partial Class Albums
         Me.lbl_songs.AutoSize = True
         Me.lbl_songs.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_songs.ForeColor = System.Drawing.Color.White
-        Me.lbl_songs.Location = New System.Drawing.Point(25, 299)
+        Me.lbl_songs.Location = New System.Drawing.Point(29, 362)
         Me.lbl_songs.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_songs.Name = "lbl_songs"
         Me.lbl_songs.Size = New System.Drawing.Size(75, 23)
@@ -139,7 +140,7 @@ Partial Class Albums
         Me.lbl_artistName.AutoSize = True
         Me.lbl_artistName.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_artistName.ForeColor = System.Drawing.Color.White
-        Me.lbl_artistName.Location = New System.Drawing.Point(467, 560)
+        Me.lbl_artistName.Location = New System.Drawing.Point(518, 634)
         Me.lbl_artistName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_artistName.Name = "lbl_artistName"
         Me.lbl_artistName.Size = New System.Drawing.Size(78, 23)
@@ -151,7 +152,7 @@ Partial Class Albums
         Me.lbl_date.AutoSize = True
         Me.lbl_date.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_date.ForeColor = System.Drawing.Color.White
-        Me.lbl_date.Location = New System.Drawing.Point(476, 601)
+        Me.lbl_date.Location = New System.Drawing.Point(518, 686)
         Me.lbl_date.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_date.Name = "lbl_date"
         Me.lbl_date.Size = New System.Drawing.Size(69, 23)
@@ -163,7 +164,7 @@ Partial Class Albums
         Me.lbl_length.AutoSize = True
         Me.lbl_length.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_length.ForeColor = System.Drawing.Color.White
-        Me.lbl_length.Location = New System.Drawing.Point(452, 643)
+        Me.lbl_length.Location = New System.Drawing.Point(503, 742)
         Me.lbl_length.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_length.Name = "lbl_length"
         Me.lbl_length.Size = New System.Drawing.Size(93, 23)
@@ -192,14 +193,89 @@ Partial Class Albums
         Me.EmailLog.TabIndex = 19
         Me.EmailLog.Text = "rfjpe"
         '
-        'img_album
+        'Label3
         '
-        Me.img_album.Image = Global.Songify.My.Resources.Resources.imagenDefault
-        Me.img_album.Location = New System.Drawing.Point(395, 32)
-        Me.img_album.Name = "img_album"
-        Me.img_album.Size = New System.Drawing.Size(522, 508)
-        Me.img_album.TabIndex = 9
-        Me.img_album.TabStop = False
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label3.Location = New System.Drawing.Point(949, 348)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(144, 23)
+        Me.Label3.TabIndex = 29
+        Me.Label3.Text = "Album artist"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Location = New System.Drawing.Point(949, 256)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(220, 23)
+        Me.Label2.TabIndex = 28
+        Me.Label2.Text = "Album release date"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label1.Location = New System.Drawing.Point(949, 171)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(146, 23)
+        Me.Label1.TabIndex = 27
+        Me.Label1.Text = "Album name"
+        '
+        'albumartisttxt
+        '
+        Me.albumartisttxt.Location = New System.Drawing.Point(953, 374)
+        Me.albumartisttxt.Name = "albumartisttxt"
+        Me.albumartisttxt.Size = New System.Drawing.Size(285, 20)
+        Me.albumartisttxt.TabIndex = 26
+        '
+        'albumreleaseDatetxt
+        '
+        Me.albumreleaseDatetxt.Location = New System.Drawing.Point(953, 282)
+        Me.albumreleaseDatetxt.Name = "albumreleaseDatetxt"
+        Me.albumreleaseDatetxt.Size = New System.Drawing.Size(285, 20)
+        Me.albumreleaseDatetxt.TabIndex = 25
+        '
+        'albumnametxt
+        '
+        Me.albumnametxt.Location = New System.Drawing.Point(953, 197)
+        Me.albumnametxt.Name = "albumnametxt"
+        Me.albumnametxt.Size = New System.Drawing.Size(285, 20)
+        Me.albumnametxt.TabIndex = 24
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(953, 462)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(285, 20)
+        Me.TextBox1.TabIndex = 30
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(949, 436)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(144, 23)
+        Me.Label4.TabIndex = 31
+        Me.Label4.Text = "Album cover"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Verdana", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(949, 98)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(177, 32)
+        Me.Label5.TabIndex = 32
+        Me.Label5.Text = "Add album"
         '
         'btn_delete
         '
@@ -207,7 +283,7 @@ Partial Class Albums
         Me.btn_delete.ForeColor = System.Drawing.Color.Black
         Me.btn_delete.Image = Global.Songify.My.Resources.Resources.eliminar
         Me.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_delete.Location = New System.Drawing.Point(1167, 483)
+        Me.btn_delete.Location = New System.Drawing.Point(1157, 530)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(81, 57)
         Me.btn_delete.TabIndex = 23
@@ -221,7 +297,7 @@ Partial Class Albums
         Me.btn_update.ForeColor = System.Drawing.Color.Black
         Me.btn_update.Image = Global.Songify.My.Resources.Resources.actualizar
         Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_update.Location = New System.Drawing.Point(1066, 483)
+        Me.btn_update.Location = New System.Drawing.Point(1056, 530)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(81, 57)
         Me.btn_update.TabIndex = 22
@@ -235,7 +311,7 @@ Partial Class Albums
         Me.btn_insert.ForeColor = System.Drawing.Color.Black
         Me.btn_insert.Image = CType(resources.GetObject("btn_insert.Image"), System.Drawing.Image)
         Me.btn_insert.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_insert.Location = New System.Drawing.Point(963, 483)
+        Me.btn_insert.Location = New System.Drawing.Point(953, 530)
         Me.btn_insert.Name = "btn_insert"
         Me.btn_insert.Size = New System.Drawing.Size(81, 57)
         Me.btn_insert.TabIndex = 21
@@ -243,77 +319,14 @@ Partial Class Albums
         Me.btn_insert.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_insert.UseVisualStyleBackColor = True
         '
-        'Label3
+        'img_album
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(959, 286)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(144, 23)
-        Me.Label3.TabIndex = 29
-        Me.Label3.Text = "Album artist"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(959, 201)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(220, 23)
-        Me.Label2.TabIndex = 28
-        Me.Label2.Text = "Album release date"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(959, 124)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(146, 23)
-        Me.Label1.TabIndex = 27
-        Me.Label1.Text = "Album name"
-        '
-        'albumartisttxt
-        '
-        Me.albumartisttxt.Location = New System.Drawing.Point(963, 312)
-        Me.albumartisttxt.Name = "albumartisttxt"
-        Me.albumartisttxt.Size = New System.Drawing.Size(184, 20)
-        Me.albumartisttxt.TabIndex = 26
-        '
-        'albumreleaseDatetxt
-        '
-        Me.albumreleaseDatetxt.Location = New System.Drawing.Point(963, 227)
-        Me.albumreleaseDatetxt.Name = "albumreleaseDatetxt"
-        Me.albumreleaseDatetxt.Size = New System.Drawing.Size(184, 20)
-        Me.albumreleaseDatetxt.TabIndex = 25
-        '
-        'albumnametxt
-        '
-        Me.albumnametxt.Location = New System.Drawing.Point(963, 150)
-        Me.albumnametxt.Name = "albumnametxt"
-        Me.albumnametxt.Size = New System.Drawing.Size(184, 20)
-        Me.albumnametxt.TabIndex = 24
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(963, 415)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(184, 20)
-        Me.TextBox1.TabIndex = 30
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(959, 389)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(144, 23)
-        Me.Label4.TabIndex = 31
-        Me.Label4.Text = "Album cover"
+        Me.img_album.Image = Global.Songify.My.Resources.Resources.imagenDefault
+        Me.img_album.Location = New System.Drawing.Point(393, 79)
+        Me.img_album.Name = "img_album"
+        Me.img_album.Size = New System.Drawing.Size(522, 508)
+        Me.img_album.TabIndex = 9
+        Me.img_album.TabStop = False
         '
         'Albums
         '
@@ -321,6 +334,7 @@ Partial Class Albums
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label3)
@@ -346,6 +360,8 @@ Partial Class Albums
         Me.Controls.Add(Me.releaseDate)
         Me.Controls.Add(Me.aName)
         Me.Controls.Add(Me.ListBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "Albums"
         Me.Text = "Albums"
         CType(Me.img_album, System.ComponentModel.ISupportInitialize).EndInit()
@@ -379,4 +395,5 @@ Partial Class Albums
     Friend WithEvents albumnametxt As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class
