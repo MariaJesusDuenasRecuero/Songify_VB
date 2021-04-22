@@ -42,14 +42,14 @@
     Public Function ReadUser()
         Return Me.usrDAO.Read(Me)
     End Function
-    Public Function InsertUser(path As String) As Integer
-        Return Me.usrDAO.Insert(Me, path)
+    Public Function InsertUser() As Integer
+        Return Me.usrDAO.Insert(Me)
     End Function
-    Public Function UpdateUser(path As String) As Integer
-        Return Me.usrDAO.Update(Me, path)
+    Public Function UpdateUser() As Integer
+        Return Me.usrDAO.Update(Me)
     End Function
-    Public Function DeleteUser(path As String) As Integer
-        Return Me.usrDAO.Delete(Me, path)
+    Public Function DeleteUser() As Integer
+        Return Me.usrDAO.Delete(Me)
     End Function
 
 End Class

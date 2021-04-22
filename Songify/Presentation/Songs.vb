@@ -5,6 +5,7 @@
     Public User As User
     Public IdPlay As Integer
     Public path As String
+    Public Albums As Collection
     Private Sub Songs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SongDAO As Song
         songNametxt.Text = ""
@@ -23,6 +24,8 @@
             ListBox1.Items.Add(song.GetName())
         Next
         ListBox2.Items.Add("User" & "\" & "Date")
+        Dim AlbumReader As New Album
+        Albums = AlbumReader.ReadAllAlbums(path)
     End Sub
 
     Public Sub New(email As String, path As String)
@@ -122,5 +125,49 @@
         Me.Hide()
     End Sub
 
+    Private Sub btn_insert_Click(sender As Object, e As EventArgs) Handles btn_insert.Click
+        Dim sName As String : Dim albumName As String : Dim length As Integer : Dim SongAdd As New Song : Dim IdAlbum As Integer
+        sName = songnametxtbox.Text
+        albumName = songalbumtxtbox.Text
+        length = songlengthtxtbox.Text
+        SongAdd.SetName(sName)
+        For Each album In Albums
+            If albumName = album.GetName() Then
+                IdAlbum = album.getIdAlbum()
+            End If
+        Next
+        SongAdd.SetAlbum(IdAlbum)
+        SongAdd.SetLength(length)
+        Try
+            SongAdd.InsertSong()
+            MsgBox("Song added")
+            ListBox1.Items.Add(SongAdd.GetName())
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
+    Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
+        Dim sName As String : Dim albumName As String : Dim length As String : Dim SongUpdate As Song : Dim IdAlbum As Integer
+        SongUpdate = New Song
+        sName = songnametxtbox.Text
+        albumName = songalbumtxtbox.Text
+        length = songlengthtxtbox.Text
+        For Each album In Albums
+            If albumName = album.GetName() Then
+                IdAlbum = album.getIdAlbum()
+            End If
+        Next
+        SongUpdate.setIdSong(SongSelected.getIdSong())
+        SongUpdate.SetName(sName)
+        SongUpdate.SetAlbum(IdAlbum)
+        SongUpdate.SetLength(length)
+        Try
+            SongUpdate.UpdateSong()
+            MsgBox("Song updated successfully")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
 End Class

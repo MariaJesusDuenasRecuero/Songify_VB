@@ -43,21 +43,17 @@
         Next
         Return usr
     End Function
-    Public Function Insert(ByVal usr As User, path As String) As Integer
-        DBBroker.GetBroker(path)
-        Return DBBroker.GetBroker.Change("INSERT INTO Users VALUES ('" & usr.GetEmail() & "', '" & usr.GetName() & "', '" & usr.GetSurname() & "', '" & usr.GetBirthdate() & "' );")
+    Public Function Insert(ByVal usr As User) As Integer
+        Return DBBroker.GetBroker.Change("INSERT INTO Songs (Email,[uName],uSurname,birthdate) VALUES ('" & usr.GetEmail() & "','" & usr.GetName() & "','" & usr.GetSurname() & "','" & usr.GetBirthdate() & "');")
     End Function
 
-    Public Function InsertPlayback(ByVal playback As Playback, path As String)
-        DBBroker.GetBroker(path)
-        Return DBBroker.GetBroker.Change("INSERT INTO Playbacks VALUES ('" & playback.GetIdPlay() & "', '" & playback.GetUser() & "', '" & playback.GetSong() & "', '" & playback.GetPlDate() & "' );")
+    Public Function InsertPlayback(ByVal playback As Playback)
+        Return DBBroker.GetBroker.Change("INSERT INTO Playbacks (user,song,plDate) VALUES ('" & playback.GetUser() & "', '" & playback.GetSong() & "', '" & playback.GetPlDate() & "' );")
     End Function
-    Public Function Update(ByVal usr As User, path As String) As Integer
-        DBBroker.GetBroker(path)
-        Return DBBroker.GetBroker.Change("UPDATE Users SET uName='" & usr.GetName() & "' SET uSurname='" & usr.GetSurname() & "' SET birthdate='" & usr.GetBirthdate() & "'WHERE Email='" & usr.GetEmail() & "';")
+    Public Function Update(ByVal usr As User) As Integer
+        Return DBBroker.GetBroker.Change("UPDATE Artists SET uName='" & usr.GetName() & "' ,uSurname='" & usr.GetSurname() & "' ,birthdate='" & usr.GetBirthdate() & "'WHERE Email='" & usr.GetEmail() & "';")
     End Function
-    Public Function Delete(ByVal usr As User, path As String) As Integer
-        DBBroker.GetBroker(path)
+    Public Function Delete(ByVal usr As User) As Integer
         Return DBBroker.GetBroker.Change("DELETE FROM Users WHERE Email='" & usr.GetEmail() & "';")
     End Function
 

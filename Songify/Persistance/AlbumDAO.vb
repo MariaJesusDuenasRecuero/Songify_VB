@@ -28,13 +28,13 @@
     End Sub
 
     Public Function Insert(ByVal a As Album) As Integer
-        Return DBBroker.GetBroker.Change("INSERT INTO Albums VALUES ('" & a.GetIdAlbum() & "', '" & a.GetName() & "', '" & a.getReleaseDate() & "', '" & a.getArtist() & "', '" & a.GetCover() & "');")
+        Return DBBroker.GetBroker.Change("INSERT INTO Albums ([aName],releaseDate,artist,[cover]) VALUES ('" & a.GetName() & "','" & a.getReleaseDate() & "','" & a.getArtist() & "','" & a.GetCover() & "');")
     End Function
     Public Function Update(ByVal a As Album) As Integer
-        Return DBBroker.GetBroker.Change("UPDATE Albums SET aName='" & a.GetName() & "' SET releaseDate='" & a.getReleaseDate() & "' SET artist='" & a.getArtist() & "' SET cover='" & a.GetCover() & "'WHERE IdAlbum='" & a.GetIdAlbum() & "';")
+        Return DBBroker.GetBroker.Change("UPDATE Albums SET aName='" & a.GetName() & "' ,releaseDate='" & a.getReleaseDate() & "' ,artist='" & a.getArtist() & "' ,[cover]='" & a.GetCover() & "'WHERE IdAlbum=" & a.GetIdAlbum() & ";")
     End Function
     Public Function Delete(ByVal a As Album) As Integer
-        Return DBBroker.GetBroker.Change("DELETE FROM Albums WHERE IdAlbum='" & a.GetIdAlbum() & "';")
+        Return DBBroker.GetBroker.Change("DELETE FROM Albums WHERE IdAlbum=" & a.GetIdAlbum() & ";")
     End Function
 
 

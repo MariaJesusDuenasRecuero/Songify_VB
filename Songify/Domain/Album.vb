@@ -35,6 +35,9 @@
     Public Function GetCover()
         Return cover
     End Function
+    Public Function setIdAlbum(Id As Integer)
+        IdAlbum = Id
+    End Function
     Public Function SetName(name As String)
         aName = name
     End Function

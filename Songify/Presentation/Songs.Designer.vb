@@ -42,6 +42,12 @@ Partial Class Songs
         Me.btn_insert = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnHistory = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.songlengthtxtbox = New System.Windows.Forms.TextBox()
+        Me.songalbumtxtbox = New System.Windows.Forms.TextBox()
+        Me.songnametxtbox = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -187,7 +193,7 @@ Partial Class Songs
         Me.btn_delete.ForeColor = System.Drawing.Color.Black
         Me.btn_delete.Image = Global.Songify.My.Resources.Resources.eliminar
         Me.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_delete.Location = New System.Drawing.Point(350, 544)
+        Me.btn_delete.Location = New System.Drawing.Point(1169, 299)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(81, 57)
         Me.btn_delete.TabIndex = 24
@@ -201,7 +207,7 @@ Partial Class Songs
         Me.btn_update.ForeColor = System.Drawing.Color.Black
         Me.btn_update.Image = Global.Songify.My.Resources.Resources.actualizar
         Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_update.Location = New System.Drawing.Point(193, 544)
+        Me.btn_update.Location = New System.Drawing.Point(1070, 299)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(81, 57)
         Me.btn_update.TabIndex = 23
@@ -215,7 +221,7 @@ Partial Class Songs
         Me.btn_insert.ForeColor = System.Drawing.Color.Black
         Me.btn_insert.Image = CType(resources.GetObject("btn_insert.Image"), System.Drawing.Image)
         Me.btn_insert.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_insert.Location = New System.Drawing.Point(45, 544)
+        Me.btn_insert.Location = New System.Drawing.Point(967, 299)
         Me.btn_insert.Name = "btn_insert"
         Me.btn_insert.Size = New System.Drawing.Size(81, 57)
         Me.btn_insert.TabIndex = 22
@@ -245,12 +251,72 @@ Partial Class Songs
         Me.btnHistory.TabIndex = 27
         Me.btnHistory.Text = "History"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label3.Location = New System.Drawing.Point(963, 226)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(231, 23)
+        Me.Label3.TabIndex = 33
+        Me.Label3.Text = "Song length (in sec)"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(963, 141)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(138, 23)
+        Me.Label4.TabIndex = 32
+        Me.Label4.Text = "Song album"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(963, 64)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(131, 23)
+        Me.Label5.TabIndex = 31
+        Me.Label5.Text = "Song name"
+        '
+        'songlengthtxtbox
+        '
+        Me.songlengthtxtbox.Location = New System.Drawing.Point(967, 252)
+        Me.songlengthtxtbox.Name = "songlengthtxtbox"
+        Me.songlengthtxtbox.Size = New System.Drawing.Size(184, 20)
+        Me.songlengthtxtbox.TabIndex = 30
+        '
+        'songalbumtxtbox
+        '
+        Me.songalbumtxtbox.Location = New System.Drawing.Point(967, 167)
+        Me.songalbumtxtbox.Name = "songalbumtxtbox"
+        Me.songalbumtxtbox.Size = New System.Drawing.Size(184, 20)
+        Me.songalbumtxtbox.TabIndex = 29
+        '
+        'songnametxtbox
+        '
+        Me.songnametxtbox.Location = New System.Drawing.Point(967, 90)
+        Me.songnametxtbox.Name = "songnametxtbox"
+        Me.songnametxtbox.Size = New System.Drawing.Size(184, 20)
+        Me.songnametxtbox.TabIndex = 28
+        '
         'Songs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.songlengthtxtbox)
+        Me.Controls.Add(Me.songalbumtxtbox)
+        Me.Controls.Add(Me.songnametxtbox)
         Me.Controls.Add(Me.btnHistory)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_delete)
@@ -297,4 +363,10 @@ Partial Class Songs
     Friend WithEvents btn_insert As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents btnHistory As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents songlengthtxtbox As TextBox
+    Friend WithEvents songalbumtxtbox As TextBox
+    Friend WithEvents songnametxtbox As TextBox
 End Class

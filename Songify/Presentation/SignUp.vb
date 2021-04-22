@@ -81,7 +81,7 @@ Public Class SignUp
                 u.SetName(name)
                 u.SetSurname(surname)
                 u.SetBirthdate(birthdate)
-                u.InsertUser(path)
+                u.InsertUser()
                 MsgBox("Registered user", MsgBoxStyle.OkOnly, "Information")
             End If
         Catch ex As Exception

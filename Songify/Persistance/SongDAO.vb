@@ -30,13 +30,13 @@
     End Sub
 
     Public Function Insert(ByVal s As Song) As Integer
-        Return DBBroker.GetBroker.Change("INSERT INTO Songs VALUES ('" & s.getIdSong() & "', '" & s.GetName() & "', '" & s.getLength() & "', '" & s.GetAlbum() & "');")
+        Return DBBroker.GetBroker.Change("INSERT INTO Songs ([sName],Album,length) VALUES ('" & s.GetName() & "','" & s.GetAlbum() & "','" & s.getLength() & "');")
     End Function
     Public Function Update(ByVal s As Song) As Integer
-        Return DBBroker.GetBroker.Change("UPDATE Songs SET sName='" & s.GetName() & "' SET length='" & s.getLength() & "' SET Album='" & s.GetAlbum() & "' WHERE IdSong='" & s.getIdSong() & "';")
+        Return DBBroker.GetBroker.Change("UPDATE Songs SET sName='" & s.GetName() & "' ,Album='" & s.GetAlbum() & "' ,length='" & s.getLength() & "'WHERE IdSong=" & s.getIdSong() & ";")
     End Function
     Public Function Delete(ByVal s As Song) As Integer
-        Return DBBroker.GetBroker.Change("DELETE FROM Songs WHERE IdSong='" & s.getIdSong() & "';")
+        Return DBBroker.GetBroker.Change("DELETE FROM Songs WHERE IdSong=" & s.getIdSong() & ";")
     End Function
 
 

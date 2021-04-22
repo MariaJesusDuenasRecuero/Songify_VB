@@ -27,6 +27,9 @@
     Public Function getLength()
         Return length
     End Function
+    Public Function setIdSong(id As Integer)
+        IdSong = id
+    End Function
     Public Function SetName(name As String)
         sName = name
     End Function

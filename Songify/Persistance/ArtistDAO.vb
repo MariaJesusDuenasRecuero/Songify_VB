@@ -47,7 +47,7 @@
         Return DBBroker.GetBroker.Change("INSERT INTO Fav_Artists VALUES ('" & s.GetUser() & "', '" & s.GetArtist() & "', '" & s.GetFavDate() & "');")
     End Function
     Public Function Insert(ByVal ar As Artist) As Integer
-        Return DBBroker.GetBroker.Change("INSERT INTO Artists ([aName],country,[image]) VALUES ('" & ar.GetName() & "','" & ar.GetCountry() & "','" & ar.GetImage() & "')")
+        Return DBBroker.GetBroker.Change("INSERT INTO Artists ([aName],country,[image]) VALUES ('" & ar.GetName() & "','" & ar.GetCountry() & "','" & ar.GetImage() & "');")
     End Function
     Public Function Update(ByVal ar As Artist) As Integer
         Return DBBroker.GetBroker.Change("UPDATE Artists SET aName='" & ar.GetName() & "' ,country='" & ar.GetCountry() & "' ,[image]='" & ar.GetImage() & "'WHERE IdArtist=" & ar.GetIdArtist() & ";")
