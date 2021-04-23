@@ -137,27 +137,21 @@
     End Sub
 
     Private Sub UnFavArtist(sender As Object, e As EventArgs) Handles unFavButton.Click
-        Dim FavArtistsCollection As Collection : Dim Selected_Artist As String : Dim ArtistDAO As Fav_Artist : Dim repetidos As Boolean = False
-        ArtistDAO = New Fav_Artist()
-        FavArtistsCollection = ArtistDAO.ReadAllFavArtists(path)
+        Dim FavArtistsCollection As Collection : Dim Selected_Artist As String : Dim ArtistDAO As Artist
+        ArtistDAO = New Artist()
+        FavArtistsCollection = ArtistDAO.ReadAllArtists(path)
         Selected_Artist = lsb_favArtist.SelectedItem
         For Each Artist In FavArtistsCollection
             If Selected_Artist = Artist.GetName() Then
                 SelectedArtist = Artist
             End If
         Next
-        For Each fav_Artist In FavArtists
-            If fav_Artist.getArtist() = SelectedArtist.GetIdArtist() And fav_Artist.getUser() = EmailUser Then
-                repetidos = True
-            End If
-        Next
-        If repetidos = True Then
-            Dim FavArtist As Fav_Artist
-            FavArtist = New Fav_Artist()
-            FavArtist.DeleteFav_Artist()
-            lsb_favArtist.Items.Remove(SelectedArtist.GetName())
-            MsgBox("Artist removed from favorites")
-        End If
+        Dim FavArtist As Fav_Artist
+        FavArtist = New Fav_Artist()
+        FavArtist.SetArtist(SelectedArtist.GetIdArtist())
+        FavArtist.DeleteFav_Artist()
+        lsb_favArtist.Items.Remove(SelectedArtist.GetName())
+        MsgBox("Artist removed from favorites")
     End Sub
 
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
