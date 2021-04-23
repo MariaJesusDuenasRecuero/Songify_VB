@@ -43,7 +43,7 @@ Partial Class Artists
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.unFavButton = New System.Windows.Forms.Button()
         Me.btnFav = New System.Windows.Forms.Button()
         Me.btn_delete = New System.Windows.Forms.Button()
         Me.btn_update = New System.Windows.Forms.Button()
@@ -258,19 +258,19 @@ Partial Class Artists
         Me.Label5.TabIndex = 33
         Me.Label5.Text = "Add artist"
         '
-        'Button1
+        'unFavButton
         '
-        Me.Button1.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Image = Global.Songify.My.Resources.Resources.estrella1
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button1.Location = New System.Drawing.Point(237, 619)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(167, 57)
-        Me.Button1.TabIndex = 34
-        Me.Button1.Text = "Unfavorite"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.unFavButton.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.unFavButton.ForeColor = System.Drawing.Color.Black
+        Me.unFavButton.Image = Global.Songify.My.Resources.Resources.estrella1
+        Me.unFavButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.unFavButton.Location = New System.Drawing.Point(237, 619)
+        Me.unFavButton.Name = "unFavButton"
+        Me.unFavButton.Size = New System.Drawing.Size(167, 57)
+        Me.unFavButton.TabIndex = 34
+        Me.unFavButton.Text = "Unfavorite"
+        Me.unFavButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.unFavButton.UseVisualStyleBackColor = True
         '
         'btnFav
         '
@@ -343,8 +343,8 @@ Partial Class Artists
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
-        Me.ClientSize = New System.Drawing.Size(1271, 865)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(1271, 749)
+        Me.Controls.Add(Me.unFavButton)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -408,5 +408,5 @@ Partial Class Artists
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents unFavButton As Button
 End Class

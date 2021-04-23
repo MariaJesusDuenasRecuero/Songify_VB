@@ -35,4 +35,7 @@
     Public Function InsertFav_Artist() As Integer
         Return Me.arDAO.InsertFav(Me)
     End Function
+    Public Function DeleteFav_Artist() As Integer
+        Return Me.arDAO.DeleteFav_Artist(Me)
+    End Function
 End Class
