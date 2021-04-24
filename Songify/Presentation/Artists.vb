@@ -13,9 +13,7 @@
         Dim ArtistDAO As Artist
         ArtistDAO = New Artist()
         Artists = ArtistDAO.ReadAllArtists(path)
-        For Each artist In Artists
-            lsb_artist.Items.Add(artist.GetName())
-        Next
+        loadArtists()
         btnFav.Enabled = False
         Dim ArtistReader As New Fav_Artist
         FavArtists = ArtistReader.ReadAllFavArtists(path)
@@ -27,6 +25,12 @@
                     End If
                 Next
             End If
+        Next
+    End Sub
+    Public Sub loadArtists()
+        lsb_artist.Items.Clear()
+        For Each artist In Artists
+            lsb_artist.Items.Add(artist.GetName())
         Next
     End Sub
     Public Sub New(EmailUser As String, path As String)
@@ -108,6 +112,7 @@
         ArtistDAO = New Artist()
         ArtistsCollection = ArtistDAO.ReadAllArtists(path)
         Selected_Artist = lsb_favArtist.SelectedItem
+        loadArtists()
         Try
             For Each Artist In ArtistsCollection
                 If Selected_Artist = Artist.GetName() Then
@@ -170,7 +175,7 @@
         ArtistAdd.SetImage(image)
         ArtistAdd.InsertArtist()
         MsgBox("Artist added")
-        lsb_artist.Items.Add(ArtistAdd.GetName())
+        loadArtists()
     End Sub
 
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
@@ -185,6 +190,7 @@
         ArtistUpdate.SetImage(image)
         Try
             ArtistUpdate.UpdateArtist()
+            loadArtists()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -197,7 +203,7 @@
         ArtistDelete.setIdArtist(SelectedArtist.GetIdArtist())
         Try
             ArtistDelete.DeleteArtist()
-            lsb_artist.Items.Remove(ArtistDelete.GetName())
+            loadArtists()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

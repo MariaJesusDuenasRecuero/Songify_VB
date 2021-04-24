@@ -316,7 +316,8 @@ Partial Class Songs
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(524, 167)
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(527, 167)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(309, 316)
         Me.PictureBox1.TabIndex = 15

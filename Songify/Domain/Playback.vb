@@ -11,13 +11,6 @@
         Me.usrDAO = New UserDAO
         Me.IdPlay = id
     End Sub
-    Public Sub New(id As String, user As String, song As Integer, pldate As Date)
-        Me.usrDAO = New UserDAO
-        IdPlay = id
-        Me.user = user
-        Me.song = song
-        Me.plDate = pldate
-    End Sub
     Public Function GetIdPlay()
         Return IdPlay
     End Function

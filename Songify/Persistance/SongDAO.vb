@@ -38,6 +38,26 @@
     Public Function Delete(ByVal s As Song) As Integer
         Return DBBroker.GetBroker.Change("DELETE FROM Songs WHERE IdSong=" & s.getIdSong() & ";")
     End Function
+    Public Function Query2(path As String)
+        Dim name As String
+        Dim names As New Collection : Dim aux As Collection
+        Dim col As Collection = DBBroker.GetBroker(path).Read("SELECT DISTINCT s.sName, count(s.sName) FROM songs s, playbacks p WHERE (p.song=s.IdSong) GROUP BY s.sName ORDER BY count(s.sName);")
+        For Each aux In col
+            name = aux(1).ToString
+            names.Add(name)
+        Next
+        Return names
+    End Function
 
+    Public Function Query4(path As String)
+        Dim names As New Collection : Dim aux As Collection
+        Dim col As Collection = DBBroker.GetBroker(path).Read("SELECT us.uName , SUM(s.length) FROM users us, playbacks p, songs s WHERE(us.Email=p.user and p.song = s.IdSong) GROUP BY us.uName ORDER BY SUM(s.length) desc;")
+        Dim name As String
+        For Each aux In col
+            name = aux(1).ToString
+            names.Add(name)
+        Next
+        Return names
+    End Function
 
 End Class

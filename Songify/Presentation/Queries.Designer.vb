@@ -41,6 +41,8 @@ Partial Class Queries
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.ListBox3 = New System.Windows.Forms.ListBox()
         Me.ListBox4 = New System.Windows.Forms.ListBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.firstquerieCountry = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'GoBackBtn
@@ -202,7 +204,7 @@ Partial Class Queries
         Me.lblSeconds.Enabled = False
         Me.lblSeconds.Font = New System.Drawing.Font("Verdana", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSeconds.ForeColor = System.Drawing.Color.White
-        Me.lblSeconds.Location = New System.Drawing.Point(668, 387)
+        Me.lblSeconds.Location = New System.Drawing.Point(539, 440)
         Me.lblSeconds.Name = "lblSeconds"
         Me.lblSeconds.Size = New System.Drawing.Size(123, 32)
         Me.lblSeconds.TabIndex = 27
@@ -239,12 +241,31 @@ Partial Class Queries
         Me.ListBox4.TabIndex = 30
         Me.ListBox4.Visible = False
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(256, 251)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(139, 20)
+        Me.TextBox1.TabIndex = 31
+        '
+        'firstquerieCountry
+        '
+        Me.firstquerieCountry.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.firstquerieCountry.Location = New System.Drawing.Point(256, 177)
+        Me.firstquerieCountry.Name = "firstquerieCountry"
+        Me.firstquerieCountry.Size = New System.Drawing.Size(191, 68)
+        Me.firstquerieCountry.TabIndex = 32
+        Me.firstquerieCountry.Text = "First querie (country)"
+        Me.firstquerieCountry.UseVisualStyleBackColor = True
+        '
         'Queries
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.Controls.Add(Me.firstquerieCountry)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.playbackTime)
         Me.Controls.Add(Me.lblSeconds)
         Me.Controls.Add(Me.ListBox4)
@@ -292,4 +313,6 @@ Partial Class Queries
     Friend WithEvents ListBox2 As ListBox
     Friend WithEvents ListBox3 As ListBox
     Friend WithEvents ListBox4 As ListBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents firstquerieCountry As Button
 End Class

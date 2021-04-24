@@ -60,4 +60,14 @@
     Public Function DeleteArtist() As Integer
         Return Me.arDAO.Delete(Me)
     End Function
+
+    Public Function Query1(path As String)
+        Return Me.arDAO.Query1(path)
+    End Function
+    Public Function Query2(path As String, country As String)
+        Return Me.arDAO.Query2(path, country)
+    End Function
+    Public Function Query5(path As String, Email As String)
+        Return Me.arDAO.Query5(path, Email)
+    End Function
 End Class

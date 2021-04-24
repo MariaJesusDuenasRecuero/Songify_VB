@@ -54,5 +54,10 @@
     Public Function DeleteSong() As Integer
         Return Me.sDAO.Delete(Me)
     End Function
-
+    Public Function Query2(path As String)
+        Return Me.sDAO.Query2(path)
+    End Function
+    Public Function Query4(path As String)
+        Return Me.sDAO.Query4(path)
+    End Function
 End Class

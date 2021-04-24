@@ -48,10 +48,10 @@
     End Function
 
     Public Function InsertPlayback(ByVal playback As Playback)
-        Return DBBroker.GetBroker.Change("INSERT INTO Playbacks (user,song,plDate) VALUES ('" & playback.GetUser() & "', '" & playback.GetSong() & "', '" & playback.GetPlDate() & "' );")
+        Return DBBroker.GetBroker.Change("INSERT INTO Playbacks ([user],song,plDate) VALUES ('" & playback.GetUser() & "','" & playback.GetSong() & "','" & playback.GetPlDate() & "');")
     End Function
     Public Function Update(ByVal usr As User) As Integer
-        Return DBBroker.GetBroker.Change("UPDATE Artists SET uName='" & usr.GetName() & "' ,uSurname='" & usr.GetSurname() & "' ,birthdate='" & usr.GetBirthdate() & "'WHERE Email='" & usr.GetEmail() & "';")
+        Return DBBroker.GetBroker.Change("UPDATE Users SET uName='" & usr.GetName() & "' ,uSurname='" & usr.GetSurname() & "' ,birthdate='" & usr.GetBirthdate() & "'WHERE Email='" & usr.GetEmail() & "';")
     End Function
     Public Function Delete(ByVal usr As User) As Integer
         Return DBBroker.GetBroker.Change("DELETE FROM Users WHERE Email='" & usr.GetEmail() & "';")

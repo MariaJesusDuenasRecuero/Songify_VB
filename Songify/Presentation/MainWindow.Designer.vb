@@ -211,7 +211,7 @@ Partial Class MainWindow
     Friend WithEvents Button1 As Button
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim f2 As New Queries()
+        Dim f2 As New Queries(path, Email)
         f2.Show()
         Me.Hide()
     End Sub

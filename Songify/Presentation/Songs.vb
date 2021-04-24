@@ -74,21 +74,19 @@
         Label2.Visible = True
     End Sub
     Private Sub PlaySong(sender As Object, e As EventArgs) Handles Play.Click
-        Dim Playbacks As Collection : Dim UserDAO As User
-        UserDAO = New User()
-        Playbacks = UserDAO.ReadAllPlaybacks(path)
-        For Each playback In Playbacks
-            IdPlay += 1
-        Next
         ProgressBar1.Value = 0
         Dim PlayBackSong As Playback
         If SongSelected IsNot Nothing Then
-            IdPlay += 1
-            PlayBackSong = New Playback(IdPlay)
+            PlayBackSong = New Playback()
             PlayBackSong.SetUser(EmailUser)
             PlayBackSong.SetSong(SongSelected.getIdSong())
-            PlayBackSong.SetPlDate(Date.Today)
-            PlayBackSong.InsertPlayBack()
+            PlayBackSong.SetPlDate(Date.Today())
+            Try
+                PlayBackSong.InsertPlayBack()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
             For L As Integer = 0 To SongSelected.getLength() * 100
                 ProgressBar1.Increment(L)
             Next L
