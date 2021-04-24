@@ -20,9 +20,7 @@
         EmailLog.Text = EmailUser
         SongDAO = New Song()
         SongsCollection = SongDAO.ReadAllSongs(path)
-        For Each song In SongsCollection
-            ListBox1.Items.Add(song.GetName())
-        Next
+        loadSongs()
         ListBox2.Items.Add("User" & "\" & "Date")
         Dim AlbumReader As New Album
         Albums = AlbumReader.ReadAllAlbums(path)
@@ -45,33 +43,38 @@
         AlbumDAO = New Album()
         Albums = AlbumDAO.ReadAllAlbums(path)
         SelectedSong = ListBox1.SelectedItem
-        playbacks = userDAO.ReadAllPlaybacks(path)
-        For Each Song In SongsCollection
-            If SelectedSong = Song.GetName() Then
-                SongSelected = Song
-            End If
-        Next
-        For Each album In Albums
-            If SongSelected.GetAlbum() = album.GetIdAlbum() Then
-                AlbumName = album.GetName()
-            End If
-        Next
-        For Each playback In playbacks
-            If playback.GetSong() = SongSelected.getIdSong() Then
-                ListBox2.Items.Add(playback.GetUser() & "\" & playback.getPlDate())
-            End If
-        Next
-        SLength = CalcularTiempo(SongSelected.GetSLength())
-        songNametxt.Text = SelectedSong
-        songNametxt.Visible = True
-        AlbumSongtxt.Text = AlbumName
-        AlbumSongtxt.Visible = True
-        SongLengthtxt.Text = SLength
-        SongLengthtxt.Visible = True
-        Play.Image = My.Resources.jugar1
-        historytxt.Visible = True
-        Label2.Text = SongSelected.GetName()
-        Label2.Visible = True
+        If SelectedSong IsNot Nothing Then
+            playbacks = userDAO.ReadAllPlaybacks(path)
+            For Each Song In SongsCollection
+                If SelectedSong = Song.GetName() Then
+                    SongSelected = Song
+                End If
+            Next
+            For Each album In Albums
+                If SongSelected.GetAlbum() = album.GetIdAlbum() Then
+                    AlbumName = album.GetName()
+                End If
+            Next
+            For Each playback In playbacks
+                If playback.GetSong() = SongSelected.getIdSong() Then
+                    ListBox2.Items.Add(playback.GetUser() & "\" & playback.getPlDate())
+                End If
+            Next
+            SLength = CalcularTiempo(SongSelected.GetSLength())
+            songNametxt.Text = SelectedSong
+            songNametxt.Visible = True
+            AlbumSongtxt.Text = AlbumName
+            AlbumSongtxt.Visible = True
+            SongLengthtxt.Text = SLength
+            SongLengthtxt.Visible = True
+            Play.Image = My.Resources.jugar1
+            historytxt.Visible = True
+            Label2.Text = SongSelected.GetName()
+            Label2.Visible = True
+        Else
+            MsgBox("You didn't select a song")
+        End If
+
     End Sub
     Private Sub PlaySong(sender As Object, e As EventArgs) Handles Play.Click
         ProgressBar1.Value = 0
@@ -139,7 +142,7 @@
         Try
             SongAdd.InsertSong()
             MsgBox("Song added")
-            ListBox1.Items.Add(SongAdd.GetName())
+            loadSongs()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -162,12 +165,29 @@
         SongUpdate.SetLength(length)
         Try
             SongUpdate.UpdateSong()
+            loadSongs()
             MsgBox("Song updated successfully")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
 
     End Sub
-
+    Private Sub btn_song_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
+        Dim SongDelete As Song
+        SongDelete = New Song()
+        SongDelete.setIdSong(SongSelected.getIdSong())
+        Try
+            SongDelete.DeleteSong()
+            loadSongs()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Sub loadSongs()
+        ListBox1.Items.Clear()
+        For Each song In SongsCollection
+            ListBox1.Items.Add(song.GetName())
+        Next
+    End Sub
 
 End Class

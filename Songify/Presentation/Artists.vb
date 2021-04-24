@@ -10,6 +10,7 @@
         country.Text = ""
         country.Visible = False
         EmailLog.Text = EmailUser
+        unFavButton.Enabled = False
         Dim ArtistDAO As Artist
         ArtistDAO = New Artist()
         Artists = ArtistDAO.ReadAllArtists(path)
@@ -46,7 +47,8 @@
     Private Sub loadData(sender As Object, e As EventArgs) Handles lsb_artist.SelectedIndexChanged
         lst_album.Items.Clear()
         Dim Albums As Collection : Dim AlbumDAO As Album : Dim ArtistName As String
-
+        btnFav.Enabled = True
+        unFavButton.Enabled = False
         AlbumDAO = New Album()
         Albums = AlbumDAO.ReadAllAlbums(path)
         ArtistName = lsb_artist.SelectedItem
@@ -78,6 +80,8 @@
 
     Private Sub loadFavArtists(sender As Object, e As EventArgs) Handles lsb_favArtist.SelectedIndexChanged
         lst_album.Items.Clear()
+        btnFav.Enabled = False
+        unFavButton.Enabled = True
         Dim Albums As Collection : Dim AlbumDAO As Album : Dim ArtistName As String
         Dim ArtistReader As New Fav_Artist : Dim FavArtists As Collection
         AlbumDAO = New Album()
@@ -198,7 +202,7 @@
     End Sub
 
     Private Sub btn_Delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
-        Dim aName As String : Dim ArtistDelete As Artist
+        Dim ArtistDelete As Artist
         ArtistDelete = New Artist()
         ArtistDelete.setIdArtist(SelectedArtist.GetIdArtist())
         Try

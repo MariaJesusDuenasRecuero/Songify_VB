@@ -42,11 +42,16 @@
         lblSeconds.Visible = False
         Dim country As String
         country = TextBox1.Text
-        Dim ArtistDAO As New Artist : Dim ListQuery1Country As Collection
-        ListQuery1Country = ArtistDAO.Query2(path, country)
-        For Each aName In ListQuery1Country
-            ListBox1.Items.Add(aName)
-        Next
+        If country IsNot Nothing Then
+            Dim ArtistDAO As New Artist : Dim ListQuery1Country As Collection
+            ListQuery1Country = ArtistDAO.Query2(path, country)
+            For Each aName In ListQuery1Country
+                ListBox1.Items.Add(aName)
+            Next
+        Else
+            MsgBox("You must write a country to filter")
+        End If
+
     End Sub
 
     Private Sub SecondQuerie_Click(sender As Object, e As EventArgs) Handles SecondQuerie.Click
@@ -77,12 +82,16 @@
         Date2 = TextBox3.Text
         fecha1 = Format(Date1, "dd/MM/yyyy")
         fecha2 = Format(Date2, "dd/MM/yyyy")
+        If fecha1 IsNot Nothing And fecha2 IsNot Nothing Then
+            Dim ArtistDAO As New Artist : Dim ListQuery3 As Collection
+            ListQuery3 = ArtistDAO.Query3(path, CDate(fecha1), CDate(fecha2), Email)
+            For Each aName In ListQuery3
+                ListBox3.Items.Add(aName)
+            Next
+        Else
+            MsgBox("You must write 2 dates for the interval")
+        End If
 
-        Dim ArtistDAO As New Artist : Dim ListQuery3 As Collection
-        ListQuery3 = ArtistDAO.Query3(path, CDate(fecha1), CDate(fecha2), Email)
-        For Each aName In ListQuery3
-            ListBox3.Items.Add(aName)
-        Next
     End Sub
 
     Private Sub fourthQuerie_Click(sender As Object, e As EventArgs) Handles fourthQuerie.Click
@@ -124,4 +133,7 @@
         Return horatotal
     End Function
 
+    Private Sub Queries_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

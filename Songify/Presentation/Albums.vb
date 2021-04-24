@@ -39,37 +39,42 @@ Public Class Albums
         SongDAO = New Song()
         Songs = SongDAO.ReadAllSongs(path)
         AlbumName = ListBox1.SelectedItem
-        For Each album In Albums
-            If album.GetName() = AlbumName Then
-                SelectedAlbum = album
-            End If
-        Next
-        For Each song In Songs
-            If song.GetAlbum() = SelectedAlbum.GetIdAlbum() Then
-                ListBox2.Items.Add(song.GetName())
-                lengthalbum = lengthalbum + song.GetLength()
-            End If
-        Next
-        ArtistDAO = New Artist()
-        Artists = ArtistDAO.ReadAllArtists(path)
-        For Each artist In Artists
-            If artist.GetIdArtist() = SelectedAlbum.getArtist() Then
-                artistname = artist.GetName()
-            End If
-        Next
+        If AlbumName IsNot Nothing Then
+            For Each album In Albums
+                If album.GetName() = AlbumName Then
+                    SelectedAlbum = album
+                End If
+            Next
+            For Each song In Songs
+                If song.GetAlbum() = SelectedAlbum.GetIdAlbum() Then
+                    ListBox2.Items.Add(song.GetName())
+                    lengthalbum = lengthalbum + song.GetLength()
+                End If
+            Next
+            ArtistDAO = New Artist()
+            Artists = ArtistDAO.ReadAllArtists(path)
+            For Each artist In Artists
+                If artist.GetIdArtist() = SelectedAlbum.getArtist() Then
+                    artistname = artist.GetName()
+                End If
+            Next
 
-        lengthtotal = CalcularTiempo(lengthalbum)
-        aName.Visible = True
-        aName.Text = artistname
-        releaseDate.Visible = True
-        releaseDate.Text = SelectedAlbum.getReleaseDate()
-        Length.Visible = True
-        Length.Text = lengthtotal
-        img_album.Image = Image.FromFile(SelectedAlbum.GetCover())
-        albumnametxt.Text = SelectedAlbum.GetName()
-        albumreleaseDatetxt.Text = SelectedAlbum.getReleaseDate()
-        albumartisttxt.Text = artistname
-        TextBox1.Text = SelectedAlbum.GetCover()
+            lengthtotal = CalcularTiempo(lengthalbum)
+            aName.Visible = True
+            aName.Text = artistname
+            releaseDate.Visible = True
+            releaseDate.Text = SelectedAlbum.getReleaseDate()
+            Length.Visible = True
+            Length.Text = lengthtotal
+            img_album.Image = Image.FromFile(SelectedAlbum.GetCover())
+            albumnametxt.Text = SelectedAlbum.GetName()
+            albumreleaseDatetxt.Text = SelectedAlbum.getReleaseDate()
+            albumartisttxt.Text = artistname
+            TextBox1.Text = SelectedAlbum.GetCover()
+        Else
+            MsgBox("You didn't select an album")
+        End If
+
     End Sub
 
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
