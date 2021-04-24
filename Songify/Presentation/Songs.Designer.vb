@@ -97,11 +97,14 @@ Partial Class Songs
         '
         Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.GoBackBtn.ForeColor = System.Drawing.Color.Black
+        Me.GoBackBtn.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_40_53
+        Me.GoBackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.GoBackBtn.Location = New System.Drawing.Point(35, 773)
         Me.GoBackBtn.Name = "GoBackBtn"
-        Me.GoBackBtn.Size = New System.Drawing.Size(103, 42)
+        Me.GoBackBtn.Size = New System.Drawing.Size(92, 42)
         Me.GoBackBtn.TabIndex = 12
         Me.GoBackBtn.Text = "Back"
+        Me.GoBackBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.GoBackBtn.UseVisualStyleBackColor = True
         '
         'lbl_profile
@@ -201,7 +204,7 @@ Partial Class Songs
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(930, 456)
+        Me.Label3.Location = New System.Drawing.Point(930, 391)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(231, 23)
         Me.Label3.TabIndex = 33
@@ -212,7 +215,7 @@ Partial Class Songs
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(930, 371)
+        Me.Label4.Location = New System.Drawing.Point(930, 306)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(138, 23)
         Me.Label4.TabIndex = 32
@@ -223,7 +226,7 @@ Partial Class Songs
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label5.Location = New System.Drawing.Point(930, 294)
+        Me.Label5.Location = New System.Drawing.Point(930, 229)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(131, 23)
         Me.Label5.TabIndex = 31
@@ -231,21 +234,21 @@ Partial Class Songs
         '
         'songlengthtxtbox
         '
-        Me.songlengthtxtbox.Location = New System.Drawing.Point(934, 482)
+        Me.songlengthtxtbox.Location = New System.Drawing.Point(934, 417)
         Me.songlengthtxtbox.Name = "songlengthtxtbox"
         Me.songlengthtxtbox.Size = New System.Drawing.Size(283, 20)
         Me.songlengthtxtbox.TabIndex = 30
         '
         'songalbumtxtbox
         '
-        Me.songalbumtxtbox.Location = New System.Drawing.Point(934, 397)
+        Me.songalbumtxtbox.Location = New System.Drawing.Point(934, 332)
         Me.songalbumtxtbox.Name = "songalbumtxtbox"
         Me.songalbumtxtbox.Size = New System.Drawing.Size(283, 20)
         Me.songalbumtxtbox.TabIndex = 29
         '
         'songnametxtbox
         '
-        Me.songnametxtbox.Location = New System.Drawing.Point(934, 320)
+        Me.songnametxtbox.Location = New System.Drawing.Point(934, 255)
         Me.songnametxtbox.Name = "songnametxtbox"
         Me.songnametxtbox.Size = New System.Drawing.Size(283, 20)
         Me.songnametxtbox.TabIndex = 28
@@ -316,7 +319,7 @@ Partial Class Songs
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Image = Global.Songify.My.Resources.Resources.Sin_título_1
         Me.PictureBox1.Location = New System.Drawing.Point(527, 167)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(309, 316)
@@ -357,6 +360,7 @@ Partial Class Songs
         Me.Controls.Add(Me.ListBox1)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimizeBox = False
         Me.Name = "Songs"
         Me.Text = "Songs"

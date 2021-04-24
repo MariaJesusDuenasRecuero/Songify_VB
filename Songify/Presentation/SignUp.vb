@@ -39,7 +39,7 @@ Public Class SignUp
 
     Private Sub SignUpClick(sender As Object, e As EventArgs) Handles btn_loginSignUp.Click
         Dim name As String : Dim surname As String : Dim email As String : Dim birthdate As Date : Dim u As User : Dim valido As Boolean : Dim formatEmail As String : Dim FechaFormato As String
-        'formatEmail = "^[\w-\.]+@\cancionify\+$"
+
         valido = True
         Try
             If txt_name.Text = "" Then
@@ -55,10 +55,7 @@ Public Class SignUp
             If txt_email.Text = "" Then
                 MessageBox.Show("Please introduce a valid value")
                 valido = False
-                'ElseIf txt_email.Text <> Format(txt_email.Text, formatEmail) Then
-                'valido = True
-                'Else
-                'valido = False
+
             End If
 
 
@@ -76,13 +73,20 @@ Public Class SignUp
                 valido = False
             End If
             birthdate = txt_birthdate.Text
+
             If valido = True Then
                 u = New User(email)
                 u.SetName(name)
                 u.SetSurname(surname)
                 u.SetBirthdate(birthdate)
-                u.InsertUser()
-                MsgBox("Registered user", MsgBoxStyle.OkOnly, "Information")
+                Try
+                    u.InsertUser()
+                    MsgBox("Registered user", MsgBoxStyle.OkOnly, "Information")
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                End Try
+
+
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

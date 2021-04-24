@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Artists
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Artists
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Artists))
         Me.lsb_artist = New System.Windows.Forms.ListBox()
@@ -98,12 +98,15 @@ Partial Class Artists
         '
         Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.GoBackBtn.ForeColor = System.Drawing.Color.Black
-        Me.GoBackBtn.Location = New System.Drawing.Point(21, 800)
+        Me.GoBackBtn.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_40_53
+        Me.GoBackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.GoBackBtn.Location = New System.Drawing.Point(23, 789)
         Me.GoBackBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.GoBackBtn.Name = "GoBackBtn"
-        Me.GoBackBtn.Size = New System.Drawing.Size(88, 42)
+        Me.GoBackBtn.Size = New System.Drawing.Size(103, 42)
         Me.GoBackBtn.TabIndex = 5
         Me.GoBackBtn.Text = "Back"
+        Me.GoBackBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.GoBackBtn.UseVisualStyleBackColor = True
         '
         'lbl_artists
@@ -185,23 +188,26 @@ Partial Class Artists
         '
         'artistnametxt
         '
+        Me.artistnametxt.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.artistnametxt.Location = New System.Drawing.Point(968, 232)
         Me.artistnametxt.Name = "artistnametxt"
-        Me.artistnametxt.Size = New System.Drawing.Size(274, 21)
+        Me.artistnametxt.Size = New System.Drawing.Size(274, 27)
         Me.artistnametxt.TabIndex = 17
         '
         'artistcountrytxt
         '
+        Me.artistcountrytxt.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.artistcountrytxt.Location = New System.Drawing.Point(968, 309)
         Me.artistcountrytxt.Name = "artistcountrytxt"
-        Me.artistcountrytxt.Size = New System.Drawing.Size(274, 21)
+        Me.artistcountrytxt.Size = New System.Drawing.Size(274, 27)
         Me.artistcountrytxt.TabIndex = 18
         '
         'artistimgtxt
         '
+        Me.artistimgtxt.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.artistimgtxt.Location = New System.Drawing.Point(968, 394)
         Me.artistimgtxt.Name = "artistimgtxt"
-        Me.artistimgtxt.Size = New System.Drawing.Size(274, 21)
+        Me.artistimgtxt.Size = New System.Drawing.Size(274, 27)
         Me.artistimgtxt.TabIndex = 19
         '
         'Label1
@@ -343,7 +349,7 @@ Partial Class Artists
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
-        Me.ClientSize = New System.Drawing.Size(1271, 749)
+        Me.ClientSize = New System.Drawing.Size(1271, 865)
         Me.Controls.Add(Me.unFavButton)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -373,6 +379,7 @@ Partial Class Artists
         Me.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.MaximizeBox = False
         Me.Name = "Artists"

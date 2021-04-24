@@ -22,6 +22,7 @@ Partial Class SignUp
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SignUp))
         Me.btn_loginSignUp = New System.Windows.Forms.Button()
         Me.txt_name = New System.Windows.Forms.TextBox()
         Me.txt_surname = New System.Windows.Forms.TextBox()
@@ -51,7 +52,7 @@ Partial Class SignUp
         'txt_name
         '
         Me.txt_name.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_name.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.txt_name.ForeColor = System.Drawing.Color.DarkSlateBlue
         Me.txt_name.Location = New System.Drawing.Point(506, 251)
         Me.txt_name.Name = "txt_name"
         Me.txt_name.Size = New System.Drawing.Size(213, 31)
@@ -61,7 +62,7 @@ Partial Class SignUp
         'txt_surname
         '
         Me.txt_surname.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_surname.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.txt_surname.ForeColor = System.Drawing.Color.DarkSlateBlue
         Me.txt_surname.Location = New System.Drawing.Point(506, 326)
         Me.txt_surname.Name = "txt_surname"
         Me.txt_surname.Size = New System.Drawing.Size(213, 31)
@@ -71,7 +72,7 @@ Partial Class SignUp
         'txt_email
         '
         Me.txt_email.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_email.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.txt_email.ForeColor = System.Drawing.Color.DarkSlateBlue
         Me.txt_email.Location = New System.Drawing.Point(506, 404)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(213, 31)
@@ -81,7 +82,7 @@ Partial Class SignUp
         'txt_birthdate
         '
         Me.txt_birthdate.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_birthdate.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.txt_birthdate.ForeColor = System.Drawing.Color.DarkSlateBlue
         Me.txt_birthdate.Location = New System.Drawing.Point(506, 477)
         Me.txt_birthdate.Name = "txt_birthdate"
         Me.txt_birthdate.Size = New System.Drawing.Size(213, 31)
@@ -149,7 +150,6 @@ Partial Class SignUp
         Me.btn_back.Size = New System.Drawing.Size(264, 42)
         Me.btn_back.TabIndex = 5
         Me.btn_back.Text = "Back"
-        Me.btn_back.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_back.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_back.UseVisualStyleBackColor = False
         '
@@ -180,6 +180,7 @@ Partial Class SignUp
         Me.Controls.Add(Me.btn_loginSignUp)
         Me.Controls.Add(Me.lbl_background)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "SignUp"
         Me.Text = "SignUp"

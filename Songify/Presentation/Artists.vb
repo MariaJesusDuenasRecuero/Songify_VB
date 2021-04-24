@@ -174,12 +174,24 @@
         aName = artistnametxt.Text
         country = artistcountrytxt.Text
         image = artistimgtxt.Text
-        ArtistAdd.SetName(aName)
-        ArtistAdd.SetCountry(country)
-        ArtistAdd.SetImage(image)
-        ArtistAdd.InsertArtist()
-        MsgBox("Artist added")
-        loadArtists()
+        If (aName = "" Or country = "" Or image = "") Then
+            MessageBox.Show("There is blank space in the register please try again")
+
+        Else
+            ArtistAdd.SetName(aName)
+            ArtistAdd.SetCountry(country)
+            ArtistAdd.SetImage(image)
+            Try
+                ArtistAdd.InsertArtist()
+                MsgBox("Artist added")
+                loadArtists()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End Try
+
+        End If
+
+
     End Sub
 
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
@@ -192,12 +204,17 @@
         ArtistUpdate.SetName(aName)
         ArtistUpdate.SetCountry(country)
         ArtistUpdate.SetImage(image)
-        Try
-            ArtistUpdate.UpdateArtist()
-            loadArtists()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+
+        If (aName = "" Or country = "" Or image = "") Then
+            MessageBox.Show("There is blank space in the register please try again")
+        Else
+            Try
+                ArtistUpdate.UpdateArtist()
+                loadArtists()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
 
     End Sub
 

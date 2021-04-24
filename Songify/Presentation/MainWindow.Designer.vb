@@ -22,6 +22,7 @@ Partial Class MainWindow
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
         Me.lbl_profile = New System.Windows.Forms.Label()
         Me.EmailLog = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -143,9 +144,10 @@ Partial Class MainWindow
         Me.Controls.Add(Me.btn_artists)
         Me.Controls.Add(Me.lbl_background)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "MainWindow"
-        Me.Text = "MainWindow"
+        Me.Text = "Home"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

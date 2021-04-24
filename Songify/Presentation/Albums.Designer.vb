@@ -55,11 +55,14 @@ Partial Class Albums
         'GoBackBtn
         '
         Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GoBackBtn.Location = New System.Drawing.Point(29, 786)
+        Me.GoBackBtn.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_40_53
+        Me.GoBackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.GoBackBtn.Location = New System.Drawing.Point(33, 786)
         Me.GoBackBtn.Name = "GoBackBtn"
-        Me.GoBackBtn.Size = New System.Drawing.Size(81, 42)
+        Me.GoBackBtn.Size = New System.Drawing.Size(96, 42)
         Me.GoBackBtn.TabIndex = 11
         Me.GoBackBtn.Text = "Back"
+        Me.GoBackBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.GoBackBtn.UseVisualStyleBackColor = True
         '
         'releaseDate
@@ -228,30 +231,34 @@ Partial Class Albums
         '
         'albumartisttxt
         '
+        Me.albumartisttxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.albumartisttxt.Location = New System.Drawing.Point(953, 374)
         Me.albumartisttxt.Name = "albumartisttxt"
-        Me.albumartisttxt.Size = New System.Drawing.Size(285, 20)
+        Me.albumartisttxt.Size = New System.Drawing.Size(285, 26)
         Me.albumartisttxt.TabIndex = 26
         '
         'albumreleaseDatetxt
         '
+        Me.albumreleaseDatetxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.albumreleaseDatetxt.Location = New System.Drawing.Point(953, 282)
         Me.albumreleaseDatetxt.Name = "albumreleaseDatetxt"
-        Me.albumreleaseDatetxt.Size = New System.Drawing.Size(285, 20)
+        Me.albumreleaseDatetxt.Size = New System.Drawing.Size(285, 26)
         Me.albumreleaseDatetxt.TabIndex = 25
         '
         'albumnametxt
         '
+        Me.albumnametxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.albumnametxt.Location = New System.Drawing.Point(953, 197)
         Me.albumnametxt.Name = "albumnametxt"
-        Me.albumnametxt.Size = New System.Drawing.Size(285, 20)
+        Me.albumnametxt.Size = New System.Drawing.Size(285, 26)
         Me.albumnametxt.TabIndex = 24
         '
         'TextBox1
         '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.Location = New System.Drawing.Point(953, 462)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(285, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(285, 26)
         Me.TextBox1.TabIndex = 30
         '
         'Label4
@@ -361,6 +368,7 @@ Partial Class Albums
         Me.Controls.Add(Me.aName)
         Me.Controls.Add(Me.ListBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Albums"
         Me.Text = "Albums"

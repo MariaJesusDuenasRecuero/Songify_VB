@@ -22,13 +22,14 @@ Partial Class Login
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.btn_login = New System.Windows.Forms.Button()
         Me.txt_email = New System.Windows.Forms.TextBox()
         Me.ofdPath = New System.Windows.Forms.OpenFileDialog()
+        Me.btn_signUp = New System.Windows.Forms.Button()
         Me.btn_connect = New System.Windows.Forms.Button()
         Me.btn_selectDB = New System.Windows.Forms.Button()
         Me.lbl_iconEmail = New System.Windows.Forms.Label()
-        Me.btn_signUp = New System.Windows.Forms.Button()
         Me.lbl_songify = New System.Windows.Forms.Label()
         Me.lbl_background = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -50,7 +51,7 @@ Partial Class Login
         '
         Me.txt_email.Enabled = False
         Me.txt_email.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_email.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.txt_email.ForeColor = System.Drawing.Color.DarkSlateBlue
         Me.txt_email.Location = New System.Drawing.Point(537, 396)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(239, 31)
@@ -60,6 +61,19 @@ Partial Class Login
         'ofdPath
         '
         Me.ofdPath.FileName = "OpenFileDialog1"
+        '
+        'btn_signUp
+        '
+        Me.btn_signUp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btn_signUp.BackColor = System.Drawing.Color.White
+        Me.btn_signUp.Enabled = False
+        Me.btn_signUp.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_signUp.Location = New System.Drawing.Point(497, 531)
+        Me.btn_signUp.Name = "btn_signUp"
+        Me.btn_signUp.Size = New System.Drawing.Size(279, 42)
+        Me.btn_signUp.TabIndex = 3
+        Me.btn_signUp.Text = "Sign up"
+        Me.btn_signUp.UseVisualStyleBackColor = False
         '
         'btn_connect
         '
@@ -101,19 +115,6 @@ Partial Class Login
         Me.lbl_iconEmail.Size = New System.Drawing.Size(37, 31)
         Me.lbl_iconEmail.TabIndex = 6
         '
-        'btn_signUp
-        '
-        Me.btn_signUp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btn_signUp.BackColor = System.Drawing.Color.White
-        Me.btn_signUp.Enabled = False
-        Me.btn_signUp.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_signUp.Location = New System.Drawing.Point(497, 531)
-        Me.btn_signUp.Name = "btn_signUp"
-        Me.btn_signUp.Size = New System.Drawing.Size(279, 42)
-        Me.btn_signUp.TabIndex = 3
-        Me.btn_signUp.Text = "Sign up"
-        Me.btn_signUp.UseVisualStyleBackColor = False
-        '
         'lbl_songify
         '
         Me.lbl_songify.BackColor = System.Drawing.Color.White
@@ -146,9 +147,10 @@ Partial Class Login
         Me.Controls.Add(Me.lbl_songify)
         Me.Controls.Add(Me.lbl_background)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Login"
-        Me.Text = "Form1"
+        Me.Text = "Sig in"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

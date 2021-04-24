@@ -44,7 +44,11 @@
         Return usr
     End Function
     Public Function Insert(ByVal usr As User) As Integer
+
         Return DBBroker.GetBroker.Change("INSERT INTO Songs (Email,[uName],uSurname,birthdate) VALUES ('" & usr.GetEmail() & "','" & usr.GetName() & "','" & usr.GetSurname() & "','" & usr.GetBirthdate() & "');")
+
+
+
     End Function
 
     Public Function InsertPlayback(ByVal playback As Playback)

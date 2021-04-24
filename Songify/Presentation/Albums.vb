@@ -101,16 +101,21 @@ Public Class Albums
                 artistID = artist.getIdArtist()
             End If
         Next
-        AlbumAdd.SetName(aName)
-        AlbumAdd.SetDate(dateR)
-        AlbumAdd.SetArtist(artistID)
-        Try
-            AlbumAdd.InsertAlbum()
-            MsgBox("Album added successfully")
-            ListBox1.Items.Add(AlbumAdd.GetName())
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        If (aName = "" Or dateR = "" Or artistname = "") Then
+            MessageBox.Show("There is blank space in the register please try again")
+        Else
+            AlbumAdd.SetName(aName)
+            AlbumAdd.SetDate(dateR)
+            AlbumAdd.SetArtist(artistID)
+            Try
+                AlbumAdd.InsertAlbum()
+                MsgBox("Album added successfully")
+                ListBox1.Items.Add(AlbumAdd.GetName())
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+
 
     End Sub
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
@@ -125,17 +130,26 @@ Public Class Albums
                 artistID = artist.getIdArtist()
             End If
         Next
-        AlbumUpdate.setIdAlbum(SelectedAlbum.GetIdAlbum())
-        AlbumUpdate.SetName(aName)
-        AlbumUpdate.SetDate(dateR)
-        AlbumUpdate.SetArtist(artistID)
-        AlbumUpdate.SetCover(cover)
-        Try
-            AlbumUpdate.UpdateAlbum()
-            MsgBox("Album Updated successfully")
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        If (aName = "" Or dateR = "" Or artistname = "" Or cover = "") Then
+            MessageBox.Show("There is blank space in the register please try again")
+        Else
+            AlbumUpdate.setIdAlbum(SelectedAlbum.GetIdAlbum())
+            AlbumUpdate.SetName(aName)
+            AlbumUpdate.SetDate(dateR)
+            AlbumUpdate.SetArtist(artistID)
+            AlbumUpdate.SetCover(cover)
+            Try
+                Try
+                    AlbumUpdate.UpdateAlbum()
+                    MsgBox("Album Updated successfully")
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                End Try
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
     End Sub
     Private Sub btn_Delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
         Dim aName As String : Dim AlbumDelete As Album

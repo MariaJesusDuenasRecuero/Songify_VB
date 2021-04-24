@@ -264,5 +264,17 @@
   <ItemGroup>
     <None Include="Resources\searching.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sin-título-1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
