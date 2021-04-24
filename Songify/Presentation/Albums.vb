@@ -71,7 +71,6 @@ Public Class Albums
                     artistname = artist.GetName()
                 End If
             Next
-
             lengthtotal = CalcularTiempo(lengthalbum)
             aName.Visible = True
             aName.Text = artistname
@@ -104,7 +103,7 @@ Public Class Albums
     End Function
 
     Private Sub btn_insert_Click(sender As Object, e As EventArgs) Handles btn_insert.Click
-        Dim aName As String : Dim dateR As Date : Dim artistname As String : Dim AlbumAdd As New Album : Dim artistID As Integer
+        Dim aName As String : Dim dateR As Date : Dim artistname As String : Dim AlbumAdd As New Album : Dim artistID As Integer : Dim iguales As Boolean = False
         Try
             aName = albumnametxt.Text
             dateR = albumreleaseDatetxt.Text
@@ -114,19 +113,28 @@ Public Class Albums
                     artistID = artist.getIdArtist()
                 End If
             Next
-            If (aName = "" Or dateR = "" Or artistname = "") Then
-                MessageBox.Show("There is blank space in the register please try again")
+            For Each album In Albums
+                If album.GetName() = aName Then
+                    iguales = True
+                End If
+            Next
+            If iguales = False Then
+                If (aName = "" Or dateR = "" Or artistname = "") Then
+                    MessageBox.Show("There is blank space in the register please try again")
+                Else
+                    AlbumAdd.SetName(aName)
+                    AlbumAdd.SetDate(dateR)
+                    AlbumAdd.SetArtist(artistID)
+                    Try
+                        AlbumAdd.InsertAlbum()
+                        MsgBox("Album added successfully")
+                        ListBox1.Items.Add(AlbumAdd.GetName())
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+                End If
             Else
-                AlbumAdd.SetName(aName)
-                AlbumAdd.SetDate(dateR)
-                AlbumAdd.SetArtist(artistID)
-                Try
-                    AlbumAdd.InsertAlbum()
-                    MsgBox("Album added successfully")
-                    ListBox1.Items.Add(AlbumAdd.GetName())
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
+                MsgBox("This album is already in the database")
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

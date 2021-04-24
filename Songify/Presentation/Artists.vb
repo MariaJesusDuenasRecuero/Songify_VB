@@ -20,6 +20,7 @@
         country.Visible = False
         EmailLog.Text = EmailUser
         unFavButton.Enabled = False
+        btn_update.Enabled = False
         Dim ArtistDAO As Artist
         ArtistDAO = New Artist()
         Artists = ArtistDAO.ReadAllArtists(path)
@@ -54,6 +55,7 @@
     End Sub
 
     Private Sub loadData(sender As Object, e As EventArgs) Handles lsb_artist.SelectedIndexChanged
+        btn_update.Enabled = True
         lst_album.Items.Clear()
         Dim Albums As Collection : Dim AlbumDAO As Album : Dim ArtistName As String
         btnFav.Enabled = True
@@ -178,40 +180,50 @@
     End Sub
 
     Private Sub btn_insert_Click(sender As Object, e As EventArgs) Handles btn_insert.Click
-        Dim aName As String : Dim country As String : Dim image As String : Dim ArtistAdd As New Artist
-        aName = artistnametxt.Text
-        country = artistcountrytxt.Text
-        If (aName = "" Or country = "" Or image = "") Then
-            MessageBox.Show("There is blank space in the register please try again")
+        Dim aName As String : Dim country As String : Dim ArtistAdd As New Artist : Dim iguales As Boolean = False
+        Try
+            aName = artistnametxt.Text
+            country = artistcountrytxt.Text
+            For Each artist In Artists
+                If artist.getName() = aName Then
+                    iguales = True
+                End If
+            Next
+            If iguales = False Then
+                If (aName = "" Or country = "" Or imageartist = "") Then
+                    MessageBox.Show("There is blank space in the register please try again")
+                Else
+                    ArtistAdd.SetName(aName)
+                    ArtistAdd.SetCountry(country)
+                    ArtistAdd.SetImage(imageartist)
+                    Try
+                        ArtistAdd.InsertArtist()
+                        MsgBox("Artist added")
+                        loadArtists()
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    End Try
 
-        Else
-            ArtistAdd.SetName(aName)
-            ArtistAdd.SetCountry(country)
-            ArtistAdd.SetImage(image)
-            Try
-                ArtistAdd.InsertArtist()
-                MsgBox("Artist added")
-                loadArtists()
-            Catch ex As Exception
-                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            End Try
-
-        End If
-
-
+                End If
+            Else
+                MsgBox("This artist is already in the database")
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End Try
     End Sub
 
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
-        Dim aName As String : Dim country As String : Dim image As String : Dim ArtistUpdate As Artist
+        Dim aName As String : Dim country As String : Dim ArtistUpdate As Artist
         ArtistUpdate = New Artist
         aName = artistnametxt.Text
         country = artistcountrytxt.Text
         ArtistUpdate.setIdArtist(SelectedArtist.GetIdArtist())
         ArtistUpdate.SetName(aName)
         ArtistUpdate.SetCountry(country)
-        ArtistUpdate.SetImage(image)
+        ArtistUpdate.SetImage(imageartist)
 
-        If (aName = "" Or country = "" Or image = "") Then
+        If (aName = "" Or country = "" Or imageartist = "") Then
             MessageBox.Show("There is blank space in the register please try again")
         Else
             Try
@@ -227,10 +239,14 @@
     Private Sub btn_Delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
         Dim ArtistDelete As Artist
         ArtistDelete = New Artist()
-        ArtistDelete.setIdArtist(SelectedArtist.GetIdArtist())
         Try
-            ArtistDelete.DeleteArtist()
-            loadArtists()
+            If SelectedArtist IsNot Nothing Then
+                ArtistDelete.setIdArtist(SelectedArtist.GetIdArtist())
+                ArtistDelete.DeleteArtist()
+                loadArtists()
+            Else
+                MsgBox("You must select an artist to delete")
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

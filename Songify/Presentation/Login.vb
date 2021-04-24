@@ -84,7 +84,6 @@ Public Class Login
             Dim f2 As New MainWindow(txt_email.Text, fileName)
 
             f2.Show()
-            Me.Hide()
         ElseIf valido = False Then
             MsgBox("Please introduce a correct format of the email", MsgBoxStyle.OkOnly, "Warning")
         Else

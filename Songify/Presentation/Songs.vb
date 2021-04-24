@@ -17,6 +17,7 @@
         historytxt.Visible = False
         Label2.Text = ""
         Label2.Visible = False
+        btn_update.Enabled = False
         EmailLog.Text = EmailUser
         SongDAO = New Song()
         SongsCollection = SongDAO.ReadAllSongs(path)
@@ -24,6 +25,7 @@
         ListBox2.Items.Add("User" & "\" & "Date")
         Dim AlbumReader As New Album
         Albums = AlbumReader.ReadAllAlbums(path)
+        Play.Enabled = False
     End Sub
 
     Public Sub New(email As String, path As String)
@@ -39,6 +41,8 @@
     Private Sub SelectSong(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         ListBox2.Items.Clear()
         ListBox2.Items.Add("User" & "\" & "Date")
+        Play.Enabled = True
+        btn_update.Enabled = True
         Dim Albums As Collection : Dim AlbumDAO As Album : Dim SelectedSong As String : Dim AlbumName As String : Dim SLength As String : Dim userDAO As New User() : Dim playbacks As Collection
         AlbumDAO = New Album()
         Albums = AlbumDAO.ReadAllAlbums(path)
@@ -86,6 +90,7 @@
             PlayBackSong.SetPlDate(Date.Today())
             Try
                 PlayBackSong.InsertPlayBack()
+                ListBox2.Items.Add(PlayBackSong.GetUser() & "\" & PlayBackSong.GetPlDate())
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -122,33 +127,39 @@
     End Sub
 
     Private Sub btn_insert_Click(sender As Object, e As EventArgs) Handles btn_insert.Click
+        Play.Enabled = False
         Dim sName As String : Dim albumName As String : Dim length As Integer : Dim SongAdd As New Song : Dim IdAlbum As Integer
-        sName = songnametxtbox.Text
-        albumName = songalbumtxtbox.Text
-        length = songlengthtxtbox.Text
-        SongAdd.SetName(sName)
-        For Each album In Albums
-            If albumName = album.GetName() Then
-                IdAlbum = album.getIdAlbum()
+        Try
+            sName = songnametxtbox.Text
+            albumName = songalbumtxtbox.Text
+            length = songlengthtxtbox.Text
+            SongAdd.SetName(sName)
+            For Each album In Albums
+                If albumName = album.GetName() Then
+                    IdAlbum = album.getIdAlbum()
+                End If
+            Next
+            If (sName = "" Or albumName = "" Or length = "") Then
+                MessageBox.Show("There is blank space in the register please try again")
+            Else
+                SongAdd.SetAlbum(IdAlbum)
+                SongAdd.SetLength(length)
+                Try
+                    SongAdd.InsertSong()
+                    MsgBox("Song added")
+                    loadSongs()
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
             End If
-        Next
-        If (sName = "" Or albumName = "" Or length = "") Then
-            MessageBox.Show("There is blank space in the register please try again")
-        Else
-            SongAdd.SetAlbum(IdAlbum)
-            SongAdd.SetLength(length)
-            Try
-                SongAdd.InsertSong()
-                MsgBox("Song added")
-                loadSongs()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
+        Play.Enabled = False
         Dim sName As String : Dim albumName As String : Dim length As String : Dim SongUpdate As Song : Dim IdAlbum As Integer
         SongUpdate = New Song
         sName = songnametxtbox.Text
@@ -177,12 +188,18 @@
 
     End Sub
     Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
+        Play.Enabled = False
         Dim SongDelete As Song
         SongDelete = New Song()
-        SongDelete.setIdSong(SongSelected.getIdSong())
         Try
-            SongDelete.DeleteSong()
-            loadSongs()
+            If SongSelected IsNot Nothing Then
+                SongDelete.setIdSong(SongSelected.getIdSong())
+                SongDelete.DeleteSong()
+                loadSongs()
+            Else
+                MsgBox("You must select the song to delete")
+            End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

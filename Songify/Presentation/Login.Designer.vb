@@ -150,7 +150,7 @@ Partial Class Login
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Login"
-        Me.Text = "Sig in"
+        Me.Text = "Sign in"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

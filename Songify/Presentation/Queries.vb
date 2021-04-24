@@ -42,7 +42,7 @@
         lblSeconds.Visible = False
         Dim country As String
         country = TextBox1.Text
-        If country IsNot Nothing Then
+        If country IsNot "" Then
             Dim ArtistDAO As New Artist : Dim ListQuery1Country As Collection
             Try
                 ListQuery1Country = ArtistDAO.Query2(path, country)
@@ -82,22 +82,31 @@
         playbackTime.Visible = False
         lblSeconds.Visible = False
         Dim Date1 As Date : Dim Date2 As Date : Dim fecha1 As String : Dim fecha2 As String
-        Date1 = TextBox2.Text
-        Date2 = TextBox3.Text
-        fecha1 = Format(Date1, "dd/MM/yyyy")
-        fecha2 = Format(Date2, "dd/MM/yyyy")
-        If fecha1 IsNot Nothing And fecha2 IsNot Nothing Then
-            Dim ArtistDAO As New Artist : Dim ListQuery3 As Collection
-            Try
-                ListQuery3 = ArtistDAO.Query3(path, CDate(fecha1), CDate(fecha2), Email)
-                For Each aName In ListQuery3
-                    ListBox3.Items.Add(aName)
-                Next
-            Catch ex As Exception
-                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            End Try
+        If TextBox2.Text = "" Or TextBox3.Text = "" Then
+            MsgBox("You must write 2 dates")
         Else
-            MsgBox("You must write 2 dates for the interval")
+            Date1 = TextBox2.Text
+            Date2 = TextBox3.Text
+            fecha1 = Format(Date1, "dd/MM/yyyy")
+            fecha2 = Format(Date2, "dd/MM/yyyy")
+            If fecha1 IsNot Nothing And fecha2 IsNot Nothing Then
+                If Date1 > Date2 Then
+                    MsgBox("The end date must be higher than the start date")
+                Else
+                    Dim ArtistDAO As New Artist : Dim ListQuery3 As Collection
+                    Try
+                        ListQuery3 = ArtistDAO.Query3(path, CDate(fecha1), CDate(fecha2), Email)
+                        For Each aName In ListQuery3
+                            ListBox3.Items.Add(aName)
+                        Next
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    End Try
+                End If
+
+            Else
+                MsgBox("You must write 2 dates for the interval")
+            End If
         End If
 
     End Sub

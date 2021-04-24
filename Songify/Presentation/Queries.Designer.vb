@@ -160,7 +160,7 @@ Partial Class Queries
         Me.playbackTime.Enabled = False
         Me.playbackTime.Font = New System.Drawing.Font("Verdana", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.playbackTime.ForeColor = System.Drawing.Color.White
-        Me.playbackTime.Location = New System.Drawing.Point(1025, 352)
+        Me.playbackTime.Location = New System.Drawing.Point(876, 350)
         Me.playbackTime.Name = "playbackTime"
         Me.playbackTime.Size = New System.Drawing.Size(103, 32)
         Me.playbackTime.TabIndex = 26
@@ -173,7 +173,7 @@ Partial Class Queries
         Me.lblSeconds.Enabled = False
         Me.lblSeconds.Font = New System.Drawing.Font("Verdana", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSeconds.ForeColor = System.Drawing.Color.White
-        Me.lblSeconds.Location = New System.Drawing.Point(1025, 405)
+        Me.lblSeconds.Location = New System.Drawing.Point(876, 399)
         Me.lblSeconds.Name = "lblSeconds"
         Me.lblSeconds.Size = New System.Drawing.Size(123, 32)
         Me.lblSeconds.TabIndex = 27

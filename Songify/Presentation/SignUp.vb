@@ -74,7 +74,7 @@ Public Class SignUp
             End If
             birthdate = txt_birthdate.Text
 
-            If valido = True Then
+            If valido = True And (surname <> "" Or name <> "" Or email <> "") Then
                 u = New User(email)
                 u.SetName(name)
                 u.SetSurname(surname)
