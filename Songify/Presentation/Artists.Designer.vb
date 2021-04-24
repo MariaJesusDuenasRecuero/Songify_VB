@@ -37,7 +37,6 @@ Partial Class Artists
         Me.lsb_favArtist = New System.Windows.Forms.ListBox()
         Me.artistnametxt = New System.Windows.Forms.TextBox()
         Me.artistcountrytxt = New System.Windows.Forms.TextBox()
-        Me.artistimgtxt = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -49,6 +48,8 @@ Partial Class Artists
         Me.btn_update = New System.Windows.Forms.Button()
         Me.btn_insert = New System.Windows.Forms.Button()
         Me.im_artists = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ofdPath = New System.Windows.Forms.OpenFileDialog()
         CType(Me.im_artists, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -202,14 +203,6 @@ Partial Class Artists
         Me.artistcountrytxt.Size = New System.Drawing.Size(274, 27)
         Me.artistcountrytxt.TabIndex = 18
         '
-        'artistimgtxt
-        '
-        Me.artistimgtxt.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.artistimgtxt.Location = New System.Drawing.Point(968, 394)
-        Me.artistimgtxt.Name = "artistimgtxt"
-        Me.artistimgtxt.Size = New System.Drawing.Size(274, 27)
-        Me.artistimgtxt.TabIndex = 19
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -234,7 +227,7 @@ Partial Class Artists
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(964, 368)
+        Me.Label3.Location = New System.Drawing.Point(964, 356)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(208, 23)
         Me.Label3.TabIndex = 22
@@ -298,7 +291,7 @@ Partial Class Artists
         Me.btn_delete.ForeColor = System.Drawing.Color.Black
         Me.btn_delete.Image = Global.Songify.My.Resources.Resources.eliminar
         Me.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_delete.Location = New System.Drawing.Point(1161, 457)
+        Me.btn_delete.Location = New System.Drawing.Point(1161, 474)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(81, 57)
         Me.btn_delete.TabIndex = 14
@@ -312,7 +305,7 @@ Partial Class Artists
         Me.btn_update.ForeColor = System.Drawing.Color.Black
         Me.btn_update.Image = Global.Songify.My.Resources.Resources.actualizar
         Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_update.Location = New System.Drawing.Point(1063, 457)
+        Me.btn_update.Location = New System.Drawing.Point(1064, 474)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(81, 57)
         Me.btn_update.TabIndex = 13
@@ -326,7 +319,7 @@ Partial Class Artists
         Me.btn_insert.ForeColor = System.Drawing.Color.Black
         Me.btn_insert.Image = CType(resources.GetObject("btn_insert.Image"), System.Drawing.Image)
         Me.btn_insert.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_insert.Location = New System.Drawing.Point(968, 457)
+        Me.btn_insert.Location = New System.Drawing.Point(968, 474)
         Me.btn_insert.Name = "btn_insert"
         Me.btn_insert.Size = New System.Drawing.Size(81, 57)
         Me.btn_insert.TabIndex = 12
@@ -344,19 +337,37 @@ Partial Class Artists
         Me.im_artists.TabIndex = 3
         Me.im_artists.TabStop = False
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button1.Location = New System.Drawing.Point(968, 392)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(81, 57)
+        Me.Button1.TabIndex = 35
+        Me.Button1.Text = "Image"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'ofdPath
+        '
+        Me.ofdPath.FileName = "OpenFileDialog1"
+        '
         'Artists
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.unFavButton)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.artistimgtxt)
         Me.Controls.Add(Me.artistcountrytxt)
         Me.Controls.Add(Me.artistnametxt)
         Me.Controls.Add(Me.lsb_favArtist)
@@ -409,11 +420,12 @@ Partial Class Artists
     Friend WithEvents lsb_favArtist As ListBox
     Friend WithEvents artistnametxt As TextBox
     Friend WithEvents artistcountrytxt As TextBox
-    Friend WithEvents artistimgtxt As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents unFavButton As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents ofdPath As OpenFileDialog
 End Class

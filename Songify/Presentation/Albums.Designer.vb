@@ -42,13 +42,14 @@ Partial Class Albums
         Me.albumartisttxt = New System.Windows.Forms.TextBox()
         Me.albumreleaseDatetxt = New System.Windows.Forms.TextBox()
         Me.albumnametxt = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btn_delete = New System.Windows.Forms.Button()
         Me.btn_update = New System.Windows.Forms.Button()
         Me.btn_insert = New System.Windows.Forms.Button()
         Me.img_album = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ofdPath = New System.Windows.Forms.OpenFileDialog()
         CType(Me.img_album, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -253,20 +254,12 @@ Partial Class Albums
         Me.albumnametxt.Size = New System.Drawing.Size(285, 26)
         Me.albumnametxt.TabIndex = 24
         '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(953, 462)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(285, 26)
-        Me.TextBox1.TabIndex = 30
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(949, 436)
+        Me.Label4.Location = New System.Drawing.Point(949, 418)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(144, 23)
         Me.Label4.TabIndex = 31
@@ -335,15 +328,33 @@ Partial Class Albums
         Me.img_album.TabIndex = 9
         Me.img_album.TabStop = False
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button1.Location = New System.Drawing.Point(953, 453)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(81, 57)
+        Me.Button1.TabIndex = 33
+        Me.Button1.Text = "Cover"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'ofdPath
+        '
+        Me.ofdPath.FileName = "OpenFileDialog1"
+        '
         'Albums
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -401,7 +412,8 @@ Partial Class Albums
     Friend WithEvents albumartisttxt As TextBox
     Friend WithEvents albumreleaseDatetxt As TextBox
     Friend WithEvents albumnametxt As TextBox
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents ofdPath As OpenFileDialog
 End Class

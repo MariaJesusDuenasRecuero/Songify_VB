@@ -4,11 +4,8 @@ Public Class Login
     Public user As User
     Public fileName As String
     Public Users As Collection
-    Public r As New Globalization.CultureInfo("es-ES")
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        r.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy"
-        System.Threading.Thread.CurrentThread.CurrentCulture = r
     End Sub
 
 

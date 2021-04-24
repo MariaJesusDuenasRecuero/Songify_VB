@@ -4,6 +4,15 @@
     Public EmailUser As String
     Public path As String
     Public FavArtists As Collection
+    Public imageartist As String
+    Private Sub ofdPath_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ofdPath.FileOk
+        Me.ofdPath.InitialDirectory = Application.StartupPath
+    End Sub
+    Private Sub btn_selectImage_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If Me.ofdPath.ShowDialog = DialogResult.OK Then
+            imageartist = ofdPath.FileName
+        End If
+    End Sub
     Private Sub Artists_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         aName.Text = ""
         aName.Visible = False
@@ -70,8 +79,7 @@
             country.Text = SelectedArtist.GetCountry()
             im_artists.Image = Image.FromFile(SelectedArtist.GetImage())
             artistnametxt.Text = SelectedArtist.GetName()
-            artistcountrytxt.Text = SelectedArtist.GetCountry
-            artistimgtxt.Text = SelectedArtist.GetImage()
+            artistcountrytxt.Text = SelectedArtist.GetCountry()
             btnFav.Enabled = True
         Else
             MsgBox("You didn't select an artist, select one", MsgBoxStyle.OkOnly, "Warning")
@@ -173,7 +181,6 @@
         Dim aName As String : Dim country As String : Dim image As String : Dim ArtistAdd As New Artist
         aName = artistnametxt.Text
         country = artistcountrytxt.Text
-        image = artistimgtxt.Text
         If (aName = "" Or country = "" Or image = "") Then
             MessageBox.Show("There is blank space in the register please try again")
 
@@ -199,7 +206,6 @@
         ArtistUpdate = New Artist
         aName = artistnametxt.Text
         country = artistcountrytxt.Text
-        image = artistimgtxt.Text
         ArtistUpdate.setIdArtist(SelectedArtist.GetIdArtist())
         ArtistUpdate.SetName(aName)
         ArtistUpdate.SetCountry(country)

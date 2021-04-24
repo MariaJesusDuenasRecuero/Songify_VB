@@ -96,11 +96,6 @@
         Else
             MsgBox("Error")
         End If
-        'If ProgressBar1.Value = SongSelected.getLength() Then
-        'Play.Image = Nothing
-        'Play.Image = My.Resources.jugar1
-        'Play.ImageAlign = ContentAlignment.MiddleCenter
-        'End If
     End Sub
     Private Sub btnPlay(sender As Object, e As EventArgs) Handles Play.MouseHover
         Play.Image = Nothing
@@ -137,15 +132,20 @@
                 IdAlbum = album.getIdAlbum()
             End If
         Next
-        SongAdd.SetAlbum(IdAlbum)
-        SongAdd.SetLength(length)
-        Try
-            SongAdd.InsertSong()
-            MsgBox("Song added")
-            loadSongs()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        If (sName = "" Or albumName = "" Or length = "") Then
+            MessageBox.Show("There is blank space in the register please try again")
+        Else
+            SongAdd.SetAlbum(IdAlbum)
+            SongAdd.SetLength(length)
+            Try
+                SongAdd.InsertSong()
+                MsgBox("Song added")
+                loadSongs()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+
     End Sub
 
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
@@ -159,20 +159,24 @@
                 IdAlbum = album.getIdAlbum()
             End If
         Next
-        SongUpdate.setIdSong(SongSelected.getIdSong())
-        SongUpdate.SetName(sName)
-        SongUpdate.SetAlbum(IdAlbum)
-        SongUpdate.SetLength(length)
-        Try
-            SongUpdate.UpdateSong()
-            loadSongs()
-            MsgBox("Song updated successfully")
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        If (sName = "" Or albumName = "" Or length = "") Then
+            MessageBox.Show("There is blank space in the register please try again")
+        Else
+            SongUpdate.setIdSong(SongSelected.getIdSong())
+            SongUpdate.SetName(sName)
+            SongUpdate.SetAlbum(IdAlbum)
+            SongUpdate.SetLength(length)
+            Try
+                SongUpdate.UpdateSong()
+                loadSongs()
+                MsgBox("Song updated successfully")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
 
     End Sub
-    Private Sub btn_song_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
+    Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
         Dim SongDelete As Song
         SongDelete = New Song()
         SongDelete.setIdSong(SongSelected.getIdSong())
