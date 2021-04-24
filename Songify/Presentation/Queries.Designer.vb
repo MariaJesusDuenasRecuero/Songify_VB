@@ -43,6 +43,8 @@ Partial Class Queries
         Me.ListBox4 = New System.Windows.Forms.ListBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.firstquerieCountry = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'GoBackBtn
@@ -78,7 +80,7 @@ Partial Class Queries
         'thirdQuerie
         '
         Me.thirdQuerie.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.thirdQuerie.Location = New System.Drawing.Point(30, 619)
+        Me.thirdQuerie.Location = New System.Drawing.Point(30, 571)
         Me.thirdQuerie.Name = "thirdQuerie"
         Me.thirdQuerie.Size = New System.Drawing.Size(191, 68)
         Me.thirdQuerie.TabIndex = 15
@@ -139,7 +141,7 @@ Partial Class Queries
         '
         Me.Label3.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(26, 571)
+        Me.Label3.Location = New System.Drawing.Point(26, 526)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(403, 23)
         Me.Label3.TabIndex = 21
@@ -258,12 +260,28 @@ Partial Class Queries
         Me.firstquerieCountry.Text = "First querie (country)"
         Me.firstquerieCountry.UseVisualStyleBackColor = True
         '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(30, 667)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(139, 20)
+        Me.TextBox2.TabIndex = 33
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(236, 667)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(139, 20)
+        Me.TextBox3.TabIndex = 34
+        '
         'Queries
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.firstquerieCountry)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.playbackTime)
@@ -315,4 +333,6 @@ Partial Class Queries
     Friend WithEvents ListBox4 As ListBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents firstquerieCountry As Button
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox3 As TextBox
 End Class

@@ -65,13 +65,24 @@
     End Sub
 
     Private Sub thirdQuerie_Click(sender As Object, e As EventArgs) Handles thirdQuerie.Click
+        ListBox3.Items.Clear()
         ListBox1.Visible = False
-        ListBox2.Visible = True
-        ListBox3.Visible = False
+        ListBox2.Visible = False
+        ListBox3.Visible = True
         ListBox4.Visible = False
         playbackTime.Visible = False
         lblSeconds.Visible = False
+        Dim Date1 As Date : Dim Date2 As Date : Dim fecha1 As String : Dim fecha2 As String
+        Date1 = TextBox2.Text
+        Date2 = TextBox3.Text
+        fecha1 = Format(Date1, "dd/MM/yyyy")
+        fecha2 = Format(Date2, "dd/MM/yyyy")
 
+        Dim ArtistDAO As New Artist : Dim ListQuery3 As Collection
+        ListQuery3 = ArtistDAO.Query3(path, CDate(fecha1), CDate(fecha2), Email)
+        For Each aName In ListQuery3
+            ListBox3.Items.Add(aName)
+        Next
     End Sub
 
     Private Sub fourthQuerie_Click(sender As Object, e As EventArgs) Handles fourthQuerie.Click

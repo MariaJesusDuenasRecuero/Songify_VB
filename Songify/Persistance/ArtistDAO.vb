@@ -73,14 +73,23 @@
     Public Function Query2(path As String, country As String)
         Dim name As String
         Dim names As New Collection : Dim aux As Collection
-        Dim col As Collection = DBBroker.GetBroker(path).Read("SELECT DISTINCT c.aName, COUNT(c.country) FROM(SELECT DISTINCT c.aName, count(c.aName) FROM songs s, playbacks p, albums a, artists c WHERE (p.song=s.IdSong AND s.album=a.IdAlbum AND a.artist=c.IdArtist) GROUP BY c.aName ORDER BY count(c.aName)) WHERE (c.country='" & country & "') GROUP BY c.country ORDER BY COUNT(c.country);")
+        Dim col As Collection = DBBroker.GetBroker(path).Read("SELECT DISTINCT c.aName, count(c.aName) FROM songs s, playbacks p, albums a, artists c WHERE (p.song=s.IdSong AND s.album=a.IdAlbum AND a.artist=c.IdArtist AND c.country = '" & country & "') GROUP BY c.aName ORDER BY count(c.aName);")
         For Each aux In col
             name = aux(1).ToString
             names.Add(name)
         Next
         Return names
     End Function
-
+    Public Function Query3(path As String, Date1 As Date, Date2 As Date, Email As String)
+        Dim name As String
+        Dim names As New Collection : Dim aux As Collection
+        Dim col As Collection = DBBroker.GetBroker(path).Read("SELECT DISTINCT c.aName , COUNT(c.aName) FROM songs s, playbacks p, albums a, artists c, users u WHERE (p.song = s.IdSong AND s.album = a.IdAlbum AND a.artist = c.IdArtist AND p.plDate BETWEEN #" & Date1 & "# AND #" & Date2 & "# AND p.user = u.Email AND u.Email = '" & Email & "') GROUP BY c.aName ORDER BY count(c.aName) desc")
+        For Each aux In col
+            name = aux(1).ToString
+            names.Add(name)
+        Next
+        Return names
+    End Function
     Public Function Query5(path As String, Email As String)
         Dim time As New Collection : Dim consulta As String
         consulta = "SELECT u.Email, SUM(s.length) FROM fav_artists fav, songs s, users u, playbacks p, artists ar, albums al WHERE (s.Album = al.IdAlbum AND al.artist = ar.IdArtist AND fav.artist = ar.IdArtist AND fav.user = u.Email AND s.IdSong = p.song AND u.Email='" & Email & "') GROUP BY u.Email ORDER BY SUM(s.length) asc;"

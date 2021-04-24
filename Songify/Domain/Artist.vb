@@ -67,6 +67,9 @@
     Public Function Query2(path As String, country As String)
         Return Me.arDAO.Query2(path, country)
     End Function
+    Public Function Query3(path As String, Date1 As Date, Date2 As Date, Email As String)
+        Return Me.arDAO.Query3(path, Date1, Date2, Email)
+    End Function
     Public Function Query5(path As String, Email As String)
         Return Me.arDAO.Query5(path, Email)
     End Function
