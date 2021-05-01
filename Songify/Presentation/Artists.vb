@@ -14,6 +14,7 @@
         End If
     End Sub
     Private Sub Artists_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim idartists As New Collection
         aName.Text = ""
         aName.Visible = False
         country.Text = ""
@@ -26,16 +27,19 @@
         Artists = ArtistDAO.ReadAllArtists(path)
         loadArtists()
         btnFav.Enabled = False
-        Dim ArtistReader As New Fav_Artist
+        Dim ArtistReader As New Artist
         FavArtists = ArtistReader.ReadAllFavArtists(path)
-        For Each fav_artist In FavArtists
-            If fav_artist.GetUser() = EmailUser Then
-                For Each artist In Artists
-                    If fav_artist.getArtist() = artist.getIdArtist() Then
-                        lsb_favArtist.Items.Add(artist.getName())
-                    End If
-                Next
+        For Each artist In FavArtists
+            If artist.GetUser() = EmailUser Then
+                idartists.Add(artist.getIdArtist())
             End If
+        Next
+        For Each artist In Artists
+            For Each IdArtist In idartists
+                If artist.GetIdArtist() = IdArtist Then
+                    lsb_favArtist.Items.Add(artist.getName())
+                End If
+            Next
         Next
     End Sub
     Public Sub loadArtists()
@@ -79,7 +83,11 @@
             aName.Text = SelectedArtist.GetName()
             country.Visible = True
             country.Text = SelectedArtist.GetCountry()
-            im_artists.Image = Image.FromFile(SelectedArtist.GetImage())
+            Try
+                im_artists.Image = Image.FromFile(SelectedArtist.GetImage())
+            Catch ex As Exception
+                MsgBox("The image from this artist has been changed or deleted")
+            End Try
             artistnametxt.Text = SelectedArtist.GetName()
             artistcountrytxt.Text = SelectedArtist.GetCountry()
             btnFav.Enabled = True
@@ -93,7 +101,7 @@
         btnFav.Enabled = False
         unFavButton.Enabled = True
         Dim Albums As Collection : Dim AlbumDAO As Album : Dim ArtistName As String
-        Dim ArtistReader As New Fav_Artist : Dim FavArtists As Collection
+        Dim ArtistReader As New Artist : Dim FavArtists As Collection : Dim id As Integer
         AlbumDAO = New Album()
         Albums = AlbumDAO.ReadAllAlbums(path)
         ArtistName = lsb_favArtist.SelectedItem
@@ -111,10 +119,20 @@
             Next
 
             aName.Visible = True
-            aName.Text = SelectedArtist.GetName()
             country.Visible = True
-            country.Text = SelectedArtist.GetCountry()
-            im_artists.Image = Image.FromFile(SelectedArtist.GetImage())
+            id = SelectedArtist.GetIdArtist()
+            For Each artist In Artists
+                If id = artist.getIdArtist() Then
+                    aName.Text = artist.GetName()
+                    country.Text = artist.GetCountry()
+                End If
+            Next
+            Try
+                im_artists.Image = Image.FromFile(SelectedArtist.GetImage())
+            Catch ex As Exception
+                MsgBox("The image from this artist has been changed or deleted")
+            End Try
+
         Else
             MsgBox("You didn't select an artist, select one", MsgBoxStyle.OkOnly, "Warning")
         End If
@@ -133,16 +151,16 @@
                     SelectedArtist = Artist
                 End If
             Next
-            For Each fav_Artist In FavArtists
-                If fav_Artist.getArtist() = SelectedArtist.GetIdArtist() And fav_Artist.getUser() = EmailUser Then
+            For Each artist In FavArtists
+                If artist.getIdArtist() = SelectedArtist.GetIdArtist() And artist.getUser() = EmailUser Then
                     repetidos = True
                 End If
             Next
             If repetidos = False Then
-                Dim FavArtist As Fav_Artist
-                FavArtist = New Fav_Artist()
+                Dim FavArtist As Artist
+                FavArtist = New Artist()
                 FavArtist.SetUser(EmailUser)
-                FavArtist.SetArtist(SelectedArtist.GetIdArtist())
+                FavArtist.setIdArtist(SelectedArtist.GetIdArtist())
                 FavArtist.SetFavDate(Date.Today())
                 FavArtist.InsertFav_Artist()
                 lsb_favArtist.Items.Add(SelectedArtist.GetName())
@@ -165,9 +183,9 @@
                 SelectedArtist = Artist
             End If
         Next
-        Dim FavArtist As Fav_Artist
-        FavArtist = New Fav_Artist()
-        FavArtist.SetArtist(SelectedArtist.GetIdArtist())
+        Dim FavArtist As Artist
+        FavArtist = New Artist()
+        FavArtist.setIdArtist(SelectedArtist.GetIdArtist())
         FavArtist.DeleteFav_Artist()
         lsb_favArtist.Items.Remove(SelectedArtist.GetName())
         MsgBox("Artist removed from favorites")
@@ -251,6 +269,5 @@
             MsgBox(ex.Message)
         End Try
     End Sub
-
 
 End Class

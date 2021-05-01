@@ -78,7 +78,12 @@ Public Class Albums
             releaseDate.Text = SelectedAlbum.getReleaseDate()
             Length.Visible = True
             Length.Text = lengthtotal
-            img_album.Image = Image.FromFile(SelectedAlbum.GetCover())
+            Try
+                img_album.Image = Image.FromFile(SelectedAlbum.GetCover())
+            Catch ex As Exception
+                MsgBox("The image from this artist has been changed or deleted")
+            End Try
+
             albumnametxt.Text = SelectedAlbum.GetName()
             albumreleaseDatetxt.Text = SelectedAlbum.getReleaseDate()
             albumartisttxt.Text = artistname

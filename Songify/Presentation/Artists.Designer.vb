@@ -241,9 +241,9 @@ Partial Class Artists
         Me.Label4.Location = New System.Drawing.Point(246, 94)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(123, 23)
+        Me.Label4.Size = New System.Drawing.Size(109, 23)
         Me.Label4.TabIndex = 23
-        Me.Label4.Text = "Favourites"
+        Me.Label4.Text = "Favorites"
         '
         'Label5
         '

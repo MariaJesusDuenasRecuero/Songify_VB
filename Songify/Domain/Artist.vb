@@ -4,6 +4,8 @@
     Private Property country As String
     Private Property image As String
     Private ReadOnly Property arDAO As ArtistDAO
+    Private User As String
+    Private favDate As Date
     Public Sub New()
         Me.arDAO = New ArtistDAO
     End Sub
@@ -17,6 +19,12 @@
         aName = name
         Me.country = country
         Me.image = image
+    End Sub
+    Public Sub New(user As String, IdArtist As Integer, favDate As Date)
+        Me.arDAO = arDAO
+        Me.User = user
+        Me.IdArtist = IdArtist
+        Me.favDate = favDate
     End Sub
     Public Sub ReadArtist()
         Me.arDAO.Read(Me)
@@ -33,6 +41,18 @@
     Public Function GetName()
         Return aName
     End Function
+    Public Function GetUser()
+        Return User
+    End Function
+    Public Function GetFavDate()
+        Return favDate
+    End Function
+    Public Function SetUser(user As String)
+        Me.User = user
+    End Function
+    Public Function SetFavDate(favDate As Date)
+        Me.favDate = favDate
+    End Function
     Public Function setIdArtist(idArtsit As Integer)
         IdArtist = idArtsit
     End Function
@@ -45,6 +65,9 @@
     Public Function SetCountry(country As String)
         Me.country = country
     End Function
+    Public Function ReadAllFavArtists(path As String)
+        Return Me.arDAO.ReadAllFavArtists(path)
+    End Function
     Public Function ReadAllArtists(path As String)
         Return Me.arDAO.ReadAll(path)
     End Function
@@ -53,6 +76,12 @@
     End Sub
     Public Function InsertArtist() As Integer
         Return Me.arDAO.Insert(Me)
+    End Function
+    Public Function InsertFav_Artist() As Integer
+        Return Me.arDAO.InsertFav(Me)
+    End Function
+    Public Function DeleteFav_Artist() As Integer
+        Return Me.arDAO.DeleteFav_Artist(Me)
     End Function
     Public Function UpdateArtist() As Integer
         Return Me.arDAO.Update(Me)
