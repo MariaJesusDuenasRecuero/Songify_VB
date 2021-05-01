@@ -82,15 +82,15 @@
     End Sub
     Private Sub PlaySong(sender As Object, e As EventArgs) Handles Play.Click
         ProgressBar1.Value = 0
-        Dim PlayBackSong As Playback
+        Dim PlayBackSong As User
         If SongSelected IsNot Nothing Then
-            PlayBackSong = New Playback()
-            PlayBackSong.SetUser(EmailUser)
+            PlayBackSong = New User()
+            PlayBackSong.SetEmail(EmailUser)
             PlayBackSong.SetSong(SongSelected.getIdSong())
             PlayBackSong.SetPlDate(Date.Today())
             Try
                 PlayBackSong.InsertPlayBack()
-                ListBox2.Items.Add(PlayBackSong.GetUser() & "\" & PlayBackSong.GetPlDate())
+                ListBox2.Items.Add(PlayBackSong.GetEmail() & "\" & PlayBackSong.GetPlDate())
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try

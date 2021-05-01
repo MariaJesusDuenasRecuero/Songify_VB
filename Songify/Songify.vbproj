@@ -80,7 +80,6 @@
   <ItemGroup>
     <Compile Include="Domain\Album.vb" />
     <Compile Include="Domain\Artist.vb" />
-    <Compile Include="Domain\Playback.vb" />
     <Compile Include="Domain\Song.vb" />
     <Compile Include="Domain\User.vb" />
     <Compile Include="Persistance\AlbumDAO.vb" />

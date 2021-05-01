@@ -20,12 +20,12 @@
         Return Users
     End Function
     Public Function ReadAllPlaybacks(path As String)
-        Dim pl As Playback : Dim Playbacks As New Collection
+        Dim pl As User : Dim Playbacks As New Collection
         Dim col, aux As Collection
         col = DBBroker.GetBroker(path).Read("SELECT * FROM Playbacks ORDER BY IdPlay")
         For Each aux In col
-            pl = New Playback(aux(1).ToString)
-            pl.SetUser(aux(2).ToString)
+            pl = New User(aux(1).ToString)
+            pl.setEmail(aux(2).ToString)
             pl.SetSong(aux(3).ToString)
             pl.SetPlDate(aux(4))
             Playbacks.Add(pl)
@@ -47,8 +47,8 @@
         Return DBBroker.GetBroker.Change("INSERT INTO Users (Email,uName,uSurname,birthdate) VALUES ('" & usr.GetEmail() & "','" & usr.GetName() & "','" & usr.GetSurname() & "','" & usr.GetBirthdate() & "');")
     End Function
 
-    Public Function InsertPlayback(ByVal playback As Playback)
-        Return DBBroker.GetBroker.Change("INSERT INTO Playbacks ([user],song,plDate) VALUES ('" & playback.GetUser() & "','" & playback.GetSong() & "','" & playback.GetPlDate() & "');")
+    Public Function InsertPlayback(ByVal user As User)
+        Return DBBroker.GetBroker.Change("INSERT INTO Playbacks ([user],song,plDate) VALUES ('" & user.GetEmail() & "','" & user.GetSong() & "','" & user.GetPlDate() & "');")
     End Function
     Public Function Update(ByVal usr As User) As Integer
         Return DBBroker.GetBroker.Change("UPDATE Users SET uName='" & usr.GetName() & "' ,uSurname='" & usr.GetSurname() & "' ,birthdate='" & usr.GetBirthdate() & "'WHERE Email='" & usr.GetEmail() & "';")

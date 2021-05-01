@@ -4,7 +4,6 @@
     Private Property Album As Integer
     Private Property length As Integer
     Private sDAO As SongDAO
-
     Public Sub New()
         Me.sDAO = New SongDAO
     End Sub
