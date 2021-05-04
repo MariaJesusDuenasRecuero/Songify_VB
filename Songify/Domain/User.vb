@@ -21,56 +21,53 @@
         Me.Song = Song
         Me.plDate = plDate
     End Sub
-    Public Function GetEmail()
+    Public Function GetEmail() As String
         Return Email
     End Function
-    Public Function setEmail(Email As String)
+    Public Function setEmail(Email As String) As String
         Me.Email = Email
     End Function
-    Public Function SetName(name As String)
+    Public Function SetName(name As String) As String
         uName = name
     End Function
-    Public Function SetSurname(surname As String)
+    Public Function SetSurname(surname As String) As String
         uSurname = surname
     End Function
-    Public Function GetName()
+    Public Function GetName() As String
         Return uName
     End Function
-    Public Function GetSurname()
+    Public Function GetSurname() As String
         Return uSurname
     End Function
-    Public Function GetBirthdate()
+    Public Function GetBirthdate() As Date
         Return birthdate
     End Function
-    Public Function GetIdPlay()
+    Public Function GetIdPlay() As Integer
         Return idPlay
     End Function
-    Public Function GetSong()
+    Public Function GetSong() As Integer
         Return Song
     End Function
-    Public Function GetPlDate()
+    Public Function GetPlDate() As Date
         Return plDate
     End Function
-    Public Function SetIdPlay(id As Integer)
+    Public Function SetIdPlay(id As Integer) As Integer
         idPlay = id
     End Function
-    Public Function SetSong(song As Integer)
+    Public Function SetSong(song As Integer) As Integer
         Me.Song = song
     End Function
-    Public Function SetPlDate(plDate As Date)
+    Public Function SetPlDate(plDate As Date) As Date
         Me.plDate = plDate
     End Function
-    Public Function SetBirthdate(birthdate As Date)
+    Public Function SetBirthdate(birthdate As Date) As Date
         Me.birthdate = birthdate
     End Function
-    Public Function ReadAllUsers(path As String)
+    Public Function ReadAllUsers(path As String) As Object
         Return Me.usrDAO.ReadAll(path)
     End Function
-    Public Function ReadAllPlaybacks(path As String)
+    Public Function ReadAllPlaybacks(path As String) As Object
         Return Me.usrDAO.ReadAllPlaybacks(path)
-    End Function
-    Public Function ReadUser()
-        Return Me.usrDAO.Read(Me)
     End Function
     Public Function InsertUser() As Integer
         Return Me.usrDAO.Insert(Me)
@@ -81,7 +78,7 @@
     Public Function DeleteUser() As Integer
         Return Me.usrDAO.Delete(Me)
     End Function
-    Public Function InsertPlayBack() As Integer
+    Public Function InsertPlayBack() As Object
         Return Me.usrDAO.InsertPlayback(Me)
     End Function
 

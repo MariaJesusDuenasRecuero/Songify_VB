@@ -20,11 +20,11 @@
         btn_update.Enabled = False
         EmailLog.Text = EmailUser
         SongDAO = New Song()
-        SongsCollection = SongDAO.ReadAllSongs(path)
+        SongsCollection = CType(SongDAO.ReadAllSongs(path), Collection)
         loadSongs()
         ListBox2.Items.Add("User" & "\" & "Date")
         Dim AlbumReader As New Album
-        Albums = AlbumReader.ReadAllAlbums(path)
+        Albums = CType(AlbumReader.ReadAllAlbums(path), Collection)
         Play.Enabled = False
     End Sub
 
@@ -43,12 +43,13 @@
         ListBox2.Items.Add("User" & "\" & "Date")
         Play.Enabled = True
         btn_update.Enabled = True
+        Dim Song As Song : Dim album As Album : Dim playback As User
         Dim Albums As Collection : Dim AlbumDAO As Album : Dim SelectedSong As String : Dim AlbumName As String : Dim SLength As String : Dim userDAO As New User() : Dim playbacks As Collection
         AlbumDAO = New Album()
-        Albums = AlbumDAO.ReadAllAlbums(path)
-        SelectedSong = ListBox1.SelectedItem
+        Albums = CType(AlbumDAO.ReadAllAlbums(path), Collection)
+        SelectedSong = CStr(ListBox1.SelectedItem)
         If SelectedSong IsNot Nothing Then
-            playbacks = userDAO.ReadAllPlaybacks(path)
+            playbacks = CType(userDAO.ReadAllPlaybacks(path), Collection)
             For Each Song In SongsCollection
                 If SelectedSong = Song.GetName() Then
                     SongSelected = Song
@@ -61,7 +62,7 @@
             Next
             For Each playback In playbacks
                 If playback.GetSong() = SongSelected.getIdSong() Then
-                    ListBox2.Items.Add(playback.GetUser() & "\" & playback.getPlDate())
+                    ListBox2.Items.Add(playback.GetEmail() & "\" & playback.GetPlDate())
                 End If
             Next
             SLength = CalcularTiempo(SongSelected.GetSLength())
@@ -85,7 +86,7 @@
         Dim PlayBackSong As User
         If SongSelected IsNot Nothing Then
             PlayBackSong = New User()
-            PlayBackSong.SetEmail(EmailUser)
+            PlayBackSong.setEmail(EmailUser)
             PlayBackSong.SetSong(SongSelected.getIdSong())
             PlayBackSong.SetPlDate(Date.Today())
             Try
@@ -112,10 +113,10 @@
         Play.Image = My.Resources.boton_de_pausa_de_video
         Play.ImageAlign = ContentAlignment.MiddleCenter
     End Sub
-    Private Function CalcularTiempo(length As Integer)
+    Private Function CalcularTiempo(length As Integer) As String
         Dim horas As Integer : Dim minutos As Integer : Dim segundos As Integer : Dim horatotal As String
-        horas = Math.Floor(length / 3600)
-        minutos = Math.Floor((length - horas * 3600) / 60)
+        horas = CInt(Math.Floor(length / 3600))
+        minutos = CInt(Math.Floor((length - horas * 3600) / 60))
         segundos = length - (horas * 3600 + minutos * 60)
         horatotal = horas & ":" & minutos & ":" & segundos
         Return horatotal
@@ -128,18 +129,18 @@
 
     Private Sub btn_insert_Click(sender As Object, e As EventArgs) Handles btn_insert.Click
         Play.Enabled = False
-        Dim sName As String : Dim albumName As String : Dim length As Integer : Dim SongAdd As New Song : Dim IdAlbum As Integer
+        Dim sName As String : Dim albumName As String : Dim length As Integer : Dim SongAdd As New Song : Dim IdAlbum As Integer : Dim album As Album
         Try
             sName = songnametxtbox.Text
             albumName = songalbumtxtbox.Text
-            length = songlengthtxtbox.Text
+            length = CInt(songlengthtxtbox.Text)
             SongAdd.SetName(sName)
             For Each album In Albums
                 If albumName = album.GetName() Then
                     IdAlbum = album.getIdAlbum()
                 End If
             Next
-            If (sName = "" Or albumName = "" Or length = "") Then
+            If (sName = "" Or albumName = "" Or CStr(length) = "") Then
                 MessageBox.Show("There is blank space in the register please try again")
             Else
                 SongAdd.SetAlbum(IdAlbum)
@@ -160,17 +161,17 @@
 
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
         Play.Enabled = False
-        Dim sName As String : Dim albumName As String : Dim length As String : Dim SongUpdate As Song : Dim IdAlbum As Integer
+        Dim sName As String : Dim albumName As String : Dim length As Integer : Dim SongUpdate As Song : Dim IdAlbum As Integer : Dim album As Album
         SongUpdate = New Song
         sName = songnametxtbox.Text
         albumName = songalbumtxtbox.Text
-        length = songlengthtxtbox.Text
+        length = CInt(songlengthtxtbox.Text)
         For Each album In Albums
             If albumName = album.GetName() Then
                 IdAlbum = album.getIdAlbum()
             End If
         Next
-        If (sName = "" Or albumName = "" Or length = "") Then
+        If (sName = "" Or albumName = "" Or CStr(length) = "") Then
             MessageBox.Show("There is blank space in the register please try again")
         Else
             SongUpdate.setIdSong(SongSelected.getIdSong())
@@ -206,6 +207,7 @@
     End Sub
     Public Sub loadSongs()
         ListBox1.Items.Clear()
+        Dim song As Song
         For Each song In SongsCollection
             ListBox1.Items.Add(song.GetName())
         Next

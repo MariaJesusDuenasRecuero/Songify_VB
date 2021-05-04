@@ -14,7 +14,7 @@
         End If
     End Sub
     Private Sub Artists_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim idartists As New Collection
+        Dim idartists As New Collection : Dim artist As Artist
         aName.Text = ""
         aName.Visible = False
         country.Text = ""
@@ -24,11 +24,11 @@
         btn_update.Enabled = False
         Dim ArtistDAO As Artist
         ArtistDAO = New Artist()
-        Artists = ArtistDAO.ReadAllArtists(path)
+        Artists = CType(ArtistDAO.ReadAllArtists(path), Collection)
         loadArtists()
         btnFav.Enabled = False
         Dim ArtistReader As New Artist
-        FavArtists = ArtistReader.ReadAllFavArtists(path)
+        FavArtists = CType(ArtistReader.ReadAllFavArtists(path), Collection)
         For Each artist In FavArtists
             If artist.GetUser() = EmailUser Then
                 idartists.Add(artist.getIdArtist())
@@ -36,14 +36,15 @@
         Next
         For Each artist In Artists
             For Each IdArtist In idartists
-                If artist.GetIdArtist() = IdArtist Then
-                    lsb_favArtist.Items.Add(artist.getName())
+                If artist.GetIdArtist().Equals(IdArtist) Then
+                    lsb_favArtist.Items.Add(artist.GetName())
                 End If
             Next
         Next
     End Sub
     Public Sub loadArtists()
         lsb_artist.Items.Clear()
+        Dim artist As Artist
         For Each artist In Artists
             lsb_artist.Items.Add(artist.GetName())
         Next
@@ -61,12 +62,12 @@
     Private Sub loadData(sender As Object, e As EventArgs) Handles lsb_artist.SelectedIndexChanged
         btn_update.Enabled = True
         lst_album.Items.Clear()
-        Dim Albums As Collection : Dim AlbumDAO As Album : Dim ArtistName As String
+        Dim Albums As Collection : Dim AlbumDAO As Album : Dim ArtistName As String : Dim artist As Artist : Dim album As Album
         btnFav.Enabled = True
         unFavButton.Enabled = False
         AlbumDAO = New Album()
-        Albums = AlbumDAO.ReadAllAlbums(path)
-        ArtistName = lsb_artist.SelectedItem
+        Albums = CType(AlbumDAO.ReadAllAlbums(path), Collection)
+        ArtistName = CStr(lsb_artist.SelectedItem)
         If ArtistName IsNot Nothing Then
             For Each artist In Artists
                 If artist.GetName() = ArtistName Then
@@ -100,13 +101,13 @@
         lst_album.Items.Clear()
         btnFav.Enabled = False
         unFavButton.Enabled = True
-        Dim Albums As Collection : Dim AlbumDAO As Album : Dim ArtistName As String
+        Dim Albums As Collection : Dim AlbumDAO As Album : Dim ArtistName As String : Dim artist As Artist : Dim album As Album
         Dim ArtistReader As New Artist : Dim FavArtists As Collection : Dim id As Integer
         AlbumDAO = New Album()
-        Albums = AlbumDAO.ReadAllAlbums(path)
-        ArtistName = lsb_favArtist.SelectedItem
+        Albums = CType(AlbumDAO.ReadAllAlbums(path), Collection)
+        ArtistName = CStr(lsb_favArtist.SelectedItem)
         If ArtistName IsNot Nothing Then
-            FavArtists = ArtistReader.ReadAllFavArtists(path)
+            FavArtists = CType(ArtistReader.ReadAllFavArtists(path), Collection)
             For Each artist In Artists
                 If artist.GetName() = ArtistName Then
                     SelectedArtist = artist
@@ -140,10 +141,10 @@
     End Sub
 
     Private Sub CovertArtistToFav(sender As Object, e As EventArgs) Handles btnFav.Click
-        Dim ArtistsCollection As Collection : Dim Selected_Artist As String : Dim ArtistDAO As Artist : Dim repetidos As Boolean = False
+        Dim ArtistsCollection As Collection : Dim Selected_Artist As String : Dim ArtistDAO As Artist : Dim repetidos As Boolean = False : Dim Artist As Artist
         ArtistDAO = New Artist()
-        ArtistsCollection = ArtistDAO.ReadAllArtists(path)
-        Selected_Artist = lsb_favArtist.SelectedItem
+        ArtistsCollection = CType(ArtistDAO.ReadAllArtists(path), Collection)
+        Selected_Artist = CStr(lsb_favArtist.SelectedItem)
         loadArtists()
         Try
             For Each Artist In ArtistsCollection
@@ -174,10 +175,10 @@
     End Sub
 
     Private Sub UnFavArtist(sender As Object, e As EventArgs) Handles unFavButton.Click
-        Dim FavArtistsCollection As Collection : Dim Selected_Artist As String : Dim ArtistDAO As Artist
+        Dim FavArtistsCollection As Collection : Dim Selected_Artist As String : Dim ArtistDAO As Artist : Dim Artist As Artist
         ArtistDAO = New Artist()
-        FavArtistsCollection = ArtistDAO.ReadAllArtists(path)
-        Selected_Artist = lsb_favArtist.SelectedItem
+        FavArtistsCollection = CType(ArtistDAO.ReadAllArtists(path), Collection)
+        Selected_Artist = CStr(lsb_favArtist.SelectedItem)
         For Each Artist In FavArtistsCollection
             If Selected_Artist = Artist.GetName() Then
                 SelectedArtist = Artist
@@ -198,7 +199,7 @@
     End Sub
 
     Private Sub btn_insert_Click(sender As Object, e As EventArgs) Handles btn_insert.Click
-        Dim aName As String : Dim country As String : Dim ArtistAdd As New Artist : Dim iguales As Boolean = False
+        Dim aName As String : Dim country As String : Dim ArtistAdd As New Artist : Dim iguales As Boolean = False : Dim artist As Artist
         Try
             aName = artistnametxt.Text
             country = artistcountrytxt.Text

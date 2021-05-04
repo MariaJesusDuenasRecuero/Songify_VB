@@ -24,7 +24,7 @@
         playbackTime.Visible = False
         lblSeconds.Visible = False
         Dim ArtistDAO As New Artist : Dim ListQuery1 As Collection
-        ListQuery1 = ArtistDAO.Query1(path)
+        ListQuery1 = CType(ArtistDAO.Query1(path), Collection)
         For Each aName In ListQuery1
             ListBox1.Items.Add(aName)
         Next
@@ -45,7 +45,7 @@
         If country IsNot "" Then
             Dim ArtistDAO As New Artist : Dim ListQuery1Country As Collection
             Try
-                ListQuery1Country = ArtistDAO.Query2(path, country)
+                ListQuery1Country = CType(ArtistDAO.Query2(path, country), Collection)
                 For Each aName In ListQuery1Country
                     ListBox1.Items.Add(aName)
                 Next
@@ -67,7 +67,7 @@
         playbackTime.Visible = False
         lblSeconds.Visible = False
         Dim SongDAO As New Song : Dim ListQuery2 As Collection
-        ListQuery2 = SongDAO.Query2(path)
+        ListQuery2 = CType(SongDAO.Query2(path), Collection)
         For Each sName In ListQuery2
             ListBox2.Items.Add(sName)
         Next
@@ -85,8 +85,8 @@
         If TextBox2.Text = "" Or TextBox3.Text = "" Then
             MsgBox("You must write 2 dates")
         Else
-            Date1 = TextBox2.Text
-            Date2 = TextBox3.Text
+            Date1 = CDate(TextBox2.Text)
+            Date2 = CDate(TextBox3.Text)
             fecha1 = Format(Date1, "dd/MM/yyyy")
             fecha2 = Format(Date2, "dd/MM/yyyy")
             If fecha1 IsNot Nothing And fecha2 IsNot Nothing Then
@@ -95,7 +95,7 @@
                 Else
                     Dim ArtistDAO As New Artist : Dim ListQuery3 As Collection
                     Try
-                        ListQuery3 = ArtistDAO.Query3(path, CDate(fecha1), CDate(fecha2), Email)
+                        ListQuery3 = CType(ArtistDAO.Query3(path, CDate(fecha1), CDate(fecha2), Email), Collection)
                         For Each aName In ListQuery3
                             ListBox3.Items.Add(aName)
                         Next
@@ -120,7 +120,7 @@
         playbackTime.Visible = False
         lblSeconds.Visible = False
         Dim SongDAO As New Song : Dim ListQuery4 As Collection
-        ListQuery4 = SongDAO.Query4(path)
+        ListQuery4 = CType(SongDAO.Query4(path), Collection)
         For Each sName In ListQuery4
             ListBox4.Items.Add(sName)
         Next
@@ -135,16 +135,16 @@
         ListBox3.Visible = False
         ListBox4.Visible = False
         Dim ArtistDAO As New Artist : Dim ListQuery5 As Collection
-        ListQuery5 = ArtistDAO.Query5(path, Email)
+        ListQuery5 = CType(ArtistDAO.Query5(path, Email), Collection)
         Dim length As String
-        length = CalcularTiempo(ListQuery5(1))
+        length = CalcularTiempo(CInt(ListQuery5(1)))
         lblSeconds.Text = length
         playbackTime.Text = Email
     End Sub
-    Private Function CalcularTiempo(length As Integer)
+    Private Function CalcularTiempo(length As Integer) As String
         Dim horas As Integer : Dim minutos As Integer : Dim segundos As Integer : Dim horatotal As String
-        horas = Math.Floor(length / 3600)
-        minutos = Math.Floor((length - horas * 3600) / 60)
+        horas = CInt(Math.Floor(length / 3600))
+        minutos = CInt(Math.Floor((length - horas * 3600) / 60))
         segundos = length - (horas * 3600 + minutos * 60)
         horatotal = horas & ":" & minutos & ":" & segundos
         Return horatotal

@@ -8,6 +8,7 @@ Public Class Albums
     Public path As String
     Public cover As String
     Private Sub Albums_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim album As New Album()
         aName.Text = ""
         aName.Visible = False
         releaseDate.Text = ""
@@ -19,12 +20,12 @@ Public Class Albums
         btn_update.Enabled = False
         Dim AlbumDAO As Album
         AlbumDAO = New Album()
-        Albums = AlbumDAO.ReadAllAlbums(path)
+        Albums = CType(AlbumDAO.ReadAllAlbums(path), Collection)
         For Each album In Albums
             ListBox1.Items.Add(album.GetName())
         Next
         Dim ArtistReader As New Artist
-        Artists = ArtistReader.ReadAllArtists(path)
+        Artists = CType(ArtistReader.ReadAllArtists(path), Collection)
     End Sub
     Public Sub New(EmailUser As String, path As String)
 
@@ -44,14 +45,15 @@ Public Class Albums
         End If
     End Sub
     Private Sub loadData(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+        Dim album As Album : Dim song As Song : Dim artist As Artist
         ListBox2.Items.Clear()
         btn_delete.Enabled = True
         btn_update.Enabled = True
         Dim Songs As Collection : Dim SongDAO As Song : Dim AlbumName As String : Dim AlbumDAO As Album : Dim ArtistDAO As Artist : Dim artistname As String : Dim lengthalbum As Integer : Dim lengthtotal As String
         lengthalbum = 0
         SongDAO = New Song()
-        Songs = SongDAO.ReadAllSongs(path)
-        AlbumName = ListBox1.SelectedItem
+        Songs = CType(SongDAO.ReadAllSongs(path), Collection)
+        AlbumName = CStr(ListBox1.SelectedItem)
         If AlbumName IsNot Nothing Then
             For Each album In Albums
                 If album.GetName() = AlbumName Then
@@ -65,7 +67,7 @@ Public Class Albums
                 End If
             Next
             ArtistDAO = New Artist()
-            Artists = ArtistDAO.ReadAllArtists(path)
+            Artists = CType(ArtistDAO.ReadAllArtists(path), Collection)
             For Each artist In Artists
                 If artist.GetIdArtist() = SelectedAlbum.getArtist() Then
                     artistname = artist.GetName()
@@ -75,7 +77,7 @@ Public Class Albums
             aName.Visible = True
             aName.Text = artistname
             releaseDate.Visible = True
-            releaseDate.Text = SelectedAlbum.getReleaseDate()
+            releaseDate.Text = CStr(SelectedAlbum.getReleaseDate())
             Length.Visible = True
             Length.Text = lengthtotal
             Try
@@ -85,7 +87,7 @@ Public Class Albums
             End Try
 
             albumnametxt.Text = SelectedAlbum.GetName()
-            albumreleaseDatetxt.Text = SelectedAlbum.getReleaseDate()
+            albumreleaseDatetxt.Text = CStr(SelectedAlbum.getReleaseDate())
             albumartisttxt.Text = artistname
         Else
             MsgBox("You didn't select an album")
@@ -98,20 +100,21 @@ Public Class Albums
         f2.Show()
         Me.Hide()
     End Sub
-    Public Function CalcularTiempo(length As Integer)
+    Public Function CalcularTiempo(length As Integer) As String
         Dim horas As Integer : Dim minutos As Integer : Dim segundos As Integer : Dim horatotal As String
-        horas = Math.Floor(length / 3600)
-        minutos = Math.Floor((length - horas * 3600) / 60)
+        horas = CInt(Math.Floor(length / 3600))
+        minutos = CInt(Math.Floor((length - horas * 3600) / 60))
         segundos = length - (horas * 3600 + minutos * 60)
         horatotal = horas & ":" & minutos & ":" & segundos
         Return horatotal
     End Function
 
     Private Sub btn_insert_Click(sender As Object, e As EventArgs) Handles btn_insert.Click
+        Dim artist As Artist : Dim album As Album
         Dim aName As String : Dim dateR As Date : Dim artistname As String : Dim AlbumAdd As New Album : Dim artistID As Integer : Dim iguales As Boolean = False
         Try
             aName = albumnametxt.Text
-            dateR = albumreleaseDatetxt.Text
+            dateR = CDate(albumreleaseDatetxt.Text)
             artistname = albumartisttxt.Text
             For Each artist In Artists
                 If artistname = artist.GetName() Then
@@ -124,7 +127,7 @@ Public Class Albums
                 End If
             Next
             If iguales = False Then
-                If (aName = "" Or dateR = "" Or artistname = "") Then
+                If (aName = "" Or dateR = Nothing Or artistname = "") Then
                     MessageBox.Show("There is blank space in the register please try again")
                 Else
                     AlbumAdd.SetName(aName)
@@ -147,18 +150,19 @@ Public Class Albums
 
     End Sub
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
+        Dim artist As Artist
         Dim aName As String : Dim dateR As Date : Dim artistname As String : Dim cover As String : Dim AlbumUpdate As Album : Dim artistID As Integer
         AlbumUpdate = New Album
         Try
             aName = albumnametxt.Text
-            dateR = albumreleaseDatetxt.Text
+            dateR = CDate(albumreleaseDatetxt.Text)
             artistname = albumartisttxt.Text
             For Each artist In Artists
                 If artistname = artist.GetName() Then
                     artistID = artist.getIdArtist()
                 End If
             Next
-            If (aName = "" Or dateR = "" Or artistname = "" Or cover = "") Then
+            If (aName = "" Or dateR = Nothing Or artistname = "" Or cover = "") Then
                 MessageBox.Show("There is blank space in the register please try again")
             Else
                 AlbumUpdate.setIdAlbum(SelectedAlbum.GetIdAlbum())

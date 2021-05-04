@@ -1,5 +1,5 @@
 ﻿Public Class Album
-    Private Property IdAlbum As String
+    Private Property IdAlbum As Integer
     Private Property aName As String
     Private Property releaseDate As Date
     Private Property artist As Integer
@@ -8,11 +8,11 @@
     Public Sub New()
         Me.AlbDAO = New AlbumDAO
     End Sub
-    Public Sub New(id As String)
+    Public Sub New(id As Integer)
         Me.AlbDAO = New AlbumDAO
         Me.IdAlbum = id
     End Sub
-    Public Sub New(id As String, name As String, Rdate As Date, artist As Integer, cover As String)
+    Public Sub New(id As Integer, name As String, Rdate As Date, artist As Integer, cover As String)
         Me.AlbDAO = New AlbumDAO
         IdAlbum = id
         aName = name
@@ -20,37 +20,37 @@
         Me.artist = artist
         Me.cover = cover
     End Sub
-    Public Function GetIdAlbum()
+    Public Function GetIdAlbum() As Integer
         Return IdAlbum
     End Function
-    Public Function getArtist()
+    Public Function getArtist() As Integer
         Return artist
     End Function
-    Public Function getReleaseDate()
+    Public Function getReleaseDate() As Date
         Return releaseDate
     End Function
-    Public Function GetName()
+    Public Function GetName() As String
         Return aName
     End Function
-    Public Function GetCover()
+    Public Function GetCover() As String
         Return cover
     End Function
-    Public Function setIdAlbum(Id As Integer)
+    Public Function setIdAlbum(Id As Integer) As Integer
         IdAlbum = Id
     End Function
-    Public Function SetName(name As String)
+    Public Function SetName(name As String) As String
         aName = name
     End Function
-    Public Function SetDate(RDate As Date)
+    Public Function SetDate(RDate As Date) As Date
         releaseDate = RDate
     End Function
-    Public Function SetArtist(nartist As Integer)
+    Public Function SetArtist(nartist As Integer) As Integer
         artist = nartist
     End Function
-    Public Function SetCover(cover As String)
+    Public Function SetCover(cover As String) As String
         Me.cover = cover
     End Function
-    Public Function ReadAllAlbums(path As String)
+    Public Function ReadAllAlbums(path As String) As Object
         Return Me.AlbDAO.ReadAll(path)
     End Function
     Public Sub ReadAlbum()

@@ -72,7 +72,7 @@ Public Class SignUp
                 MessageBox.Show("Please introduce a valid value")
                 valido = False
             End If
-            birthdate = txt_birthdate.Text
+            birthdate = CDate(txt_birthdate.Text)
 
             If valido = True And (surname <> "" Or name <> "" Or email <> "") Then
                 u = New User(email)

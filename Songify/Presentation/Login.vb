@@ -63,7 +63,7 @@ Public Class Login
         iguales = False
         UserDAO = New User()
         valido = False
-        Users = UserDAO.ReadAllUsers(fileName)
+        Users = CType(UserDAO.ReadAllUsers(fileName), Collection)
 
 
         email = txt_email.Text

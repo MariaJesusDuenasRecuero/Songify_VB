@@ -5,12 +5,12 @@
         Me.Albums = New Collection
     End Sub
 
-    Public Function ReadAll(path As String)
+    Public Function ReadAll(path As String) As Object
         Dim a As Album
         Dim col, aux As Collection
         col = DBBroker.GetBroker(path).Read("SELECT * FROM Albums ORDER BY IdAlbum")
         For Each aux In col
-            a = New Album(aux(1).ToString, aux(2).ToString, aux(3).ToString, aux(4).ToString, aux(5).ToString)
+            a = New Album(CInt(aux(1).ToString), aux(2).ToString, CDate(aux(3).ToString), CInt(aux(4).ToString), aux(5).ToString)
             Me.Albums.Add(a)
         Next
         Return Albums
@@ -21,8 +21,8 @@
         col = DBBroker.GetBroker.Read("SELECT * FROM Albums WHERE IdAlbum='" & a.GetIdAlbum() & "';")
         For Each aux In col
             a.SetName(aux(2).ToString)
-            a.SetDate(aux(3).ToString)
-            a.SetArtist(aux(4).ToString)
+            a.SetDate(CDate(aux(3).ToString))
+            a.SetArtist(CInt(aux(4).ToString))
             a.SetCover(aux(5).ToString)
         Next
     End Sub
