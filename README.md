@@ -1,9 +1,15 @@
-# Project Database [2020-2021]
+## Project Database [2020-2021]
 
 
 The database to be managed will contain a series of tables to store information about users, artists, albums, songs, plays and favorite artists of the users.
 The following figure describes the relational schema of the database to be used.
-The file with the database can be found on the virtual campus of the course.
+The file with the database can be found on master branch.
+
+The following image will show the Relational model of the database:
+
+![esquema](https://user-images.githubusercontent.com/72667996/120924467-320cd400-c6d4-11eb-93cb-3721e1c0eac6.PNG)
+
+
 
 Developed in visual basic language
 
