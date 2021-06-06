@@ -6,6 +6,7 @@
     Public IdPlay As Integer
     Public path As String
     Public Albums As Collection
+     Michi.Enabled = false
     Private Sub Songs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SongDAO As Song
         songNametxt.Text = ""
@@ -89,6 +90,8 @@
             PlayBackSong.setEmail(EmailUser)
             PlayBackSong.SetSong(SongSelected.getIdSong())
             PlayBackSong.SetPlDate(Date.Today())
+            Michi.Enabled = True
+
             Try
                 PlayBackSong.InsertPlayBack()
                 ListBox2.Items.Add(PlayBackSong.GetEmail() & "\" & PlayBackSong.GetPlDate())

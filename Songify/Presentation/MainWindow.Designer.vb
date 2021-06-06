@@ -26,11 +26,13 @@ Partial Class MainWindow
         Me.lbl_profile = New System.Windows.Forms.Label()
         Me.EmailLog = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_signOut = New System.Windows.Forms.Button()
         Me.btn_songs = New System.Windows.Forms.Button()
         Me.btn_Album = New System.Windows.Forms.Button()
         Me.btn_artists = New System.Windows.Forms.Button()
         Me.lbl_background = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lbl_profile
@@ -67,6 +69,16 @@ Partial Class MainWindow
         Me.Button1.Text = "Queries"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Image = Global.Songify.My.Resources.Resources.dancing_cat_56
+        Me.Label1.Location = New System.Drawing.Point(66, 208)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(278, 441)
+        Me.Label1.TabIndex = 15
         '
         'btn_signOut
         '
@@ -129,14 +141,26 @@ Partial Class MainWindow
         Me.lbl_background.Size = New System.Drawing.Size(418, 593)
         Me.lbl_background.TabIndex = 2
         '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Image = Global.Songify.My.Resources.Resources.dancing_cat_56
+        Me.Label2.Location = New System.Drawing.Point(907, 208)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(278, 441)
+        Me.Label2.TabIndex = 16
+        '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lbl_profile)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.EmailLog)
         Me.Controls.Add(Me.btn_signOut)
         Me.Controls.Add(Me.btn_songs)
@@ -217,4 +241,7 @@ Partial Class MainWindow
         f2.Show()
         Me.Hide()
     End Sub
+
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

@@ -63,6 +63,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property _4aedd44ab39a02514290e2b05871555f() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("4aedd44ab39a02514290e2b05871555f", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property actualizar() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("actualizar", resourceCulture)
@@ -156,6 +166,16 @@ Namespace My.Resources
         Friend ReadOnly Property carta() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("carta", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property dancing_cat_56() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dancing-cat-56", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

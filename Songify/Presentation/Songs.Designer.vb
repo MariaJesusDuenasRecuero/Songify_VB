@@ -27,7 +27,6 @@ Partial Class Songs
         Me.songNametxt = New System.Windows.Forms.Label()
         Me.AlbumSongtxt = New System.Windows.Forms.Label()
         Me.SongLengthtxt = New System.Windows.Forms.Label()
-        Me.GoBackBtn = New System.Windows.Forms.Button()
         Me.lbl_profile = New System.Windows.Forms.Label()
         Me.EmailLog = New System.Windows.Forms.Label()
         Me.Songtxt = New System.Windows.Forms.Label()
@@ -44,11 +43,13 @@ Partial Class Songs
         Me.songalbumtxtbox = New System.Windows.Forms.TextBox()
         Me.songnametxtbox = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Michi = New System.Windows.Forms.Label()
         Me.btn_delete = New System.Windows.Forms.Button()
         Me.btn_update = New System.Windows.Forms.Button()
         Me.btn_insert = New System.Windows.Forms.Button()
         Me.Play = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.GoBackBtn = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -93,20 +94,6 @@ Partial Class Songs
         Me.SongLengthtxt.TabIndex = 3
         Me.SongLengthtxt.Text = "Label3"
         '
-        'GoBackBtn
-        '
-        Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GoBackBtn.ForeColor = System.Drawing.Color.Black
-        Me.GoBackBtn.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_40_53
-        Me.GoBackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.GoBackBtn.Location = New System.Drawing.Point(35, 773)
-        Me.GoBackBtn.Name = "GoBackBtn"
-        Me.GoBackBtn.Size = New System.Drawing.Size(92, 42)
-        Me.GoBackBtn.TabIndex = 12
-        Me.GoBackBtn.Text = "Back"
-        Me.GoBackBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.GoBackBtn.UseVisualStyleBackColor = True
-        '
         'lbl_profile
         '
         Me.lbl_profile.AutoSize = True
@@ -134,7 +121,7 @@ Partial Class Songs
         Me.Songtxt.AutoSize = True
         Me.Songtxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.Songtxt.ForeColor = System.Drawing.Color.White
-        Me.Songtxt.Location = New System.Drawing.Point(645, 523)
+        Me.Songtxt.Location = New System.Drawing.Point(645, 508)
         Me.Songtxt.Name = "Songtxt"
         Me.Songtxt.Size = New System.Drawing.Size(66, 24)
         Me.Songtxt.TabIndex = 16
@@ -142,7 +129,7 @@ Partial Class Songs
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(541, 579)
+        Me.ProgressBar1.Location = New System.Drawing.Point(545, 563)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(265, 23)
         Me.ProgressBar1.TabIndex = 17
@@ -265,6 +252,17 @@ Partial Class Songs
         Me.Label6.TabIndex = 34
         Me.Label6.Text = "Add song"
         '
+        'Michi
+        '
+        Me.Michi.Font = New System.Drawing.Font("Verdana", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Michi.ForeColor = System.Drawing.Color.White
+        Me.Michi.Image = Global.Songify.My.Resources.Resources._4aedd44ab39a02514290e2b05871555f
+        Me.Michi.Location = New System.Drawing.Point(521, 500)
+        Me.Michi.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Michi.Name = "Michi"
+        Me.Michi.Size = New System.Drawing.Size(311, 397)
+        Me.Michi.TabIndex = 35
+        '
         'btn_delete
         '
         Me.btn_delete.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -311,7 +309,7 @@ Partial Class Songs
         '
         Me.Play.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
         Me.Play.Image = Global.Songify.My.Resources.Resources.jugar1
-        Me.Play.Location = New System.Drawing.Point(641, 637)
+        Me.Play.Location = New System.Drawing.Point(641, 597)
         Me.Play.Name = "Play"
         Me.Play.Size = New System.Drawing.Size(70, 49)
         Me.Play.TabIndex = 18
@@ -325,6 +323,20 @@ Partial Class Songs
         Me.PictureBox1.Size = New System.Drawing.Size(309, 316)
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
+        '
+        'GoBackBtn
+        '
+        Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.GoBackBtn.ForeColor = System.Drawing.Color.Black
+        Me.GoBackBtn.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_40_53
+        Me.GoBackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.GoBackBtn.Location = New System.Drawing.Point(35, 773)
+        Me.GoBackBtn.Name = "GoBackBtn"
+        Me.GoBackBtn.Size = New System.Drawing.Size(92, 42)
+        Me.GoBackBtn.TabIndex = 12
+        Me.GoBackBtn.Text = "Back"
+        Me.GoBackBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.GoBackBtn.UseVisualStyleBackColor = True
         '
         'Songs
         '
@@ -358,6 +370,7 @@ Partial Class Songs
         Me.Controls.Add(Me.AlbumSongtxt)
         Me.Controls.Add(Me.songNametxt)
         Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.Michi)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -396,4 +409,5 @@ Partial Class Songs
     Friend WithEvents songalbumtxtbox As TextBox
     Friend WithEvents songnametxtbox As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents Michi As Label
 End Class

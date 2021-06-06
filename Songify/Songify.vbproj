@@ -274,5 +274,11 @@
   <ItemGroup>
     <None Include="Resources\Sin-título-1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dancing-cat-56.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4aedd44ab39a02514290e2b05871555f.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
