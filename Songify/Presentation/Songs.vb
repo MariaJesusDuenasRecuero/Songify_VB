@@ -6,8 +6,9 @@
     Public IdPlay As Integer
     Public path As String
     Public Albums As Collection
-     Michi.Enabled = false
+
     Private Sub Songs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Michi.Enabled = False
         Dim SongDAO As Song
         songNametxt.Text = ""
         songNametxt.Visible = False
