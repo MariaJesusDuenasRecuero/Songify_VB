@@ -41,11 +41,12 @@
     End Sub
 
     Private Sub SelectSong(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+
         ListBox2.Items.Clear()
         ListBox2.Items.Add("User" & "\" & "Date")
         Play.Enabled = True
         btn_update.Enabled = True
-        Dim Song As Song : Dim album As Album : Dim playback As User
+        Dim Song As Song : Dim album As Album : Dim playback As User : Dim aName As String
         Dim Albums As Collection : Dim AlbumDAO As Album : Dim SelectedSong As String : Dim AlbumName As String : Dim SLength As String : Dim userDAO As New User() : Dim playbacks As Collection
         AlbumDAO = New Album()
         Albums = CType(AlbumDAO.ReadAllAlbums(path), Collection)
@@ -78,6 +79,9 @@
             historytxt.Visible = True
             Label2.Text = SongSelected.GetName()
             Label2.Visible = True
+            songnametxtbox.Text = SongSelected.GetName()
+            songalbumtxtbox.Text = AlbumName
+            songlengthtxtbox.Text = CStr(SongSelected.GetSLength())
         Else
             MsgBox("You didn't select a song")
         End If
@@ -141,7 +145,7 @@
             SongAdd.SetName(sName)
             For Each album In Albums
                 If albumName = album.GetName() Then
-                    IdAlbum = album.getIdAlbum()
+                    IdAlbum = album.GetIdAlbum()
                 End If
             Next
             If (sName = "" Or albumName = "" Or CStr(length) = "") Then
@@ -165,14 +169,15 @@
 
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
         Play.Enabled = False
-        Dim sName As String : Dim albumName As String : Dim length As Integer : Dim SongUpdate As Song : Dim IdAlbum As Integer : Dim album As Album
+        Dim sName As String : Dim albumName As String : Dim length As Integer : Dim SongUpdate As Song : Dim IdAlbum As Integer : Dim album As Album : Dim albumCorrect As Boolean = False
         SongUpdate = New Song
         sName = songnametxtbox.Text
         albumName = songalbumtxtbox.Text
         length = CInt(songlengthtxtbox.Text)
         For Each album In Albums
             If albumName = album.GetName() Then
-                IdAlbum = album.getIdAlbum()
+                IdAlbum = album.GetIdAlbum()
+                albumCorrect = True
             End If
         Next
         If (sName = "" Or albumName = "" Or CStr(length) = "") Then
@@ -183,9 +188,15 @@
             SongUpdate.SetAlbum(IdAlbum)
             SongUpdate.SetLength(length)
             Try
-                SongUpdate.UpdateSong()
-                loadSongs()
-                MsgBox("Song updated successfully")
+                If (albumCorrect = True) Then
+
+                    SongUpdate.UpdateSong()
+                    loadSongs()
+                    MsgBox("Song updated successfully")
+                Else
+                    MsgBox("The album wasn't added in our database")
+                End If
+
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -200,6 +211,7 @@
             If SongSelected IsNot Nothing Then
                 SongDelete.setIdSong(SongSelected.getIdSong())
                 SongDelete.DeleteSong()
+                MsgBox("Song deleted successfully")
                 loadSongs()
             Else
                 MsgBox("You must select the song to delete")
