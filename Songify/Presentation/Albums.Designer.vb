@@ -169,7 +169,7 @@ Partial Class Albums
         Me.lbl_length.AutoSize = True
         Me.lbl_length.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_length.ForeColor = System.Drawing.Color.White
-        Me.lbl_length.Location = New System.Drawing.Point(503, 742)
+        Me.lbl_length.Location = New System.Drawing.Point(503, 739)
         Me.lbl_length.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_length.Name = "lbl_length"
         Me.lbl_length.Size = New System.Drawing.Size(93, 23)
@@ -366,7 +366,7 @@ Partial Class Albums
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
-        Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.ClientSize = New System.Drawing.Size(1271, 749)
         Me.Controls.Add(Me.CleanBtn)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label5)
