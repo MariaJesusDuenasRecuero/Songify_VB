@@ -50,6 +50,7 @@ Partial Class Artists
         Me.im_artists = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ofdPath = New System.Windows.Forms.OpenFileDialog()
+        Me.CleanBtn = New System.Windows.Forms.Button()
         CType(Me.im_artists, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -355,12 +356,27 @@ Partial Class Artists
         '
         Me.ofdPath.FileName = "OpenFileDialog1"
         '
+        'CleanBtn
+        '
+        Me.CleanBtn.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CleanBtn.ForeColor = System.Drawing.Color.Black
+        Me.CleanBtn.Image = CType(resources.GetObject("CleanBtn.Image"), System.Drawing.Image)
+        Me.CleanBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.CleanBtn.Location = New System.Drawing.Point(1161, 392)
+        Me.CleanBtn.Name = "CleanBtn"
+        Me.CleanBtn.Size = New System.Drawing.Size(81, 57)
+        Me.CleanBtn.TabIndex = 36
+        Me.CleanBtn.Text = "Clean"
+        Me.CleanBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.CleanBtn.UseVisualStyleBackColor = True
+        '
         'Artists
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.Controls.Add(Me.CleanBtn)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.unFavButton)
         Me.Controls.Add(Me.Label5)
@@ -428,4 +444,5 @@ Partial Class Artists
     Friend WithEvents unFavButton As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents ofdPath As OpenFileDialog
+    Friend WithEvents CleanBtn As Button
 End Class

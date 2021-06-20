@@ -50,6 +50,7 @@ Partial Class Songs
         Me.Play = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GoBackBtn = New System.Windows.Forms.Button()
+        Me.CleanBtn = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -338,12 +339,27 @@ Partial Class Songs
         Me.GoBackBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.GoBackBtn.UseVisualStyleBackColor = True
         '
+        'CleanBtn
+        '
+        Me.CleanBtn.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CleanBtn.ForeColor = System.Drawing.Color.Black
+        Me.CleanBtn.Image = CType(resources.GetObject("CleanBtn.Image"), System.Drawing.Image)
+        Me.CleanBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.CleanBtn.Location = New System.Drawing.Point(1136, 457)
+        Me.CleanBtn.Name = "CleanBtn"
+        Me.CleanBtn.Size = New System.Drawing.Size(81, 57)
+        Me.CleanBtn.TabIndex = 36
+        Me.CleanBtn.Text = "Clean"
+        Me.CleanBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.CleanBtn.UseVisualStyleBackColor = True
+        '
         'Songs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.Controls.Add(Me.CleanBtn)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
@@ -410,4 +426,5 @@ Partial Class Songs
     Friend WithEvents songnametxtbox As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Michi As Label
+    Friend WithEvents CleanBtn As Button
 End Class

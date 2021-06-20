@@ -10,11 +10,15 @@
     End Sub
     Private Sub btn_selectImage_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If Me.ofdPath.ShowDialog = DialogResult.OK Then
-            imageartist = ofdPath.FileName
+            If (ofdPath.FileName.Contains(".jpg") Or ofdPath.FileName.Contains(".png")) Then
+                cover = ofdPath.FileName
+                MsgBox("Operation successful")
+            Else
+                MsgBox("It isn't an appropiate image format")
+            End If
         End If
     End Sub
     Private Sub Artists_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim idartists As New Collection : Dim artist As Artist
         aName.Text = ""
         aName.Visible = False
         country.Text = ""
@@ -26,12 +30,25 @@
         ArtistDAO = New Artist()
         Artists = CType(ArtistDAO.ReadAllArtists(path), Collection)
         loadArtists()
+        favArtistsload()
         btnFav.Enabled = False
+    End Sub
+    Public Sub loadArtists()
+        lsb_artist.Items.Clear()
+        Dim artist As Artist
+        For Each artist In Artists
+            lsb_artist.Items.Add(artist.GetName())
+        Next
+    End Sub
+
+    Public Sub favArtistsload()
+        lsb_favArtist.Items.Clear()
+        Dim idartists As New Collection : Dim artist As Artist
         Dim ArtistReader As New Artist
         FavArtists = CType(ArtistReader.ReadAllFavArtists(path), Collection)
         For Each artist In FavArtists
             If artist.GetUser() = EmailUser Then
-                idartists.Add(artist.getIdArtist())
+                idartists.Add(artist.GetIdArtist())
             End If
         Next
         For Each artist In Artists
@@ -40,13 +57,6 @@
                     lsb_favArtist.Items.Add(artist.GetName())
                 End If
             Next
-        Next
-    End Sub
-    Public Sub loadArtists()
-        lsb_artist.Items.Clear()
-        Dim artist As Artist
-        For Each artist In Artists
-            lsb_artist.Items.Add(artist.GetName())
         Next
     End Sub
     Public Sub New(EmailUser As String, path As String)
@@ -98,42 +108,37 @@
     End Sub
 
     Private Sub loadFavArtists(sender As Object, e As EventArgs) Handles lsb_favArtist.SelectedIndexChanged
+        btn_update.Enabled = True
         lst_album.Items.Clear()
-        btnFav.Enabled = False
         unFavButton.Enabled = True
         Dim Albums As Collection : Dim AlbumDAO As Album : Dim ArtistName As String : Dim artist As Artist : Dim album As Album
-        Dim ArtistReader As New Artist : Dim FavArtists As Collection : Dim id As Integer
+        btnFav.Enabled = False
         AlbumDAO = New Album()
         Albums = CType(AlbumDAO.ReadAllAlbums(path), Collection)
         ArtistName = CStr(lsb_favArtist.SelectedItem)
         If ArtistName IsNot Nothing Then
-            FavArtists = CType(ArtistReader.ReadAllFavArtists(path), Collection)
             For Each artist In Artists
                 If artist.GetName() = ArtistName Then
                     SelectedArtist = artist
                 End If
             Next
             For Each album In Albums
-                If SelectedArtist.GetIdArtist() = album.GetArtist() Then
+                If SelectedArtist.GetIdArtist() = album.getArtist() Then
                     lst_album.Items.Add(album.GetName())
                 End If
             Next
 
             aName.Visible = True
+            aName.Text = SelectedArtist.GetName()
             country.Visible = True
-            id = SelectedArtist.GetIdArtist()
-            For Each artist In Artists
-                If id = artist.getIdArtist() Then
-                    aName.Text = artist.GetName()
-                    country.Text = artist.GetCountry()
-                End If
-            Next
+            country.Text = SelectedArtist.GetCountry()
             Try
                 im_artists.Image = Image.FromFile(SelectedArtist.GetImage())
             Catch ex As Exception
                 MsgBox("The image from this artist has been changed or deleted")
             End Try
-
+            artistnametxt.Text = SelectedArtist.GetName()
+            artistcountrytxt.Text = SelectedArtist.GetCountry()
         Else
             MsgBox("You didn't select an artist, select one", MsgBoxStyle.OkOnly, "Warning")
         End If
@@ -144,8 +149,7 @@
         Dim ArtistsCollection As Collection : Dim Selected_Artist As String : Dim ArtistDAO As Artist : Dim repetidos As Boolean = False : Dim Artist As Artist
         ArtistDAO = New Artist()
         ArtistsCollection = CType(ArtistDAO.ReadAllArtists(path), Collection)
-        Selected_Artist = CStr(lsb_favArtist.SelectedItem)
-        loadArtists()
+        Selected_Artist = CStr(lsb_artist.SelectedItem)
         Try
             For Each Artist In ArtistsCollection
                 If Selected_Artist = Artist.GetName() Then
@@ -164,8 +168,8 @@
                 FavArtist.setIdArtist(SelectedArtist.GetIdArtist())
                 FavArtist.SetFavDate(Date.Today())
                 FavArtist.InsertFav_Artist()
-                lsb_favArtist.Items.Add(SelectedArtist.GetName())
                 MsgBox("Artist added to favorites")
+                favArtistsload()
             Else
                 MsgBox("You have this artist in favorites")
             End If
@@ -188,8 +192,8 @@
         FavArtist = New Artist()
         FavArtist.setIdArtist(SelectedArtist.GetIdArtist())
         FavArtist.DeleteFav_Artist()
-        lsb_favArtist.Items.Remove(SelectedArtist.GetName())
         MsgBox("Artist removed from favorites")
+        favArtistsload()
     End Sub
 
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
@@ -270,5 +274,8 @@
             MsgBox(ex.Message)
         End Try
     End Sub
-
+    Private Sub CleanBtn_Click(sender As Object, e As EventArgs) Handles CleanBtn.Click
+        artistnametxt.Text = ""
+        artistcountrytxt.Text = ""
+    End Sub
 End Class

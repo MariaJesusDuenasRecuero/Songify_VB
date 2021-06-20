@@ -8,7 +8,6 @@ Public Class Albums
     Public path As String
     Public cover As String
     Private Sub Albums_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim album As New Album()
         aName.Text = ""
         aName.Visible = False
         releaseDate.Text = ""
@@ -18,14 +17,17 @@ Public Class Albums
         EmailLog.Text = EmailUser
         btn_delete.Enabled = False
         btn_update.Enabled = False
+        loadAlbums()
+        Dim ArtistReader As New Artist
+        Artists = CType(ArtistReader.ReadAllArtists(path), Collection)
+    End Sub
+    Public Sub loadAlbums()
         Dim AlbumDAO As Album
-        AlbumDAO = New Album()
+        AlbumDAO = New Album() : Dim album As New Album()
         Albums = CType(AlbumDAO.ReadAllAlbums(path), Collection)
         For Each album In Albums
             ListBox1.Items.Add(album.GetName())
         Next
-        Dim ArtistReader As New Artist
-        Artists = CType(ArtistReader.ReadAllArtists(path), Collection)
     End Sub
     Public Sub New(EmailUser As String, path As String)
 
@@ -41,7 +43,12 @@ Public Class Albums
     End Sub
     Private Sub btn_selectDB_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If Me.ofdPath.ShowDialog = DialogResult.OK Then
-            cover = ofdPath.FileName
+            If (ofdPath.FileName.Contains(".jpg") Or ofdPath.FileName.Contains(".png")) Then
+                cover = ofdPath.FileName
+                MsgBox("Operation successful")
+            Else
+                MsgBox("It isn't an appropiate image format")
+            End If
         End If
     End Sub
     Private Sub loadData(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
@@ -136,7 +143,7 @@ Public Class Albums
                     Try
                         AlbumAdd.InsertAlbum()
                         MsgBox("Album added successfully")
-                        ListBox1.Items.Add(AlbumAdd.GetName())
+                        loadAlbums()
                     Catch ex As Exception
                         MsgBox(ex.Message)
                     End Try
@@ -174,6 +181,7 @@ Public Class Albums
                     Try
                         AlbumUpdate.UpdateAlbum()
                         MsgBox("Album Updated successfully")
+                        loadAlbums()
                     Catch ex As Exception
                         MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End Try
@@ -194,10 +202,15 @@ Public Class Albums
             AlbumDelete.DeleteAlbum()
             ListBox1.Items.Remove(AlbumDelete.GetName())
             MsgBox("Album deleted successfully")
+            loadAlbums()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
-
+    Private Sub CleanBtn_Click(sender As Object, e As EventArgs) Handles CleanBtn.Click
+        albumnametxt.Text = ""
+        albumartisttxt.Text = ""
+        albumreleaseDatetxt.Text = ""
+    End Sub
 End Class

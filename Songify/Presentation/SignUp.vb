@@ -72,24 +72,27 @@ Public Class SignUp
                 MessageBox.Show("Please introduce a valid value")
                 valido = False
             End If
-            birthdate = CDate(txt_birthdate.Text)
-
+            Try
+                birthdate = CDate(txt_birthdate.Text)
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End Try
             If valido = True And (surname <> "" Or name <> "" Or email <> "") Then
-                u = New User(email)
-                u.SetName(name)
-                u.SetSurname(surname)
-                u.SetBirthdate(birthdate)
-                Try
-                    u.InsertUser()
-                    MsgBox("Registered user", MsgBoxStyle.OkOnly, "Information")
-                Catch ex As Exception
-                    MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                End Try
+                    u = New User(email)
+                    u.SetName(name)
+                    u.SetSurname(surname)
+                    u.SetBirthdate(birthdate)
+                    Try
+                        u.InsertUser()
+                        MsgBox("Registered user", MsgBoxStyle.OkOnly, "Information")
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    End Try
 
 
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
 
     End Sub

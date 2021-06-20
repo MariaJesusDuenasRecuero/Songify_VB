@@ -151,15 +151,19 @@
             If (sName = "" Or albumName = "" Or CStr(length) = "") Then
                 MessageBox.Show("There is blank space in the register please try again")
             Else
-                SongAdd.SetAlbum(IdAlbum)
-                SongAdd.SetLength(length)
-                Try
-                    SongAdd.InsertSong()
-                    MsgBox("Song added")
-                    loadSongs()
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
+                If (length >= 0) Then
+                    SongAdd.SetAlbum(IdAlbum)
+                    SongAdd.SetLength(length)
+                    Try
+                        SongAdd.InsertSong()
+                        MsgBox("Song added")
+                        loadSongs()
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+                Else
+                    MsgBox("You can't add a negative length!")
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -183,23 +187,26 @@
         If (sName = "" Or albumName = "" Or CStr(length) = "") Then
             MessageBox.Show("There is blank space in the register please try again")
         Else
-            SongUpdate.setIdSong(SongSelected.getIdSong())
-            SongUpdate.SetName(sName)
-            SongUpdate.SetAlbum(IdAlbum)
-            SongUpdate.SetLength(length)
-            Try
-                If (albumCorrect = True) Then
+            If (length >= 0) Then
+                SongUpdate.setIdSong(SongSelected.getIdSong())
+                SongUpdate.SetName(sName)
+                SongUpdate.SetAlbum(IdAlbum)
+                SongUpdate.SetLength(length)
+                Try
+                    If (albumCorrect = True) Then
 
-                    SongUpdate.UpdateSong()
-                    loadSongs()
-                    MsgBox("Song updated successfully")
-                Else
-                    MsgBox("The album wasn't added in our database")
-                End If
-
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
+                        SongUpdate.UpdateSong()
+                        loadSongs()
+                        MsgBox("Song updated successfully")
+                    Else
+                        MsgBox("The album wasn't added in our database")
+                    End If
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+            Else
+                MsgBox("You can't update with a negative length!")
+            End If
         End If
 
     End Sub
@@ -228,5 +235,9 @@
             ListBox1.Items.Add(song.GetName())
         Next
     End Sub
-
+    Private Sub CleanBtn_Click(sender As Object, e As EventArgs) Handles CleanBtn.Click
+        songnametxtbox.Text = ""
+        songalbumtxtbox.Text = ""
+        songlengthtxtbox.Text = ""
+    End Sub
 End Class

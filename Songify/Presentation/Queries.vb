@@ -85,28 +85,32 @@
         If TextBox2.Text = "" Or TextBox3.Text = "" Then
             MsgBox("You must write 2 dates")
         Else
-            Date1 = CDate(TextBox2.Text)
-            Date2 = CDate(TextBox3.Text)
-            fecha1 = Format(Date1, "dd/MM/yyyy")
-            fecha2 = Format(Date2, "dd/MM/yyyy")
-            If fecha1 IsNot Nothing And fecha2 IsNot Nothing Then
-                If Date1 > Date2 Then
-                    MsgBox("The end date must be higher than the start date")
-                Else
-                    Dim ArtistDAO As New Artist : Dim ListQuery3 As Collection
-                    Try
-                        ListQuery3 = CType(ArtistDAO.Query3(path, CDate(fecha1), CDate(fecha2), Email), Collection)
-                        For Each aName In ListQuery3
-                            ListBox3.Items.Add(aName)
-                        Next
-                    Catch ex As Exception
-                        MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                    End Try
-                End If
+            Try
+                Date1 = CDate(TextBox2.Text)
+                Date2 = CDate(TextBox3.Text)
+                fecha1 = Format(Date1, "dd/MM/yyyy")
+                fecha2 = Format(Date2, "dd/MM/yyyy")
+                If fecha1 IsNot Nothing And fecha2 IsNot Nothing Then
+                    If Date1 > Date2 Then
+                        MsgBox("The end date must be higher than the start date")
+                    Else
+                        Dim ArtistDAO As New Artist : Dim ListQuery3 As Collection
+                        Try
+                            ListQuery3 = CType(ArtistDAO.Query3(path, CDate(fecha1), CDate(fecha2), Email), Collection)
+                            For Each aName In ListQuery3
+                                ListBox3.Items.Add(aName)
+                            Next
+                        Catch ex As Exception
+                            MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        End Try
+                    End If
 
-            Else
-                MsgBox("You must write 2 dates for the interval")
-            End If
+                Else
+                    MsgBox("You must write 2 dates for the interval")
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End Try
         End If
 
     End Sub
@@ -128,8 +132,7 @@
     End Sub
 
     Private Sub fifthQuerie_Click(sender As Object, e As EventArgs) Handles fifthQuerie.Click
-        playbackTime.Visible = True
-        lblSeconds.Visible = True
+
         ListBox1.Visible = False
         ListBox2.Visible = False
         ListBox3.Visible = False
@@ -137,9 +140,15 @@
         Dim ArtistDAO As New Artist : Dim ListQuery5 As Collection
         ListQuery5 = CType(ArtistDAO.Query5(path, Email), Collection)
         Dim length As String
-        length = CalcularTiempo(CInt(ListQuery5(1)))
-        lblSeconds.Text = length
-        playbackTime.Text = Email
+        Try
+            length = CalcularTiempo(CInt(ListQuery5(1)))
+            lblSeconds.Text = length
+            playbackTime.Text = Email
+            playbackTime.Visible = True
+            lblSeconds.Visible = True
+        Catch ex As Exception
+            MsgBox("This user doesn't have any favorite artist")
+        End Try
     End Sub
     Private Function CalcularTiempo(length As Integer) As String
         Dim horas As Integer : Dim minutos As Integer : Dim segundos As Integer : Dim horatotal As String
