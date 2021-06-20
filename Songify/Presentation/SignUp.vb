@@ -2,12 +2,6 @@
 Imports System.Data.OleDb
 Public Class SignUp
     Public path As String
-    Private Sub btn_loginSignUp_Click(sender As Object, e As EventArgs) Handles btn_loginSignUp.Click
-        Dim f2 As New Login
-        f2.Show()
-        Me.Hide()
-    End Sub
-
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
         Dim f2 As New Login
         f2.Show()
@@ -84,8 +78,11 @@ Public Class SignUp
                     u.SetBirthdate(birthdate)
                     Try
                         u.InsertUser()
-                        MsgBox("Registered user", MsgBoxStyle.OkOnly, "Information")
-                    Catch ex As Exception
+                    MsgBox("Registered user", MsgBoxStyle.OkOnly, "Information")
+                    Dim f2 As New Login
+                    f2.Show()
+                    Me.Hide()
+                Catch ex As Exception
                         MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End Try
 

@@ -11,7 +11,7 @@
     Private Sub btn_selectImage_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If Me.ofdPath.ShowDialog = DialogResult.OK Then
             If (ofdPath.FileName.Contains(".jpg") Or ofdPath.FileName.Contains(".png")) Then
-                cover = ofdPath.FileName
+                imageartist = ofdPath.FileName
                 MsgBox("Operation successful")
             Else
                 MsgBox("It isn't an appropiate image format")
@@ -26,14 +26,14 @@
         EmailLog.Text = EmailUser
         unFavButton.Enabled = False
         btn_update.Enabled = False
-        Dim ArtistDAO As Artist
-        ArtistDAO = New Artist()
-        Artists = CType(ArtistDAO.ReadAllArtists(path), Collection)
         loadArtists()
         favArtistsload()
         btnFav.Enabled = False
     End Sub
     Public Sub loadArtists()
+        Dim ArtistDAO As Artist
+        ArtistDAO = New Artist()
+        Artists = CType(ArtistDAO.ReadAllArtists(path), Collection)
         lsb_artist.Items.Clear()
         Dim artist As Artist
         For Each artist In Artists
@@ -108,6 +108,7 @@
     End Sub
 
     Private Sub loadFavArtists(sender As Object, e As EventArgs) Handles lsb_favArtist.SelectedIndexChanged
+
         btn_update.Enabled = True
         lst_album.Items.Clear()
         unFavButton.Enabled = True
@@ -194,6 +195,9 @@
         FavArtist.DeleteFav_Artist()
         MsgBox("Artist removed from favorites")
         favArtistsload()
+        If (lsb_favArtist.Items.Count = 0) Then
+            unFavButton.Enabled = False
+        End If
     End Sub
 
     Private Sub BtnBack(sender As Object, e As EventArgs) Handles GoBackBtn.Click
@@ -251,6 +255,7 @@
         Else
             Try
                 ArtistUpdate.UpdateArtist()
+                MsgBox("Artist updated successfully")
                 loadArtists()
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -266,7 +271,12 @@
             If SelectedArtist IsNot Nothing Then
                 ArtistDelete.setIdArtist(SelectedArtist.GetIdArtist())
                 ArtistDelete.DeleteArtist()
+                MsgBox("Artist deleted successfully")
                 loadArtists()
+                artistnametxt.Text = ""
+                artistcountrytxt.Text = ""
+                im_artists.Image.Dispose()
+                im_artists.Image = My.Resources.imagenDefault
             Else
                 MsgBox("You must select an artist to delete")
             End If
@@ -277,5 +287,7 @@
     Private Sub CleanBtn_Click(sender As Object, e As EventArgs) Handles CleanBtn.Click
         artistnametxt.Text = ""
         artistcountrytxt.Text = ""
+        im_artists.Image.Dispose()
+        im_artists.Image = My.Resources.imagenDefault
     End Sub
 End Class

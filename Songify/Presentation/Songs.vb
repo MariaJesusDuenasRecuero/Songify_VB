@@ -9,7 +9,6 @@
 
     Private Sub Songs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Michi.Enabled = False
-        Dim SongDAO As Song
         songNametxt.Text = ""
         songNametxt.Visible = False
         AlbumSongtxt.Text = ""
@@ -21,8 +20,7 @@
         Label2.Visible = False
         btn_update.Enabled = False
         EmailLog.Text = EmailUser
-        SongDAO = New Song()
-        SongsCollection = CType(SongDAO.ReadAllSongs(path), Collection)
+
         loadSongs()
         ListBox2.Items.Add("User" & "\" & "Date")
         Dim AlbumReader As New Album
@@ -177,37 +175,41 @@
         SongUpdate = New Song
         sName = songnametxtbox.Text
         albumName = songalbumtxtbox.Text
-        length = CInt(songlengthtxtbox.Text)
-        For Each album In Albums
-            If albumName = album.GetName() Then
-                IdAlbum = album.GetIdAlbum()
-                albumCorrect = True
-            End If
-        Next
-        If (sName = "" Or albumName = "" Or CStr(length) = "") Then
-            MessageBox.Show("There is blank space in the register please try again")
-        Else
-            If (length >= 0) Then
-                SongUpdate.setIdSong(SongSelected.getIdSong())
-                SongUpdate.SetName(sName)
-                SongUpdate.SetAlbum(IdAlbum)
-                SongUpdate.SetLength(length)
-                Try
-                    If (albumCorrect = True) Then
-
-                        SongUpdate.UpdateSong()
-                        loadSongs()
-                        MsgBox("Song updated successfully")
-                    Else
-                        MsgBox("The album wasn't added in our database")
-                    End If
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
+        Try
+            length = CInt(songlengthtxtbox.Text)
+            For Each album In Albums
+                If albumName = album.GetName() Then
+                    IdAlbum = album.GetIdAlbum()
+                    albumCorrect = True
+                End If
+            Next
+            If (sName = "" Or albumName = "" Or CStr(length) = "") Then
+                MessageBox.Show("There is blank space in the register please try again")
             Else
-                MsgBox("You can't update with a negative length!")
+                If (length >= 0) Then
+                    SongUpdate.setIdSong(SongSelected.getIdSong())
+                    SongUpdate.SetName(sName)
+                    SongUpdate.SetAlbum(IdAlbum)
+                    SongUpdate.SetLength(length)
+                    Try
+                        If (albumCorrect = True) Then
+
+                            SongUpdate.UpdateSong()
+                            loadSongs()
+                            MsgBox("Song updated successfully")
+                        Else
+                            MsgBox("The album wasn't added in our database")
+                        End If
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+                Else
+                    MsgBox("You can't update with a negative length!")
+                End If
             End If
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
     Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
@@ -231,6 +233,8 @@
     Public Sub loadSongs()
         ListBox1.Items.Clear()
         Dim song As Song
+        Dim SongDAO = New Song()
+        SongsCollection = CType(SongDAO.ReadAllSongs(path), Collection)
         For Each song In SongsCollection
             ListBox1.Items.Add(song.GetName())
         Next
@@ -240,4 +244,5 @@
         songalbumtxtbox.Text = ""
         songlengthtxtbox.Text = ""
     End Sub
+
 End Class

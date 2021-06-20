@@ -140,6 +140,7 @@ Public Class Albums
                     AlbumAdd.SetName(aName)
                     AlbumAdd.SetDate(dateR)
                     AlbumAdd.SetArtist(artistID)
+                    AlbumAdd.SetCover(cover)
                     Try
                         AlbumAdd.InsertAlbum()
                         MsgBox("Album added successfully")
@@ -158,7 +159,7 @@ Public Class Albums
     End Sub
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
         Dim artist As Artist
-        Dim aName As String : Dim dateR As Date : Dim artistname As String : Dim cover As String : Dim AlbumUpdate As Album : Dim artistID As Integer
+        Dim aName As String : Dim dateR As Date : Dim artistname As String : Dim AlbumUpdate As Album : Dim artistID As Integer
         AlbumUpdate = New Album
         Try
             aName = albumnametxt.Text
@@ -169,7 +170,7 @@ Public Class Albums
                     artistID = artist.getIdArtist()
                 End If
             Next
-            If (aName = "" Or dateR = Nothing Or artistname = "" Or cover = "") Then
+            If (aName = "" Or dateR = Nothing Or artistname = "") Then
                 MessageBox.Show("There is blank space in the register please try again")
             Else
                 AlbumUpdate.setIdAlbum(SelectedAlbum.GetIdAlbum())
@@ -200,8 +201,11 @@ Public Class Albums
         AlbumDelete.setIdAlbum(SelectedAlbum.GetIdAlbum())
         Try
             AlbumDelete.DeleteAlbum()
-            ListBox1.Items.Remove(AlbumDelete.GetName())
             MsgBox("Album deleted successfully")
+            albumnametxt.Text = ""
+            albumartisttxt.Text = ""
+            albumreleaseDatetxt.Text = ""
+            img_album.Image = My.Resources.imagenDefault
             loadAlbums()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -212,5 +216,6 @@ Public Class Albums
         albumnametxt.Text = ""
         albumartisttxt.Text = ""
         albumreleaseDatetxt.Text = ""
+        img_album.Image = My.Resources.imagenDefault
     End Sub
 End Class

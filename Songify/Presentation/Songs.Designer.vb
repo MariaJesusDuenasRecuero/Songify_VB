@@ -51,6 +51,7 @@ Partial Class Songs
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GoBackBtn = New System.Windows.Forms.Button()
         Me.CleanBtn = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -181,7 +182,7 @@ Partial Class Songs
         Me.btnHistory.AutoSize = True
         Me.btnHistory.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnHistory.ForeColor = System.Drawing.Color.White
-        Me.btnHistory.Location = New System.Drawing.Point(250, 139)
+        Me.btnHistory.Location = New System.Drawing.Point(250, 111)
         Me.btnHistory.Name = "btnHistory"
         Me.btnHistory.Size = New System.Drawing.Size(97, 25)
         Me.btnHistory.TabIndex = 27
@@ -353,12 +354,24 @@ Partial Class Songs
         Me.CleanBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.CleanBtn.UseVisualStyleBackColor = True
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(250, 139)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(134, 25)
+        Me.Label7.TabIndex = 37
+        Me.Label7.Text = "User/Date"
+        '
         'Songs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
         Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.CleanBtn)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label3)
@@ -427,4 +440,5 @@ Partial Class Songs
     Friend WithEvents Label6 As Label
     Friend WithEvents Michi As Label
     Friend WithEvents CleanBtn As Button
+    Friend WithEvents Label7 As Label
 End Class
