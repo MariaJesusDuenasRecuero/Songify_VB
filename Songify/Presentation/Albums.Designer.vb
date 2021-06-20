@@ -323,7 +323,7 @@ Partial Class Albums
         'img_album
         '
         Me.img_album.Image = Global.Songify.My.Resources.Resources.imagenDefault
-        Me.img_album.Location = New System.Drawing.Point(393, 79)
+        Me.img_album.Location = New System.Drawing.Point(386, 79)
         Me.img_album.Name = "img_album"
         Me.img_album.Size = New System.Drawing.Size(522, 508)
         Me.img_album.TabIndex = 9
