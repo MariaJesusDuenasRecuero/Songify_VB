@@ -9,6 +9,7 @@
         Me.ofdPath.InitialDirectory = Application.StartupPath
     End Sub
     Private Sub btn_selectImage_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         If Me.ofdPath.ShowDialog = DialogResult.OK Then
             If (ofdPath.FileName.Contains(".jpg") Or ofdPath.FileName.Contains(".png")) Then
                 imageartist = ofdPath.FileName
@@ -78,6 +79,7 @@
         AlbumDAO = New Album()
         Albums = CType(AlbumDAO.ReadAllAlbums(path), Collection)
         ArtistName = CStr(lsb_artist.SelectedItem)
+        im_artists.Image = My.Resources.imagenDefault
         If ArtistName IsNot Nothing Then
             For Each artist In Artists
                 If artist.GetName() = ArtistName Then
@@ -195,6 +197,10 @@
         FavArtist.DeleteFav_Artist()
         MsgBox("Artist removed from favorites")
         favArtistsload()
+        artistnametxt.Text = ""
+        artistcountrytxt.Text = ""
+        im_artists.Image.Dispose()
+        im_artists.Image = My.Resources.imagenDefault
         If (lsb_favArtist.Items.Count = 0) Then
             unFavButton.Enabled = False
         End If
@@ -218,7 +224,7 @@
             Next
             If iguales = False Then
                 If (aName = "" Or country = "" Or imageartist = "") Then
-                    MessageBox.Show("There is blank space in the register please try again")
+                    MessageBox.Show("There is blank space in the register (name,country,cover) please try again")
                 Else
                     ArtistAdd.SetName(aName)
                     ArtistAdd.SetCountry(country)
@@ -227,6 +233,7 @@
                         ArtistAdd.InsertArtist()
                         MsgBox("Artist added")
                         loadArtists()
+                        imageartist = ""
                     Catch ex As Exception
                         MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End Try
@@ -257,6 +264,7 @@
                 ArtistUpdate.UpdateArtist()
                 MsgBox("Artist updated successfully")
                 loadArtists()
+                imageartist = ""
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try

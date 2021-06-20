@@ -15,9 +15,6 @@
         AlbumSongtxt.Visible = False
         SongLengthtxt.Text = ""
         SongLengthtxt.Visible = False
-        historytxt.Visible = False
-        Label2.Text = ""
-        Label2.Visible = False
         btn_update.Enabled = False
         EmailLog.Text = EmailUser
 
@@ -74,9 +71,6 @@
             SongLengthtxt.Text = SLength
             SongLengthtxt.Visible = True
             Play.Image = My.Resources.jugar1
-            historytxt.Visible = True
-            Label2.Text = SongSelected.GetName()
-            Label2.Visible = True
             songnametxtbox.Text = SongSelected.GetName()
             songalbumtxtbox.Text = AlbumName
             songlengthtxtbox.Text = CStr(SongSelected.GetSLength())

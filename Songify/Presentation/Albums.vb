@@ -135,7 +135,7 @@ Public Class Albums
             Next
             If iguales = False Then
                 If (aName = "" Or dateR = Nothing Or artistname = "") Then
-                    MessageBox.Show("There is blank space in the register please try again")
+                    MessageBox.Show("There is blank space in the register (name, releaseDate, artist, cover) please try again")
                 Else
                     AlbumAdd.SetName(aName)
                     AlbumAdd.SetDate(dateR)
@@ -145,6 +145,7 @@ Public Class Albums
                         AlbumAdd.InsertAlbum()
                         MsgBox("Album added successfully")
                         loadAlbums()
+                        cover = ""
                     Catch ex As Exception
                         MsgBox(ex.Message)
                     End Try
@@ -183,6 +184,7 @@ Public Class Albums
                         AlbumUpdate.UpdateAlbum()
                         MsgBox("Album Updated successfully")
                         loadAlbums()
+                        cover = ""
                     Catch ex As Exception
                         MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End Try
@@ -218,4 +220,5 @@ Public Class Albums
         albumreleaseDatetxt.Text = ""
         img_album.Image = My.Resources.imagenDefault
     End Sub
+
 End Class

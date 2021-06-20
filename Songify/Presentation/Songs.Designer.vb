@@ -32,8 +32,6 @@ Partial Class Songs
         Me.Songtxt = New System.Windows.Forms.Label()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
-        Me.historytxt = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnHistory = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -68,7 +66,7 @@ Partial Class Songs
         Me.songNametxt.AutoSize = True
         Me.songNametxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
         Me.songNametxt.ForeColor = System.Drawing.Color.White
-        Me.songNametxt.Location = New System.Drawing.Point(128, 597)
+        Me.songNametxt.Location = New System.Drawing.Point(33, 588)
         Me.songNametxt.Name = "songNametxt"
         Me.songNametxt.Size = New System.Drawing.Size(77, 26)
         Me.songNametxt.TabIndex = 1
@@ -79,7 +77,7 @@ Partial Class Songs
         Me.AlbumSongtxt.AutoSize = True
         Me.AlbumSongtxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
         Me.AlbumSongtxt.ForeColor = System.Drawing.Color.White
-        Me.AlbumSongtxt.Location = New System.Drawing.Point(128, 649)
+        Me.AlbumSongtxt.Location = New System.Drawing.Point(33, 640)
         Me.AlbumSongtxt.Name = "AlbumSongtxt"
         Me.AlbumSongtxt.Size = New System.Drawing.Size(77, 26)
         Me.AlbumSongtxt.TabIndex = 2
@@ -90,7 +88,7 @@ Partial Class Songs
         Me.SongLengthtxt.AutoSize = True
         Me.SongLengthtxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
         Me.SongLengthtxt.ForeColor = System.Drawing.Color.White
-        Me.SongLengthtxt.Location = New System.Drawing.Point(128, 710)
+        Me.SongLengthtxt.Location = New System.Drawing.Point(33, 701)
         Me.SongLengthtxt.Name = "SongLengthtxt"
         Me.SongLengthtxt.Size = New System.Drawing.Size(77, 26)
         Me.SongLengthtxt.TabIndex = 3
@@ -123,7 +121,7 @@ Partial Class Songs
         Me.Songtxt.AutoSize = True
         Me.Songtxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.Songtxt.ForeColor = System.Drawing.Color.White
-        Me.Songtxt.Location = New System.Drawing.Point(645, 508)
+        Me.Songtxt.Location = New System.Drawing.Point(645, 462)
         Me.Songtxt.Name = "Songtxt"
         Me.Songtxt.Size = New System.Drawing.Size(66, 24)
         Me.Songtxt.TabIndex = 16
@@ -131,7 +129,7 @@ Partial Class Songs
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(545, 563)
+        Me.ProgressBar1.Location = New System.Drawing.Point(545, 517)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(265, 23)
         Me.ProgressBar1.TabIndex = 17
@@ -143,28 +141,6 @@ Partial Class Songs
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.Size = New System.Drawing.Size(174, 407)
         Me.ListBox2.TabIndex = 19
-        '
-        'historytxt
-        '
-        Me.historytxt.AutoSize = True
-        Me.historytxt.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.historytxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.historytxt.Location = New System.Drawing.Point(15, 50)
-        Me.historytxt.Name = "historytxt"
-        Me.historytxt.Size = New System.Drawing.Size(123, 23)
-        Me.historytxt.TabIndex = 20
-        Me.historytxt.Text = "History of:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(144, 50)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 23)
-        Me.Label2.TabIndex = 21
-        Me.Label2.Text = "rfjpe"
         '
         'Label1
         '
@@ -259,7 +235,7 @@ Partial Class Songs
         Me.Michi.Font = New System.Drawing.Font("Verdana", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Michi.ForeColor = System.Drawing.Color.White
         Me.Michi.Image = Global.Songify.My.Resources.Resources._4aedd44ab39a02514290e2b05871555f
-        Me.Michi.Location = New System.Drawing.Point(521, 500)
+        Me.Michi.Location = New System.Drawing.Point(521, 454)
         Me.Michi.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Michi.Name = "Michi"
         Me.Michi.Size = New System.Drawing.Size(311, 397)
@@ -311,7 +287,7 @@ Partial Class Songs
         '
         Me.Play.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
         Me.Play.Image = Global.Songify.My.Resources.Resources.jugar1
-        Me.Play.Location = New System.Drawing.Point(641, 597)
+        Me.Play.Location = New System.Drawing.Point(641, 551)
         Me.Play.Name = "Play"
         Me.Play.Size = New System.Drawing.Size(70, 49)
         Me.Play.TabIndex = 18
@@ -320,7 +296,7 @@ Partial Class Songs
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Songify.My.Resources.Resources.Sin_título_1
-        Me.PictureBox1.Location = New System.Drawing.Point(527, 167)
+        Me.PictureBox1.Location = New System.Drawing.Point(527, 121)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(309, 316)
         Me.PictureBox1.TabIndex = 15
@@ -332,7 +308,7 @@ Partial Class Songs
         Me.GoBackBtn.ForeColor = System.Drawing.Color.Black
         Me.GoBackBtn.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_40_53
         Me.GoBackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.GoBackBtn.Location = New System.Drawing.Point(35, 773)
+        Me.GoBackBtn.Location = New System.Drawing.Point(35, 742)
         Me.GoBackBtn.Name = "GoBackBtn"
         Me.GoBackBtn.Size = New System.Drawing.Size(92, 42)
         Me.GoBackBtn.TabIndex = 12
@@ -370,7 +346,7 @@ Partial Class Songs
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
-        Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.ClientSize = New System.Drawing.Size(1328, 796)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.CleanBtn)
         Me.Controls.Add(Me.Label6)
@@ -385,8 +361,6 @@ Partial Class Songs
         Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.btn_update)
         Me.Controls.Add(Me.btn_insert)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.historytxt)
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.Play)
         Me.Controls.Add(Me.ProgressBar1)
@@ -424,8 +398,6 @@ Partial Class Songs
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Play As Button
     Friend WithEvents ListBox2 As ListBox
-    Friend WithEvents historytxt As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents btn_delete As Button
     Friend WithEvents btn_update As Button
     Friend WithEvents btn_insert As Button

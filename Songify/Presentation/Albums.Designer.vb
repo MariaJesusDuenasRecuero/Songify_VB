@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Albums
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Albums
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Albums))
         Me.GoBackBtn = New System.Windows.Forms.Button()
@@ -59,7 +59,7 @@ Partial Class Albums
         Me.GoBackBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.GoBackBtn.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_40_53
         Me.GoBackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.GoBackBtn.Location = New System.Drawing.Point(33, 786)
+        Me.GoBackBtn.Location = New System.Drawing.Point(33, 711)
         Me.GoBackBtn.Name = "GoBackBtn"
         Me.GoBackBtn.Size = New System.Drawing.Size(96, 42)
         Me.GoBackBtn.TabIndex = 11
@@ -72,7 +72,7 @@ Partial Class Albums
         Me.releaseDate.AutoSize = True
         Me.releaseDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.releaseDate.ForeColor = System.Drawing.Color.White
-        Me.releaseDate.Location = New System.Drawing.Point(690, 686)
+        Me.releaseDate.Location = New System.Drawing.Point(698, 667)
         Me.releaseDate.Name = "releaseDate"
         Me.releaseDate.Size = New System.Drawing.Size(57, 20)
         Me.releaseDate.TabIndex = 8
@@ -83,7 +83,7 @@ Partial Class Albums
         Me.aName.AutoSize = True
         Me.aName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.aName.ForeColor = System.Drawing.Color.White
-        Me.aName.Location = New System.Drawing.Point(690, 634)
+        Me.aName.Location = New System.Drawing.Point(698, 615)
         Me.aName.Name = "aName"
         Me.aName.Size = New System.Drawing.Size(57, 20)
         Me.aName.TabIndex = 7
@@ -110,7 +110,7 @@ Partial Class Albums
         Me.Length.AutoSize = True
         Me.Length.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Length.ForeColor = System.Drawing.Color.White
-        Me.Length.Location = New System.Drawing.Point(690, 742)
+        Me.Length.Location = New System.Drawing.Point(698, 723)
         Me.Length.Name = "Length"
         Me.Length.Size = New System.Drawing.Size(57, 20)
         Me.Length.TabIndex = 13
@@ -145,7 +145,7 @@ Partial Class Albums
         Me.lbl_artistName.AutoSize = True
         Me.lbl_artistName.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_artistName.ForeColor = System.Drawing.Color.White
-        Me.lbl_artistName.Location = New System.Drawing.Point(518, 634)
+        Me.lbl_artistName.Location = New System.Drawing.Point(526, 615)
         Me.lbl_artistName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_artistName.Name = "lbl_artistName"
         Me.lbl_artistName.Size = New System.Drawing.Size(78, 23)
@@ -157,7 +157,7 @@ Partial Class Albums
         Me.lbl_date.AutoSize = True
         Me.lbl_date.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_date.ForeColor = System.Drawing.Color.White
-        Me.lbl_date.Location = New System.Drawing.Point(518, 686)
+        Me.lbl_date.Location = New System.Drawing.Point(526, 667)
         Me.lbl_date.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_date.Name = "lbl_date"
         Me.lbl_date.Size = New System.Drawing.Size(69, 23)
@@ -169,7 +169,7 @@ Partial Class Albums
         Me.lbl_length.AutoSize = True
         Me.lbl_length.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_length.ForeColor = System.Drawing.Color.White
-        Me.lbl_length.Location = New System.Drawing.Point(503, 739)
+        Me.lbl_length.Location = New System.Drawing.Point(511, 720)
         Me.lbl_length.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_length.Name = "lbl_length"
         Me.lbl_length.Size = New System.Drawing.Size(93, 23)
@@ -366,7 +366,7 @@ Partial Class Albums
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
-        Me.ClientSize = New System.Drawing.Size(1271, 749)
+        Me.ClientSize = New System.Drawing.Size(1328, 796)
         Me.Controls.Add(Me.CleanBtn)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label5)

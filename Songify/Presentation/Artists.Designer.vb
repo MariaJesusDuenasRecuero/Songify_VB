@@ -102,7 +102,7 @@ Partial Class Artists
         Me.GoBackBtn.ForeColor = System.Drawing.Color.Black
         Me.GoBackBtn.Image = Global.Songify.My.Resources.Resources.WhatsApp_Image_2021_04_06_at_12_40_53
         Me.GoBackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.GoBackBtn.Location = New System.Drawing.Point(23, 789)
+        Me.GoBackBtn.Location = New System.Drawing.Point(23, 727)
         Me.GoBackBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.GoBackBtn.Name = "GoBackBtn"
         Me.GoBackBtn.Size = New System.Drawing.Size(103, 42)
@@ -375,7 +375,7 @@ Partial Class Artists
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
-        Me.ClientSize = New System.Drawing.Size(1271, 749)
+        Me.ClientSize = New System.Drawing.Size(1328, 796)
         Me.Controls.Add(Me.CleanBtn)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.unFavButton)
