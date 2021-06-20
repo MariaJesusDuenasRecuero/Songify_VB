@@ -375,7 +375,7 @@ Partial Class Artists
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkViolet
-        Me.ClientSize = New System.Drawing.Size(1271, 865)
+        Me.ClientSize = New System.Drawing.Size(1271, 749)
         Me.Controls.Add(Me.CleanBtn)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.unFavButton)

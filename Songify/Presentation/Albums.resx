@@ -153,17 +153,17 @@
   </metadata>
   <data name="CleanBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHaSURBVFhHxZc7
-        bsMwDIY9Ze8UoEtOkGv0FrlMphwgF8jQNWcoCvQQnbtmKPpa3f9TKFexaVcx0JLAB0gURepJ2U3btlVI
-        FuJO7MWDeBbvBmV0tGGz8Hx4uMoSydIcvwkUJSejr8eWPkvPZ4mrBAkz3ooPgeJTHMVGrEQ3S8qmow0b
-        bGmgLz5GV8RXnmf9JKh8iZ248Ww9sLU+9EWBL3c1hoqmWYsXQeVR3PZtaqGv+aCCz/XA5qJynnkOfhDV
-        h2kMfJivPIiLlegb5mU/lEZjSO7Ba+uDT0GBGD/npzDgsFBgyapmLnkFr60PPkXejm2nt0aWnhPLoane
-        c0n1AADfghjESluRG7izFHZlh9+QXDUAIIagsLd6WhoSB3e3+qqBZM4AuKLEIiaxU+qk5eh1mEJy9QCA
-        WIICsbvl33jGU0jmDoCMSYHY6RGhsvKMp5DMHQBpmwKx00tG5eqkI5k7APaeArHTc3pyjEgyKcAEGILX
-        VjJIVhJeUWLHDyB8C8IPYfg1DE9EsanYlHGPkSljn2NrjPsgKQziPsnMKO6jtFNEfpZ3yvNK5O3g0Pzf
-        j0lGwtLF/JqVSFgN8gSJA0XJ3/2c9pEwS1InjnlEeMl4ToEyOtqwqTy8bfMN5DupkSyR9IEAAAAASUVO
-        RK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAOwAAADsAXkocb0AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABy0lEQVRYR+3WzysEYRzH8fH7V8oB5aC48i8gboqTlIskLnJFSkKRQq4kB3Hg4HeRg5KTkhxcJAcp
+        KX8Ad+/PPPsUw87ujplx2U+92nm2zfPd7zzzXc4/ZApXqHBXMWcGJxjCNWItwm5e5K5MEepELPFurlet
+        dTsijzY/Q7G7cpxCHGPaXUWc7ObZzbObh7Z5DjqgwdGNPExAw2Q18eodMioqlNTiHPvoxyaesY02vKEF
+        Suib9+IRp1iDOqGM4gKlaIQ+oyJC27wSe3hHHXKxAb8i1Andjj+nE/pGgxiH2l+CVEW0Qp0KnHKs4xL1
+        eiORdIvQmdDBDBTdv3uMQJt4k04ROph6OjLOPG6g++iXVEVsoctcZpZdLJjLlPErYgCTyDiaWodQJ2x0
+        8mvM5Y8kK+IA7QgUFXEE/bE5fKAHyeItQqdfa3s7AiUfevSG8YRq+MUWoW7psdXEDC2vUEE26tBvURHq
+        liZmqFnGorl0xjBrLr/NB0Ud0yEOPfZM7OAOZWjCLWxUjFqvsR1J7NOxgio8oAGKDp4mpsZ2pLFFvKBP
+        bySiiamxHUsKoGd8yV2ZLmhs67cjtthOaGJqbDcj9qgI/Y/wdWL+MY7zCaDTdI6oHMqgAAAAAElFTkSu
+        QmCC
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
